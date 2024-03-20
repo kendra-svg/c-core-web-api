@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Cita
+    public class Cita
     {
+        //public DateTime AppointmentDate { get; set; }
+        //public string Title { get; set; }
+        //public string Specialty { get; set; }
+
+        //public int PatientID { get; set; }
+
     }
 }

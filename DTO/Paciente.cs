@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Class1
+    public class Paciente: UsuarioBase
     {
+        public Paciente() { 
+            //this.Citas = new List<Cita>();
+        }
+
+
+        //public List<Cita> Citas { get; set; }
     }
 }
