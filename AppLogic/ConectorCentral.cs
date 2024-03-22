@@ -8,5 +8,6 @@ namespace AppLogic
 {
     internal class ConectorCentral
     {
+        //prueba de commit en la rama
     }
 }
