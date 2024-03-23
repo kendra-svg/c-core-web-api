@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Paciente: UsuarioBase
+    public class Paciente: UsuarioBase 
     {
-        public Paciente() { 
-            //this.Citas = new List<Cita>();
-        }
-
-
-        //public List<Cita> Citas { get; set; }
+        public string IdRol { get; set; }
+        public string NombreRol { get; set; }
     }
 }

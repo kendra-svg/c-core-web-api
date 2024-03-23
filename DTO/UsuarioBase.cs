@@ -3,7 +3,7 @@
     public class UsuarioBase
     {
         public string Nombre { get; set; }
-        
+
         public int Id { get; set; }
 
         public string Apellidos { get; set; }
@@ -22,6 +22,10 @@
 
         public byte[] foto { get; set; }
 
-        public string contrasennas { get; set; }
+        public string contrasenna { get; set; }
+
+        public string ExpedienteId { get; set; }
+
+        public string UbicacionIdCoordenadas { get; set; }
     }
 }
