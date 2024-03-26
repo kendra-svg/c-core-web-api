@@ -8,11 +8,11 @@
 
         public string Apellidos { get; set; }
 
-        public string telefono { get; set; }
+        public string Telefono { get; set; }
 
         public string Correo { get; set; }
 
-        public string sexo { get; set; }
+        public string Sexo { get; set; }
 
         public DateTime FechaNacimiento { get; set; }
 
@@ -20,12 +20,12 @@
 
         public string Direccion { get; set; }
 
-        public byte[] foto { get; set; }
+        public byte[] Foto { get; set; }
 
-        public string contrasenna { get; set; }
+        public string Contrasenna { get; set; }
 
-        public string ExpedienteId { get; set; }
+        public Expediente Expedientes { get; set; } //Hace referencia al Id de la clase Expediente
 
-        public string UbicacionIdCoordenadas { get; set; }
+        public Ubicacion Ubicaciones { get; set; } //Hace referencia al Id de la clase Ubicacion
     }
 }

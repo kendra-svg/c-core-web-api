@@ -6,12 +6,21 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API.csproj", "{08E279B3-1758-4413-B0A2-AD82AF97184F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogic", "..\AppLogic\AppLogic.csproj", "{C87E10E6-9A57-47F4-B108-9FC7B942D437}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A504AF39-9F62-4318-A99D-76B825B1C0E6} = {A504AF39-9F62-4318-A99D-76B825B1C0E6}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{A504AF39-9F62-4318-A99D-76B825B1C0E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{78215E0B-666E-4EBE-AAE0-7B4564AD7CBC} = {78215E0B-666E-4EBE-AAE0-7B4564AD7CBC}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEB-UI", "..\WEB-UI\WEB-UI.csproj", "{8CA80EF3-5E21-45BF-83EF-19E816EC2BB8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{78215E0B-666E-4EBE-AAE0-7B4564AD7CBC} = {78215E0B-666E-4EBE-AAE0-7B4564AD7CBC}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "..\DTO\DTO.csproj", "{78215E0B-666E-4EBE-AAE0-7B4564AD7CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "..\DTO\DTO.csproj", "{78215E0B-666E-4EBE-AAE0-7B4564AD7CBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

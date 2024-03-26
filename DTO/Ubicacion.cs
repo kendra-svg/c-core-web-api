@@ -9,8 +9,8 @@ namespace DTO
     public class Ubicacion
     {
         public string Coordenadas { get; set; }
-        public string Id { get; set; } //Vendria a ser el id_coordenadas del diagrama de la base de datos
+        public string Id { get; set; } 
 
-        public int IdSedes { get; set; } //Vendria a ser el sedes_id_sedes del diagrama de la base de datos
+        public Sede Sedes { get; set; } //Hace referencia al Id de la clase Sede
     }
 }
