@@ -33,7 +33,7 @@ header {
 .elementos-nav {
 
     display: flex;
-    margin-left: 50vw;
+    margin-left: 20vw;
 }
 
     .elementos-nav a {
@@ -45,7 +45,7 @@ header {
     }
 
 .elementos-nav a i {
-    margin-right: 60px; 
+    margin-right: 100px; 
 }
 
 
@@ -75,18 +75,23 @@ footer {
 }
 
 .left-section {
-    top: 0;
-    left: 0;
     flex: 1;
     margin-right: 20px;
+    margin-bottom: -10px;
+
 }
 
 .right-section {
-
     flex: 1;
     text-align: right;
-    margin-left: 20px; 
-   
+    margin-left: 20px;
+    margin-bottom: -30px;
+}
+
+.powered {
+    margin-left: 100px;
+    margin-bottom: 0px;
+    
 }
 
 
@@ -114,8 +119,10 @@ footer {
 
 .menu-section {
 
-    max-width: 300px;
-    margin-left: 1vw;
+    height: 50px;
+    width: 300px;
+    margin-left: 3vw;
+    margin-top: -10px; 
 
 }
 
