@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Paciente: UsuarioBase 
+    public class Canton
     {
-        public string IdRol { get; set; }
-        public string NombreRol { get; set; }
+        public string Id { get; set; } 
+        public string Nombre { get; set; } 
     }
 }
+
