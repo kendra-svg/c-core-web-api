@@ -19,7 +19,6 @@ namespace DTO
         public string NotasMedicas { get; set; } //Queda vacio por el usuario y lo llena el doctor
         public string NotasEnfermeria { get; set; } //Queda vacio por el usuario y lo llena el enfemero
         public string UsuarioId { get; set; } //ROL_USUARIO_id_rol_usuarios en diagrama base de datos
-        public string LaboratorioId { get; set; } //LABORATORIO_id_laboratorio en diagrama base de datos
-
+        public Laboratorio Laboratorios { get; set; } //Hace referencia al Id de la clase Laboratorio
     }
 }

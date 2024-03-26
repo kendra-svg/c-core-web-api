@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Distrito
+    public class Secretario: UsuarioBase
     {
-        public string Id { get; set; } 
-        public string Nombre { get; set; } 
+        public string IdRol { get; set; }
+        public string NombreRol { get; set; }
     }
 }
