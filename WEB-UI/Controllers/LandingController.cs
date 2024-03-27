@@ -4,7 +4,7 @@ namespace WEB_UI.Controllers
 {
     public class LandingController : Controller
     {
-        public IActionResult Index()
+        public IActionResult IndexLanding()
         {
             return View();
         }
