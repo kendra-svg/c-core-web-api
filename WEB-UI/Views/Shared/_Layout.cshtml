@@ -25,20 +25,20 @@
                             <a asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-heart"></i>Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a asp-area="" asp-controller="Landing" asp-action="Index"><i class="fas fa-users"></i>Nosotros</a>
+                            <a asp-area="" asp-controller="Landing" asp-action="IndexLanding"><i class="fas fa-users"></i>Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a asp-area="" asp-controller="Landing" asp-action="Index"><i class="fas fa-clinic-medical"></i>Servicios</a>
+                            <a asp-area="" asp-controller="Landing" asp-action="IndexLanding"><i class="fas fa-clinic-medical"></i>Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a asp-area="" asp-controller="Landing" asp-action="Index"><i class="fas fa-phone"></i>Contáctenos</a>
+                            <a asp-area="" asp-controller="Landing" asp-action="IndexLanding"><i class="fas fa-phone"></i>Contáctenos</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid p-0">
         <main role="main" >
             @RenderBody()
         </main>
