@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WEB_UI.Models;
 
 namespace WEB_UI.Controllers
 {
@@ -8,5 +9,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult Lista()
+        {
+            return View(new List<Cita>());
+        }
     }
 }
+
