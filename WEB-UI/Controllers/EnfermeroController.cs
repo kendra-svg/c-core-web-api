@@ -4,7 +4,7 @@ namespace WEB_UI.Controllers
 {
     public class EnfermeroController : Controller
     {
-        public IActionResult LandingEnfermero()
+        public IActionResult LandingEnfemero()
         {
             return View();
         }
