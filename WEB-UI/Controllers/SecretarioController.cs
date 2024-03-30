@@ -9,9 +9,17 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult Crear()
+        {
+            return View();
+        }
         public IActionResult Lista()
         {
             return View(new List<Cita>());
+        }
+        public IActionResult Detalles()
+        {
+            return View();
         }
     }
 }
