@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Provincia
+    public class Provincia: BaseClass
     {
-        public string Id { get; set; } 
+        public int Id { get; set; } 
         public string Nombre { get; set; } 
     }
 }

@@ -9,19 +9,18 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Mappers
 {
-    public class CantonMapper : ICrudStatements
+    public class ProvinciasMapper : ICrudStatements
     {
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "SP_INSERT_cantones";
+            operation.ProcedureName = "SP_INSERT_provincias";
 
-            Canton app = (Canton)dto;
+            Provincia app = (Provincia)dto;
 
-            operation.AddIntegerParam("idcantones", app.Id);
-            operation.AddVarCharParam("nombre_cantones", app.Nombre);
-
+            operation.AddIntegerParam("idprovincias", app.Id);
+            operation.AddVarCharParam("nombreprovincias", app.Nombre);
             return operation;
         }
 
@@ -45,4 +44,6 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         }
     }
+
+
 }

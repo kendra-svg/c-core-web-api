@@ -8,7 +8,7 @@ namespace DTO
 {
     public class BaseClass
     {
-        public string id {  get; set; }
+        public int Id {  get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using dataaccess.crud;
 using DTO;
 using System.Linq;
 namespace AppLogic
@@ -7,7 +8,9 @@ namespace AppLogic
     {
         public Paciente GetPaciente(int id)
         {
-            return null;
+            Patientcrud crud = new Patientcrud();
+            return crud.RetrieveAll<Patient>();
+
         }
 
 
