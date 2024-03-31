@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Canton : BaseClass
+    public class Canton 
     {
         public int Id { get; set; } //
         public string Nombre { get; set; } 
