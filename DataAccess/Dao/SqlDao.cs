@@ -10,7 +10,9 @@ namespace DataAccess.DAO
 {
     public class SqlDao
     {
-        private string connectionString = "";
+        //Para la base de datos local"Server=localhost;Database=ISA_CLINIC;Trusted_Connection=True;"
+        //User ID=cenfo_DB;Password=Psw123456*; en caso de no tener windows autentication o usar un user, se remplaza la seccion de trusted_connection...
+        private string connectionString = "Server=localhost;Database=master;Trusted_Connection=True;";
 
         //Singleton
         private static SqlDao instance = new SqlDao();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,13 @@ namespace DataAccess.DAO
 
             parameters.Add(new SqlParameter("@" + parameterName, parameterValue));
 
+        }
+        public void AddBinaryParam(string paramName, byte[] value)
+        {
+
+            SqlParameter param = new SqlParameter(paramName, SqlDbType.VarBinary);
+            param.Value = value;
+            parameters.Add(param);
         }
 
 
