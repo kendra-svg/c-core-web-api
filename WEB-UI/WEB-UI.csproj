@@ -7,8 +7,4 @@
     <RootNamespace>WEB_UI</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj" />
-  </ItemGroup>
-
 </Project>
