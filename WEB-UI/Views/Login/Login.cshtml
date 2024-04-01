@@ -1,0 +1,84 @@
+﻿@model DTO.UsuarioBase
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_Layout.cshtml";
+}
+@section Scripts {
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Login.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>@ViewBag.Title</title>
+</head>
+
+
+<body>
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+        {
+            <h2 class="create-account">Iniciar Sesión</h2>
+            <p class="cuenta-gratis">¿Aún no tienes una cuenta?</p>
+
+            @Html.TextBoxFor(model => model.Nombre, new { placeholder = "Nombre" })
+            @Html.PasswordFor(model => model.contrasennas, new { placeholder = "Contraseña" })
+
+            <input type="submit" value="Iniciar Sesión">
+            //validaciones
+            <div>
+
+            </div>
+        }
+
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido de nuevo</h2>
+                <p>Si aún no tiene una cuenta, por favor regístrese aquí</p>
+                <button class="sign-in-btn">Registrarse</button>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            <h2 class="create-account">Crear cuenta</h2>
+            <p class="cuenta-gratis">¡Regístrate ahora!</p>
+            @Html.TextBoxFor(model => model.Nombre, new { placeholder = "Nombre" })
+            @Html.TextBoxFor(model => model.Apellidos, new { placeholder = "Apellidos" })
+            @Html.TextBoxFor(model => model.Correo, new { placeholder = "Correo electrónico" })
+   
+            <input type="submit" value="Registrarse">
+        }
+
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido de nuevo</h2>
+                <p>Si ya tienes una cuenta, inicia sesión</p>
+                <button class="sign-up-btn">Iniciar Sesión</button>
+            </div>
+        </div>
+
+    <script>
+        // Aquí pegar el contenido del archivo script.js
+        const $btnSignIn = document.querySelector('.sign-in-btn'),
+            $btnSignUp = document.querySelector('.sign-up-btn'),
+            $signUp = document.querySelector('.sign-up'),
+            $signIn = document.querySelector('.sign-in');
+
+        document.addEventListener('click', e => {
+            if (e.target === $btnSignIn || e.target === $btnSignUp) {
+                $signIn.classList.toggle('active');
+                $signUp.classList.toggle('active')
+            }
+        });
+    </script>
+</body>
+</html>

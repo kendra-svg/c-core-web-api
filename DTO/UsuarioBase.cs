@@ -1,6 +1,6 @@
 ﻿namespace DTO
 {
-    public class UsuarioBase
+    public class UsuarioBase : BaseClass
     {
         public string Nombre { get; set; }
 

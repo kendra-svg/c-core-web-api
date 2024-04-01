@@ -1,0 +1,239 @@
+﻿body {
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5em; /* Tamaño de fuente más pequeño */
+    margin-right: 20px; /* Ajusta el margen derecho según sea necesario */
+}
+
+.main-w3layouts {
+    padding: 3em 0 1em;
+}
+
+.main-agileinfo {
+    width: 60%;
+    margin: 3em auto;
+    background-color: #68ddbd;
+    border-radius: 10px;
+}
+
+.agileits-top {
+    padding: 3em;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+    .input-group > div {
+        width: 48%;
+    }
+
+.input-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload span {
+    background-color: #038554;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.preview-container {
+    width: 48%;
+    text-align: center;
+}
+
+    .preview-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+    font-size: 0.9em;
+    color: #038554;
+    font-weight: 100;
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 0.8em;
+    border: solid 1px #03bb85;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #a4fff7;
+}
+
+input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background-color: #038554;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.9em;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+}
+
+    input[type="submit"]:hover {
+        background-color: #03bb85;
+    }
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="%2303bb85"><path d="M16 26l-8-8h16z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    width: 200px;
+    width: 328px; 
+}
+
+    select::-ms-expand {
+        display: none;
+    }
+
+.colorlibcopy-agile {
+    margin: 2em 0 1em;
+    text-align: center;
+}
+
+    .colorlibcopy-agile p {
+        font-size: 0.9em;
+        color: #038554;
+        line-height: 1.8em;
+        letter-spacing: 1px;
+        font-weight: 100;
+    }
+
+        .colorlibcopy-agile p a {
+            color: #038554;
+            transition: 0.5s all;
+        }
+
+            .colorlibcopy-agile p a:hover {
+                color: #03bb85;
+            }
+
+.btn-container {
+    text-align: center;
+}
+
+.image-container {
+    width: 200px; 
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    display: flex; 
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+    /* Estilos para la imagen dentro del contenedor */
+    .image-container img {
+        width: auto; /* La anchura se ajustará automáticamente para mantener la relación de aspecto */
+        height: 100%; /* La altura ocupará todo el espacio disponible */
+        object-fit: cover; /* Escala la imagen para que se ajuste dentro del contenedor sin deformarse */
+    }
+
+
+/* Estilos para la sección "Seguridad de la cuenta" */
+.security-info {
+    color: #ffffff;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+    .security-info h2 {
+        margin: 0;
+    }
+
+    .security-info p {
+        color: #ffffff; 
+        margin-top: 5px;
+    }
+
+
+/* Estilos para los campos de contraseña */
+.password-inputs {
+    width: 50%;
+    float: left;
+}
+
+    .password-inputs input[type="password"] {
+        font-size: 0.9em;
+        color: #038554;
+        font-weight: 100;
+        width: 100%;
+        display: block;
+        border: none;
+        padding: 0.8em;
+        border: solid 1px #03bb85;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: #a4fff7;
+    }
+
+/* Estilos para el mapa */
+#map {
+    height: 250px;
+    margin-bottom: 20px; /* Ajusta este valor según el espacio adicional que desees */
+}
+
+.divider-line {
+    border: 1px solid #ffffff; /* Línea sólida blanca */
+    margin: 20px 0 10px; /* Espacio superior e inferior */
+    width: 100%; /* Ancho completo */
+}
+.space-line {
+    margin: 10px 0; /* Espacio superior e inferior */
+}
+
+.coordinates-container {
+    width: 48%;
+    float: left;
+    margin-top: 20px;
+}
+
+    .coordinates-container input[type="text"] {
+        font-size: 0.9em;
+        color: #038554;
+        width: calc(100% - 10px);
+        border: 1px solid #03bb85;
+        border-radius: 5px;
+        padding: 0.8em;
+        margin-bottom: 10px;
+        background-color: #a4fff7;
+        box-sizing: border-box;
+    }

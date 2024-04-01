@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DataAccess.CRUD
 {
@@ -11,11 +12,11 @@ namespace DataAccess.CRUD
     {
         protected SqlDao dao;
 
-        //public abstract void Create(BaseClass dto);
+        public abstract void Create(BaseClass dto);
 
-        //public abstract void Update(BaseClass dto);
+        public abstract void Update(BaseClass dto);
 
-        //public abstract void Delete(BaseClass dto);
+        public abstract void Delete(BaseClass dto);
 
         public abstract List<T> RetrieveAll<T>();
 
