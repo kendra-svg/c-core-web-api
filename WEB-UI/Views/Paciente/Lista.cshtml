@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WEB_UI.Models.ExamenPersonal>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+<div class="text-center mt-3 mx-15">
+    <p>
+        <a class=" btn btn-outline-success my-2 my-sm-0" asp-action="Crear">Crear nuevo examen</a>
+    </p>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDeExamen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especialidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDeExamen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+
+            <td></td>
+        </tr>
+}
+    </tbody>
+</table>
