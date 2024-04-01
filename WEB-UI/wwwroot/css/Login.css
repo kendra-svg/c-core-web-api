@@ -1,0 +1,110 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/fondo_registro_e_iniciosesionm.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.container-form {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario {
+    width: 400px;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: rgba(51, 51, 51, 0.6);
+    text-align: center;
+}
+
+.create-account {
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+}
+
+.cuenta-gratis {
+    margin-bottom: 2rem;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    font-size: 1rem;
+    color: #fff;
+}
+
+    .formulario input[type="button"],
+    .formulario input[type="submit"] {
+        width: 50%;
+        margin-top: 2rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 2rem;
+        background-color: #03bb85;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .formulario input[type="button"]:hover,
+        .formulario input[type="submit"]:hover {
+            background-color: #038554;
+        }
+
+.welcome-back {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+    .welcome-back .message {
+        padding: 1rem;
+        color: #fff;
+    }
+
+        .welcome-back .message h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-back .message p {
+            margin-bottom: 1rem;
+        }
+
+.sign-in-btn,
+.sign-up-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+    .sign-in-btn:hover,
+    .sign-up-btn:hover {
+        text-decoration: none;
+    }
