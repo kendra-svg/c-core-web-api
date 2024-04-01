@@ -10,7 +10,7 @@ namespace AppLogic
 {
     public class ProvinciasManager
     {
-        public string CreateProvincias(Provincia app)
+        public string CreateProvincias(BaseClass app)
         {
             ProvinciasCrud crud = new ProvinciasCrud();
             crud.Create(app);
