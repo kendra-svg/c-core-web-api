@@ -59,7 +59,7 @@
                     </div>
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.telefono, new { @class = "text", placeholder = "Teléfono", required = "required" })
+                            @Html.TextBoxFor(model => model.Telefono, new { @class = "text", placeholder = "Teléfono", required = "required" })
                         </div>
                         <div>
                             @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo", required = "required" })
@@ -67,7 +67,7 @@
                     </div>
                     <div class="input-group">
                         <div>
-                            @Html.DropDownListFor(model => model.sexo, new List<SelectListItem>
+                            @Html.DropDownListFor(model => model.Sexo, new List<SelectListItem>
                         {
                         new SelectListItem { Text = "Masculino", Value = "male" },
                         new SelectListItem { Text = "Femenino", Value = "female" }
@@ -95,8 +95,8 @@
                             <p>Al menos debe contener de 8 a 12 caracteres.</p>
                         </div>
                         <div class="password-inputs">
-                            @Html.PasswordFor(model => model.contrasennas, new { @class = "text", placeholder = "Contraseña", required = "required" })
-                            @Html.PasswordFor(model => model.contrasennas, new { @class = "text", placeholder = "Confirmar Contraseña", required = "required" })
+                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Contraseña", required = "required" })
+                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Confirmar Contraseña", required = "required" })
                         </div>
                     </div>
 

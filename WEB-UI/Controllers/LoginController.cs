@@ -17,7 +17,7 @@ namespace WEB_UI.Controllers
         [HttpPost]
         public IActionResult Login(UsuarioBase usuario)
         {
-            if (usuario.Nombre == null || usuario.contrasennas == null)
+            if (usuario.Nombre == null || usuario.Contrasenna == null)
             {
                 ViewBag.Message = "Usuario y/o password incorrectos";
                 return View();
