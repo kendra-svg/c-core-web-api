@@ -8,5 +8,25 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult CitasPersonales()
+        {
+            return View();
+        }
+        public IActionResult CrearCitasPersonales()
+        {
+            return View();
+        }
+        public IActionResult DatosPersonales()
+        {
+            return View();
+        }
+        public IActionResult ExpedientePersonal()
+        {
+            return View();
+        }
+        public IActionResult EncuestaServicio()
+        {
+            return View();
+        }
     }
 }

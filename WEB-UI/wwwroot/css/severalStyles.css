@@ -1,0 +1,59 @@
+﻿/*
+    PARA CITAS PERSONALES
+*/
+
+#main-box-appointments {
+    background-color: #68ddbd
+}
+
+#other-box-appointments {
+    background-color: #68ddbd;
+    margin-left: 5px
+}
+
+
+/*
+    PARA ASIGNACION DE CITAS
+*/
+
+.textbox-appointment-assignation {
+    width: 400px;
+    height: 200px
+}
+
+#img-profile-personal-data {
+    height: 100px;
+    width: 100px
+}
+
+#i-new-password {
+    height: 5em;
+    color: black
+}
+
+/*
+    PARA EXPEDIENTE PERSONAL
+*/
+
+#btns-expediente button {
+    width: 450px;
+    background-color: #68ddbd
+}
+
+
+
+/*
+    PARA ENCUESTA DE SERVICIO
+*/
+
+#additional-comments {
+    width: 450px
+}
+
+/*
+    PARA PAGOS DE FACTURAS
+*/
+
+#tb-bills td {
+    padding-left: 20px
+}
