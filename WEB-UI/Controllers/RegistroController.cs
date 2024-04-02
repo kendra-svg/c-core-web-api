@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DTO; // Asegúrate de tener acceso al espacio de nombres DTO
+using DTO;
+
 
 namespace WEB_UI.Controllers
 {
