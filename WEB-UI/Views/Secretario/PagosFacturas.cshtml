@@ -1,0 +1,190 @@
+﻿
+@{
+    Layout = null;
+    ViewData["Title"] = "Home Secretario";
+}
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    <link href="~/css/severalstyles.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="~/css/usersmenustyle.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <header id="header-menu" class="text-white">
+        <div class="row align-items-center ">
+            <div class="col">
+                <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
+            </div>
+            <div class="col text-center ">
+                <p>Sede a la que pertenece</p>
+            </div>
+
+            <div class="col text-end m-1">
+                <p><i class="bi bi-person "></i></i>Correo@gmail.com</p>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="barra-busqueda">
+        <div class="input-group">
+            <div class="form-outline" data-mdb-input-init>
+                <input id="search-focus" type="search" id="form1" class="form-control" />
+                <label class="form-label" for="form1">Search</label>
+            </div>
+            <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    @Html.Partial("MenuLateralSecretario")
+
+    <div class="col text-left">
+        <h2>Pagos de Facturas a Clientes</h2>
+        <input type="text" class="form-text" placeholder="Buscar" />
+        <div class="container">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-3">
+                        <table id="tb-bills" class="table border mt-3">
+                            <tr>
+                                <th>ID FACTURA</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>IVA</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>IMPUESTO POR SERVICIO</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>ESPECIALIDAD MEDICA</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>DOCTOR</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>FECHA DE EMISION</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>ESTADO</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>MONTO TOTAL</th>
+                                <td>Content</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn border">Descargar</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn border">Pagar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-3">
+                        <table id="tb-bills" class="table border mt-3">
+                            <tr>
+                                <th>ID FACTURA</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>IVA</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>IMPUESTO POR SERVICIO</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>ESPECIALIDAD MEDICA</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>DOCTOR</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>FECHA DE EMISION</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>ESTADO</th>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <th>MONTO TOTAL</th>
+                                <td>Content</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn border">Descargar</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn border">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <h5> PAYPAL</h5>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    
+    
+
+    @* @Html.Partial("_Footer") *@
+
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/usermenu/menufunctions.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+
