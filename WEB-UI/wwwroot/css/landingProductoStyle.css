@@ -5,10 +5,25 @@
 }
 
 
-#btn-access-app {
+#btn-access-app, #btn-location, #btn-register {
     margin-bottom: 12%;
-    margin-top: 5%
+    margin-top: 5%;
+    background-color: #68ddbd;
 }
+
+#right-section-welcome p, #right-section-welcome h2{
+    width: 350px;
+    background-color: #038554;
+    color: white;
+    padding-left: 5px
+}
+#left-section-welcome p {
+    width: 250px;
+    background-color: #038554;
+    color: white;
+    padding-left: 5px
+}
+
 
 #btn-location {
     margin-bottom: 5%;
