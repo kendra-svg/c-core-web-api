@@ -1,110 +1,123 @@
-﻿* {
+﻿body {
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(img/fondo_registro_e_iniciosesionm.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-}
-
-.container-form {
-    width: 90%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.formulario {
-    width: 400px;
-    padding: 2rem;
-    margin: 2rem;
-    background-color: rgba(51, 51, 51, 0.6);
+h1 {
+    font-size: 2.5em;
     text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-.create-account {
-    margin-bottom: 2rem;
-    font-size: 1.7rem;
+.main-w3layouts {
+    padding: 3em 0 1em;
 }
 
-.cuenta-gratis {
-    margin-bottom: 2rem;
+.main-agileinfo {
+    width: 60%;
+    margin: 3em auto;
+    background-color: #68ddbd;
+    border-radius: 10px;
 }
 
-.formulario input {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #fff;
-    text-align: center;
-    outline: none;
-    font-size: 1rem;
-    color: #fff;
+.agileits-top {
+    padding: 3em;
 }
 
-    .formulario input[type="button"],
-    .formulario input[type="submit"] {
-        width: 50%;
-        margin-top: 2rem;
-        padding: 1rem;
-        border: none;
-        border-radius: 2rem;
-        background-color: #03bb85;
-        font-weight: bold;
-        font-size: 1rem;
-        color: #fff;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+    .input-group > div {
+        width: 48%;
     }
 
-        .formulario input[type="button"]:hover,
-        .formulario input[type="submit"]:hover {
-            background-color: #038554;
-        }
-
-.welcome-back {
-    margin-top: 2rem;
-    text-align: center;
+.input-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-    .welcome-back .message {
-        padding: 1rem;
-        color: #fff;
+    .input-group-header .file-upload {
+        margin-left: auto;
     }
 
-        .welcome-back .message h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
+.file-upload input[type="file"] {
+    display: none;
+}
 
-        .welcome-back .message p {
-            margin-bottom: 1rem;
-        }
-
-.sign-in-btn,
-.sign-up-btn {
-    background-color: transparent;
-    border: none;
-    color: #fff;
+.file-upload span {
+    background-color: #038554;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    text-decoration: underline;
 }
 
-    .sign-in-btn:hover,
-    .sign-up-btn:hover {
-        text-decoration: none;
+.preview-container {
+    width: 48%;
+    text-align: center;
+}
+
+    .preview-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
     }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="password"] {
+    font-size: 0.9em;
+    color: #038554;
+    font-weight: 100;
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 0.8em;
+    border: solid 1px #03bb85;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #a4fff7;
+}
+
+input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background-color: #038554;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.9em;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+}
+
+    input[type="submit"]:hover {
+        background-color: #03bb85;
+    }
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .signup-link p {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+        .signup-link p a {
+            color: #ffffff;
+            transition: 0.5s all;
+        }
+
+            .signup-link p a:hover {
+                color: #03bb85;
+            }
