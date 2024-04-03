@@ -6,18 +6,34 @@
 
 <div id="welcome-section" class="container-fluid text-black m-0 p-2">
     <div class="row">
-        <div class="col">
+        <div class="col" id="right-section-welcome">
             <h2>Bienvenido a SIMPECI</h2>
-            <p>Nuestro objetivo es brindar a nuestros <br /> pacientes una atencion media de alta<br /> calidad con un enfoque centrado que <br />se adapte a las necesidades<br /> individuales de cada paciente.</p>
-            <p>Listo para comenzar? <br /> Solicita tu cita ahora mismo</p>
-            <button type="button" class="btn btn-primary e">Pida una cita</button>
+            <p>
+                Nuestro objetivo es brindar a nuestros <br /> pacientes, una atención media de alta<br /> calidad con un enfoque centrado que <br />se adapte a las necesidades<br /> individuales de cada paciente.</br>
+                ¿Listo para comenzar? <br /> Solicita tu cita ahora mismo.
+            </p>
+
+            <a asp-controller="Login" asp-action="Login" class="text-decoration-none text-black">
+                <button type="button" class="btn border " id="btn-appointment">Pida una cita</button>
+            </a> 
+
+
+           
         </div>
 
 
-        <div class="col mx-lg-5">
-            <button type="button" class="btn btn-primary" id="btn-access-app">Acceso</button>
-            <p>Si necesita atencion medica <br /> urgente, por favor, dirijase <br /> de inmediato al centro <br /> medico mas cercano.</p>
-            <button type="button" class="btn btn-primary" id="btn-location">Ubicacion</button>
+        <div class="col-4" id="left-section-welcome">
+            <a asp-controller="Login" asp-action="Login" class="text-decoration-none text-black">
+                <button type="button" class="btn border" id="btn-access-app">Acceso</button>
+            </a>
+
+
+            
+            <p>Si necesita atencion medica <br /> urgente, por favor, diríjase <br /> de inmediato al centro <br /> medico mas cercano.</p>
+            <a asp-controller="Login" asp-action="Login" class="text-decoration-none text-black">
+                <button type="button" class="btn border" id="btn-location">Ubicaciones</button>
+            </a>
+           
         </div>
     </div>
 </div>
@@ -26,7 +42,7 @@
     <div class="row">
         <div class="col boxes-features">
             <h5>Sedes</h5>
-            <p>Al contar con diversas sedes alrededor de todo el pais, podemos ampliar la cobertura de nuestros servicios medicos y llegar a todas las personas que requiren nuestros servicios.</p>
+            <p>Al contar con diversas sedes alrededor de todo el país, podemos ampliar la cobertura de nuestros servicios médicos y llegar a todas las personas que requieren nuestros servicios.</p>
         </div>
 
         <div class="col boxes-features">
@@ -35,7 +51,7 @@
         </div>
         <div class="col boxes-features">
             <h5>Seguimiento de Calidad</h5>
-            <p>Cualquier persona que utilice nuestros servicios <br /> puede brindar una retroalimentacion <br />para poder seguir mejorando.</p>
+            <p>Cualquier persona que utilice nuestros servicios <br /> puede brindar una retroalimentación <br />para poder seguir mejorando.</p>
         </div>
     </div>
 </div>
@@ -43,12 +59,12 @@
     <h2>Nuestros Servicios 24/7 </h2>
     <p>
         Ofrecemos una ampia gama de diversos serviocios,que se adaptan a las necesidades unicas de cada paciente<br />
-        Gracias a nuestros servicios de calidad podemos ayudarlo a promever su bienestar y mejorar su calidad de vida.<br />
+        Gracias a nuestros servicios de calidad podemos ayudarlo a promover su bienestar y mejorar su calidad de vida.<br />
         Algunos de nuestros servicios:
     </p>
     <div class="row">
         <div class="col boxes-services">
-            <h5>Reservacion de Citas</h5>
+            <h5>Reservación de Citas</h5>
 
         </div>
 
@@ -63,7 +79,7 @@
     </div>
     <div class="row">
         <div class="col boxes-services">
-            <h5>Serivicios Especializados</h5>
+            <h5>Servicios Especializados</h5>
 
         </div>
 
@@ -72,18 +88,18 @@
 
         </div>
         <div class="col  boxes-services">
-            <h5>Examenes Medicos</h5>
+            <h5>Exámenes Médicos⁣/h5>
 
         </div>
     </div>
     <div class="row">
         <div class="col boxes-services">
-            <h5>Gestion de Recetas</h5>
+            <h5>Gestión de Recetas</h5>
 
         </div>
 
         <div class="col  boxes-services">
-            <h5>Servicio de Diagnosticos</h5>
+            <h5>Servicio de Diagnósticos</h5>
 
         </div>
         <div class="col  boxes-services">
@@ -98,7 +114,7 @@
         <div class="col boxes-professionals">
             <img src="https://i.imgur.com/i6Ao0cE.png" />
             <h5>Dr.Javier Rodriguez</h5>
-            <p>Oftmalogia</p>
+            <p>Oftmalogía</p>
 
         </div>
 
@@ -111,7 +127,7 @@
         <div class="col boxes-professionals">
             <img src="https://i.imgur.com/i6Ao0cE.png" />
             <h5>Dr.Manuel Lopez</h5>
-            <p>Cardiologia</p>
+            <p>Cardiología</p>
 
         </div>
     </div>
@@ -119,7 +135,7 @@
         <div class="col boxes-professionals">
             <img src="https://i.imgur.com/i6Ao0cE.png" />
             <h5>Dra.Maria Centeno</h5>
-            <p>Otorrinolaringologia</p>
+            <p>Otorrinolaringología</p>
 
         </div>
 
@@ -132,7 +148,7 @@
         <div class="col boxes-professionals">
             <img src="https://i.imgur.com/i6Ao0cE.png" />
             <h5>Dra.Gabriela Chavarria</h5>
-            <p>Neumologia</p>
+            <p>Neumología</p>
         </div>
     </div>
 </div>
@@ -140,14 +156,14 @@
     <h2>Caracteristicas</h2>
     <div class="row">
         <div class="col boxes-characteristics">
-            <p>Contamos con una aplicacion con los mas altos estandares donde el usuario se pueda sentir comodo y seguro, ya toda la informacion que se recopila,esta en un ambiente seguro donde unicamente los funcionarios requeridos tienes acceso a la informacion sensible</p>
+            <p>Contamos con una aplicación con los más altos estándares donde el usuario se pueda sentir cámodo y seguro, ya que toda la información que se recopila,está en un ambiente seguro donde únicamente los funcionarios requeridos tienen acceso a la información sensible.</p>
 
         </div>
         <div class="col boxes-characteristics">
-            <p>Al tener una interfaz facil de utilizar para todos los usuarios tanto pacientes como funcionariso, podemos enfocarnos en brindar un servicio de calidad y dejar de lado la burocracia.</p>
+            <p>Al tener una interfaz fácil de utilizar para todos los usuarios, tanto pacientes como funcionarios, podemos enfocarnos en brindar un servicio de calidad y dejar de lado la burocracia.</p>
         </div>
         <div class="col boxes-characteristics">
-            <p>El hecho de disponer de una aplicacion confiable nos garantiza el poder brindarle un servicio que este a la altura de sus expectativas.</p>
+            <p>El hecho de disponer de una aplicación confiable nos garantiza el poder brindarle un servicio que este a la altura de sus expectativas.</p>
         </div>
 
 

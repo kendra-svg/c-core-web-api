@@ -43,6 +43,22 @@ namespace WEB_UI.Controllers
             // Pasa la lista de sedes a la vista
             return View(sedes);
         }
+        public IActionResult AsignacionCitas()
+        {
+            return View();
+        }
+        public IActionResult BuscadorExpedientes()
+        {
+            return View();
+        }
+        public IActionResult ResultadosEncuestas()
+        {
+            return View();
+        }
+        public IActionResult DefinicionPrecioEImpuestos()
+        {
+            return View();
+        }
 
         public IActionResult Lista()
         {
