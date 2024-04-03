@@ -5,10 +5,10 @@
 }
 
 
-#btn-access-app,#btn-location,#btn-appointment{
+#btn-access-app, #btn-location, #btn-register {
     margin-bottom: 12%;
     margin-top: 5%;
-    background-color:#68ddbd;
+    background-color: #68ddbd;
 }
 
 #right-section-welcome p, #right-section-welcome h2{
