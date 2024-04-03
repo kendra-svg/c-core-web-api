@@ -20,7 +20,7 @@
 
         public string Direccion { get; set; }
 
-        public byte[] Foto { get; set; }
+        public string Foto { get; set; }
 
         public string Contrasenna { get; set; }
 
