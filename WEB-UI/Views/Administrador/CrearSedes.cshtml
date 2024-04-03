@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "CrearSedes";
+}
+
+<h1 class="text-center mt-3">Crea una nueva sede</h1>
+<div class="row mt-3">
+    <div class="col-md-8">
+        <a asp-action="ListaSedes" class="btn btn-outline-success">Regresar</a>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form id="crearSedeForm" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label for="fotoInput" class="control-label">Foto</label>
+                    <input type="file" id="fotoInput" class="form-control" onchange="previewImage(event)" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <img id="imagenPrevia" style="display:none; max-width: 100%; height: auto;" />
+                </div>
+                <div class="form-group">
+                    <label for="NombreSede" class="control-label">Nombre de la Sede</label>
+                    <input id="NombreSede" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Descripcion" class="control-label">Descripción</label>
+                    <textarea id="Descripcion" class="form-control" rows="3"></textarea>
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="FechaCreacion" class="control-label">Fecha de Creación</label>
+                    <input id="FechaCreacion" type="date" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Provincia" class="control-label">Provincia</label>
+                    <input id="Provincia" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Canton" class="control-label">Cantón</label>
+                    <input id="Canton" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Distrito" class="control-label">Distrito</label>
+                    <input id="Distrito" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="OtrasSeñas" class="control-label">Otras Señas</label>
+                    <input id="OtrasSeñas" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="ubicacion" class="control-label">Ubicación</label>
+                    <input type="text" id="ubicacion" name="ubicacion" class="form-control" />
+                    <button type="button" class="btn btn-primary mt-2" id="verMapa">Ver Mapa</button>
+                    <div id="map" class="mt-3" style="width:100%; height:300px; display:none;"></div>
+                    <span class="text-danger"></span>
+                </div>
+                <div class="text-center mt-3 mx-15">
+                    <div class="form-group">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Crear Sede</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+    <script src="~/ListaSedes/CrearSedes.js"></script>

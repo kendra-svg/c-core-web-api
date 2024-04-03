@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WEB_UI.Models;
+using DTO; 
 
 namespace WEB_UI.Controllers
 {
@@ -9,23 +11,31 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+
         public IActionResult Crear()
         {
             return View();
         }
-        public IActionResult Lista()
-        {
-            return View(new List<Cita>());
-        }
-        public IActionResult Detalles()
+
+        public IActionResult ListaCitas()
         {
             return View();
         }
+        public IActionResult AsignacionCitas()
+        {
+            return View();
+        }
+
+        public IActionResult DetallesCitas()
+        {
+            return View();
+        }
+
         public IActionResult PagosFacturas()
         {
             return View();
         }
+
     }
 }
-
 

@@ -12,7 +12,6 @@ namespace DTO
     {
         public UsuarioBase Usuarios { get; set; } //Esta es la linea que intenta llamar a UsuarioBase
         public int IdCita { get; set; } //Se genera automaticamente
-        public DateTime Fecha { get; set; } //Usuario escoge
         public string Titulo { get; set; } //Usuario escoge
         public string Especialidad { get; set; } //Usuario escoge
         public string Diagnostico { get; set; } //Queda vacio por el usuario y lo llena el doctor
