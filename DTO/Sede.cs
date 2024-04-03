@@ -16,7 +16,7 @@ namespace DTO
         public Provincia Provincia { get; set; }
         public Distrito Distrito { get; set; }
         public string Direccion { get; set; }
-        public byte[] Foto { get; set; }
+        public string Foto { get; set; }
         public int IdSede { get; set; }
 
         public string IdUbicacion { get; set; } //Vendria a ser el ubicaciones_id_coordenadas del diagrama de la base de datos
