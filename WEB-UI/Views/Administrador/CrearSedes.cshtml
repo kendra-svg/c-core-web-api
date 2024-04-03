@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "CrearSedes";
+}
+
+<h1 class="text-center mt-3">Crea una nueva sede</h1>
+<div class="row mt-3">
+    <div class="col-md-8">
+        <a asp-action="ListaSedes" class="btn btn-outline-success">Regresar</a>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="input-foto" class="form-label">Foto</label>
+                <input type="file" class="form-control" id="input-foto">
+            </div>
+            <div class="mb-3">
+                <label for="input-nombre-sede" class="form-label">Nombre de la Sede</label>
+                <input type="text" class="form-control" id="input-nombre-sede" placeholder="Nombre de la Sede" required>
+            </div>
+            <div class="mb-3">
+                <label for="input-descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="input-descripcion" rows="3" placeholder="Descripción" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
+                <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
+            </div>
+            <div class="mb-3">
+                <label for="input-ubicacion" class="form-label">Ubicación</label>
+                <div class="form-inline">
+                    <label for="input-provincia" style="display: block;">Provincia</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="input-provincia" placeholder="Provincia" required>
+
+                    <label for="input-canton" style="display: block;">Cantón</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="input-canton" placeholder="Cantón" required>
+
+                    <label for="input-distrito" style="display: block;">Distrito</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="input-distrito" placeholder="Distrito" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="input-otras-senas" class="form-label">Otras Señas</label>
+                <input type="text" class="form-control" id="input-otras-senas" placeholder="Otras Señas" required>
+            </div>
+            <div class="mb-3">
+                <label for="input-ubicacion" class="form-label">Ubicación</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="input-ubicacion" placeholder="Ubicación" aria-label="Ubicación" aria-describedby="ver-mapa" required>
+                    <button class="btn btn-outline-success" type="button" id="ver-mapa" onclick="initMap()">Ver Mapa</button>
+                </div>
+            </div>
+
+            <div id="map" style="height: 300px;"></div>
+
+            <div class="text-center mt-3 mx-15">
+                <div class="form-group">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Crear Sede</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
