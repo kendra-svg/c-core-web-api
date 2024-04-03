@@ -125,5 +125,45 @@ namespace WEB_UI.Controllers
             // Redirigir a la acción Lista para mostrar la lista actualizada de sedes
             return RedirectToAction(nameof(Lista));
         }
+
+
+        //editando vanessa
+        // GET: Administrador/ConfiguracionAlertas
+        public ActionResult ConfiguracionAlertas()
+        {
+            // Lógica para mostrar la página de configuración de alertas
+            return View();
+        }
+
+        // POST: Administrador/ConfiguracionAlertas
+        [HttpPost]
+        public ActionResult ConfiguracionAlertas(FormCollection form)
+        {
+            // Lógica para guardar la configuración de alertas recibida del formulario
+            return RedirectToAction("ConfiguracionAlertas");
+        }
+
+        // GET: Administrador/EditarAlerta/5
+        public ActionResult EditarAlerta(int id)
+        {
+            // Lógica para mostrar el formulario de edición de la alerta con el ID especificado
+            return View();
+        }
+
+        // POST: Administrador/EditarAlerta/5
+        [HttpPost]
+        public ActionResult EditarAlerta(int id, FormCollection form)
+        {
+            // Lógica para procesar la edición de la alerta con el ID especificado
+            return RedirectToAction("ConfiguracionAlertas");
+        }
+
+        // POST: Administrador/EliminarAlerta/5
+        [HttpPost]
+        public ActionResult EliminarAlerta(int id)
+        {
+            // Lógica para eliminar la alerta con el ID especificado
+            return RedirectToAction("ConfiguracionAlertas");
+        }
     }
 }

@@ -5,8 +5,19 @@
     padding: 0;
 }
 
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo verde */
+    color: #000000; /* Texto blanco */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alinea todo a la izquierda */
+}
+
 h1 {
-    color: #000000; /* Color negro */
+    color: #000000; /* Color verde similar al de la agenda */
 }
 
 .btn {
@@ -19,7 +30,7 @@ h1 {
 
 .btn-add {
     background-color: #a4fff7; /* Color de fondo del botón Añadir Notificación */
-    color: #000000; /* Texto negro */
+    color: #0000
     width: 200px; /* Ancho del botón Añadir Notificación */
     margin-bottom: 20px; /* Margen inferior */
 }
@@ -32,13 +43,13 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    color: #000000; /* Texto negro */
+    color: #000000;
 }
 
     .notification input[type="number"] {
         width: 50px;
         margin-right: 5px;
-        background-color: #ffffff; /* Color de fondo de las cajitas */
+        background-color: #a4fff7; /* Color de fondo de las cajitas */
         color: #000000; /* Texto negro */
     }
 
@@ -53,19 +64,4 @@ h1 {
         cursor: pointer; /* Cambio de cursor al pasar el mouse */
         font-size: 16px; /* Tamaño de la fuente */
         line-height: 1; /* Altura de línea */
-    }
-
-.btn-save {
-    background-color: #28a745; /* Color de fondo verde */
-    color: #fff; /* Texto blanco */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 3px; /* Bordes redondeados */
-    cursor: pointer; /* Cambio de cursor al pasar el mouse */
-    text-decoration: none; /* Sin subrayado */
-    margin-top: 20px; /* Margen superior */
-}
-
-    .btn-save:hover {
-        background-color: #218838; /* Cambio de color al pasar el mouse */
     }

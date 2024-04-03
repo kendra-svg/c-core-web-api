@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Configuración de alertas automáticas";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Notificación</title>
+    <link rel="stylesheet" href="~/css/configuracionAlertas.css">
+</head>
+<body>
+    <h1>Crear Notificación</h1>
+
+    <button class="btn btn-add" id="btnAddNotification">Añadir Notificación</button>
+
+    <div class="notification-list" id="notificationList">
+        <!-- Aquí se mostrarán las notificaciones agregadas -->
+    </div>
+
+    <!-- Plantilla para una notificación -->
+    <template id="notificationTemplate">
+        <div class="notification">
+            <input type="number" min="1" value="1" class="days" required>
+            <span>día(s) antes</span>
+            <span class="btn-delete">❌</span>
+        </div>
+    </template>
+
+    <button class="btn btn-save" id="btnSave">Guardar</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnAddNotification = document.getElementById("btnAddNotification");
+            const notificationList = document.getElementById("notificationList");
+            const notificationTemplate = document.getElementById("notificationTemplate");
+
+            btnAddNotification.addEventListener("click", function () {
+                const newNotification = document.importNode(notificationTemplate.content, true);
+                notificationList.appendChild(newNotification);
+            });
+
+            // Event delegation for delete buttons
+            notificationList.addEventListener("click", function (event) {
+                if (event.target.classList.contains("btn-delete")) {
+                    event.target.closest(".notification").remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
