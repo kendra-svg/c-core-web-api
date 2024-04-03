@@ -1,5 +1,4 @@
 ﻿
-/**PARA EL FUNCIONAMIENTO DEL MENU LATERAL DESPLABLE*/
 document.addEventListener('DOMContentLoaded', function () {
     var sidebarMenu = document.getElementById('sidebar-menu');
     sidebarMenu.addEventListener('mouseout', function () {
@@ -9,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
         sidebarMenu.classList.remove('active');
     });
 
-
-
-    /**PARA EL FUNCIONAMIENTO DEL MENU DESPLEGABLE EN LA PARTE IZQUIERDA PARA CERRAR SESION O VER MI PERFIL*/
+    
+    
+    
     var otherOptions = document.getElementById('other-options');
     var otherOptionsList = document.getElementById('other-options-list');
 
@@ -25,3 +24,5 @@ document.addEventListener('DOMContentLoaded', function () {
     otherOptionsList.addEventListener('mouseout', function () {
         otherOptionsList.style.display = 'none';
     });
+})
+

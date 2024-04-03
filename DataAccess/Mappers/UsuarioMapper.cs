@@ -24,7 +24,7 @@ namespace DataAccess.Mappers
             operation.AddDatetimeParam("fehcasnacimiento", app.FechaNacimiento);
             operation.AddIntegerParam("edades", app.Edad);
             operation.AddVarCharParam("direcciones", app.Direccion);
-            //operation.AddVarCharParam("fotos", app.Foto);
+            operation.AddVarCharParam("fotos", app.Foto);
             operation.AddVarCharParam("contrasenna", app.Contrasenna);
             return operation;
         }
