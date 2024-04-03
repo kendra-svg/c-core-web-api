@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WEB_UI.Models.Agenda>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="~/css/agenda.css" />
+    <title>Agenda</title>
+</head>
+
+<body>
+    <h2>Agenda</h2>
+
+    <div class="botones-container">
+        <h3 class="subtitulo">Detalles de las citas</h3>
+        <div class="btn-group">
+            <a class="btn btn-outline-success" asp-controller="Doctor" asp-action="Reagendar">Fechas para Reagendar</a>
+            <a class="btn btn-outline-success" asp-controller="Doctor" asp-action="Crear">Crear Cita</a>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Buscar cita por nombre del paciente...">
+        <button type="submit" class="search-button">Buscar</button>
+    </div>
+
+
+    <p>Tiene un lapso de 24 horas para poder cancelar la cita del paciente.</p>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre del Paciente</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora de Inicio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Sede</th>
+                <th scope="col">Especialidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>2024-04-01</td>
+                <td>08:00 AM</td>
+                <td>Consulta Radiología</td>
+                <td>Hospital Central</td>
+                <td>Radiología</td>
+                <td>50.00</td>
+                <td>
+                    <button class="btn btn-cancelar" onclick="cancelarCita(1)">Cancelar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>María González</td>
+                <td>2024-04-01</td>
+                <td>09:00 AM</td>
+                <td>Consulta Radiología</td>
+                <td>Hospital Central</td>
+                <td>Radiología</td>
+                <td>50.00</td>
+                <td>
+                    <button class="btn btn-cancelar" onclick="cancelarCita(2)">Cancelar</button>
+                </td>
+            </tr>
+
+            @foreach (var cita in Model)
+            {
+                <tr>
+                    <td>@cita.NombrePaciente</td>
+                    <td>@cita.Fecha.ToShortDateString()</td>
+                    <td>@cita.HoraInicio</td>
+                    <td>@cita.Descripcion</td>
+                    <td>@cita.Sede</td>
+                    <td>@cita.Especialidad</td>
+                    <td>@cita.Precio</td>
+                    <td>
+                        <button class="btn btn-cancelar" onclick="cancelarCita(@cita.IdCita)">Cancelar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @section Scripts {
+        <script>
+            function cancelarCita(idCita) {
+                // agregar código para cancelar la cita con el idCita
+                alert("Se cancelará esta cita);
+                        }
+        </script>
+    }
+</body>
+</html>
