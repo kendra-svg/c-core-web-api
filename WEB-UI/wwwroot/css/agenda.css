@@ -1,0 +1,79 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el contenedor de los botones y el subtítulo */
+.botones-container {
+    display: flex; /* Alinea los elementos en una fila */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    margin-bottom: 20px; /* Agrega espacio debajo del contenedor */
+}
+
+.btn {
+    margin-right: 10px; /* Ajusta el margen entre los botones */
+}
+
+/* Estilo para el subtítulo "Detalles de las citas" */
+.subtitulo {
+    color: #000000; /* Negro */
+    margin-right: auto; /* Mueve el subtítulo hacia la izquierda */
+}
+
+/* Estilo para el contenedor de los botones */
+.btn-group {
+    margin-right: 800px; /* Agrega espacio a la derecha del contenedor de botones */
+}
+
+
+/* Estilo para el botón de buscar */
+.btn-buscar {
+    background-color: #28a745; /* Verde */
+    border-color: #28a745; /* Verde */
+    color: #ffffff; /* Blanco */
+    margin-right: 10px;
+}
+
+/* Estilo para el botón de cancelar cita */
+.btn-cancelar {
+    background-color: #dc3545; /* Rojo */
+    border-color: #dc3545; /* Rojo */
+    color: #ffffff; /* Blanco */
+    margin-right: 10px; /* Agrega espacio a la derecha de cada botón */
+}
+
+
+.buscar-container {
+    padding: 5px; /* Ajusta el relleno para dar espacio alrededor de la barra de búsqueda */
+}
+
+.buscar-form {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+}
+
+.buscar-input {
+    flex: 1; /* Hace que el campo de búsqueda ocupe todo el espacio disponible */
+    margin-right: 10px; /* Ajusta el margen derecho para separar el campo de búsqueda del botón */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 5px;
+    width: 585px; /* Ajusta el ancho de la barra de búsqueda aquí */
+}
+
+.search-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
