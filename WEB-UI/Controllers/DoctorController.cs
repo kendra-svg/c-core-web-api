@@ -25,5 +25,9 @@ namespace WEB_UI.Controllers
             // Por ahora, se simulará una lista vacía
             return new List<Agenda>();
         }
+        public IActionResult Sedes()
+        {
+            return View();
+        }
     }
 }
