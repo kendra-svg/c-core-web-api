@@ -11,6 +11,6 @@ namespace DTO
         public string Id { get; set; }
         public string NombreExamen { get; set; }
         public string Comentario { get; set; }
-        public byte[] Foto { get; set; }
+        public string Foto { get; set; }
     }
 }
