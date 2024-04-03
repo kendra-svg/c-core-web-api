@@ -1,9 +1,11 @@
 ﻿@*
-   
+    
 *@
 @{
     <script src="~/js/usermenu/menufunctions.js"></script>
+    <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
+    <link href="~/css/severalstyles.css" rel="stylesheet" />
 }
 
 <div class="container-fluid p-0">
@@ -77,7 +79,7 @@
 
                     <h5>Mi Salud</h5>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-controller="Administrador" asp-action="ExpedientePersonal">
                             <i class="bi bi-clipboard2-pulse"></i>
                             <span class="text">Expediente</span>
                         </a>
@@ -89,7 +91,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-controller="Administrador" asp-action="CitasPersonales">
                             <i class="bi bi-calendar-heart"></i>
                             <span class="text">Citas</span>
                         </a>
@@ -113,13 +115,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-controller="Administrador" asp-action="EncuestaServicio">
                             <i class="bi bi-emoji-neutral"></i>
                             <span class="text">Encuesta de Servicios</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-controller="Administrador" asp-action="DatosPersonales">
                             <i class="bi bi-person"></i>
                             <span class="text">Datos Personales</span>
                         </a>
