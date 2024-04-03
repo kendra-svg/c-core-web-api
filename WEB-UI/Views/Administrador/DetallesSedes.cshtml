@@ -48,26 +48,44 @@
             </dl>
         </div>
     </div>
-    
+
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Profesionales de la Sede</h4>
+            <button id="editarBtn" class="btn btn-success"><i class="fas fa-plus"></i> Agregar profesional</button>
+            <div class="d-flex justify-content-center">
+                <!-- Aquí puedes agregar información genérica -->
+                <p>Información genérica sobre profesionales de la sede.</p>
+            </div>
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Fecha</th>
                         <th scope="col">Rol</th>
                         <th scope="col">Acciones</th>
-
                     </tr>
                 </thead>
                 <tbody id="citasTableBody">
                     <!-- Los datos de las citas se cargarán dinámicamente aquí con JS-->
+                    <tr>
+                        <td>01/04/2024</td>
+                        <td>Médico</td>
+                        <td>
+                            <button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>
+                            <button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02/04/2024</td>
+                        <td>Enfermera</td>
+                        <td>
+                            <button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>
+                            <button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>
+                        </td>
+                    </tr>
+                    <!-- Puedes agregar más filas con información genérica -->
                 </tbody>
             </table>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button id="editarBtn" class="btn btn-outline-success">Agregar</button>
         </div>
     </div>
 </div>
