@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Expediente
+    public class Expediente: BaseClass
     {
-        public string Id { get; set; }
         public string HistorialClinico { get; set; }
         public Cita Citas { get; set; } //Hace referencia al Id de la clase Cita
 
