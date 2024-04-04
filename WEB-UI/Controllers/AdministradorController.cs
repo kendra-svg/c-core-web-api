@@ -81,5 +81,12 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Administrador/MiSalud/EncuestaServicio.cshtml");
         }
+        //usuarios--------------------------------------------------------------------
+        public ActionResult usuarios()
+        {
+            // Lógica para mostrar la página de usaurios
+            return View();
+        }
+        //
     }
 }
