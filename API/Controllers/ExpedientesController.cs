@@ -7,13 +7,13 @@ namespace API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ProvinciaController : ControllerBase
+    public class ExpedientesController : ControllerBase
     {
         [HttpPost]
-        public string CreateProvincia(Provincia app)
+        public string CreateExpediente(Expediente app) 
         {
-            ProvinciasManager manager = new ProvinciasManager();
-            return manager.CreateProvincias(app);
+            ExpedientesManager manager = new ExpedientesManager();
+            return manager.CreateExpediente(app);
         }
     }
 }

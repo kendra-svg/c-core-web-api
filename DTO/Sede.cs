@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Sede
+    public class Sede : BaseClass
     {
         public string Nombre { get; set; }
 
@@ -24,10 +24,6 @@ namespace DTO
 
         public string Direccion { get; set; }
 
-        public byte[] Foto { get; set; }
-
-        public int IdSede { get; set; }
-
-        public string IdUbicacion { get; set; } //Vendria a ser el ubicaciones_id_coordenadas del diagrama de la base de datos
+        public string Foto { get; set; }
     }
 }
