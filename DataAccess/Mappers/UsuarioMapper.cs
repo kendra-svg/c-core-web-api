@@ -48,6 +48,15 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         }
 
+        public SqlOperation GetRetrieveByCredentialsStatement(string correo, string contrasenna)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_VERIFICAR_USUARIO";
+            operation.AddVarCharParam("@Correo", correo);
+            operation.AddVarCharParam("@Contrasenna", contrasenna);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
