@@ -4,8 +4,6 @@
     {
         public string Nombre { get; set; }
 
-        public int Id { get; set; }
-
         public string Apellidos { get; set; }
 
         public string Telefono { get; set; }
@@ -20,12 +18,15 @@
 
         public string Direccion { get; set; }
 
-        public byte[] Foto { get; set; }
+        public string Foto { get; set; }
+        public int Morosidad { get; set; }
 
         public string Contrasenna { get; set; }
 
+        public string Identificacion { get; set; }
+
         public Expediente Expedientes { get; set; } //Hace referencia al Id de la clase Expediente
 
-        public Ubicacion Ubicaciones { get; set; } //Hace referencia al Id de la clase Ubicacion
+        public string Ubicaciones { get; set; } //Hace referencia al Id de la clase Ubicacion
     }
 }
