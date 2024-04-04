@@ -14,18 +14,27 @@ namespace DataAccess.Mappers
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = " SP_INSERT_usuarios";
+
+            operation.ProcedureName = "SP_INSERT_usuarios";
+
             UsuarioBase app = (UsuarioBase)dto;
+
+            operation.AddIntegerParam("idusuario", app.Id);
             operation.AddVarCharParam("nombres", app.Nombre);
             operation.AddVarCharParam("apellidos", app.Apellidos);
             operation.AddVarCharParam("telefonos", app.Telefono);
             operation.AddVarCharParam("correos", app.Correo);
             operation.AddVarCharParam("sexos", app.Sexo);
-            operation.AddDatetimeParam("fehcasnacimiento", app.FechaNacimiento);
+            operation.AddDatetimeParam("fechasnacimiento", app.FechaNacimiento);
             operation.AddIntegerParam("edades", app.Edad);
             operation.AddVarCharParam("direcciones", app.Direccion);
             operation.AddVarCharParam("fotos", app.Foto);
             operation.AddVarCharParam("contrasenna", app.Contrasenna);
+            operation.AddVarCharParam("identificaciones", app.Identificacion);
+            operation.AddVarCharParam("ubicaciones", app.Ubicaciones);
+            operation.AddIntegerParam("morosidades", app.Morosidad);
+            //operation.AddVarCharParam("expedientesid", app.Expedientes);
+
             return operation;
         }
 

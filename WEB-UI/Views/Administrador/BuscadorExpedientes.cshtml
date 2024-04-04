@@ -206,22 +206,30 @@
         <div class="container" id="btns-expediente">
             <div class="row">
                 <div class="col-4 m-1">
-                    <button class="btn border " asp-controller="Paciente" asp-action="CitasPersonales">Citas</button>
+                    <a asp-controller="Administrador" asp-action="">
+                        <button class="btn border">Citas</button>
+                    </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 m-1">
-                    <button class="btn border " asp-controller="Paciente" asp-action="">Examenes</button>
+                    <a asp-controller="Administrador" asp-action="">
+                        <button class="btn border">Examenes</button>
+                    </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 m-1">
-                    <button class="btn border " asp-controller="Paciente" asp-action="">Recetas</button>
+                    <a asp-controller="Administrador" asp-action="RecetasPacientes">
+                        <button class="btn border">Recetas</button>
+                    </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 m-1">
-                    <button class="btn border " asp-controller="Paciente" asp-action="">Diagnosticos Medicos</button>
+                    <a asp-controller="Administrador" asp-action="">
+                        <button class="btn border">Diagnosticos Medicos</button>
+                    </a>
                 </div>
             </div>
 
