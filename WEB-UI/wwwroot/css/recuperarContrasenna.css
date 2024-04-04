@@ -1,0 +1,55 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.main-w3layouts {
+    margin: 10% auto;
+    width: 30%;
+    background: #68ddbd; /* Cambio del color del fondo */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+    .main-w3layouts h1 {
+        text-align: center;
+        color: #fff; /* Cambio del color del texto */
+    }
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #68ddbd; /* Cambio del color del borde del cuadro de texto */
+        border-radius: 5px;
+        outline: none;
+        background-color: #a4fff7; /* Cambio del color de fondo del cuadro de texto */
+    }
+
+    .input-group button {
+        background: #03bb85; /* Cambio del color del botón */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative; /* Se cambia a relativo para poder centrar */
+        left: 50%; /* Se coloca en la mitad del contenedor */
+        transform: translateX(-50%); /* Se centra horizontalmente */
+    }
+
+p {
+    font-size: 14px;
+    color: #fff; /* Cambio del color del texto */
+    text-align: center;
+    margin-bottom: 10px; /* Espacio adicional debajo del texto */
+}

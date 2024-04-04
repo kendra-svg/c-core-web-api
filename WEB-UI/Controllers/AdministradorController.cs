@@ -165,5 +165,12 @@ namespace WEB_UI.Controllers
             // Lógica para eliminar la alerta con el ID especificado
             return RedirectToAction("ConfiguracionAlertas");
         }
+        //usuarios--------------------------------------------------------------------
+        public ActionResult usuarios()
+        {
+            // Lógica para mostrar la página de usaurios
+            return View();
+        }
+        //
     }
 }
