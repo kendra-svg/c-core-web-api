@@ -47,6 +47,18 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult RecetasPacientes()
+        {
+            return View();
+        }
+        public IActionResult CrearRecetas()
+        {
+            return View();
+        }
+        public IActionResult MisRecetas()
+        {
+            return View();
+        }
 
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL ADMIN
         public IActionResult CitasPersonales()
