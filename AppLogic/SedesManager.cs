@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace AppLogic
 {
-    public class CantonesManager
+    public class SedesManager
     {
-        public string CreateCanton(Canton app)
+        public string CreateSede(Sede app)
         {
-            CantonesCrud crud = new CantonesCrud();
+            SedeCrud crud = new SedeCrud();
             crud.Create(app);
-            return "Ok";
+            return "ok";
         }
     }
 }

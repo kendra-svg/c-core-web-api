@@ -10,16 +10,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-    public class ProvinciasCrud : CrudFactory
+    public class SedeCrud : CrudFactory
     {
-        ProvinciasMapper mapper;
+        SedeMapper mapper;
 
-        public ProvinciasCrud() : base()
+        public SedeCrud() : base() 
         {
-            mapper = new ProvinciasMapper();
+            mapper = new SedeMapper();
             dao = SqlDao.GetInstance();
         }
-
         public override void Create(BaseClass dto)
         {
             SqlOperation operation = mapper.GetCreateStatement(dto);

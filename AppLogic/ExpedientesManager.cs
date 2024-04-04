@@ -1,20 +1,20 @@
 ﻿using DataAccess.Crud;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO;
 
 namespace AppLogic
 {
-    public class ProvinciasManager
+    public class ExpedientesManager
     {
-        public string CreateProvincias(BaseClass app)
+        public string CreateExpediente(Expediente app)
         {
-            ProvinciasCrud crud = new ProvinciasCrud();
+            ExpedienteCrud crud = new ExpedienteCrud();
             crud.Create(app);
-            return "Ok";
+            return "ok";
         }
     }
 }

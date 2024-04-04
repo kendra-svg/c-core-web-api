@@ -9,19 +9,26 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Mappers
 {
-    public class CantonMapper : ICrudStatements
+    public class SedeMapper : ICrudStatements
     {
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "SP_INSERT_cantones";
+            operation.ProcedureName = "SP_INSERT_sedes";
 
-            Canton app = (Canton)dto;
+            Sede app = (Sede)dto;
 
-            operation.AddIntegerParam("idcantones", app.Id);
-            operation.AddVarCharParam("nombre_cantones", app.Nombre);
-
+            operation.AddIntegerParam("idsedes", app.Id);
+            operation.AddVarCharParam("nombresedes", app.Nombre);
+            operation.AddVarCharParam("descripciones", app.Descripcion);
+            operation.AddDatetimeParam("fecha_creacion", app.FechaCreacion);
+            operation.AddVarCharParam("ubicaciones", app.Ubicacion);
+            operation.AddVarCharParam("provincias", app.Provincia);
+            operation.AddVarCharParam("cantones", app.Canton);
+            operation.AddVarCharParam("distritos", app.Distrito);
+            operation.AddVarCharParam("direcciones", app.Direccion);
+            operation.AddVarCharParam("fotos", app.Foto);
             return operation;
         }
 
