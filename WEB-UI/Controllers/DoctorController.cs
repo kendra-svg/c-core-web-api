@@ -37,5 +37,32 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+
+        public IActionResult BuscadorExpedientes()
+        {
+            return View();
+        }
+
+        //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL DOC
+        public IActionResult CitasPersonales()
+        {
+            return View("~/Views/Doctor/MiSalud/CitasPersonales.cshtml");
+        }
+        public IActionResult CrearCitasPersonales()
+        {
+            return View("~/Views/Doctor/MiSalud/CrearCitasPersonales.cshtml");
+        }
+        public IActionResult DatosPersonales()
+        {
+            return View("~/Views/Doctor/MiSalud/DatosPersonales.cshtml");
+        }
+        public IActionResult ExpedientePersonal()
+        {
+            return View("~/Views/Doctor/MiSalud/ExpedientePersonal.cshtml");
+        }
+        public IActionResult EncuestaServicio()
+        {
+            return View("~/Views/Doctor/MiSalud/EncuestaServicio.cshtml");
+        }
     }
 }
