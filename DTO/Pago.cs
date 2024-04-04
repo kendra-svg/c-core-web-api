@@ -8,9 +8,9 @@ namespace DTO
 {
     public class Pago
     {
-        public string IdFactura { get; set; }
         public DateTime FechaEmision { get; set; }
         public DateTime FechaPago { get; set; }
         public int Monto { get; set; }
+        public UsuarioBase Usuario { get; set; }
     }
 }
