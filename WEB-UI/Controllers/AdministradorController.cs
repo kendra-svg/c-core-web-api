@@ -7,41 +7,9 @@ namespace WEB_UI.Controllers
 {
     public class AdministradorController : Controller
     {
-        // Lista de sedes estática con datos de prueba
-        private List<Sedes> sedes = new List<Sedes>();
-        public AdministradorController()
-        {
-            sedes.Add(
-            new Sedes
-            {
-                NombreSede = "Sede 1",
-                Descripcion = "Descripción de la sede 1",
-                FechaCreacion = DateTime.Now.ToString(),
-                Foto = "foto1.jpg",
-                Provincia = "Provincia 1",
-                Canton = "Cantón 1",
-                Distrito = "Distrito 1",
-                OtrasSeñas = "Otras señas de la sede 1",
-                Ubicacion = "Ubicación de la sede 1"
-            });
-            sedes.Add(new Sedes
-            {
-                NombreSede = "Sede 2",
-                Descripcion = "Descripción de la sede 2",
-                FechaCreacion = DateTime.Now.ToString(),
-                Foto = "foto2.jpg",
-                Provincia = "Provincia 2",
-                Canton = "Cantón 2",
-                Distrito = "Distrito 2",
-                OtrasSeñas = "Otras señas de la sede 2",
-                Ubicacion = "Ubicación de la sede 2"
-            });
-        }
-
         public IActionResult LandingAdministrador()
         {
-            // Pasa la lista de sedes a la vista
-            return View(sedes);
+            return View();
         }
         public IActionResult AsignacionCitas()
         {
@@ -59,71 +27,25 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-
-        //SECCION MI SALUD DEL ADMINISTRADOR
-        public IActionResult CitasPersonales()
-        {
-            return View("~/Views/Administrador/MiSalud/CitasPersonales.cshtml");
-        }
-        public IActionResult CrearCitasPersonales()
-        {
-            return View("~/Views/Administrador/MiSalud/CrearCitasPersonales.cshtml");
-        }
-        public IActionResult DatosPersonales()
-        {
-            return View("~/Views/Administrador/MiSalud/DatosPersonales.cshtml");
-        }
-        public IActionResult ExpedientePersonal()
-        {
-            return View("~/Views/Administrador/MiSalud/ExpedientePersonal.cshtml");
-        }
-        public IActionResult EncuestaServicio()
-        {
-            return View("~/Views/Administrador/MiSalud/EncuestaServicio.cshtml");
-        }
-
-
-
-        public IActionResult Lista()
-        {
-            return View(sedes);
-        }
-
-        public IActionResult Crear()
+        public IActionResult ListaSedes()
         {
             return View();
         }
-
-        public IActionResult Detalles(string nombreSede)
+        public IActionResult CrearSedes()
         {
-            // Encuentra la sede con el nombre proporcionado
-            var sede = sedes.FirstOrDefault(s => s.NombreSede == nombreSede);
-            if (sede == null)
-            {
-                return NotFound(); // Manejo de situación donde la sede no se encuentra
-            }
-            return View(sede);
+            return View();
         }
-        [HttpPost] // Esto especifica que esta acción responde a solicitudes POST
-        public IActionResult Create(string nombreSede, string descripcion, string fechaCreacion, string foto, string provincia, string canton, string distrito, string otrasSeñas, string ubicacion)
+        public IActionResult DetallesSedes()
         {
-
-            var nuevaSede = new Sedes
-            {
-                NombreSede = nombreSede,
-                Descripcion = descripcion,
-                FechaCreacion = fechaCreacion,
-                Foto = foto,
-                Provincia = provincia,
-                Canton = canton,
-                Distrito = distrito,
-                OtrasSeñas = otrasSeñas,
-                Ubicacion = ubicacion
-            };
-
-            sedes.Add(nuevaSede);
-            // Redirigir a la acción Lista para mostrar la lista actualizada de sedes
-            return RedirectToAction(nameof(Lista));
+            return View();
+        }
+        public IActionResult ExamenPersonal()
+        {
+            return View();
+        }
+        public IActionResult ExamenGeneral()
+        {
+            return View();
         }
     }
 }

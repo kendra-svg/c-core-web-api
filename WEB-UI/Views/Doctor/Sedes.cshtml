@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Detalles Sedes";
+}
+
+<h1 class="text-center mt-3">Sedes</h1>
+<div class="d-flex justify-content-between">
+    <a asp-action="LandingDoctor" class="btn btn-outline-success text-success mr-auto" style="text-decoration: none;">Regresar</a>
+    <div class="mx-auto">
+    </div>
+</div>
+<div class="d-flex w-75 mt-4">
+    <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre sede" aria-label="Buscar sede">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+</div>
+
+<table class="table" id="sedeTable">
+    <thead class="thead">
+        <tr>
+            <th scope="col">Nombre de la Sede</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha de Creación</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="sedeTableBody">
+        <tr>
+            <td>Sede 1</td>
+            <td>Descripción de la Sede 1</td>
+            <td>01/01/2022</td>
+            <td><button class="btn btn-success">Enviar solicitud</button></td>
+        </tr>
+        <tr>
+            <td>Sede 2</td>
+            <td>Descripción de la Sede 2</td>
+            <td>02/01/2022</td>
+            <td><button class="btn btn-success">Enviar solicitud</button></td>
+        </tr>
+        <tr>
+            <td>Sede 3</td>
+            <td>Descripción de la Sede 3</td>
+            <td>03/01/2022</td>
+            <td><button class="btn btn-success">Enviar solicitud</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Mis sedes</h2>
+
+<table class="table" id="sedeTable">
+    <thead class="thead">
+        <tr>
+            <th scope="col">Nombre de la Sede</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha de Creación</th>
+
+        </tr>
+    </thead>
+    <tbody id="sedeTableBody">
+        <tr>
+            <td>Sede 1</td>
+            <td>Descripción de la Sede 1</td>
+            <td>01/01/2022</td>
+        </tr>
+        <tr>
+            <td>Sede 2</td>
+            <td>Descripción de la Sede 2</td>
+            <td>02/01/2022</td>
+        </tr>
+        <tr>
+            <td>Sede 3</td>
+            <td>Descripción de la Sede 3</td>
+            <td>03/01/2022</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div class="container mt-3">
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4 class="card-title">Datos de la sede</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">Foto:</dt>
+                <dd class="col-sm-9">
+                    <img src="https://via.placeholder.com/150" class="img-fluid" alt="Foto de la sede" />
+                </dd>
+
+                <dt class="col-sm-3">Nombre de la Sede:</dt>
+                <dd class="col-sm-9">Sede A</dd>
+
+                <dt class="col-sm-3">Descripción:</dt>
+                <dd class="col-sm-9">Descripción de la Sede A</dd>
+
+                <dt class="col-sm-3">Fecha de Creación:</dt>
+                <dd class="col-sm-9">01/01/2022</dd>
+
+                <dt class="col-sm-3">Provincia:</dt>
+                <dd class="col-sm-9">Provincia A</dd>
+
+                <dt class="col-sm-3">Cantón:</dt>
+                <dd class="col-sm-9">Cantón A</dd>
+
+                <dt class="col-sm-3">Distrito:</dt>
+                <dd class="col-sm-9">Distrito A</dd>
+
+                <dt class="col-sm-3">Otras Señas:</dt>
+                <dd class="col-sm-9">Otras señas de la Sede A</dd>
+
+                <dt class="col-sm-3">Ubicación:</dt>
+                <dd class="col-sm-9">Ubicación de la Sede A</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
