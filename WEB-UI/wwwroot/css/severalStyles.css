@@ -1,4 +1,105 @@
-﻿/*
+﻿
+
+/*
+    PARA LANDING PRODUCTO
+*/
+
+#welcome-section {
+    background-image: url(https://i.imgur.com/iYoRiG9.png);
+    background-size: cover;
+}
+
+
+#btn-access-app, #btn-location, #btn-register {
+    margin-bottom: 12%;
+    margin-top: 5%;
+    background-color: #68ddbd;
+}
+
+#right-section-welcome p, #right-section-welcome h2 {
+    width: 350px;
+    background-color: #038554;
+    color: white;
+    padding-left: 5px
+}
+
+#left-section-welcome p {
+    width: 250px;
+    background-color: #038554;
+    color: white;
+    padding-left: 5px
+}
+
+
+#btn-location {
+    margin-bottom: 5%;
+}
+
+
+/**#seccion-novedades{
+    background-color:#68ddbd
+}*/
+.boxes-features {
+    border-color: aliceblue;
+    border-radius: 5px;
+    border-style: dashed;
+    margin: 5%;
+    text-align: center;
+    background-color: #68ddbd
+}
+
+#services-section {
+    background-color: #038554;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.boxes-services {
+    border-color: white;
+    border-radius: 5px;
+    border-style: double;
+    margin: 5%;
+    text-align: center;
+    background-color: #68ddbd;
+    height: 50px;
+}
+
+.boxes-professionals {
+    border-radius: 5px;
+    border-style: initial;
+    margin: 5%;
+    text-align: center;
+}
+
+#professionals-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%
+}
+
+#characteristics-section {
+    background-color: #03bb85;
+    margin-bottom: 0%;
+    display: block
+}
+
+.boxes-characteristics {
+    border-color: black;
+    border-radius: 5px;
+    border-style: double;
+    margin: 5%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/*
     PARA CITAS PERSONALES
 */
 
