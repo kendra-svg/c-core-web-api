@@ -36,6 +36,41 @@
             <input type="file" class="form-control" id="input-foto">
         </div>
     </form>
+    <form>
+        <h2>Buscar Examen</h2>
+        <div class="row d-flex align-items-end justify-content-end">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-control" id="especialidad">
+                        <option value="">Especialidad</option>
+                        <option value="cardiologia">Cardiología</option>
+                        <option value="radiologia">Radiología</option>
+                        <option value="oftalmologia">Oftalmología</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-control" id="tipoExamen">
+                        <option value="">Tipo de examen</option>
+                        <option value="ecocardiograma">Ecocardiograma</option>
+                        <option value="radiografia">Radiografía</option>
+                        <option value="examenocular">Examen ocular</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="date" class="form-control" id="fecha">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-success btn-block">Buscar</button>
+            </div>
+        </div>
+    </form>
     <div class="container">
         <h2>Listado de Exámenes</h2>
         <div class="card">
