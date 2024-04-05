@@ -16,5 +16,11 @@ namespace AppLogic
             crud.Create(app);
             return "Ok";
         }
+        public List<UsuarioBase> GetAllUsuarios() 
+        {
+            UsuarioCrud crud =new UsuarioCrud();
+            return crud.RetrieveAll<UsuarioBase>();
+
+        }
     }
 }

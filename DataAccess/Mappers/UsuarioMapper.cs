@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Mappers
 {
-    public class UsuarioMapper : ICrudStatements
+    public class UsuarioMapper : IObjectMapper , ICrudStatements
     {
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
@@ -45,7 +45,9 @@ namespace DataAccess.Mappers
 
         public SqlOperation GetRetrieveAllStatement()
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_PPATIENTS";
+            return operation;
         }
 
         public SqlOperation GetRetrieveByIdStatement(string id)
@@ -56,6 +58,38 @@ namespace DataAccess.Mappers
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
             throw new NotImplementedException();
+        }
+        public BaseClass BuildObject(Dictionary<string, object> row)
+        {
+            UsuarioBase pat = new UsuarioBase();
+            pat.Id = int.Parse(row["id_usuario"].ToString());
+            pat.Identificacion = row["indentificaciones"].ToString();
+            pat.Nombre = row["nombres"].ToString();
+            pat.Apellidos = row["apellidos"].ToString();
+            pat.Telefono = row["telefonos"].ToString();
+            pat.Correo = row["correos"].ToString();
+            pat.Sexo = row["sexos"].ToString();
+            pat.FechaNacimiento = DateTime.Parse(row["fechas_nacimiento"].ToString());
+            pat.Edad = int.Parse(row["edades"].ToString());
+            pat.Direccion = row["direcciones"].ToString();
+            pat.Foto = row["fotos"].ToString();
+            pat.Contrasenna = row["contrasennas"].ToString();
+            pat.Morosidad = int.Parse(row["MOROSIDADES"].ToString());
+            pat.Ubicaciones = row["contrasennas"].ToString();
+            // pat.Expedientes = int.Parse(row["expediente_id_expedientes"].ToString());
+            return pat;
+        }
+
+        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
+        {
+            List<BaseClass> results = new List<BaseClass>();
+            foreach(var row in rowList) 
+            {
+                var pat = BuildObject(row);
+                results.Add(pat);
+            }
+            return results;
+                   
         }
     }
 }
