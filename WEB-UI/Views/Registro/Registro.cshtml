@@ -51,18 +51,18 @@
 
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.Nombre, new { @class = "text", placeholder = "Nombres", required = "required" })
+                            @Html.TextBoxFor(model => model.Nombre, new { @class = "text", placeholder = "Nombres", required = "required", id = "Nombre" })
                         </div>
                         <div>
-                            @Html.TextBoxFor(model => model.Apellidos, new { @class = "text", placeholder = "Apellidos", required = "required" })
+                            @Html.TextBoxFor(model => model.Apellidos, new { @class = "text", placeholder = "Apellidos", required = "required", id = "Apellidos" })
                         </div>
                     </div>
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.Telefono, new { @class = "text", placeholder = "Teléfono", required = "required" })
+                            @Html.TextBoxFor(model => model.Telefono, new { @class = "text", placeholder = "Teléfono", required = "required", id = "Telefono" })
                         </div>
                         <div>
-                            @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo", required = "required" })
+                            @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo", required = "required", id = "Correo" })
                         </div>
                     </div>
                     <div class="input-group">
@@ -71,10 +71,10 @@
                         {
                         new SelectListItem { Text = "Masculino", Value = "male" },
                         new SelectListItem { Text = "Femenino", Value = "female" }
-                        }, "Seleccione Sexo", new { @class = "text", required = "required" })
+                        }, "Seleccione Sexo", new { @class = "text", required = "required", id = "Sexo" })
                         </div>
                         <div>
-                            @Html.TextBoxFor(model => model.FechaNacimiento, new { @class = "text", placeholder = "Fecha de Nacimiento", required = "required", type = "date" })
+                            @Html.TextBoxFor(model => model.FechaNacimiento, new { @class = "text", placeholder = "Fecha de Nacimiento", required = "required", type = "date", id = "FechaNacimiento" })
                         </div>
                     </div>
                     <div class="input-group">
@@ -95,8 +95,8 @@
                             <p>Al menos debe contener de 8 a 12 caracteres.</p>
                         </div>
                         <div class="password-inputs">
-                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Contraseña", required = "required" })
-                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Confirmar Contraseña", required = "required" })
+                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Contraseña", required = "required", id = "Contrasenna" })
+                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Confirmar Contraseña", required = "required", id = "ConfirmarContrasenna" })
                         </div>
                     </div>
 
