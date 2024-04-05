@@ -1,160 +1,158 @@
-﻿@model WEB_UI.Models.usuarios
+﻿@model List<WEB_UI.Models.usuarios>
 
 @{
-    ViewBag.Title = "Datos del usuario";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Usuarios";
 }
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/css/usuarioVistaAdmin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <style>
-        /* Estilos personalizados */
-        .main-agileinfo {
-            margin: 0 auto;
-            max-width: 600px;
-            padding: 20px;
-        }
-        .input-group-header {
-            margin-bottom: 20px;
-        }
-        .btn-container {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/usuarioVistaAdmin.css">
 </head>
-<body>
-    <div class="main-w3layouts wrapper">
-        <div class="main-agileinfo">
-            <h1>EN PROCESO Datos del usuario</h1>
-            <!-- Barra de búsqueda de usuarios -->
-            <div class="input-group">
-                <input type="text" class="text" placeholder="Buscar usuarios...">
-                <button type="button">Buscar</button>
-            </div>
-            <div class="input-group">
-                <div class="input-group-header">
-                    <h2>Datos personales</h2>
-                    <div class="file-upload">
-                        <label for="photo">
-                            <span>Subir foto</span>
-                            <input type="file" id="photo" accept="image/*" onchange="previewImage(event)">
-                        </label>
-                    </div>
-                </div>
-                <div class="image-container">
-                    <img src="#" alt="Imagen" id="preview">
-                </div>
-            </div>
 
-            @using (Html.BeginForm("ActualizarUsuario", "Administrador", FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
 
-                <div class="input-group">
-                    <div>
-                        @Html.TextBoxFor(model => model.Nombres, new { @class = "text", placeholder = "Nombres", required = "required" })
-                    </div>
-                    <div>
-                        @Html.TextBoxFor(model => model.Apellidos, new { @class = "text", placeholder = "Apellidos", required = "required" })
-                    </div>
-                </div>
-                <div class="input-group">
-                    <div>
-                        @Html.TextBoxFor(model => model.Telefono, new { @class = "text", placeholder = "Teléfono", required = "required" })
-                    </div>
-                    <div>
-                        @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo", required = "required" })
-                    </div>
-                </div>
-                
-                <div>
-                    @Html.TextBoxFor(model => model.FechaNacimiento, new { @class = "text", placeholder = "Fecha de Nacimiento", required = "required", type = "date" })
-                </div>
-                <div class="input-group">
-                    <input type="hidden" id="lat" name="latitud"> <!-- Campo oculto para guardar la latitud -->
-                    <input type="hidden" id="lng" name="longitud"> <!-- Campo oculto para guardar la longitud -->
-                    <div id="map" style="height: 300px;"></div>
-                    <div class="coordinates-container">
-                        <input type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
-                    </div>
-                </div>
+<h2>Usuarios</h2>
 
-                <div class="input-group">
-                    <div>
-                        @Html.TextBoxFor(model => model.NombreSede, new { @class = "text", placeholder = "Nombre de la sede", required = "required" })
-                    </div>
-                    <div>
-                        @Html.DropDownListFor(model => model.Canton, new List<SelectListItem>
-                            {
-                                // Lista de cantones
-                            }, "Seleccione cantón", new { @class = "text", required = "required" })
-                    </div>
-                    <div>
-                        @Html.DropDownListFor(model => model.Provincia, new List<SelectListItem>
-                            {
-                                // Lista de provincias
-                            }, "Seleccione provincia", new { @class = "text", required = "required" })
-                    </div>
-                    <div>
-                        @Html.DropDownListFor(model => model.Distrito, new List<SelectListItem>
-                            {
-                                // Lista de distritos
-                            }, "Seleccione distrito", new { @class = "text", required = "required" })
-                    </div>
-                </div>
+<form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Buscar usuarios..." />
+    <button type="button" onclick="buscar()">Buscar</button>
+</form>
 
-                <div class="btn-container">
-                    <hr class="divider-line">
-                    <input type="submit" value="Actualizar">
-                </div>
-            }
-        </div>
-    </div>
-
-    <script>
-        // Función para previsualizar la imagen seleccionada
-        function previewImage(event) {
-            var input = event.target;
-            var preview = document.getElementById('preview');
-
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
+<table>
+    <thead>
+        <tr>
+            <th>Foto de perfil</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Sexo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Edad</th>
+            <th>Sede</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <!-- Aquí debería ir el código para mostrar la foto de perfil -->
+                    <!-- Ejemplo: <img src=" alt="Foto de perfil" width="50" height="50"> -->
+                </td>
+                <td>
+                    <input type="text" value="@item.Nombres" id="Nombres_@item.Id" />
+                </td>
+                <td>
+                    <input type="text" value="@item.Apellidos" id="Apellidos_@item.Id" />
+                </td>
+                <td>
+                    <input type="text" value="@item.Telefono" id="Telefono_@item.Id" />
+                </td>
+                <td>
+                    <input type="text" value="@item.Correo" id="Correo_@item.Id" />
+                </td>
+                <td>
+                    <select id="Sexo_@item.Id">
+                        <option value="Masculino" selected="@(item.Sexo == "Masculino")">Masculino</option>
+                        <option value="Femenino" selected="@(item.Sexo == "Femenino")">Femenino</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="date" value="@item.FechaNacimiento.ToString("yyyy-MM-dd")" id="FechaNacimiento_@item.Id" />
+                </td>
+                <td>
+                    <input type="text" value="@item.Edad" id="Edad_@item.Id" />
+                </td>
+                <td>
+                    <input type="text" value="@item.NombreSede" id="NombreSede_@item.Id" />
+                </td>
+                <td>
+                    <select id="Rol_@item.Id">
+                        <option value="Doctor" selected="@(item.Doctor != null)">Doctor</option>
+                        <option value="Enfermero" selected="@(item.Enfermero != null)">Enfermero</option>
+                        <option value="Paciente" selected="@(item.Paciente != null)">Paciente</option>
+                        <option value="Secretario" selected="@(item.Secretario != null)">Secretario</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="guardarEdicion(@item.Id)">Guardar</button>
+                    <button onclick="cancelarEdicion(@item.Id)">Cancelar</button>
+                </td>
+            </tr>
         }
+    </tbody>
+</table>
 
-        // Inicializa el mapa con un marcador en una ubicación específica
-        var map = L.map('map').setView([51.505, -0.09], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        var marker = L.marker([51.5, -0.09]).addTo(map);
+<script>
+    // JavaScript para enviar los datos editados al servidor
+    function guardarEdicion(userId) {
+        var nombres = document.getElementById("Nombres_" + userId).value;
+        var apellidos = document.getElementById("Apellidos_" + userId).value;
+        var telefono = document.getElementById("Telefono_" + userId).value;
+        var correo = document.getElementById("Correo_" + userId).value;
+        var sexo = document.getElementById("Sexo_" + userId).value;
+        var fechaNacimiento = document.getElementById("FechaNacimiento_" + userId).value;
+        var edad = document.getElementById("Edad_" + userId).value;
+        var nombreSede = document.getElementById("NombreSede_" + userId).value;
+        var rol = document.getElementById("Rol_" + userId).value;
 
-        // Evento al hacer clic en el mapa para obtener las coordenadas
-        map.on('click', function (e) {
-            var lat = e.latlng.lat.toFixed(6); // Obtiene la latitud y la redondea
-            var lng = e.latlng.lng.toFixed(6); // Obtiene la longitud y la redondea
-            var coordinates = lat + ', ' + lng; // Combina latitud y longitud en un solo formato
-            document.getElementById('coordinates').value = coordinates; // Guarda las coordenadas en el campo de coordenadas
-        });
-    </script>
-</body>
-</html>
+        // Realizar solicitud AJAX para enviar los datos editados al servidor
+        fetch("/Usuarios/Editar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: userId,
+                nombres: nombres,
+                apellidos: apellidos,
+                telefono: telefono,
+                correo: correo,
+                sexo: sexo,
+                fechaNacimiento: fechaNacimiento,
+                edad: edad,
+                nombreSede: nombreSede,
+                rol: rol
+            })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error al guardar los cambios");
+                }
+                // Actualizar la página después de guardar los cambios
+                location.reload();
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Error al guardar los cambios");
+            });
+    }
+
+    // JavaScript para cancelar la edición
+    function cancelarEdicion(userId) {
+        // Recargar la página para descartar los cambios
+        location.reload();
+    }
+
+    // JavaScript para realizar la búsqueda de usuarios
+    function buscar() {
+        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        var table = document.querySelector("table");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) { // Comienza desde la segunda fila (índice 1)
+            var cells = rows[i].getElementsByTagName("td");
+            var found = false;
+            for (var j = 0; j < cells.length; j++) {
+                var cellText = cells[j].textContent.toLowerCase();
+                if (cellText.includes(searchTerm)) {
+                    found = true;
+                    break;
+                }
+            }
+            rows[i].style.display = found ? "" : "none";
+        }
+    }
+</script>
+
