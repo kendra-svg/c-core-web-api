@@ -3,3 +3,83 @@
 @{
     ViewBag.Title = "Facturación";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facturación</title>
+    <link rel="stylesheet" type="text/css" href="~/css/facturacion.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Facturación</h2>
+
+        <h3>Información</h3>
+        <form action="/Facturacion/GenerarFactura" method="post">
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="text" id="fecha" name="Fecha">
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellidos del Paciente:</label>
+                <input type="text" id="nombre" name="NombrePaciente">
+            </div>
+
+            <div class="form-group">
+                <label for="identificacion">Identificación del Paciente:</label>
+                <input type="text" id="identificacion" name="IdentificacionPaciente">
+            </div>
+
+            <div class="form-group">
+                <label for="especialidad">Especialidad:</label>
+                <select id="especialidad" name="Especialidad">
+                    <option value="Especialidad1">Especialidad 1</option>
+                    <option value="Especialidad2">Especialidad 2</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="laboratorio">Laboratorio:</label>
+                <select id="laboratorio" name="Laboratorio">
+                    <option value="Laboratorio1">Laboratorio 1</option>
+                    <option value="Laboratorio2">Laboratorio 2</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="medico">Médico:</label>
+                <select id="medico" name="Medico">
+                    <option value="DrNombreApellido">Dr. Nombre Apellido</option>
+                    <option value="OtroMedico">Dr. Otro Médico</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio por Consulta:</label>
+                <input type="text" id="precio" name="PrecioConsulta">
+            </div>
+
+            <div class="form-group">
+                <label for="impuesto">Impuesto por Servicio:</label>
+                <input type="text" id="impuesto" name="ImpuestoServicio">
+            </div>
+
+            <div class="form-group">
+                <label for="iva">IVA:</label>
+                <input type="text" id="iva" name="IVA" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="montoFinal">Monto Final:</label>
+                <input type="text" id="montoFinal" name="MontoFinal" readonly>
+            </div>
+
+            <button type="submit">Generar Factura</button>
+        </form>
+    </div>
+</body>
+</html>

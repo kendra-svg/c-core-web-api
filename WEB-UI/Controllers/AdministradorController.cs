@@ -109,6 +109,16 @@ namespace WEB_UI.Controllers
             };
         }
 
-        //
+        //Notificaciones - Solicitudes de profesionales
+        public IActionResult NotificacionesSolicitudes()
+        {
+            return View();
+        }
+
+        //Reportes Financieros
+        public IActionResult ReportesFinancieros()
+        {
+            return View();
+        }
     }
 }
