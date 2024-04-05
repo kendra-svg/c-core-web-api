@@ -1,10 +1,11 @@
 ﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+   
 *@
 @{
-    <script src="~/js/usermenu/menufunctions.js"></script>
+
+ 
 }
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 ">
     <div class="row">
         <div class="col-2 overflow-auto align-self-start">
             <nav id="sidebar-menu" >
@@ -17,7 +18,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Paciente" asp-action="">
+                        <a class="nav-link" asp-controller="Paciente" asp-action="Medicos">
 
                             <i class="bi bi-people"></i>
                             <span class="text">Medicos</span>
@@ -57,13 +58,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Paciente" asp-action="">
+                        <a class="nav-link" asp-controller="Paciente" asp-action="Diagnosticos">
                             <i class="bi bi-clipboard2-pulse"></i>
                             <span class="text">Diagnosticos</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Paciente" asp-action="">
+                        <a class="nav-link" asp-controller="Paciente" asp-action="MisFacturas">
                             <i class="bi bi-cash-coin"></i>
                             <span class="text">Pagos</span>
                         </a>

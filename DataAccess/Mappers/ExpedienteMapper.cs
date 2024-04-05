@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Mappers
 {
-    public class ExpedienteMapper : ICrudStatements
+    public class ExpedienteMapper : IObjectMapper, ICrudStatements
     {
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
@@ -43,5 +43,16 @@ namespace DataAccess.Mappers
         {
             throw new NotImplementedException();
         }
+
+         public BaseClass BuildObject(Dictionary<string, object> row)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

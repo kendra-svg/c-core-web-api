@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Diagnosticos";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Diagnosticos.css">
+</head>
+<body>
+    <h2>@ViewData["Title"]</h2>
+
+    <!-- Barras de búsqueda -->
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por Nombre" class="search-input">
+        <input type="text" placeholder="Buscar por ID" class="search-input">
+    </div>
+
+    <!-- Cuadro con información del paciente -->
+    <div class="patient-info-box">
+        <h3>Información del Paciente</h3>
+        <table class="patient-info">
+            <tr>
+                <td><label for="nombre">Nombre del Paciente:</label></td>
+                <td><input type="text" id="nombre" name="nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="identificacion">Identificación:</label></td>
+                <td><input type="text" id="identificacion" name="identificacion"></td>
+            </tr>
+            <tr>
+                <td><label for="medico">Nombre del Médico:</label></td>
+                <td><input type="text" id="medico" name="medico"></td>
+            </tr>
+            <tr>
+                <td><label for="descripcion">Descripción:</label></td>
+                <td><textarea id="descripcion" name="descripcion"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="fecha">Fecha de Emisión:</label></td>
+                <td><input type="text" id="fecha" name="fecha"></td>
+            </tr>
+        </table>
+        <button type="submit">Guardar Cambios</button>
+    </div>
+</body>
+</html>
