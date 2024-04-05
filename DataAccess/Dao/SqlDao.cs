@@ -12,7 +12,7 @@ namespace DataAccess.DAO
     {
         //Para la base de datos local"Server=localhost;Database=ISA_CLINIC;Trusted_Connection=True;"
         //User ID=cenfo_DB;Password=Psw123456*; en caso de no tener windows autentication o usar un user, se remplaza la seccion de trusted_connection...
-        private string connectionString = "Server=localhost;Database=master;Trusted_Connection=True;";
+        private string connectionString = "Server=localhost;Database=proyecto2;Trusted_Connection=True;";
 
         //Singleton
         private static SqlDao instance = new SqlDao();
@@ -43,7 +43,7 @@ namespace DataAccess.DAO
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = operation.ProcedureName;
 
-            foreach (SqlParameter param in operation.parameters) { 
+            foreach (SqlParameter param in operation.parameters) {
                 command.Parameters.Add(param);
             }
             try
@@ -78,12 +78,12 @@ namespace DataAccess.DAO
                 connection.Open();
                 //Ejecutar el script 
                 SqlDataReader reader = command.ExecuteReader();
-                if(reader.HasRows) 
+                if (reader.HasRows)
                 {
 
-                    while (reader.Read()) { 
+                    while (reader.Read()) {
                         Dictionary<string, object> rowDicc = new Dictionary<string, object>();
-                        for(var fieldCount =0; fieldCount < reader.FieldCount; fieldCount++)
+                        for (var fieldCount = 0; fieldCount < reader.FieldCount; fieldCount++)
                         {
                             rowDicc.Add(reader.GetName(fieldCount), reader.GetValue(fieldCount));
                         }
@@ -98,7 +98,31 @@ namespace DataAccess.DAO
                 throw ex;
             }
         }
-
+        public bool VerificarCredenciales(string correo, string contrasenna)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_VERIFICAR_USUARIO", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Correo", correo);
+                    command.Parameters.AddWithValue("@Contrasenna", contrasenna);
+                    connection.Open();
+                    int resultado = (int)command.ExecuteScalar();
+                    return resultado == 1;
+                }
+            }
+        }
 
     }
 }
+
+
+
+
+
+
+       
+
+
+
