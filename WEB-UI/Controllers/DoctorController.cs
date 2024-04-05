@@ -84,6 +84,12 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Doctor/MiSalud/EncuestaServicio.cshtml");
         }
-        
+
+        //Diagnosticos
+        public IActionResult Diagnosticos()
+        {
+            return View();
+        }
+
     }
 }

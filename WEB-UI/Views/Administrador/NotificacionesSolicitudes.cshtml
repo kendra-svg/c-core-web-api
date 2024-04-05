@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Solicitudes de Profesionales";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/NotificacionesSolicitudes.css">
+</head>
+<body>
+    <h2>Solicitudes de Profesionales</h2>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por Nombre de Profesional" class="search-input">
+    </div>
+
+    <div class="professional-requests">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Profesional</th>
+                    <th>Rol</th>
+                    <th>Especialidad</th>
+                    <th>Nombre de la Sede</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>Médico General</td>
+                    <td>Medicina General</td>
+                    <td>Hospital Central</td>
+                    <td>
+                        <button type="button" class="accept-button">Aceptar</button>
+                        <button type="button" class="reject-button">Rechazar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

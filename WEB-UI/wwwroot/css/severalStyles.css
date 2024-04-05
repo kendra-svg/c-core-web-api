@@ -1,5 +1,6 @@
 ﻿
 
+
 /*
     PARA LANDING PRODUCTO
 */
@@ -217,7 +218,7 @@
 }
 
 /*
-    PARA LANDING PRODUCTO
+    PARA LANDING DE CADA ROL
 */
 .boxes-quick-access {
     border-color: black;
@@ -232,6 +233,13 @@
     height: 90px;
     width: 50px;
 }
+    .boxes-quick-access a {
+        text-decoration: none
+    }
+}
+
+
+
 
 #menu-quick-access a {
     color: white;

@@ -50,6 +50,16 @@ namespace WEB_UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult RecuperarContrasenna()
+        {
+            return RedirectToAction("RecuperarContrasenna", "RecuperarContrasenna");
+        }
+
+        public IActionResult Registro()
+        {
+            return RedirectToAction("Registro", "Registro");
+        }
+
 
     }
 
