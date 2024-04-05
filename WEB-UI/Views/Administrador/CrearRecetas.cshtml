@@ -1,60 +1,71 @@
 ﻿@{
     ViewData["Title"] = "Crear Recetas";
 }
-<div class="container">
-    <h2 class="text-center">Crear Receta</h2>
-    <form>
-        <div class="form-group mt-4">
-            <label for="imagenReceta">Agregar Imagen:</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="imagenReceta" accept="image/*">
-                <label class="custom-file-label" for="imagenReceta">Seleccionar archivo</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agrega tus enlaces a CSS y scripts aquí -->
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Crear Receta</h2>
+        <form>
+            <div class="form-group mt-4">
+                <label for="imagenReceta">Agregar Imagen:</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="imagenReceta" accept="image/*">
+                    <label class="custom-file-label" for="imagenReceta">Seleccionar archivo</label>
+                </div>
             </div>
-        </div>
-        <div class="form-group mt-4">
-            <label for="nombrePaciente">Nombre del Paciente:</label>
-            <input type="text" class="form-control" id="nombrePaciente" placeholder="Nombre del paciente">
-        </div>
-        <div class="form-group mt-4">
-            <label for="identificacionPaciente">Identificación del Paciente:</label>
-            <input type="text" class="form-control" id="identificacionPaciente" placeholder="Identificación del paciente">
-        </div>
-        <div class="form-group mt-4">
-            <label for="nombreMedico">Nombre del Médico:</label>
-            <input type="text" class="form-control" id="nombreMedico" placeholder="Nombre del médico">
-        </div>
-        <div class="form-group mt-4">
-            <label for="clinica">Clínica:</label>
-            <input type="text" class="form-control" id="clinica" placeholder="Nombre de la clínica">
-        </div>
-        <div class="form-group mt-4">
-            <label for="consultorio">Consultorio:</label>
-            <input type="text" class="form-control" id="consultorio" placeholder="Consultorio">
-        </div>
-        <div class="form-group mt-4">
-            <label for="fechaEmision">Fecha de Emisión:</label>
-            <input type="date" class="form-control" id="fechaEmision">
-        </div>
-        <div class="form-group mt-4">
-            <label for="medicamentos">Medicamentos:</label>
-            <input type="text" class="form-control" id="medicamentos" placeholder="Medicamentos">
-        </div>
-        <div class="form-group mt-4">
-            <label for="dosisRecomendada">Dosis Recomendada:</label>
-            <input type="text" class="form-control" id="dosisRecomendada" placeholder="Dosis recomendada">
-        </div>
-        <div class="form-group mt-4">
-            <label for="cantidadDias">Cantidad de Días:</label>
-            <input type="number" class="form-control" id="cantidadDias" placeholder="Cantidad de días">
-        </div>
-        <div class="form-group mt-4">
-            <label for="recomendaciones">Recomendaciones:</label>
-            <input type="text" class="form-control" id="recomendaciones" placeholder="Recomendaciones">
-        </div>
-        <div class="form-group mt-4 d-flex justify-content-center">
-            <button type="submit" class="btn btn-success btn-block">Agregar</button>
-        </div>
-    </form>
-</div>
+            <div class="form-group mt-4">
+                <label for="nombrePaciente">Nombre del Paciente:</label>
+                <input type="text" class="form-control" id="nombrePaciente" placeholder="Nombre del paciente">
+            </div>
+            <div class="form-group mt-4">
+                <label for="identificacionPaciente">Identificación del Paciente:</label>
+                <input type="text" class="form-control" id="identificacionPaciente" placeholder="Identificación del paciente">
+            </div>
+            <div class="form-group mt-4">
+                <label for="nombreMedico">Nombre del Médico:</label>
+                <input type="text" class="form-control" id="nombreMedico" placeholder="Nombre del médico">
+            </div>
+            <div class="form-group mt-4">
+                <label for="clinica">Clínica:</label>
+                <input type="text" class="form-control" id="clinica" placeholder="Nombre de la clínica">
+            </div>
+            <div class="form-group mt-4">
+                <label for="consultorio">Consultorio:</label>
+                <input type="text" class="form-control" id="consultorio" placeholder="Consultorio">
+            </div>
+            <div class="form-group mt-4">
+                <label for="fechaEmision">Fecha de Emisión:</label>
+                <input type="date" class="form-control" id="fechaEmision">
+            </div>
+            <div class="form-group mt-4">
+                <label for="medicamentos">Medicamentos:</label>
+                <input type="text" class="form-control" id="medicamentos" placeholder="Medicamentos">
+            </div>
+            <div class="form-group mt-4">
+                <label for="dosisRecomendada">Dosis Recomendada:</label>
+                <input type="text" class="form-control" id="dosisRecomendada" placeholder="Dosis recomendada">
+            </div>
+            <div class="form-group mt-4">
+                <label for="cantidadDias">Cantidad de Días:</label>
+                <input type="number" class="form-control" id="cantidadDias" placeholder="Cantidad de días">
+            </div>
+            <div class="form-group mt-4">
+                <label for="recomendaciones">Recomendaciones:</label>
+                <input type="text" class="form-control" id="recomendaciones" placeholder="Recomendaciones">
+            </div>
+            <div class="form-group mt-4 d-flex justify-content-center">
+                <button type="submit" class="btn btn-success btn-block">Agregar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
 
 

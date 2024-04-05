@@ -55,7 +55,14 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-
+        public IActionResult MisFacturas()
+        {
+            return View();
+        }
+        public IActionResult Medicos()
+        {
+            return View();
+        }
 
 
         //PARA LA PARTE DE MI SALUD DE SECRETARIO

@@ -1,103 +1,111 @@
 ﻿@{
     ViewData["Title"] = "Examen Personal";
 }
-<div class="container">
-    <h2>Examenes Personales</h2>
-    <div class="mt-5 d-flex justify-content-center">
-        <button type="submit" class="btn btn-success">Registrar Examen</button>
-    </div>
-    <form>
-        <div class="form-group">
-            <label for="especialidad">Especialidad:</label>
-            <input type="text" class="form-control" id="especialidad">
-        </div>
-        <div class="form-group">
-            <label for="tipoExamen">Tipo de Examen:</label>
-            <select class="form-control" id="tipoExamen">
-                <option>Examen A</option>
-                <option>Examen B</option>
-                <option>Examen C</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="fecha">Fecha:</label>
-            <input type="date" class="form-control" id="fecha">
-        </div>
-        <div class="form-group">
-            <label for="centroMedico">Centro Médico:</label>
-            <input type="text" class="form-control" id="centroMedico">
-        </div>
-        <div class="form-group">
-            <label for="comentario">Agregar Comentario:</label>
-            <textarea class="form-control" id="comentario" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="input-foto" class="form-label">Foto</label>
-            <input type="file" class="form-control" id="input-foto">
-        </div>
-    </form>
-    <form>
-        <h2>Buscar Examen</h2>
-        <div class="row d-flex align-items-end justify-content-end">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <select class="form-control" id="especialidad">
-                        <option value="">Especialidad</option>
-                        <option value="cardiologia">Cardiología</option>
-                        <option value="radiologia">Radiología</option>
-                        <option value="oftalmologia">Oftalmología</option>
-                        <!-- Agrega más opciones según sea necesario -->
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <select class="form-control" id="tipoExamen">
-                        <option value="">Tipo de examen</option>
-                        <option value="ecocardiograma">Ecocardiograma</option>
-                        <option value="radiografia">Radiografía</option>
-                        <option value="examenocular">Examen ocular</option>
-                        <!-- Agrega más opciones según sea necesario -->
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <input type="date" class="form-control" id="fecha">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-success btn-block">Buscar</button>
-            </div>
-        </div>
-    </form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
     <div class="container">
-        <h2>Listado de Exámenes</h2>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Examen 1</h5>
-                <p class="card-text"><strong>Especialidad:</strong> Cardiología</p>
-                <p class="card-text"><strong>Tipo de Examen:</strong> Ecocardiograma</p>
-                <p class="card-text"><strong>Fecha:</strong> 2024-03-15</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center align-items-center">
-                <button class="btn btn-success">Descargar</button>
-                <div style="margin-left: 10px;"></div>
-                <button class="btn btn-danger">Eliminar</button>
-            </div>
+        <h2>Examenes Personales</h2>
+        <div class="mt-5 d-flex justify-content-center">
+            <button type="submit" class="btn btn-success">Registrar Examen</button>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Examen 2</h5>
-                <p class="card-text"><strong>Especialidad:</strong> Radiología</p>
-                <p class="card-text"><strong>Tipo de Examen:</strong> Radiografía de tórax</p>
-                <p class="card-text"><strong>Fecha:</strong> 2024-04-10</p>
+        <form>
+            <div class="form-group">
+                <label for="especialidad">Especialidad:</label>
+                <input type="text" class="form-control" id="especialidad">
             </div>
-            <div class="card-footer d-flex justify-content-center align-items-center">
-                <button class="btn btn-success">Descargar</button>
-                <div style="margin-left: 10px;"></div>
-                <button class="btn btn-danger">Eliminar</button>
+            <div class="form-group">
+                <label for="tipoExamen">Tipo de Examen:</label>
+                <select class="form-control" id="tipoExamen">
+                    <option>Examen A</option>
+                    <option>Examen B</option>
+                    <option>Examen C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" class="form-control" id="fecha">
+            </div>
+            <div class="form-group">
+                <label for="centroMedico">Centro Médico:</label>
+                <input type="text" class="form-control" id="centroMedico">
+            </div>
+            <div class="form-group">
+                <label for="comentario">Agregar Comentario:</label>
+                <textarea class="form-control" id="comentario" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="input-foto" class="form-label">Foto</label>
+                <input type="file" class="form-control" id="input-foto">
+            </div>
+        </form>
+        <form>
+            <h2>Buscar Examen</h2>
+            <div class="row d-flex align-items-end justify-content-end">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <select class="form-control" id="especialidad">
+                            <option value="">Especialidad</option>
+                            <option value="cardiologia">Cardiología</option>
+                            <option value="radiologia">Radiología</option>
+                            <option value="oftalmologia">Oftalmología</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <select class="form-control" id="tipoExamen">
+                            <option value="">Tipo de examen</option>
+                            <option value="ecocardiograma">Ecocardiograma</option>
+                            <option value="radiografia">Radiografía</option>
+                            <option value="examenocular">Examen ocular</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="fecha">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success btn-block">Buscar</button>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <h2>Listado de Exámenes</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Examen 1</h5>
+                    <p class="card-text"><strong>Especialidad:</strong> Cardiología</p>
+                    <p class="card-text"><strong>Tipo de Examen:</strong> Ecocardiograma</p>
+                    <p class="card-text"><strong>Fecha:</strong> 2024-03-15</p>
+                </div>
+                <div class="card-footer d-flex justify-content-center align-items-center">
+                    <button class="btn btn-success">Descargar</button>
+                    <div style="margin-left: 10px;"></div>
+                    <button class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Examen 2</h5>
+                    <p class="card-text"><strong>Especialidad:</strong> Radiología</p>
+                    <p class="card-text"><strong>Tipo de Examen:</strong> Radiografía de tórax</p>
+                    <p class="card-text"><strong>Fecha:</strong> 2024-04-10</p>
+                </div>
+                <div class="card-footer d-flex justify-content-center align-items-center">
+                    <button class="btn btn-success">Descargar</button>
+                    <div style="margin-left: 10px;"></div>
+                    <button class="btn btn-danger">Eliminar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>
