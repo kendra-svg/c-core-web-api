@@ -49,6 +49,14 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult MisFacturas()
+        {
+            return View();
+        }
+        public IActionResult Medicos()
+        {
+            return View();
+        }
 
         public IActionResult BuscadorExpedientes()
         {
