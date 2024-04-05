@@ -59,6 +59,14 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult MisFacturas()
+        {
+            return View();
+        }
+        public IActionResult Medicos()
+        {
+            return View();
+        }
 
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL ADMIN
         public IActionResult CitasPersonales()
@@ -101,6 +109,16 @@ namespace WEB_UI.Controllers
             };
         }
 
-        //
+        //Notificaciones - Solicitudes de profesionales
+        public IActionResult NotificacionesSolicitudes()
+        {
+            return View();
+        }
+
+        //Reportes Financieros
+        public IActionResult ReportesFinancieros()
+        {
+            return View();
+        }
     }
 }
