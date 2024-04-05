@@ -4,6 +4,7 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 @section Scripts {
+    <script src="~/js/login/login.js"></script>
 
 }
 
@@ -13,8 +14,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/Login.css" />
 
+    <link rel="stylesheet" href="~/css/Login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/login/login.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+@*     <script src="~/js/login/loginvalidation.js"></script> *@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -32,9 +37,35 @@
 
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post))
                 {
+                    <div>
+                        @if (ViewBag.Message != null)
+                        {
+                            <div id="validations" style="color: red; display: none">@ViewBag.Message</div>
+@*                             <script>mostrarAlerta("@ViewBag.Message");</script> *@
+                        }
+                    </div>
+                    <script>
+                            $(document).ready(function () {
+                                var message = "@ViewBag.Message";
+                                if (message !== "") {
+                                    mostrarAlerta(message);
+                                }
+                            });
+
+                            function mostrarAlerta(mensaje) {
+                                Swal.fire({
+                                    title: 'Error',
+                                    text: mensaje,
+                                    icon: 'error'
+                                });
+                            } 
+
+                  </script>
+
+
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.Nombre, new { @class = "text", placeholder = "Nombre", required = "required" })
+                            @Html.TextBoxFor(model => model.Correo, new { @class = "email", placeholder = "Correo", required = "required" })
                         </div>
                         <div>
                             @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Contraseña", required = "required" })
@@ -51,6 +82,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div
 </body>
 </html>

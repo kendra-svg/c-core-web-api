@@ -13,9 +13,9 @@ namespace WEB_UI.Models
         public DateTime FechaNacimiento { get; set; }
         public int Edad { get; set; }
         public string NombreSede { get; set; }
-        public Canton Canton { get; set; }
-        public Provincia Provincia { get; set; }
-        public Distrito Distrito { get; set; }
+        public string Canton { get; set; }
+        public string Provincia { get; set; }
+        public string Distrito { get; set; }
         public Doctor Doctor { get; set; }
         public Enfermero Enfermero { get; set; }
         public Paciente Paciente { get; set; }
