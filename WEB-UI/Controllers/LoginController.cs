@@ -1,5 +1,10 @@
-﻿using DTO;
+﻿using DataAccess.DAO;
+using DataAccess.Mappers;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace WEB_UI.Controllers
 {
@@ -15,30 +20,48 @@ namespace WEB_UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(UsuarioBase usuario)
+        public IActionResult Login(UsuarioBase usuario, SqlDao sqlDao)
         {
-            if (usuario.Nombre == null || usuario.Contrasenna == null)
+            if (usuario.Correo == null || usuario.Contrasenna == null)
             {
-                ViewBag.Message = "Usuario y/o password incorrectos";
+                ViewBag.Message = "No puede dejar campos vacíos";
                 return View();
             }
 
-            //httpClient -> API(user) --> Admin --> DAO --> BD
+            bool credencialesValidas = sqlDao.VerificarCredenciales(usuario.Correo, usuario.Contrasenna);
 
-            //cambiar por nombres y apellidos
-            usuario.Nombre = "Juan Perez Perez";
+            if (credencialesValidas)
+            {
+                HttpContext.Session.SetString("user", usuario.Correo);
+                return RedirectToAction("LandingPaciente", "Paciente");
+            }
+            else
+            {
+                ViewBag.Message = "Correo electronico o clave incorrectos";
 
-            //Inicia sesion, propiedades de la clase usuario. Nombre completo no existe, cambiar por nombres  y apellidos
-            HttpContext.Session.SetString("user", usuario.Nombre);
-            return RedirectToAction("Index", "Home");
+                return View();
+            }
+
+
         }
-
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult RecuperarContrasenna()
+        {
+            return RedirectToAction("RecuperarContrasenna", "RecuperarContrasenna");
+        }
+
+        public IActionResult Registro()
+        {
+            return RedirectToAction("Registro", "Registro");
+        }
+
 
     }
+
+    
 }

@@ -13,25 +13,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/css/recuperarContrasenna.css" />
     <title>@ViewBag.Title</title>
-    <style>
-        /* Estilos CSS */
-        
-    </style>
 </head>
 <body>
     <div class="main-w3layouts wrapper">
         <h1>Recuperar Contraseña</h1>
         <div class="main-agileinfo">
             <div class="agileits-top">
+             
                 <div class="input-group">
+                    <label for="Correo">Ingresa tu correo electrónico para enviarte un código temporal </label>
                     @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo Electrónico" })
                 </div>
-                <p>Ingresa tu correo, y si está en nuestra base de datos, te enviaremos un código de verificación.</p>
+          
+                <p class="verification-message" id="verificationMessage"></p>
+       
                 <div class="input-group">
-                    <button type="button">Enviar</button>
+                    <input type="text" id="codigoVerificacion" placeholder="Digita el código temporal enviado" style="display: none;">
+                </div>
+   
+                <div class="input-group">
+                    <button type="button" onclick="mostrarTextbox()">Siguiente</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function mostrarTextbox() {
+            var textbox = document.getElementById("codigoVerificacion");
+            var correo = document.getElementById("Correo").value;
+            var verificationMessage = document.getElementById("verificationMessage");
+
+            if (correo === "") {
+                verificationMessage.innerText = "Por favor, ingresa un correo válido.";
+                textbox.style.display = "none";
+            }
+            else {
+                verificationMessage.innerText = ""; // Limpia el mensaje de verificación
+                textbox.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>

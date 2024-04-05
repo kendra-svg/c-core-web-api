@@ -81,12 +81,26 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Administrador/MiSalud/EncuestaServicio.cshtml");
         }
-        //usuarios--------------------------------------------------------------------
-        public ActionResult usuarios()
+        //usuarios
+        public IActionResult Usuarios()
         {
-            // Lógica para mostrar la página de usaurios
-            return View();
+            // Aquí se debería llamar al método para obtener la lista de usuarios
+            var usuarios = ObtenerUsuarios();
+            return View(usuarios);
         }
+
+        // Método para obtener la lista de usuarios (simulado)
+        private List<usuarios> ObtenerUsuarios()
+        {
+            // Aquí podrías tener la lógica para obtener la lista de usuarios desde tu base de datos u otra fuente de datos
+            // Por simplicidad, aquí se simula una lista estática de usuarios
+            return new List<usuarios>
+            {
+                new usuarios { Id = 1, Nombres = "Juan", Apellidos = "Pérez", Telefono = "123456789", Correo = "juan@example.com", Sexo = "Masculino", FechaNacimiento = new DateTime(1990, 1, 1), Edad = 30, NombreSede = "Sede1", Doctor = null, Enfermero = null, Paciente = null, Secretario = null },
+                new usuarios { Id = 2, Nombres = "María", Apellidos = "Gómez", Telefono = "987654321", Correo = "maria@example.com", Sexo = "Femenino", FechaNacimiento = new DateTime(1995, 5, 10), Edad = 25, NombreSede = "Sede2", Doctor = null, Enfermero = null, Paciente = null, Secretario = null }
+            };
+        }
+
         //
     }
 }
