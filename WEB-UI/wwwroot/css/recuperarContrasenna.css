@@ -28,10 +28,10 @@
         width: 100%;
         padding: 10px;
         font-size: 16px;
-        border: 1px solid #68ddbd; /* Cambio del color del borde del cuadro de texto */
+        border: 1px solid #68ddbd; 
         border-radius: 5px;
         outline: none;
-        background-color: #a4fff7; /* Cambio del color de fondo del cuadro de texto */
+        background-color: #a4fff7;
     }
 
     .input-group button {
@@ -42,14 +42,36 @@
         font-size: 16px;
         border-radius: 5px;
         cursor: pointer;
-        position: relative; /* Se cambia a relativo para poder centrar */
+        position: relative;
         left: 50%; /* Se coloca en la mitad del contenedor */
         transform: translateX(-50%); /* Se centra horizontalmente */
     }
 
 p {
     font-size: 14px;
-    color: #fff; /* Cambio del color del texto */
+    color: #fff;
     text-align: center;
-    margin-bottom: 10px; /* Espacio adicional debajo del texto */
+    margin-bottom: 10px; 
+}
+
+/* Estilo para el textbox */
+.input-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #68ddbd;
+    border-radius: 5px;
+    outline: none;
+    background-color: #a4fff7; 
+}
+
+.input-group label {
+    text-align: center;
+    color: white;
+}
+
+
+.verification-message {
+    font-size: 14px;
+    color: #ff0000; /* Color rojo para el mensaje de verificación */
 }
