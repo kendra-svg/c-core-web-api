@@ -1,4 +1,5 @@
-﻿using DataAccess.DAO;
+﻿
+using DataAccess.DAO;
 using DataAccess.Mappers;
 using DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +53,13 @@ namespace WEB_UI.Controllers
             return RedirectToAction("LandingPaciente", "Paciente");
 
 
+
+            //ViewBag.Message = null;
+            //ViewBag.esValido = true;
+            HttpContext.Session.SetString("user", usuario.Correo);
+            return RedirectToAction("LandingPaciente", "Paciente");
+
+
         }
 
 
@@ -74,5 +82,5 @@ namespace WEB_UI.Controllers
 
     }
 
-    
+
 }

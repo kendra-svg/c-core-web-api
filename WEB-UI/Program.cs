@@ -13,6 +13,17 @@ builder.Services.AddSession(session =>
     session.Cookie.IsEssential = false; //Esto indica que la cookie es esencial o no para el funcionamiento del sitio
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "Demo_Policy",
+        policy =>
+        {
+            policy.AllowAnyOrigin();
+            policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
+            }
+        );
+});
 
 var app = builder.Build();
 
@@ -34,5 +45,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.UseSession();
+
+app.UseCors();
+
 app.Run();
