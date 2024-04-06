@@ -78,6 +78,7 @@
                         <input type="hidden" id="lng" name="longitud">
                         <div id="map" style="height: 300px;"></div>
                         <div class="coordinates-container">
+                            <input type="text" id="Identificacion" class="text" placeholder="Identificacion">
                             <input type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
                             <select class="text" required="required" id="Direccion" name="Direccion">
                                 <option value="" disabled selected>Seleccione dirección</option>
@@ -129,12 +130,12 @@
             }
         }
 
-        var map = L.map('map').setView([51.505, -0.09], 13);
+        var map = L.map('map').setView([9.933, -84.08], 8);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        var marker = L.marker([51.5, -0.09]).addTo(map);
+        var marker = L.marker([9.933, -84.08]).addTo(map);
 
         map.on('click', function (e) {
             var lat = e.latlng.lat.toFixed(6);

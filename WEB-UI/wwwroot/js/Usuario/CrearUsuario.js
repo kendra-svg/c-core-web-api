@@ -22,7 +22,7 @@
         usuario.contrasenna = $('#ConfirmarContrasenna').val();
         usuario.direccion = $('#Direccion').find(":selected").val();
         usuario.foto = $('#Correo').val();
-        usuario.identificacion = $('#Correo').val();
+        usuario.identificacion = $('#Identificacion').val();
         usuario.ubicaciones = $('#Correo').val();
 
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
@@ -66,11 +66,8 @@ generateUniqueId = () => {
     return randomNumber.toString();
 }
 
+
 $(document).ready(function () {
     var view = new CrearUsuario();
     view.InitView();
 });
-
-
-   
-
