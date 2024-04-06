@@ -5,7 +5,6 @@
 }
 @section Scripts {
     <script src="~/js/Usuario/CrearUsuario.js"></script>
-
 }
 
 <!DOCTYPE html>
@@ -24,7 +23,6 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <title>@ViewBag.Title</title>
 </head>
-
 
 <body>
     <div class="main-w3layouts wrapper">
@@ -46,49 +44,43 @@
                     </div>
                 </div>
 
-                @using (Html.BeginForm("Registro", "Registro", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
-
+                <form id="registroForm" action="Registro" method="post">
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.Nombre, new { @class = "text", placeholder = "Nombres", required = "required", id = "Nombre" })
+                            <input type="text" class="text" placeholder="Nombres" required="required" id="Nombre" name="Nombre">
                         </div>
                         <div>
-                            @Html.TextBoxFor(model => model.Apellidos, new { @class = "text", placeholder = "Apellidos", required = "required", id = "Apellidos" })
+                            <input type="text" class="text" placeholder="Apellidos" required="required" id="Apellidos" name="Apellidos">
                         </div>
                     </div>
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.Telefono, new { @class = "text", placeholder = "Teléfono", required = "required", id = "Telefono" })
+                            <input type="text" class="text" placeholder="Teléfono" required="required" id="Telefono" name="Telefono">
                         </div>
                         <div>
-                            @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo", required = "required", id = "Correo" })
+                            <input type="email" class="text" placeholder="Correo" required="required" id="Correo" name="Correo">
                         </div>
                     </div>
                     <div class="input-group">
                         <div>
-                            @Html.DropDownListFor(model => model.Sexo, new List<SelectListItem>
-                        {
-                        new SelectListItem { Text = "Masculino", Value = "male" },
-                        new SelectListItem { Text = "Femenino", Value = "female" }
-                        }, "Seleccione Sexo", new { @class = "text", required = "required", id = "Sexo" })
+                            <select class="text" required="required" id="Sexo" name="Sexo">
+                                <option value="" disabled selected>Seleccione Sexo</option>
+                                <option value="male">Masculino</option>
+                                <option value="female">Femenino</option>
+                            </select>
                         </div>
                         <div>
-                            @Html.TextBoxFor(model => model.FechaNacimiento, new { @class = "text", placeholder = "Fecha de Nacimiento", required = "required", type = "date", id = "FechaNacimiento" })
+                            <input type="date" class="text" placeholder="Fecha de Nacimiento" required="required" id="FechaNacimiento" name="FechaNacimiento">
                         </div>
                     </div>
                     <div class="input-group">
-                        <input type="hidden" id="lat" name="latitud"> <!-- Campo oculto para guardar la latitud -->
-                        <input type="hidden" id="lng" name="longitud"> <!-- Campo oculto para guardar la longitud -->
+                        <input type="hidden" id="lat" name="latitud">
+                        <input type="hidden" id="lng" name="longitud">
                         <div id="map" style="height: 300px;"></div>
                         <div class="coordinates-container">
                             <input type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
                         </div>
-
                     </div>
-
-
                     <div class="input-group">
                         <hr class="divider-line">
                         <div class="security-info">
@@ -96,24 +88,19 @@
                             <p>Al menos debe contener de 8 a 12 caracteres.</p>
                         </div>
                         <div class="password-inputs">
-                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Contraseña", required = "required", id = "Contrasenna" })
-                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Confirmar Contraseña", required = "required", id = "ConfirmarContrasenna" })
+                            <input type="password" class="text" placeholder="Contraseña" required="required" id="Contrasenna" name="Contrasenna">
+                            <input type="password" class="text" placeholder="Confirmar Contraseña" required="required" id="ConfirmarContrasenna" name="ConfirmarContrasenna">
                         </div>
                     </div>
-
-
-
                     <div class="btn-container">
                         <hr class="divider-line">
-                        <input type="submit" value="Registrarse" id="boton-enviar">
+                        <button type="submit" id="boton-enviar" >Registrarse</button>
                     </div>
-
-                }
+                </form>
             </div>
         </div>
     </div>
 
-  
     <script>
         function previewImage(event) {
             var input = event.target;
@@ -131,21 +118,19 @@
             }
         }
 
-        var map = L.map('map').setView([51.505, -0.09], 13); // Inicializa el mapa en una ubicación específica
-
+        var map = L.map('map').setView([51.505, -0.09], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        var marker = L.marker([51.5, -0.09]).addTo(map); // Añade un marcador al mapa
+        var marker = L.marker([51.5, -0.09]).addTo(map);
 
         map.on('click', function (e) {
-            var lat = e.latlng.lat.toFixed(6); // Obtiene la latitud y la redondea
-            var lng = e.latlng.lng.toFixed(6); // Obtiene la longitud y la redondea
-            var coordinates = lat + ', ' + lng; // Combina latitud y longitud en un solo formato
-            document.getElementById('coordinates').value = coordinates; // Guarda las coordenadas en el campo de coordenadas
+            var lat = e.latlng.lat.toFixed(6);
+            var lng = e.latlng.lng.toFixed(6);
+            var coordinates = lat + ', ' + lng;
+            document.getElementById('coordinates').value = coordinates;
         });
-
     </script>
 </body>
 </html>

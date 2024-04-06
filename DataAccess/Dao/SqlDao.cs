@@ -15,6 +15,7 @@ namespace DataAccess.DAO
         //private string connectionString = "Server=localhost;Database=proyecto2;Trusted_Connection=True;";
         private string connectionString = "Server=tcp:simepci.database.windows.net,1433;Initial Catalog=simepci;Persist Security Info=False;User ID=simepci;Password=Caramelocamaron22;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
+
         //Singleton
         private static SqlDao instance = new SqlDao();
 
