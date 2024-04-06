@@ -39,10 +39,6 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult ExamenPersonal()
-        {
-            return View();
-        }
         public IActionResult ExamenGeneral()
         {
             return View();
@@ -51,18 +47,24 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult MisRecetas()
-        {
-            return View();
-        }
-        public IActionResult MisFacturas()
-        {
-            return View();
-        }
+        
         public IActionResult Medicos()
         {
             return View();
         }
+        public IActionResult Facturacion()
+        {
+            return View();
+        }
+        public IActionResult Diagnosticos()
+        {
+            return View();
+        }
+        public IActionResult RecetasPacientes()
+        {
+            return View();
+        }
+
 
 
         //PARA LA PARTE DE MI SALUD DE SECRETARIO
@@ -86,12 +88,25 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Secretario/MiSalud/EncuestaServicio.cshtml");
         }
+        public IActionResult ExamenPersonal()
+        {
+            return View("~/Views/Secretario/MiSalud/ExamenPersonal.cshtml");
+        }
+        public IActionResult DiagnosticoPersonal()
+        {
+            return View("~/Views/Secretario/MiSalud/DiagnosticoPersonal.cshtml");
+        }
+        public IActionResult MisFacturas()
+        {
+            return View("~/Views/Secretario/MiSalud/MisFacturas.cshtml");
+        }
+        public IActionResult MisRecetas()
+        {
+            return View("~/Views/Secretario/MiSalud/MisRecetas.cshtml");
+        }
 
         //Facturacion
-        public IActionResult Facturacion()
-        {
-            return View();
-        }
+
 
         // POST: /Facturacion/GenerarFactura
         [HttpPost]

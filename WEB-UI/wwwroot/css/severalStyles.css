@@ -1,6 +1,5 @@
 ﻿
 
-
 /*
     PARA LANDING PRODUCTO
 */
@@ -18,17 +17,17 @@
 }
 
 #right-section-welcome p, #right-section-welcome h2 {
-    width: 350px;
+    width: 45%;
     background-color: #038554;
     color: white;
-    padding-left: 5px
+    padding-left: 3%
 }
 
 #left-section-welcome p {
-    width: 250px;
+    width: 45%;
     background-color: #038554;
     color: white;
-    padding-left: 5px
+    padding-left: 3%
 }
 
 
@@ -42,7 +41,7 @@
 }*/
 .boxes-features {
     border-color: aliceblue;
-    border-radius: 5px;
+    border-radius: 2%;
     border-style: dashed;
     margin: 5%;
     text-align: center;

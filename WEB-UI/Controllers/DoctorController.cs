@@ -29,10 +29,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult ExamenPersonal()
-        {
-            return View();
-        }
+        
         public IActionResult ExamenGeneral()
         {
             return View();
@@ -45,14 +42,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult MisRecetas()
-        {
-            return View();
-        }
-        public IActionResult MisFacturas()
-        {
-            return View();
-        }
+        
         public IActionResult Medicos()
         {
             return View();
@@ -62,6 +52,12 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult ListaCitas()
+        {
+            return View();
+        }
+       
+
 
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL DOC
         public IActionResult CitasPersonales()
@@ -83,6 +79,22 @@ namespace WEB_UI.Controllers
         public IActionResult EncuestaServicio()
         {
             return View("~/Views/Doctor/MiSalud/EncuestaServicio.cshtml");
+        }
+        public IActionResult MisRecetas()
+        {
+            return View("~/Views/Doctor/MiSalud/MisRecetas.cshtml");
+        }
+        public IActionResult MisFacturas()
+        {
+            return View("~/Views/Doctor/MiSalud/MisFacturas.cshtml");
+        }
+        public IActionResult DiagnosticoPersonal()
+        {
+            return View("~/Views/Doctor/MiSalud/DiagnosticoPersonal.cshtml");
+        }
+        public IActionResult ExamenPersonal()
+        {
+            return View("~/Views/Doctor/MiSalud/ExamenPersonal.cshtml");
         }
 
         //Diagnosticos
