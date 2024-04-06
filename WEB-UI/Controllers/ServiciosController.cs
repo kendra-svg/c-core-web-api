@@ -2,12 +2,11 @@
 
 namespace WEB_UI.Controllers
 {
-    public class LandingController : Controller
+    public class ServiciosController: Controller
     {
-        public IActionResult IndexLanding()
+        public IActionResult Servicios()
         {
             return View();
         }
-
     }
 }

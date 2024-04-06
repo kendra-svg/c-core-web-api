@@ -1,7 +1,10 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Sedes";
+    ViewData["Title"] = "Mis Diagnosticos";
 }
+
+
+
 
 
 <!DOCTYPE html>
@@ -13,16 +16,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-   
 
+
+
+    <link rel="stylesheet" type="text/css" href="~/css/Diagnosticos.css">
     <link href="~/css/severalstyles.css" rel="stylesheet" />
-
-
-
 </head>
 <body>
 
@@ -60,34 +62,44 @@
 
 
     <div class="col text-left">
-            <p class="pl-4">Accesos Rapidos</p>
-            <div class="container">
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="ExpedientePersonal"><p> Expediente</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="CitasPersonales"><p> Citas</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="ExamenPersonal"><p> Examenes</p></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="Diagnosticos"><p> Diagnosticos</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="Medicos"><p> Medicos</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="EncuestaServicio"> <p> Encuesta de Servicios</p></a>
-                    </div>
-                </div>
-            </div>
+        <h2>@ViewData["Title"]</h2>
 
-            
-            
+        <!-- Barras de búsqueda -->
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar por Nombre" class="search-input">
+            <input type="text" placeholder="Buscar por ID" class="search-input">
+        </div>
+
+        <!-- Cuadro con información del paciente -->
+        <div class="patient-info-box">
+            <h3>Información del Paciente</h3>
+            <table class="patient-info">
+                <tr>
+                    <td><label for="nombre">Nombre del Paciente:</label></td>
+                    <td><input type="text" id="nombre" name="nombre"></td>
+                </tr>
+                <tr>
+                    <td><label for="identificacion">Identificación:</label></td>
+                    <td><input type="text" id="identificacion" name="identificacion"></td>
+                </tr>
+                <tr>
+                    <td><label for="medico">Nombre del Médico:</label></td>
+                    <td><input type="text" id="medico" name="medico"></td>
+                </tr>
+                <tr>
+                    <td><label for="descripcion">Descripción:</label></td>
+                    <td><textarea id="descripcion" name="descripcion"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="fecha">Fecha de Emisión:</label></td>
+                    <td><input type="text" id="fecha" name="fecha"></td>
+                </tr>
+            </table>
+            <!-- El paciente no deberia poder cambiar diagnosticos
+            <button type="submit">Guardar Cambios</button>
+            -->
+        </div>
+
 
 
 
@@ -113,7 +125,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
-
 </html>
 
 
