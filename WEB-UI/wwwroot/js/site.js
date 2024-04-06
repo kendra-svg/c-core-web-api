@@ -3,4 +3,4 @@
 
 // Write your JavaScript code.
 //var API_URL_BASE = "https://localhost:7154/";
-var API_URL_BASE = apisimepci.azurewebsites.net
+var API_URL_BASE = "https://apisimepci.azurewebsites.net"
