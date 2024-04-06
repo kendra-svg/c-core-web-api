@@ -74,6 +74,10 @@ namespace WEB_UI.Controllers
         public IActionResult MisRecetas()
         {
             return View("~/Views/Enfermero/MiSalud/MisRecetas.cshtml");
+        } //Ver pacientes
+        public IActionResult VerPacientes()
+        {
+            return View();
         }
     }
 }
