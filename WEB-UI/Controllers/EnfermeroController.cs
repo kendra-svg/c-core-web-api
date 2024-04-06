@@ -12,10 +12,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult ExamenPersonal()
-        {
-            return View();
-        }
+       
         public IActionResult ExamenGeneral()
         {
             return View();
@@ -24,14 +21,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult MisRecetas()
-        {
-            return View();
-        }
-        public IActionResult MisFacturas()
-        {
-            return View();
-        }
+     
         public IActionResult Medicos()
         {
             return View();
@@ -82,9 +72,6 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Enfermero/MiSalud/MisRecetas.cshtml");
         } //Ver pacientes
-        public IActionResult VerPacientes()
-        {
-            return View();
-        }
+        
     }
 }
