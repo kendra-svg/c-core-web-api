@@ -67,6 +67,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult VerPacientes()
+        {
+            return View();
+        }
 
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL ADMIN
         public IActionResult CitasPersonales()
