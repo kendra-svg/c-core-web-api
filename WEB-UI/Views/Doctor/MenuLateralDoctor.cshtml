@@ -2,6 +2,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="~/css/severalstyles.css" rel="stylesheet" />
 }
 <div class="container-fluid p-0">
     <div class="row">
@@ -34,7 +36,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Doctor" asp-action="">
+                        <a class="nav-link" asp-controller="Doctor" asp-action="ListaCitas">
                             <i class="bi bi-calendar2-heart"></i>
                             <span class="text">Citas de Pacientes</span>
                         </a>
@@ -57,7 +59,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Doctor" asp-action="ExamenesPersonales">
+                        <a class="nav-link" asp-controller="Doctor" asp-action="ExamenPersonal">
                             <i class="bi bi-card-list"></i>
                             <span class="text">Examenes</span>
                         </a>
@@ -69,19 +71,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Doctor" asp-action="ExpedientePersonal">
+                        <a class="nav-link" asp-controller="Doctor" asp-action="MisRecetas">
                             <i class="bi bi-prescription2"></i>
                             <span class="text">Recetas</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Doctor" asp-action="ExpedientePersonal">
+                        <a class="nav-link" asp-controller="Doctor" asp-action="DiagnosticoPersonal">
                             <i class="bi bi-activity"></i>
                             <span class="text">Diagnosticos</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Doctor" asp-action="ExpedientePersonal">
+                        <a class="nav-link" asp-controller="Doctor" asp-action="MisFacturas">
                             <i class="bi bi-cash-coin"></i>
                             <span class="text">Pagos</span>
                         </a>
