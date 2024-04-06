@@ -51,11 +51,17 @@
                     @Html.AntiForgeryToken()
 
                     <div class="input-group">
+                        
                         <div>
                             @Html.TextBoxFor(model => model.Nombre, new { @class = "text", placeholder = "Nombres", required = "required", id = "Nombre" })
                         </div>
                         <div>
                             @Html.TextBoxFor(model => model.Apellidos, new { @class = "text", placeholder = "Apellidos", required = "required", id = "Apellidos" })
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div>
+                            @Html.TextBoxFor(model => model.Identificacion, new { @class = "text", placeholder = "Identificación", required = "required", id = "Identificacion" })
                         </div>
                     </div>
                     <div class="input-group">
