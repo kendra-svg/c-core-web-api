@@ -44,6 +44,13 @@ namespace WEB_UI.Controllers
                 //ViewBag.PrimeraIteracion = true;
                 return View();
             }
+         
+
+
+            //ViewBag.Message = null;
+            //ViewBag.esValido = true;
+            HttpContext.Session.SetString("user", usuario.Correo);
+            return RedirectToAction("LandingPaciente", "Paciente");
 
 
 
