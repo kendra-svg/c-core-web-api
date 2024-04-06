@@ -1,25 +1,26 @@
 ﻿function CrearUsuario() {
 
-    var self = this; // Mantenemos una referencia a 'this' en 'self' para evitar problemas de alcance
+    /*var self = this;*/ // Mantenemos una referencia a 'this' en 'self' para evitar problemas de alcance
 
     this.InitView = function () {
         $('#boton-enviar').click(function (event) {
-            event.preventDefault(); // Evita que se realice la acción por defecto del botón (enviar el formulario)
-            self.SubmitCrearUsuario(); // Llama al método para enviar el usuario
+            /* event.preventDefault();*/
+           var view = new CrearUsuario();
+            view.SubmitCrearUsuario(); // Llama al método para enviar el usuario
         })
     }
     this.SubmitCrearUsuario = function () {
         var usuario = {};
-        //usuario.id
+        usuario.id = generateUniqueId();
         usuario.nombre = $('#Nombre').val();
         usuario.apellidos = $('#Apellidos').val();
         usuario.telefono = $('#Telefono').val();
         usuario.correo = $('#Correo').val();
-        usuario.fecha = $('#Correo').val();
+        usuario.fecha = $('#FechaNacimiento').val();
         usuario.sexo = $('#Sexo').find(":selected").val();
         usuario.contrasenna = $('#Contrasenna').val();
         usuario.contrasenna = $('#ConfirmarContrasenna').val();
-        usuario.direccion = $('#Correo').val();
+        usuario.direccion = $('#Direccion').find(":selected").val();
         usuario.foto = $('#Correo').val();
         usuario.identificacion = $('#Correo').val();
         usuario.ubicaciones = $('#Correo').val();
@@ -58,6 +59,11 @@
     //this.CommunicatePatient = function () {
     //    console.log("Enviar Correo al Paciente");
     //}
+}
+
+generateUniqueId = () => {
+    const randomNumber = Math.floor(100000 + Math.random() * 900000);
+    return randomNumber.toString();
 }
 
 $(document).ready(function () {
