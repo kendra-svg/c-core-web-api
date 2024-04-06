@@ -30,35 +30,10 @@
                     <img src="https://via.placeholder.com/150" class="img-fluid mt-3 mb-1" alt="Imagen">
                     <button class="btn btn-success d-block mt-1 ml-3">Subir archivo</button>
                 </div>
-                <div class="col-md-6 d-flex justify-content-end align-top">
-                    <p class="mt-2 mr-2">Asignar Rol</p>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle mr-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Rol
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Doctor</a></li>
-                            <li><a class="dropdown-item" href="#">Enfermero</a></li>
-                            <li><a class="dropdown-item" href="#">Secretario</a></li>
-                        </ul>
-                    </div>
-                    <p class="mt-2 mr-2">Asignar sede</p>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                            Asignar sedes
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item" href="#">Sede A</a></li>
-                            <li><a class="dropdown-item" href="#">Sede B</a></li>
-                            <li><a class="dropdown-item" href="#">Sede C</a></li>
-                        </ul>
-                    </div>
-
-                </div>
             </div>
         </div>
         <div class="container mt-5">
-            <h3 class="mb-3">Sedes a las que pertenece</h3>
+            <h3 class="mb-3">Sede a la que pertenece</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
@@ -75,18 +50,6 @@
                             <td>San José</td>
                             <td>San José</td>
                             <td>San José</td>
-                        </tr>
-                        <tr>
-                            <td>Sede B</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                        </tr>
-                        <tr>
-                            <td>Sede C</td>
-                            <td>Limón</td>
-                            <td>Limón</td>
-                            <td>Limón</td>
                         </tr>
                     </tbody>
                 </table>
@@ -137,6 +100,12 @@
                 </div>
                 <div class="mb-4">
                     <button type="button" class="btn btn-primary">Ver expediente</button>
+                </div>
+
+                <!-- Botónes de Activar cuenta y Desactivar cuenta -->
+                <div class="mt-5 mb-5">
+                    <button type="button" class="btn btn-info">Activar cuenta</button>
+                    <button type="button" class="btn btn-danger ml-2">Desactivar cuenta</button>
                 </div>
                 <div class="text-center mt-5 mb-2">
                     <button type="button" class="btn btn-success">Guardar</button>
