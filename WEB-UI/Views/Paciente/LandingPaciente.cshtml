@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Sedes";
+    ViewData["Title"] = "HOME PACIENTE";
 }
 
 
@@ -43,7 +43,7 @@
         </div>
 
     </header>
-    <div class="position-relative">
+    <div class="position-absolute">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0" style="display:none;">
                 <li><a asp-controller="Paciente" asp-action="DatosPersonales">Mi perfil</a></li>
@@ -59,7 +59,7 @@
 
 
 
-    <div class="col text-left">
+    <div class="col text-left" id="menu-quick-access">
             <p class="pl-4">Accesos Rapidos</p>
             <div class="container">
                 <div class="row">

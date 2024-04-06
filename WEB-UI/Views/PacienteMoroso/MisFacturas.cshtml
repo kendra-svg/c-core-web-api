@@ -1,0 +1,155 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Mis Facturas";
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="~/css/usersmenustyle.css" rel="stylesheet" />
+    <link href="~/css/severalstyles.css" rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <header id="header-menu" class="text-white">
+
+        <div class="row align-items-center">
+            <div class="col text-left">
+                <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
+            </div>
+            <div class="col text-center">
+                <p>Sede a la que pertenece</p>
+            </div>
+            <div class="col text-end p-5" id="other-options">
+                <i class="bi bi-person"></i>
+                <span>correo@gmail.com </span>
+
+            </div>
+        </div>
+
+    </header>
+    <div class="position-relative">
+        <div class="container">
+            <ul id="other-options-list" class="list-unstyled position-absolute end-0" style="display:none;">
+                <li><a asp-controller="PacienteMoroso" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    @Html.Partial("MenuLateralPacienteMoroso")
+
+
+
+    <div class="col text-left">
+        <div class="row align-items-center justify-content-center mt-4 ">
+            <div class="col-md-9 ml-4">
+                <form class="d-flex" action="/buscar" method="GET">
+                    <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <div class="justify-content-center">
+                <button type="button" class="btn btn-primary mr-2 text-white">Pagadas</button>
+                <button type="button" class="btn btn-secondary text-white">Pendientes</button>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <h2 class="text-center mt-5 mb-4">Facturas Personales</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">ID Factura: 123456</h5>
+                    <p class="card-text"><strong>Impuesto por Servicio:</strong> $10.00</p>
+                    <p class="card-text"><strong>Monto Total:</strong> $100.00</p>
+                    <p class="card-text"><strong>Especialidad Médica:</strong> Medicina General</p>
+                    <p class="card-text"><strong>Doctor/a:</strong>  María González</p>
+                    <p class="card-text"><strong>Fecha de Emisión:</strong> 2024-04-05</p>
+                    <p class="card-text"><strong>Estado:</strong> Pendiente</p>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <button class="btn btn-success mr-3">Descargar Receta</button>
+                    <button class="btn btn-info mr-3">Pagar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">ID Factura: 987654</h5>
+                    <p class="card-text"><strong>Impuesto por Servicio:</strong> $15.00</p>
+                    <p class="card-text"><strong>Monto Total:</strong> $120.00</p>
+                    <p class="card-text"><strong>Especialidad Médica:</strong> Laboratorio</p>
+                    <p class="card-text"><strong>Doctor/a:</strong>  Carlos López</p>
+                    <p class="card-text"><strong>Fecha de Emisión:</strong> 2024-04-06</p>
+                    <p class="card-text"><strong>Estado:</strong> Pagado</p>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <button class="btn btn-success mr-2">Descargar Receta</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="fw-bold">PayPal</h3>
+                    <img src="https://i.imgur.com/aMgiFxT.png" alt="Logo de PayPal" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="col-md-6">
+                    <p class="text-muted fs-5 mt-2">Recuerda que también tienes la opción de realizar tu pago en ventanilla.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    @Html.Partial("_Footer")
+
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+    <script src="~/js/usermenu/menufunctions.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+
+

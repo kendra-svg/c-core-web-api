@@ -51,7 +51,7 @@
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
-                <li><a asp-controller="Secretario" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
                 <li><a href="#">Cerrar Sesión</a></li>
             </ul>
         </div>
@@ -60,13 +60,13 @@
 
 
 
-    @Html.Partial("MenuLateralSecretario")
+    @Html.Partial("MenuLateralAdmin")
 
 
     <div class="col text-left">
         <div class="text-center mt-3 mx-15">
             <div class="btn-group">
-                <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Secretario" asp-action="AsignacionCitas">Crear Cita</a>
+                <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Administrador" asp-action="AsignacionCitas">Crear Cita</a>
             </div>
         </div>
 
