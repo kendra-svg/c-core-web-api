@@ -141,6 +141,10 @@ namespace WEB_UI.Controllers
             return View();
         }
 
-        
+        //Diagnostico
+        public IActionResult Diagnostico()
+        {
+            return View();
+        }
     }
 }

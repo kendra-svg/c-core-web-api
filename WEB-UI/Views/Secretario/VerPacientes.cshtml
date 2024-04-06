@@ -1,0 +1,112 @@
+﻿@model List<WEB_UI.Models.usuarios>
+
+@{
+    ViewBag.Title = "Pacientes";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/usuarioVistaAdmin.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <link href="~/css/severalstyles.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h2>Pacientes</h2>
+
+
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Buscar usuarios..." />
+        <button type="button" onclick="buscar()">Buscar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Foto de perfil</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Identificación</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Sexo</th>
+                <th>Fecha de nacimiento</th>
+                <th>Edad</th>
+                <th>Sede</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="foto_paciente1.jpg" alt="Foto paciente 1" width="50" height="50"></td>
+                <td>Juan</td>
+                <td>Pérez</td>
+                <td>111114678</td>
+                <td>123456789</td>
+                <td>juan@example.com</td>
+                <td>Masculino</td>
+                <td>1990-01-01</td>
+                <td>32</td>
+                <td>Sede A</td>
+            </tr>
+            <tr>
+                <td><img src="foto_paciente2.jpg" alt="Foto paciente 2" width="50" height="50"></td>
+                <td>María</td>
+                <td>Gómez</td>
+                <td>211114678</td>
+                <td>987654321</td>
+                <td>maria@example.com</td>
+                <td>Femenino</td>
+                <td>1985-05-15</td>
+                <td>36</td>
+                <td>Sede B</td>
+            </tr>
+            <tr>
+                <td><img src="foto_paciente3.jpg" alt="Foto paciente 3" width="50" height="50"></td>
+                <td>Emanuel</td>
+                <td>Mora</td>
+                <td>131114678</td>
+                <td>984654521</td>
+                <td>emanuek@example.com</td>
+                <td>Maculino</td>
+                <td>1985-05-15</td>
+                <td>36</td>
+                <td>Sede B</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<script>
+    // JavaScript para realizar la búsqueda de usuarios
+    function buscar() {
+        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        var table = document.querySelector("table");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) { // Comienza desde la segunda fila (índice 1)
+            var cells = rows[i].getElementsByTagName("td");
+            var found = false;
+            for (var j = 0; j < cells.length; j++) {
+                var cellText = cells[j].textContent.toLowerCase();
+                if (cellText.includes(searchTerm)) {
+                    found = true;
+                    break;
+                }
+            }
+            rows[i].style.display = found ? "" : "none";
+        }
+    }
+</script>
+</html>
