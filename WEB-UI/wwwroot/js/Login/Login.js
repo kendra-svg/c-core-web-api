@@ -8,15 +8,22 @@
                 text: div.text(),
                 title: 'Error'
             });
-
-            $('#Correo').val('');
-            $('#Contrasenna').val('');
-
-            return false;
+            
+         /*   limpiarFormulario();*/
+           /* return false;*/
         }
-        return true;
-    }
 
+       /* return true;*/
+
+    }
+    /*segundoIntento = false;*/
+}
+
+
+function limpiarFormulario() {
+    $('#Correo').val('');
+    $('#Contrasenna').val('');
+    
 }
 
 $(document).ready(function () {
@@ -24,8 +31,13 @@ $(document).ready(function () {
     $('#Contrasenna').attr('autocomplete', 'off');
     $('form').submit(function (event) {
         var view = new LoginView();
-        if (!view.Validate()) {
-            event.preventDefault();
-        }
+        //if (!view.Validate()) {
+        //    event.preventDefault();
+        //}
+        view.Validate();
     });
+  /*  ViewData.Clear();*/
+   /* limpiarFormulario();*/
+   /* ViewData.Clear();*/
+
 });

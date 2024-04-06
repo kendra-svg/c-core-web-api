@@ -16,34 +16,45 @@ namespace WEB_UI.Controllers
         }
         public IActionResult Login()
         {
+
             return View();
         }
+
+
 
         [HttpPost]
         public IActionResult Login(UsuarioBase usuario, SqlDao sqlDao)
         {
-            if (usuario.Correo == null || usuario.Contrasenna == null)
-            {
-                ViewBag.Message = "No puede dejar campos vacíos";
-                return View();
-            }
+            //if (usuario.Correo == null || usuario.Contrasenna == null)
+            //{
+            //    ViewBag.Message = "No puede dejar campos vacíos";
+            //    return View();
+            //}
 
             bool credencialesValidas = sqlDao.VerificarCredenciales(usuario.Correo, usuario.Contrasenna);
+            //bool esValido = false;
 
-            if (credencialesValidas)
+
+            if (!credencialesValidas)
             {
-                HttpContext.Session.SetString("user", usuario.Correo);
-                return RedirectToAction("LandingPaciente", "Paciente");
-            }
-            else
-            {
+
                 ViewBag.Message = "Correo electronico o clave incorrectos";
-
+                //ViewBag.esValido = false;
+                //ViewBag.PrimeraIteracion = true;
                 return View();
             }
+         
+
+
+            //ViewBag.Message = null;
+            //ViewBag.esValido = true;
+            HttpContext.Session.SetString("user", usuario.Correo);
+            return RedirectToAction("LandingPaciente", "Paciente");
 
 
         }
+
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
