@@ -12,8 +12,8 @@ namespace DataAccess.DAO
     {
         //Para la base de datos local"Server=localhost;Database=ISA_CLINIC;Trusted_Connection=True;"
         //User ID=cenfo_DB;Password=Psw123456*; en caso de no tener windows autentication o usar un user, se remplaza la seccion de trusted_connection...
-        private string connectionString = "Server=localhost;Database=proyecto2;Trusted_Connection=True;";
-        //private string connectionString = "Server=tcp:simepci.database.windows.net,1433;Initial Catalog=G5-SIMEPCI;Persist Security Info=False;User ID=simepci-p;Password=Camaroncaramelo;;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        //private string connectionString = "Server=localhost;Database=proyecto2;Trusted_Connection=True;";
+        private string connectionString = "Server=tcp:simepci.database.windows.net,1433;Initial Catalog=simepci;Persist Security Info=False;User ID=simepci;Password=Caramelocamaron22;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         //Singleton
         private static SqlDao instance = new SqlDao();
