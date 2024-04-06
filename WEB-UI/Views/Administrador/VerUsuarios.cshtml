@@ -1,7 +1,5 @@
-﻿@model List<WEB_UI.Models.usuarios>
-
-@{
-    ViewBag.Title = "Ver Pacientes";
+﻿@{
+    ViewBag.Title = "Ver Usuarios";
 }
 
 <!DOCTYPE html>
@@ -21,7 +19,7 @@
                 <form class="d-flex" action="/buscar" method="GET">
                     <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
                     <button class="btn btn-outline-success mx-20" type="submit">Buscar</button>
-    </form>
+                </form>
             </div>
         </div>
         <div class="container mt-2">
@@ -32,50 +30,66 @@
                     <img src="https://via.placeholder.com/150" class="img-fluid mt-3 mb-1" alt="Imagen">
                     <button class="btn btn-success d-block mt-1 ml-3">Subir archivo</button>
                 </div>
+                <div class="col-md-6 d-flex justify-content-end align-top">
+                    <p class="mt-2 mr-2">Asignar Rol</p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle mr-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Rol
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Doctor</a></li>
+                            <li><a class="dropdown-item" href="#">Enfermero</a></li>
+                            <li><a class="dropdown-item" href="#">Secretario</a></li>
+                        </ul>
+                    </div>
+                    <p class="mt-2 mr-2">Asignar sede</p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            Asignar sedes
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">Sede A</a></li>
+                            <li><a class="dropdown-item" href="#">Sede B</a></li>
+                            <li><a class="dropdown-item" href="#">Sede C</a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="container mt-5">
-            <h3 class="mb-3">Sede a la que pertenece</h3>
+            <h3 class="mb-3">Sedes a las que pertenece</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
-        <thead>
-            <tr>
+                    <thead>
+                        <tr>
                             <th scope="col">Nombre de la sede</th>
                             <th scope="col">Provincia</th>
                             <th scope="col">Cantón</th>
                             <th scope="col">Distrito</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="foto_paciente1.jpg" alt="Foto paciente 1" width="50" height="50"></td>
-                <td>Juan</td>
-                <td>Pérez</td>
-                <td>111114678</td>
-                <td>123456789</td>
-                <td>juan@example.com</td>
-                <td>Masculino</td>
-                <td>1990-01-01</td>
-                <td>32</td>
-                <td>Sede A</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sede A</td>
                             <td>San José</td>
                             <td>San José</td>
                             <td>San José</td>
-            </tr>
-            <tr>
-                <td><img src="foto_paciente3.jpg" alt="Foto paciente 3" width="50" height="50"></td>
-                <td>Emanuel</td>
-                <td>Mora</td>
-                <td>131114678</td>
-                <td>984654521</td>
-                <td>emanuek@example.com</td>
-                <td>Maculino</td>
-                <td>1985-05-15</td>
-                <td>36</td>
-                <td>Sede B</td>
-            </tr>
-        </tbody>
-    </table>
+                        </tr>
+                        <tr>
+                            <td>Sede B</td>
+                            <td>Heredia</td>
+                            <td>Heredia</td>
+                            <td>Heredia</td>
+                        </tr>
+                        <tr>
+                            <td>Sede C</td>
+                            <td>Alajuela</td>
+                            <td>Alajuela</td>
+                            <td>Alajuela</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="container mt-4">
@@ -139,26 +153,4 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
-<script>
-    // JavaScript para realizar la búsqueda de usuarios
-    function buscar() {
-        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-        var table = document.querySelector("table");
-        var rows = table.getElementsByTagName("tr");
-
-        for (var i = 1; i < rows.length; i++) { // Comienza desde la segunda fila (índice 1)
-            var cells = rows[i].getElementsByTagName("td");
-            var found = false;
-            for (var j = 0; j < cells.length; j++) {
-                var cellText = cells[j].textContent.toLowerCase();
-                if (cellText.includes(searchTerm)) {
-                    found = true;
-                    break;
-                }
-            }
-            rows[i].style.display = found ? "" : "none";
-        }
-    }
-</script>
 </html>
