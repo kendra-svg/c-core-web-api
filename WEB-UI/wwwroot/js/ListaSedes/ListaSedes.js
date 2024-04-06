@@ -1,4 +1,6 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
+﻿
+
+document.addEventListener("DOMContentLoaded", function () {
     // Definir los datos de las sedes
     var sedes = [
         { nombre: "Sede 1", descripcion: "Descripción de la sede 1", fechaCreacion: "2022-04-04" },
@@ -16,7 +18,7 @@
             "<td>" + sede.descripcion + "</td>" +
             "<td>" + sede.fechaCreacion + "</td>" +
             "<td>" +
-            "<a class='btn btn-sm btn-outline-success'><i class='bi bi-eye'></i></a>" +
+            "<a class='btn btn-sm btn-success' ><i class='bi bi-eye'></i></a>" +
             "<button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>" +
             "<button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>" +
             "</td>" +
