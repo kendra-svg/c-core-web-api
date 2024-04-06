@@ -23,6 +23,7 @@ namespace API.Controllers
         {
             UsuariosManager pm = new UsuariosManager();
             return pm.GetAllUsuarios();
+
         }
     }
 }
