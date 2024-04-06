@@ -8,18 +8,21 @@
             self.SubmitCrearUsuario(); // Llama al método para enviar el usuario
         })
     }
-
-
     this.SubmitCrearUsuario = function () {
         var usuario = {};
+        //usuario.id
         usuario.nombre = $('#Nombre').val();
         usuario.apellidos = $('#Apellidos').val();
         usuario.telefono = $('#Telefono').val();
         usuario.correo = $('#Correo').val();
-        usuario.fecha = $('#FechaNacimiento').val();
+        usuario.fecha = $('#Correo').val();
         usuario.sexo = $('#Sexo').find(":selected").val();
         usuario.contrasenna = $('#Contrasenna').val();
         usuario.contrasenna = $('#ConfirmarContrasenna').val();
+        usuario.direccion = $('#Correo').val();
+        usuario.foto = $('#Correo').val();
+        usuario.identificacion = $('#Correo').val();
+        usuario.ubicaciones = $('#Correo').val();
 
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
 
