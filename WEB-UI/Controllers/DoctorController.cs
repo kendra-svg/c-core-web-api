@@ -106,6 +106,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-
+        // Ver pacientes
+        public IActionResult VerPacientes()
+        {
+            return View();
+        }
     }
 }

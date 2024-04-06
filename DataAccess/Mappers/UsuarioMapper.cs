@@ -68,47 +68,49 @@ namespace DataAccess.Mappers
         {
             throw new NotImplementedException();
         }
-        public BaseClass BuildObject(Dictionary<string, object> row)
-        {
-            UsuarioBase pat = new UsuarioBase();
-            pat.Id = int.Parse(row["id_usuario"].ToString());
-            pat.Identificacion = row["indentificaciones"].ToString();
-            pat.Nombre = row["nombres"].ToString();
-            pat.Apellidos = row["apellidos"].ToString();
-            pat.Telefono = row["telefonos"].ToString();
-            pat.Correo = row["correos"].ToString();
-            pat.Sexo = row["sexos"].ToString();
-            pat.FechaNacimiento = DateTime.Parse(row["fechas_nacimiento"].ToString());
-            pat.Edad = int.Parse(row["edades"].ToString());
-            pat.Direccion = row["direcciones"].ToString();
-            pat.Foto = row["fotos"].ToString();
-            pat.Contrasenna = row["contrasennas"].ToString();
-            pat.Morosidad = int.Parse(row["MOROSIDADES"].ToString());
-            pat.Ubicaciones = row["contrasennas"].ToString();
-            // pat.Expedientes = int.Parse(row["expediente_id_expedientes"].ToString());
-            return pat;
-        }
         //public BaseClass BuildObject(Dictionary<string, object> row)
         //{
-        //    var app = new UsuarioBase()
-        //    {
-        //        Id = int.Parse(row["id_usuario"].ToString()),
-        //        Nombre = row["nombres"].ToString(),
-        //        Apellidos = row["apellidos"].ToString(),
-        //        Correo = row["correos"].ToString(),
-        //        Telefono = row["telefonos"].ToString(),
-        //        Sexo = row["sexos"].ToString(),
-        //        FechaNacimiento = DateTime.Parse(row["fechas_nacimiento"].ToString()),
-        //        Edad = int.Parse(row["edades"].ToString()),
-        //        Direccion = row["direcciones"].ToString(),
-        //        Foto = row["foto"].ToString(),
-        //        Morosidad = int.Parse(row["MOROSIDADES"].ToString()),
-        //        Contrasenna = row["contrasennas"].ToString(),
-        //        Ubicaciones = row["Ubicaciones"].ToString(),
-        //        Identificacion = row["indentificaciones"].ToString()
-        //    };
-        //    return app;
+        //    UsuarioBase pat = new UsuarioBase();
+        //    pat.Id = int.Parse(row["id_usuario"].ToString());
+        //    pat.Identificacion = row["indentificaciones"].ToString();
+        //    pat.Nombre = row["nombres"].ToString();
+        //    pat.Apellidos = row["apellidos"].ToString();
+        //    pat.Telefono = row["telefonos"].ToString();
+        //    pat.Correo = row["correos"].ToString();
+        //    pat.Sexo = row["sexos"].ToString();
+        //    pat.FechaNacimiento = DateTime.Parse(["fechas_nacimiento"].ToString());
+        //    pat.Edad = int.Parse(row["edades"].ToString());
+        //    pat.Direccion = row["direcciones"].ToString();
+        //    pat.Foto = row["fotos"].ToString();
+        //    pat.Contrasenna = row["contrasennas"].ToString();
+        //    pat.Morosidad = int.Parse(row["MOROSIDADES"].ToString());
+        //    pat.Ubicaciones = row["contrasennas"].ToString();
+        //    // pat.Expedientes = int.Parse(row["expediente_id_expedientes"].ToString());
+        //    return pat;
         //}
+        public BaseClass BuildObject(Dictionary<string, object> row)
+        {
+            
+           
+            UsuarioBase app = new UsuarioBase();
+
+            app.Id = int.Parse(row["id_usuario"].ToString());
+            app.Nombre = row["nombres"].ToString();
+            app.Apellidos = row["apellidos"].ToString();
+            app.Correo = row["correos"].ToString();
+            app.Telefono = row["telefonos"].ToString();
+            app.Sexo = row["sexos"].ToString();
+            app.FechaNacimiento = DateTime.Parse(row["fechas_nacimiento"].ToString());
+            app.Edad = int.Parse(row["edades"].ToString());
+            app.Direccion = row["direcciones"].ToString();
+            app.Foto = row["foto"].ToString();
+            app.Morosidad = int.Parse(row["MOROSIDADES"].ToString());
+            app.Contrasenna = row["contrasennas"].ToString();
+            app.Ubicaciones = row["Ubicaciones"].ToString();
+            app.Identificacion = row["indentificaciones"].ToString();
+            
+            return app;
+        }
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> listRows)
         {

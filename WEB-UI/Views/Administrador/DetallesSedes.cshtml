@@ -50,7 +50,7 @@
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
                 <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
+                <li><a <a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -58,10 +58,11 @@
 
 
 
+
     @Html.Partial("MenuLateralAdmin")
 
 
-    <div class="col text-left" id="menu-quick-access">
+    <div class="col text-left" >
         <h1 class="text-center mt-3">Datos de la sede</h1>
         <div class="col text-end m-3 ">
             <button class="btn border">Subir Foto</button>

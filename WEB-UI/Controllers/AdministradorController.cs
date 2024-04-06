@@ -2,9 +2,11 @@
 using WEB_UI.Models;
 using System;
 using System.Collections.Generic;
+using System.Security.Policy;
 
 namespace WEB_UI.Controllers
 {
+    
     public class AdministradorController : Controller
     {
         public IActionResult LandingAdministrador()
@@ -55,6 +57,10 @@ namespace WEB_UI.Controllers
        
        
         public IActionResult Medicos()
+        {
+            return View();
+        }
+        public IActionResult ListaCitas()
         {
             return View();
         }
@@ -139,6 +145,12 @@ namespace WEB_UI.Controllers
         }
 
         public IActionResult ConfiguracionAlertas()
+        {
+            return View();
+        }
+
+        //Diagnostico
+        public IActionResult Diagnostico()
         {
             return View();
         }

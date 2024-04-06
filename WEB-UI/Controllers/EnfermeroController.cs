@@ -66,5 +66,25 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Enfermero/MiSalud/EncuestaServicio.cshtml");
         }
+        public IActionResult ExamenPersonal()
+        {
+            return View("~/Views/Enfermero/MiSalud/ExamenPersonal.cshtml");
+        }
+        public IActionResult DiagnosticoPersonal()
+        {
+            return View("~/Views/Enfermero/MiSalud/DiagnosticoPersonal.cshtml");
+        }
+        public IActionResult MisFacturas()
+        {
+            return View("~/Views/Enfermero/MiSalud/MisFacturas.cshtml");
+        }
+        public IActionResult MisRecetas()
+        {
+            return View("~/Views/Enfermero/MiSalud/MisRecetas.cshtml");
+        } //Ver pacientes
+        public IActionResult VerPacientes()
+        {
+            return View();
+        }
     }
 }

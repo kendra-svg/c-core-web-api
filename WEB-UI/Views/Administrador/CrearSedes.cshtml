@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "CrearSedes";
+    ViewData["Title"] = "Crear Sedes";
 }
 
 
@@ -50,7 +50,7 @@
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
                 <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
+                <li><a <a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -61,7 +61,7 @@
     @Html.Partial("MenuLateralAdmin")
 
 
-    <div class="col text-left" id="menu-quick-access">
+    <div class="col text-left" >
         <h1 class="text-center mt-3">Crea una nueva sede</h1>
         <!-- <div class="row mt-3">
             <div class="col-md-8">
