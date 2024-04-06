@@ -16,7 +16,7 @@
             "<td>" + sede.descripcion + "</td>" +
             "<td>" + sede.fechaCreacion + "</td>" +
             "<td>" +
-            "<a href='' class='btn btn-sm btn-outline-success'><i class='bi bi-eye'></i></a>" +
+            "<a class='btn btn-sm btn-outline-success'><i class='bi bi-eye'></i></a>" +
             "<button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>" +
             "<button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>" +
             "</td>" +

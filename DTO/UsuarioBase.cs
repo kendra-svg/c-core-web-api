@@ -25,7 +25,7 @@
 
         public string Identificacion { get; set; }
 
-        public Expediente Expedientes { get; set; } //Hace referencia al Id de la clase Expediente
+        //public Expediente Expedientes { get; set; } //Hace referencia al Id de la clase Expediente
 
         public string Ubicaciones { get; set; } //Hace referencia al Id de la clase Ubicacion
     }

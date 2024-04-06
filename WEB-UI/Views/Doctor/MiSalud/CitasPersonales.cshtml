@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Home Paciente";
+    ViewData["Title"] = "Citas Personales";
 }
 
 
@@ -42,14 +42,15 @@
         </div>
 
     </header>
-    <div class="position-relative ">
+    <div class="position-relative">
         <div class="container">
-            <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
+            <ul id="other-options-list" class="list-unstyled position-absolute end-0" style="display:none;">
                 <li><a asp-controller="Doctor" asp-action="DatosPersonales">Mi perfil</a></li>
                 <li><a href="#">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
+
 
 
 
@@ -71,7 +72,7 @@
                     <input class="form-control me-sm-2" type="search" placeholder="Search">
                 </div>
                 <div class="col text-end ">
-                    <a asp-controller="Doctor" asp-action="CrearCitasPersonales">
+                    <a asp-controller="Administrador" asp-action="CrearCitasPersonales">
                         <button class=" btn btn-light border mt-1">Crear una cita</button>
                     </a>
                 </div>
@@ -121,12 +122,11 @@
 
 
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
-
-
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/sitas/citaspersonales.js"></script>
+    <script src="~/js/citas/citaspersonales.js"></script>
 
     <script src="~/js/usermenu/menufunctions.js"></script>
 

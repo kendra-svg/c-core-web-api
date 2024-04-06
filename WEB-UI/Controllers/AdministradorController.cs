@@ -39,10 +39,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult ExamenPersonal()
-        {
-            return View();
-        }
+      
         public IActionResult ExamenGeneral()
         {
             return View();
@@ -55,14 +52,8 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult MisRecetas()
-        {
-            return View();
-        }
-        public IActionResult MisFacturas()
-        {
-            return View();
-        }
+       
+       
         public IActionResult Medicos()
         {
             return View();
@@ -97,6 +88,24 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Administrador/MiSalud/EncuestaServicio.cshtml");
         }
+        public IActionResult ExamenPersonal()
+        {
+            return View("~/Views/Administrador/MiSalud/ExamenPersonal.cshtml");
+        }
+        public IActionResult DiagnosticoPersonal()
+        {
+            return View("~/Views/Administrador/MiSalud/DiagnosticoPersonal.cshtml");
+        }
+        public IActionResult MisRecetas()
+        {
+            return View("~/Views/Administrador/MiSalud/MisRecetas.cshtml");
+        }
+
+
+        public IActionResult MisFacturas()
+        {
+            return View("~/Views/Administrador/MiSalud/MisFacturas.cshtml");
+        }
         //usuarios
         public IActionResult Usuarios()
         {
@@ -125,6 +134,11 @@ namespace WEB_UI.Controllers
 
         //Reportes Financieros
         public IActionResult ReportesFinancieros()
+        {
+            return View();
+        }
+
+        public IActionResult ConfiguracionAlertas()
         {
             return View();
         }

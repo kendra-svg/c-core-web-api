@@ -88,16 +88,38 @@ namespace DataAccess.Mappers
             // pat.Expedientes = int.Parse(row["expediente_id_expedientes"].ToString());
             return pat;
         }
+        //public BaseClass BuildObject(Dictionary<string, object> row)
+        //{
+        //    var app = new UsuarioBase()
+        //    {
+        //        Id = int.Parse(row["id_usuario"].ToString()),
+        //        Nombre = row["nombres"].ToString(),
+        //        Apellidos = row["apellidos"].ToString(),
+        //        Correo = row["correos"].ToString(),
+        //        Telefono = row["telefonos"].ToString(),
+        //        Sexo = row["sexos"].ToString(),
+        //        FechaNacimiento = DateTime.Parse(row["fechas_nacimiento"].ToString()),
+        //        Edad = int.Parse(row["edades"].ToString()),
+        //        Direccion = row["direcciones"].ToString(),
+        //        Foto = row["foto"].ToString(),
+        //        Morosidad = int.Parse(row["MOROSIDADES"].ToString()),
+        //        Contrasenna = row["contrasennas"].ToString(),
+        //        Ubicaciones = row["Ubicaciones"].ToString(),
+        //        Identificacion = row["indentificaciones"].ToString()
+        //    };
+        //    return app;
+        //}
 
-        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
+        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> listRows)
         {
-            List<BaseClass> results = new List<BaseClass>();
-            foreach(var row in rowList) 
+            var lsResult = new List<BaseClass>();
+            
+            foreach(var objRow in listRows) 
             {
-                var pat = BuildObject(row);
-                results.Add(pat);
+                var object_row = BuildObject(objRow);
+                lsResult.Add(object_row);
             }
-            return results;
+            return lsResult;
                    
         }
     }
