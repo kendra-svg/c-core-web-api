@@ -47,6 +47,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult VerPacientes()
+        {
+            return View();
+        }
 
         public IActionResult BuscadorExpedientes()
         {
@@ -102,6 +106,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-
+        // Ver pacientes
+       
     }
 }

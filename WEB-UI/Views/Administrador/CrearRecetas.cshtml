@@ -26,6 +26,9 @@
 
     <link href="~/css/severalstyles.css" rel="stylesheet" />
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/StyleRecetas.css">
 </head>
 <body>
 
@@ -50,10 +53,11 @@
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
                 <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
+                <li><a <a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
+
 
 
 
@@ -129,11 +133,17 @@
 
     <script src="~/js/usermenu/menufunctions.js"></script>
 
+   
+@*     <script src="~/js/Recetas/CrearRecetas.js"></script> *@
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-</body>
-</html>
+

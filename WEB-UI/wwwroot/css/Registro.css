@@ -205,6 +205,14 @@ select {
         background-color: #a4fff7;
     }
 
+select#Sexo {
+    width: 527px;
+}
+
+#Identificacion {
+    width: 208%;
+}
+
 /* Estilos para el mapa */
 #map {
     height: 250px;
