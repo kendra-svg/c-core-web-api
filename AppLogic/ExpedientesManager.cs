@@ -10,10 +10,10 @@ namespace AppLogic
 {
     public class ExpedientesManager
     {
-        public string CreateExpediente(Expediente app)
+        public string CreateExpediente(Expediente exp)
         {
             ExpedienteCrud crud = new ExpedienteCrud();
-            crud.Create(app);
+            crud.Create(exp);
             return "ok";
         }
     }

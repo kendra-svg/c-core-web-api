@@ -4,6 +4,8 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/Usuario/CrearUsuario.js"></script>
 }
 
@@ -44,25 +46,37 @@
                     </div>
                 </div>
 
-                <form id="registroForm" action="Registro" method="post">
+                <form id="registroForm" >
                     <div class="input-group">
+                        
                         <div>
-                            <input type="text" class="text" placeholder="Nombres" required="required" id="Nombre" name="Nombre">
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" class="text"  required="required" id="Nombre" name="Nombre">
                         </div>
                         <div>
-                            <input type="text" class="text" placeholder="Apellidos" required="required" id="Apellidos" name="Apellidos">
+                            <label for="Apellidos">Apellidos</label>
+                            <input type="text" class="text"  required="required" id="Apellidos" name="Apellidos">
+                        </div>
+                        </div>
+                    <div class="input-group">
+                            <div>
+                                <label for="Identificacion">Identificación</label>
+                                <input type="text" class="text"  required="required" id="Identificacion" name="Identificacion">
+                            </div>
+                     </div>
+                    <div class="input-group">
+                        <div>
+                            <label for="Telefono">Telefono</label>
+                            <input type="text" class="text" required="required" id="Telefono" name="Telefono">
+                        </div>
+                        <div>
+                            <label for="Correo">Correo</label>
+                            <input type="email" class="text" required="required" id="Correo" name="Correo">
                         </div>
                     </div>
                     <div class="input-group">
                         <div>
-                            <input type="text" class="text" placeholder="Teléfono" required="required" id="Telefono" name="Telefono">
-                        </div>
-                        <div>
-                            <input type="email" class="text" placeholder="Correo" required="required" id="Correo" name="Correo">
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <div>
+                            <label for="Sexo">Sexo</label>
                             <select class="text" required="required" id="Sexo" name="Sexo">
                                 <option value="" disabled selected>Seleccione Sexo</option>
                                 <option value="male">Masculino</option>
@@ -70,6 +84,7 @@
                             </select>
                         </div>
                         <div>
+                            <label for="FechaNacimiento">Fecha de Nacimiento</label>
                             <input type="datetime-local" class="text" placeholder="Fecha de Nacimiento" id="FechaNacimiento" name="FechaNacimiento">
                         </div>
                     </div>
@@ -78,8 +93,9 @@
                         <input type="hidden" id="lng" name="longitud">
                         <div id="map" style="height: 300px;"></div>
                         <div class="coordinates-container">
-                            <input type="text" id="Identificacion" class="text" placeholder="Identificacion">
+                            <label for="coordinates">Ubicación</label>
                             <input type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
+                            <label for= "Direccion">Dirección</label>
                             <select class="text" required="required" id="Direccion" name="Direccion">
                                 <option value="" disabled selected>Seleccione dirección</option>
                                 <option value="1">San José</option>
@@ -106,7 +122,7 @@
                     </div>
                     <div class="btn-container">
                         <hr class="divider-line">
-                        <button type="submit" id="boton-enviar" >Registrarse</button>
+                        <button type="button" id="btnCreate">Registrarse</button>
                     </div>
                 </form>
             </div>

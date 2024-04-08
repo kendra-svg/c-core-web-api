@@ -12,15 +12,15 @@ namespace DataAccess.Crud
 {
     public class UsuarioCrud : CrudFactory
     {
-        UsuarioMapper mapper;
+        UsuarioMapper usuarioMapper;
         public UsuarioCrud() : base()
         {
-            mapper = new UsuarioMapper();
+            usuarioMapper = new UsuarioMapper();
             dao = SqlDao.GetInstance();
         }
         public override void Create(BaseClass dto)
         {
-            SqlOperation operation = mapper.GetCreateStatement(dto);
+            SqlOperation operation = usuarioMapper.GetCreateStatement(dto);
             dao.ExecuteStoredProcedure(operation);
         }
 
@@ -32,13 +32,13 @@ namespace DataAccess.Crud
         public override List<T> RetrieveAll<T>()
         {
             List<T> resultList = new List<T>();
-            SqlOperation operation = mapper.GetRetrieveAllStatement();
+            SqlOperation operation = usuarioMapper.GetRetrieveAllStatement();
 
             List<Dictionary<string, object>> dataResults= dao.ExecuteStoredProcedureWithQuery(operation);
 
             if(dataResults.Count > 0) 
             {
-                var dtoList = mapper.BuildObjects(dataResults);
+                var dtoList = usuarioMapper.BuildObjects(dataResults);
                 foreach (var dto in dtoList)
                 {
                     resultList.Add((T)Convert.ChangeType(dto, typeof(T)));

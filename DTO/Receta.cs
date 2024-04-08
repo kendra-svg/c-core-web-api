@@ -14,7 +14,7 @@ namespace DTO
         public string RecomendacionAdicional { get; set; }
         public string Foto { get; set; }
         public string IdRol { get; set; }
-        public Sede Sedes{ get; set; } //Hace referencia al Id de la clase Sede
+        public Sede Sedes { get; set; } //Hace referencia al Id de la clase Sede
         public Expediente Expedientes { get; set; } //Hace referencia al Id de la clase Expediente
 
     }

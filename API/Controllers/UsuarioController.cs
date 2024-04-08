@@ -1,5 +1,4 @@
 ﻿using AppLogic;
-using DataAccess.Crud;
 using DTO;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -13,10 +12,10 @@ namespace API.Controllers
     public class UsuarioController : ControllerBase
     {
         [HttpPost]
-        public string CreateUsuario(UsuarioBase app)
+        public string CreateUsuario(UsuarioBase user)
         {
             UsuariosManager manager = new UsuariosManager();
-            return manager.CreateUsuario(app);
+            return manager.CreateUsuario(user);
         }
         [HttpGet]
         public List<UsuarioBase> GetUsuarios()
