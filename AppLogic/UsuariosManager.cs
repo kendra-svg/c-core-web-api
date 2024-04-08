@@ -10,15 +10,15 @@ namespace AppLogic
 {
     public class UsuariosManager
     {
-        public string CreateUsuario(UsuarioBase app)
+        public string CreateUsuario(UsuarioBase user)
         {
             UsuarioCrud crud = new UsuarioCrud();
-            crud.Create(app);
+            crud.Create(user);
             return "Ok";
         }
-        public List<UsuarioBase> GetAllUsuarios() 
+        public List<UsuarioBase> GetAllUsuarios()
         {
-            UsuarioCrud crud =new UsuarioCrud();
+            UsuarioCrud crud = new UsuarioCrud();
             return crud.RetrieveAll<UsuarioBase>();
 
         }

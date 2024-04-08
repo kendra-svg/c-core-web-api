@@ -44,7 +44,7 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         }
 
-         public BaseClass BuildObject(Dictionary<string, object> row)
+        public BaseClass BuildObject(Dictionary<string, object> row)
         {
             throw new NotImplementedException();
         }

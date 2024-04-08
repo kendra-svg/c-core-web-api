@@ -12,10 +12,10 @@ namespace API.Controllers
     public class ExpedientesController : ControllerBase
     {
         [HttpPost]
-        public string CreateExpediente(Expediente app) 
+        public string CreateExpediente(Expediente exp)
         {
             ExpedientesManager manager = new ExpedientesManager();
-            return manager.CreateExpediente(app);
+            return manager.CreateExpediente(exp);
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Medicamento: BaseClass
+    public class Medicamento : BaseClass
     {
         public string Nombre { get; set; }
-        
+
     }
 }

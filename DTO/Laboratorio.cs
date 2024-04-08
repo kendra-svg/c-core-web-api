@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Laboratorio: BaseClass
+    public class Laboratorio : BaseClass
     {
         public string NombreExamen { get; set; }
         public string Comentario { get; set; }

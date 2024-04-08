@@ -1,4 +1,10 @@
-﻿namespace DTO
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DTO
 {
     public class UsuarioBase : BaseClass
     {
@@ -24,8 +30,6 @@
         public string Contrasenna { get; set; }
 
         public string Identificacion { get; set; }
-
-        //public Expediente Expedientes { get; set; } //Hace referencia al Id de la clase Expediente
 
         public string Ubicaciones { get; set; } //Hace referencia al Id de la clase Ubicacion
     }
