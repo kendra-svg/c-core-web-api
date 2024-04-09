@@ -8,6 +8,7 @@ namespace DTO
 {
     public class Laboratorio : BaseClass
     {
+        
         public string NombreExamen { get; set; }
         public string Comentario { get; set; }
         public string Foto { get; set; }
