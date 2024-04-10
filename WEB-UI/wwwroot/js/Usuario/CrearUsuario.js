@@ -16,11 +16,10 @@
         usuario.fechaNacimiento = $('#FechaNacimiento').val();
         usuario.sexo = $('#Sexo').find(":selected").val();
         usuario.contrasenna = $('#Contrasenna').val();
-        /*        usuario.contrasenna = $('#ConfirmarContrasenna').val();*/
         usuario.direccion = $('#Direccion').find(":selected").val();
         usuario.foto = $('#Correo').val();
         usuario.identificacion = $('#Identificacion').val();
-        usuario.ubicaciones = $('#Correo').val();
+        usuario.ubicaciones = $('#Direccion').val();
 
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
         console.log(usuario)
@@ -37,14 +36,16 @@
             hasContent: true
         }).done(function (result) {
             Swal.fire({
-                title: "success",
+                title: "Éxito",
                 icon: "info",
-                text: "Registro con éxito",
-                timer: 2000
+                text: "Se ha completado el registro",
             }).then(
                 function () {
                     var view = new CrearUsuario();
                     view.CommunicatePatient();
+                    view.LimpiarFormulario();
+                    view.RedirectToLogin();
+
                 }
             )
         }).fail(function (error) {
@@ -61,7 +62,27 @@
     this.CommunicatePatient = function () {
         console.log("Enviar Correo al Paciente");
     }
+
+    this.RedirectToLogin = function () {
+        window.location = "/Login/Login";
+    }
+
+    this.LimpiarFormulario = function () {
+        $('#Nombre').val("");
+        $('#Apellidos').val("");
+        $('#Telefono').val("");
+        $('Foto').val('');
+        $('#Correo').val("");
+        $('#FechaNacimiento').val("");
+        $('#Sexo').val("");
+        $('#Contrasenna').val("");
+        $('#Direccion').val("");
+        $('#Identificacion').val("");
+        $('#Direccion').val("");
+    }
 }
+
+
 generatedIds = [];
 
 generateUniqueId = () => {
@@ -76,6 +97,7 @@ generateUniqueId = () => {
 
 
 $(document).ready(function () {
+
     var view = new CrearUsuario();
     view.InitView();
 });
