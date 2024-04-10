@@ -1,0 +1,186 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Landing Equipo";
+
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+    <link href="https://getbootstrap.com/docs/5.0/examples/product/product.css" rel="stylesheet">
+    <title> Landing Equipo</title>
+</head>
+
+<body>
+    <header style="background-color: #FF9800;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3" style="font-weight: bold;">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="">
+                    <img style="width: 100px;" class="logo" src="https://i.imgur.com/er826Ey.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end">
+                    <ul class="navbar-nav elementos-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i></i>Nuestro Proyecto mas reciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#Proposito"><i></i>Propositos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#Equipo"><i></i>Nuestro equipo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#Objetivos"><i></i>Objetivos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div id="Proposito" class="container">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2 align-self-center mb-4">
+                <h2 class="featurette-heading text-center">Misión</h2>
+                <p class="lead">Desarrollar soluciones, creativas y efectivas que se adapten a las necesidades de cada uno de nuestros clientes, así como dar mantenimiento y seguimiento para adaptar los proyectos actuales a las necesidades que surjan.</p>
+            </div>
+            <div class="col-md-5 order-md-1 align-self-center mb-4">
+                <img class="featurette-image img-fluid mx-auto d-block" src="https://i.imgur.com/YZUQhWJ.png" alt="Generic placeholder image">
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7 align-self-center mb-4">
+                <h2 class="featurette-heading text-center">Visión</h2>
+                <p class="lead">Aspiramos a desarrollar cada entrega con excelencia y dedicación, manteniendo un sólido compromiso con la calidad y la innovación, pilares esenciales para fomentar un ambiente de trabajo colaborativo y comprometido. Buscamos ser un equipo donde el intercambio de ideas y la cooperación impulsen nuestro crecimiento y aprendizaje colectivo, aplicando activamente nuestros conocimientos. Queremos contribuir al éxito del proyecto cumpliendo y satisfaciendo todas las expectativas.</p>
+            </div>
+            <div class="col-md-5 align-self-center mb-4">
+                <img class="featurette-image img-fluid mx-auto d-block" src="https://i.imgur.com/eBddIt6.jpg" alt="Generic placeholder image">
+            </div>
+        </div>
+    </div>
+
+    <div id="Proposito" class="container-fluid text-center">
+        <div class="bg-light-transparent">
+            <h2 class="text-center text-black">Valores</h2>
+            <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 justify-content-between align-items-center">
+                <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+                    <div class="mx-auto justify-content-center align-items-center" style="width: 80%; height: 140px; border-radius: 21px 21px 0 0;">
+                        <img class="img-fluid" src="https://i.imgur.com/0cHyzo0.png" style="max-width: 150px; height: auto;">
+                    </div>
+                    <div class="my-3 py-3 text-center text-black">
+                        <h2 class="h4">Disciplina</h2>
+                        <p class="lead">Demostrar constancia tanto de forma individual como grupal en la puntualidad en las entregas, asistencia a reuniones y compromiso con la presencialidad.</p>
+                    </div>
+                </div>
+                <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+                    <div class="mx-auto justify-content-center align-items-center" style="width: 80%; height: 140px; border-radius: 21px 21px 0 0;">
+                        <img class="img-fluid" src="https://i.imgur.com/SJNE8ZN.png" style="max-width: 150px; height: auto;">
+                    </div>
+                    <div class="my-3 py-3 text-center text-black">
+                        <h2 class="h4">Compañerismo</h2>
+                        <p class="lead">Escuchar atentamente las ideas de los demás compañeros, respetar las ideas en las que no esté de acuerdo y ofrecer alternativas, así como ser empático y comprensivo ante las posibles situaciones que se puedan presentar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 justify-content-center align-items-center">
+                <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+                    <div class="mx-auto justify-content-center align-items-center" style="width: 80%; height: 140px; border-radius: 21px 21px 0 0;">
+                        <img class="img-fluid" src="https://i.imgur.com/Gq8Uons.png" style="max-width: 150px; height: auto;">
+                    </div>
+                    <div class="my-3 py-3 text-center text-black">
+                        <h2 class="h4">Responsabilidad</h2>
+                        <p class="lead">Honrar los compromisos pactados y completar de manera satisfactoria las obligaciones asignadas. Comprometerse con el equipo y trabajar en cada etapa del desarrollo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="Equipo" class="container">
+        <div class="row justify-content-center mb-10 mt-4">
+            <div class="col-lg-12 text-center">
+                <h1>Nuestro equipo</h1>
+            </div>
+        </div>
+
+
+        <div class="row align-items-stretch justify-content-center">
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light p-4 h-100 text-center">
+                    <img class="rounded-circle" src="https://i.imgur.com/ZyMqwdU.jpg" alt="Generic placeholder image" style=" width:140px; height:140px;object-fit: cover;">
+                    <h2>Fernando Valverde</h2>
+                    <p>SCRUM MASTER</p>
+                </div><!-- /.bg-light -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light p-4 h-100 text-center">
+                    <img class="rounded-circle" src="https://i.imgur.com/o1Z0OjQ.jpg" alt="Generic placeholder image" style=" width:140px; height:140px;object-fit: cover;">
+                    <h2>Christian Ortega</h2>
+                    <p>PRODUCT OWNER</p>
+                </div><!-- /.bg-light -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light p-4 h-100 text-center">
+                    <img class="rounded-circle" src="https://i.imgur.com/3qGjrWO.jpg" alt="Generic placeholder image" style=" width:140px; height:140px;object-fit: cover;">
+                    <h2>Kendra Sancho</h2>
+                    <p>DEVELOPER</p>
+                </div><!-- /.bg-light -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+        <div class="row align-items-stretch justify-content-center">
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light p-4 h-100 text-center">
+                    <img class="rounded-circle mx-auto d-block" src="https://i.imgur.com/rf0dbRG.jpg" alt="Generic placeholder image" style=" width:140px; height:140px;object-fit: cover;">
+                    <h2>Ricardo Valverde</h2>
+                    <p>COORDINADOR DE SOPORTE</p>
+                </div><!-- /.bg-light -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light p-4 h-100 text-center">
+                    <img class="rounded-circle mx-auto d-block" src="https://i.imgur.com/8pWDRe3.png" alt="Generic placeholder image" style=" width:140px; height:140px;object-fit: cover;">
+                    <h2>Vanessa Villegas</h2>
+                    <p>COORDINADOR DE CALIDAD</p>
+                </div><!-- /.bg-light -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+    <hr class="featurette-divider">
+
+    <div id="Objetivos" class="container-fluid text-center">
+        <h2 class="text-center mt-4">Objetivos</h2>
+        <div class="row justify-content-around mx-5">
+            <div class="col-md-5 bg-light p-4 my-3">
+                <h5 class="text-center">Calidad</h5>
+                <p>Implementar estrictas prácticas de control de calidad y procesos de mejora continua para garantizar que los productos o servicios entregados a los clientes cumplan con los más altos estándares de calidad y satisfagan sus necesidades y expectativas.</p>
+            </div>
+
+            <div class="col-md-5 bg-light p-4 my-3">
+                <h5 class="text-center">Comunicación</h5>
+                <p>Promover la transparencia y la apertura en la comunicación, y fomentar la retroalimentación constructiva para garantizar una colaboración fluida y una comprensión compartida de los objetivos y tareas del equipo.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-auto py-3" style="background-color: #FF9800;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="text-muted" style="color: black !important;">Software Unified Sunrise - Todos los derechos reservados &copy; 2024</span>
+            <span class="text-muted" style="color: black !important; margin-left: auto;">Contacto: unifiedsunrise2024@gmail.com</span>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
