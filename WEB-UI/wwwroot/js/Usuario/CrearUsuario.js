@@ -13,7 +13,7 @@
         usuario.apellidos = $('#Apellidos').val();
         usuario.telefono = $('#Telefono').val();
         usuario.correo = $('#Correo').val();
-        usuario.fecha = $('#FechaNacimiento').val();
+        usuario.fechaNacimiento = $('#FechaNacimiento').val();
         usuario.sexo = $('#Sexo').find(":selected").val();
         usuario.contrasenna = $('#Contrasenna').val();
         /*        usuario.contrasenna = $('#ConfirmarContrasenna').val();*/
