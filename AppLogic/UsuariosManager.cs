@@ -22,5 +22,11 @@ namespace AppLogic
             return crud.RetrieveAll<UsuarioBase>();
 
         }
+
+        public List<UsuarioBase> GetUserCredentials(string correo, string contrasenna)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveCredentials<UsuarioBase>(correo, contrasenna);
+        }
     }
 }

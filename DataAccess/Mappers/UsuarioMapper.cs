@@ -85,12 +85,12 @@ namespace DataAccess.Mappers
             return operation;
         }
 
-        public SqlOperation GetRetrieveByCredentialsStatement(string correo, string contrasenna)
+        public SqlOperation GetRetrieveCredentials(string correo, string contrasenna)
         {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName = "SP_VERIFICAR_USUARIO";
-            operation.AddVarCharParam("@Correo", correo);
-            operation.AddVarCharParam("@Contrasenna", contrasenna);
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddVarCharParam("Contrasenna", contrasenna);
             return operation;
         }
 

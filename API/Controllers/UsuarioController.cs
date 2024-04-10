@@ -24,5 +24,12 @@ namespace API.Controllers
             return pm.GetAllUsuarios();
 
         }
+
+        [HttpGet]
+        public List<UsuarioBase> GetUserCredentials(string correo, string contrasenna)
+        {
+            UsuariosManager um = new UsuariosManager();
+            return um.GetUserCredentials(correo, contrasenna);
+        }
     }
 }
