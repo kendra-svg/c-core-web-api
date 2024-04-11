@@ -39,7 +39,7 @@ function CrearUsuario() {
         usuario.identificacion = $('#Identificacion').val();
         usuario.ubicaciones = $('#coordinates').val();
         usuario.rol = "Paciente";
-        usuario.estado = 1;
+        usuario.estado = 0;
         var fechaNacimientoString = $('#FechaNacimiento').val();
         var fechaNacimiento = new Date(fechaNacimientoString);
         var fechaActualString = new Date().toISOString().slice(0, 16);

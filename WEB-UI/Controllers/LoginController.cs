@@ -26,7 +26,7 @@ namespace WEB_UI.Controllers
         public IActionResult Login(UsuarioBase usuario)
         {
             using HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://simepci-api-sln.azurewebsites.net");
+            client.BaseAddress = new Uri("https://apisimepci.azurewebsites.net");
 
             var requestUri = new Uri(client.BaseAddress, "/api/Usuario/GetUserCredentials?correo=" + usuario.Correo + "&contrasenna=" + usuario.Contrasenna);
             var result = client.GetAsync(requestUri).Result;
