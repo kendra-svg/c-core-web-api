@@ -1,10 +1,10 @@
 ﻿
-using DataAccess.DAO;
-using DataAccess.Mappers;
 using DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;
+using Newtonsoft.Json;
+using WEB_UI.Models;
 
 
 namespace WEB_UI.Controllers
@@ -22,24 +22,35 @@ namespace WEB_UI.Controllers
         }
 
 
-
         [HttpPost]
-        public IActionResult Login(UsuarioBase usuario, SqlDao sqlDao)
+        public IActionResult Login(UsuarioBase usuario)
         {
+            using HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://simepci-api-sln.azurewebsites.net");
 
-            bool credencialesValidas = sqlDao.VerificarCredenciales(usuario.Correo, usuario.Contrasenna);
-            //bool esValido = false;
+            var requestUri = new Uri(client.BaseAddress, "/api/Usuario/GetUserCredentials?correo=" + usuario.Correo + "&contrasenna=" + usuario.Contrasenna);
+            var result = client.GetAsync(requestUri).Result;
 
-
-            if (!credencialesValidas)
+            if (result.IsSuccessStatusCode)
             {
+                var resultString = result.Content.ReadAsStringAsync().Result;
+                var usuarios = JsonConvert.DeserializeObject<List<UsuarioBase>>(resultString);
 
-                ViewBag.Message = "Correo electronico o clave incorrectos";
-                return View();
+                var user = usuarios.FirstOrDefault(u => u.Correo == usuario.Correo && u.Contrasenna == usuario.Contrasenna);
+
+                if (user != null)
+                {
+                    HttpContext.Session.SetString(user.Correo, JsonConvert.SerializeObject(user));
+                    return RedirectToAction("LandingPaciente", "Paciente");
+                }
+
             }
-            HttpContext.Session.SetString("user", usuario.Correo);
-            return RedirectToAction("LandingPaciente", "Paciente");
+            ViewBag.Message = "Usuario o contraseña incorrectos";
+            return View();
         }
+
+
+
 
 
         public IActionResult Logout()
