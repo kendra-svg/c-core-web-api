@@ -41,7 +41,19 @@ namespace WEB_UI.Controllers
                 if (user != null)
                 {
                     HttpContext.Session.SetString(user.Correo, JsonConvert.SerializeObject(user));
-                    return RedirectToAction("LandingPaciente", "Paciente");
+                    switch (user.Rol)
+                    {
+                        case "Paciente":
+                            return RedirectToAction("LandingPaciente", "Paciente");
+                        case "Enfermero":
+                            return RedirectToAction("LandingEnfermero", "Enfermero");
+                        case "Doctor":
+                            return RedirectToAction("LandingDoctor", "Doctor");
+                        case "Secretario":
+                            return RedirectToAction("LandingSecretario", "Secretario");
+                        case "Administrador":
+                            return RedirectToAction("LandingAdministrador", "Administrador");
+                    }
                 }
 
             }
