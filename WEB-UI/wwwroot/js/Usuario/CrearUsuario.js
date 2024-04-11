@@ -1,4 +1,22 @@
-﻿function CrearUsuario() {
+﻿const buttonElement = document.querySelector('#botonFoto');
+
+const fotoCloudinary = document.querySelector('#fotoUsuario');
+
+let widget_cloudinary = cloudinary.createUploadWidget({
+    cloudName: 'dzwwoyc7x',
+    uploadPreset: 'preset.Ken'
+}, (err, result) => {
+    if (!err && result && result.event === 'success') {
+        console.log('Imagen subida con éxito', result.info);
+        fotoCloudinary.src = result.info.secure_url;
+    }
+});
+
+botonFoto.addEventListener('click', () => {
+    widget_cloudinary.open();
+}, false);
+
+function CrearUsuario() {
 
     this.InitView = function () {
         $('#btnCreate').click(function (event) {
@@ -17,12 +35,108 @@
         usuario.sexo = $('#Sexo').find(":selected").val();
         usuario.contrasenna = $('#Contrasenna').val();
         usuario.direccion = $('#Direccion').find(":selected").val();
-        usuario.foto = $('#Correo').val();
+        usuario.foto = fotoCloudinary.src;
         usuario.identificacion = $('#Identificacion').val();
-        usuario.ubicaciones = $('#Direccion').val();
+        usuario.ubicaciones = $('#coordinates').val();
+        var fechaNacimientoString = $('#FechaNacimiento').val();
+        var fechaNacimiento = new Date(fechaNacimientoString);
+        var fechaActualString = new Date().toISOString().slice(0, 16);
+        var fechaActual = new Date(fechaActualString);
+        var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+        if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
+            (fechaActual.getMonth() === fechaNacimiento.getMonth() && fechaActual.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
+
+        usuario.edad = edad;
+        console.log(usuario)
+        if (fechaNacimientoString > fechaActualString) {
+            Swal.fire({
+                icon: 'error',
+                text: "La fecha de nacimiento no puede ser mayor a la fecha actual.",
+                title: 'Error'
+            });
+            console.log(fechaActualString)
+            $('#FechaNacimiento').val("");
+            return;
+        }
+
+        if (!usuario.foto) {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor seleccione una foto.",
+                title: 'Error'
+            });
+            return; 
+        }
+
+        if (usuario.telefono.length > 14) { 
+            Swal.fire({
+                icon: 'error',
+                text: "El número de teléfono no puede tener más de 14 dígitos.",
+                title: 'Error'
+            });
+            $('#Telefono').val("");
+            return;
+        }
+
+        if (usuario.identificacion.length > 9) {
+            Swal.fire({
+                icon: 'error',
+                text: "La identificación no puede tener más de 9 dígitos.",
+                title: 'Error'
+            });
+            $('#Identificacion').val("");
+            return;
+        }
+
+
+        if (usuario.contrasenna.length < 8) {
+            Swal.fire({
+                icon: 'error',
+                text: "La contraseña debe tener al menos 8 caracteres.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.contrasenna.length > 12) { 
+            Swal.fire({
+                icon: 'error',
+                text: "La contraseña no puede tener más de 12 caracteres.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.contrasenna != $('#ConfirmarContrasenna').val()) {
+            Swal.fire({
+                icon: 'error',
+                text: "Las contraseñas no coinciden.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.telefono.length < 8) { 
+            Swal.fire({
+                icon: 'error',
+                text: "El número de teléfono no puede tener menos de 8 dígitos.",
+                title: 'Error'
+            });
+            $('#Telefono').val("");
+            return;
+        }
 
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
-        console.log(usuario)
+
         $.ajax({
             headers: {
                 'Accept': "application/json",
@@ -81,6 +195,8 @@
         $('#Direccion').val("");
     }
 }
+
+
 
 
 generatedIds = [];
