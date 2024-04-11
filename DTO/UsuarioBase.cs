@@ -25,7 +25,9 @@ namespace DTO
         public string Direccion { get; set; }
 
         public string Foto { get; set; }
-        public int Morosidad { get; set; }
+
+        public string Rol { get; set; }
+        public int Estado { get; set; }
 
         public string Contrasenna { get; set; }
 
