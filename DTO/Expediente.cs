@@ -15,7 +15,7 @@ namespace DTO
         public string MalosHabitos { set; get; }
         public string RiesgosCardiovasculares { set; get; }
         public string Diabetes { set; get; }
-        public string EnfermedadesCogenitas { set; get; }
+        public string EnfermedadesCongenitas { set; get; }
         public string AntecedentesCancer { set; get; }
         //public int registro_citas_id_citas { set; get; }
         //public int usuarios_id_usuario { set; get; }
