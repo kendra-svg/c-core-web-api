@@ -27,7 +27,8 @@ namespace DataAccess.Mappers
             user.Edad = int.Parse(row["edades"].ToString());
             user.Direccion = row["direcciones"].ToString();
             user.Foto = row["fotos"].ToString();
-            user.Morosidad = int.Parse(row["MOROSIDADES"].ToString());
+            user.Estado = int.Parse(row["estado"].ToString());
+            user.Rol = row["roles"].ToString();
             user.Contrasenna = row["contrasennas"].ToString();
             user.Ubicaciones = row["Ubicaciones"].ToString();
             user.Identificacion = row["indentificaciones"].ToString();
@@ -65,9 +66,10 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("direcciones", user.Direccion);
             operation.AddVarCharParam("fotos", user.Foto);
             operation.AddVarCharParam("contrasenna", user.Contrasenna);
-            operation.AddVarCharParam("indentificaciones", user.Identificacion);
+            operation.AddVarCharParam("identificaciones", user.Identificacion);
             operation.AddVarCharParam("ubicaciones", user.Ubicaciones);
-            operation.AddIntegerParam("morosidades", user.Morosidad);
+            operation.AddVarCharParam("roles", user.Rol);
+            operation.AddIntegerParam("estado", user.Estado);
             //operation.AddVarCharParam("expedientesid", app.Expedientes);
 
             return operation;

@@ -38,11 +38,14 @@ function CrearUsuario() {
         usuario.foto = fotoCloudinary.src;
         usuario.identificacion = $('#Identificacion').val();
         usuario.ubicaciones = $('#coordinates').val();
+        usuario.rol = "Paciente";
+        usuario.estado = 1;
         var fechaNacimientoString = $('#FechaNacimiento').val();
         var fechaNacimiento = new Date(fechaNacimientoString);
         var fechaActualString = new Date().toISOString().slice(0, 16);
         var fechaActual = new Date(fechaActualString);
         var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
 
         if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
             (fechaActual.getMonth() === fechaNacimiento.getMonth() && fechaActual.getDate() < fechaNacimiento.getDate())) {
@@ -59,6 +62,15 @@ function CrearUsuario() {
             });
             console.log(fechaActualString)
             $('#FechaNacimiento').val("");
+            return;
+        }
+
+        if (fechaNacimientoString == "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor seleccione una fecha de nacimiento.",
+                title: 'Error'
+            });
             return;
         }
 
