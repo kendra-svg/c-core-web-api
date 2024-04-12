@@ -41,7 +41,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-      
+        public IActionResult DetallesCitas()
+        {
+            return View();
+        }
         public IActionResult ExamenGeneral()
         {
             return View();
@@ -159,6 +162,11 @@ namespace WEB_UI.Controllers
 
         //Diagnostico
         public IActionResult Diagnostico()
+        {
+            return View();
+        }
+
+        public IActionResult ListaUsuarios()
         {
             return View();
         }

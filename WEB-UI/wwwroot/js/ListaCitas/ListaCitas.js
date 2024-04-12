@@ -13,6 +13,8 @@
     citasTableBody.empty();
 
 
+    var detallesCitasUrl = "/Administrador/DetallesCitas";
+
     citas.forEach(function (cita) {
         var row = "<tr>" +
             "<td>" + cita.fecha + "</td>" +
@@ -25,7 +27,7 @@
             "<td>" + cita.precio + "</td>" +
             "<td>" + cita.estado + "</td>" +
             "<td>" +
-            "<a href='#' class='btn btn-sm btn-outline-success'><i class='bi bi-eye'></i></a>" +
+            "<a href='" + detallesCitasUrl + "'class='btn btn-sm btn-success'><i class='bi bi-eye'></i></a>" +
             "<button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>" +
             "<button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>" +
             "</td>" +
