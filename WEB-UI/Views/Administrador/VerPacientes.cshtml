@@ -61,135 +61,66 @@
 
     @Html.Partial("MenuLateralAdmin")
 
-
     <div class="col text-left" id="menu-quick-access">
+        <div class="row align-items-center justify-content-between mt-3 mb-4">
+            <div class="col-md-3 mt-3">
+                <p class="ml-1">Buscar Usuario</p>
+            </div>
+            <div class="col-md-9">
+                <form class="d-flex mr-4" action="/buscar" method="GET">
+                    <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
+                    <button class="btn btn-outline-success " type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+
         <div class="container">
-            <div class="row align-items-center justify-content-between mt-3 mb-4">
-                <div class="col-md-3 mt-3">
-                    <p class="ml-1">Buscar Usuario</p>
-                </div>
-                <div class="col-md-9">
-                    <form class="d-flex" action="/buscar" method="GET">
-                        <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
-                        <button class="btn btn-outline-success mx-20" type="submit">Buscar</button>
-                    </form>
-                </div>
-            </div>
-            <div class="container mt-2">
-                <div class="row">
-                    <h2>Datos del usuario</h2>
-                    <div class="col-md-6">
-
-                        <img src="https://via.placeholder.com/150" class="img-fluid mt-3 mb-1" alt="Imagen">
-                        <button class="btn btn-success d-block mt-1 ml-3">Subir archivo</button>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end align-top">
-                        <p class="mt-2 mr-2">Asignar Rol</p>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle mr-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Rol
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Doctor</a></li>
-                                <li><a class="dropdown-item" href="#">Enfermero</a></li>
-                                <li><a class="dropdown-item" href="#">Secretario</a></li>
-                            </ul>
-                        </div>
-                        <p class="mt-2 mr-2">Asignar sede</p>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                Asignar sedes
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item" href="#">Sede A</a></li>
-                                <li><a class="dropdown-item" href="#">Sede B</a></li>
-                                <li><a class="dropdown-item" href="#">Sede C</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-5">
-                <h3 class="mb-3">Sede a la que pertenece</h3>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <button class="btn btn-success mb-2">Nuevo Usuario</button>
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Nombre de la sede</th>
-                                <th scope="col">Provincia</th>
-                                <th scope="col">Cantón</th>
-                                <th scope="col">Distrito</th>
+                                <th>ID</th>
+                                <th>Correo</th>
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Sede A</td>
-                                <td>San José</td>
-                                <td>San José</td>
-                                <td>San José</td>
+                                <td>1</td>
+                                <td>usuario1@example.com</td>
+                                <td>Usuario Uno</td>
+                                <td>Doctor</td>
+                                <td>Activo</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
+                                    <button type="button" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>usuario2@example.com</td>
+                                <td>Usuario Dos</td>
+                                <td>Enfermero</td>
+                                <td>Inactivo</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
+                                    <button type="button" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                </td>
                             </tr>
 
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="container mt-4">
-                <h5 class="mb-3">Datos personales</h5>
-                <form>
-                    <div class="mb-3">
-                        <label for="idCorreo" class="form-label">ID o Correo</label>
-                        <input type="text" class="form-control" id="idCorreo" readonly value="usuario@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombres" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" id="nombres" readonly value="Juan">
-                    </div>
-                    <div class="mb-3">
-                        <label for="apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="apellidos" readonly value="Pérez">
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" readonly value="123456789">
-                    </div>
-                    <div class="mb-3">
-                        <label for="sexo" class="form-label">Sexo</label>
-                        <input type="text" class="form-control" id="sexo" readonly value="Masculino">
-                    </div>
-                    <div class="mb-3">
-                        <label for="edad" class="form-label">Edad</label>
-                        <input type="text" class="form-control" id="edad" readonly value="30">
-                    </div>
-                    <div class="mb-3">
-                        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                        <input type="text" class="form-control" id="fechaNacimiento" readonly value="1994-05-20">
-                    </div>
-                    <div class="mb-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="mapa" class="form-label">Dirección</label>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15615.38457881493!2d-83.02889259173582!3d9.999112277566764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0dab225b448a9%3A0x502bb975f8956b88!2sLim%C3%B3n%2C%20Costa%20Rica!5e0!3m2!1sen!2s!4v1650100493638!5m2!1sen!2s" width="400" height="450" style="border:0; background-color:transparent;" allowfullscreen="" loading="lazy"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <button type="button" class="btn btn-primary" onclick="window.location.href='BuscadorExpedientes'">Ver expediente</button>
-                    </div>
-                    <div class="mt-5 mb-5">
-                        <button type="button" class="btn btn-info">Activar cuenta</button>
-                        <button type="button" class="btn btn-danger ml-2">Desactivar cuenta</button>
-                    </div>
-                    <div class="text-center mt-5 mb-2">
-                        <button type="button" class="btn btn-success">Guardar</button>
-                    </div>
-                </form>
-            </div>
         </div>
+
 
     </div>
 

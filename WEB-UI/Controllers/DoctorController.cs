@@ -51,6 +51,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult DetallesPaciente()
+        {
+            return View();
+        }
 
         public IActionResult BuscadorExpedientes()
         {
