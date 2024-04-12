@@ -10,21 +10,8 @@ namespace WEB_UI.Controllers
             return View();
         }
 
-        public IActionResult Agenda()
-        {
-            // Aquí deberías obtener la lista de citas y pasarla a la vista
-            // Por ejemplo:
-            var listaCitas = ObtenerListaCitas(); // Función ficticia para obtener las citas
-            return View(listaCitas);
-        }
-
-        // Función ficticia para obtener la lista de citas
-        private List<Agenda> ObtenerListaCitas()
-        {
-            // Aquí deberías recuperar la lista de citas de tu sistema o base de datos
-            // Por ahora, se simulará una lista vacía
-            return new List<Agenda>();
-        }
+        
+        
         public IActionResult Sedes()
         {
             return View();
@@ -110,7 +97,11 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        // Ver pacientes
-       
+        //Lista general pacientes
+        public IActionResult ListaGeneralPacientes()
+        {
+            return View();
+        }
+
     }
 }
