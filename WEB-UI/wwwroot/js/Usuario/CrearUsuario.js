@@ -1,11 +1,26 @@
-﻿function CrearUsuario() {
+﻿const buttonElement = document.querySelector('#botonFoto');
 
-    /*var self = this;*/ // Mantenemos una referencia a 'this' en 'self' para evitar problemas de alcance
+const fotoCloudinary = document.querySelector('#fotoUsuario');
+
+let widget_cloudinary = cloudinary.createUploadWidget({
+    cloudName: 'dzwwoyc7x',
+    uploadPreset: 'preset.Ken'
+}, (err, result) => {
+    if (!err && result && result.event === 'success') {
+        console.log('Imagen subida con éxito', result.info);
+        fotoCloudinary.src = result.info.secure_url;
+    }
+});
+
+botonFoto.addEventListener('click', () => {
+    widget_cloudinary.open();
+}, false);
+
+function CrearUsuario() {
 
     this.InitView = function () {
-        $('#boton-enviar').click(function (event) {
-            /* event.preventDefault();*/
-           var view = new CrearUsuario();
+        $('#btnCreate').click(function (event) {
+            var view = new CrearUsuario();
             view.SubmitCrearUsuario(); // Llama al método para enviar el usuario
         })
     }
@@ -16,14 +31,121 @@
         usuario.apellidos = $('#Apellidos').val();
         usuario.telefono = $('#Telefono').val();
         usuario.correo = $('#Correo').val();
-        usuario.fecha = $('#FechaNacimiento').val();
+        usuario.fechaNacimiento = $('#FechaNacimiento').val();
         usuario.sexo = $('#Sexo').find(":selected").val();
         usuario.contrasenna = $('#Contrasenna').val();
-        usuario.contrasenna = $('#ConfirmarContrasenna').val();
         usuario.direccion = $('#Direccion').find(":selected").val();
-        usuario.foto = $('#Correo').val();
+        usuario.foto = fotoCloudinary.src;
         usuario.identificacion = $('#Identificacion').val();
-        usuario.ubicaciones = $('#Correo').val();
+        usuario.ubicaciones = $('#coordinates').val();
+        usuario.rol = "Paciente";
+        usuario.estado = 0;
+        var fechaNacimientoString = $('#FechaNacimiento').val();
+        var fechaNacimiento = new Date(fechaNacimientoString);
+        var fechaActualString = new Date().toISOString().slice(0, 16);
+        var fechaActual = new Date(fechaActualString);
+        var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+
+        if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
+            (fechaActual.getMonth() === fechaNacimiento.getMonth() && fechaActual.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
+
+        usuario.edad = edad;
+        console.log(usuario)
+        if (fechaNacimientoString > fechaActualString) {
+            Swal.fire({
+                icon: 'error',
+                text: "La fecha de nacimiento no puede ser mayor a la fecha actual.",
+                title: 'Error'
+            });
+            console.log(fechaActualString)
+            $('#FechaNacimiento').val("");
+            return;
+        }
+
+        if (fechaNacimientoString == "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor seleccione una fecha de nacimiento.",
+                title: 'Error'
+            });
+            return;
+        }
+
+        if (!usuario.foto) {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor seleccione una foto.",
+                title: 'Error'
+            });
+            return; 
+        }
+
+        if (usuario.telefono.length > 14) { 
+            Swal.fire({
+                icon: 'error',
+                text: "El número de teléfono no puede tener más de 14 dígitos.",
+                title: 'Error'
+            });
+            $('#Telefono').val("");
+            return;
+        }
+
+        if (usuario.identificacion.length > 9) {
+            Swal.fire({
+                icon: 'error',
+                text: "La identificación no puede tener más de 9 dígitos.",
+                title: 'Error'
+            });
+            $('#Identificacion').val("");
+            return;
+        }
+
+
+        if (usuario.contrasenna.length < 8) {
+            Swal.fire({
+                icon: 'error',
+                text: "La contraseña debe tener al menos 8 caracteres.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.contrasenna.length > 12) { 
+            Swal.fire({
+                icon: 'error',
+                text: "La contraseña no puede tener más de 12 caracteres.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.contrasenna != $('#ConfirmarContrasenna').val()) {
+            Swal.fire({
+                icon: 'error',
+                text: "Las contraseñas no coinciden.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.telefono.length < 8) { 
+            Swal.fire({
+                icon: 'error',
+                text: "El número de teléfono no puede tener menos de 8 dígitos.",
+                title: 'Error'
+            });
+            $('#Telefono').val("");
+            return;
+        }
 
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
 
@@ -40,34 +162,70 @@
             hasContent: true
         }).done(function (result) {
             Swal.fire({
-                title: "success",
+                title: "Éxito",
                 icon: "info",
-                text: "Usuario Creado",
-                timer: 2000
+                text: "Se ha completado el registro",
             }).then(
                 function () {
                     var view = new CrearUsuario();
-                   /* view.CommunicatePatient();*/
+                    view.CommunicatePatient();
+                    view.LimpiarFormulario();
+                    view.RedirectToLogin();
+
                 }
-            )      
+            )
         }).fail(function (error) {
-            alert("Error al Crear el usuario");
+            Swal.fire({
+                icon: 'error',
+                text: "Error al registrarse",
+                title: 'Error',
+
+            });
             console.log("Error", error);
         });
 
     }
-    //this.CommunicatePatient = function () {
-    //    console.log("Enviar Correo al Paciente");
-    //}
+    this.CommunicatePatient = function () {
+        console.log("Enviar Correo al Paciente");
+    }
+
+    this.RedirectToLogin = function () {
+        window.location = "/Login/Login";
+    }
+
+    this.LimpiarFormulario = function () {
+        $('#Nombre').val("");
+        $('#Apellidos').val("");
+        $('#Telefono').val("");
+        $('Foto').val('');
+        $('#Correo').val("");
+        $('#FechaNacimiento').val("");
+        $('#Sexo').val("");
+        $('#Contrasenna').val("");
+        $('#Direccion').val("");
+        $('#Identificacion').val("");
+        $('#Direccion').val("");
+    }
 }
 
+
+
+
+generatedIds = [];
+
 generateUniqueId = () => {
-    const randomNumber = Math.floor(100000 + Math.random() * 900000);
-    return randomNumber.toString();
+    let newId;
+    do {
+        const randomNumber = Math.floor(100000 + Math.random() * 900000);
+        newId = parseInt(randomNumber);
+    } while (generatedIds.includes(newId));
+    generatedIds.push(newId);
+    return newId;
 }
 
 
 $(document).ready(function () {
+
     var view = new CrearUsuario();
     view.InitView();
 });

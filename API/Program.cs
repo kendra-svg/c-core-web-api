@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Options;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,35 +7,45 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Configurar el CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "Demo_Policy",
         policy =>
-{
-            policy.AllowAnyOrigin();
-            policy.AllowAnyHeader();
-            policy.AllowAnyMethod();
-            }
-        );
+        {
+            policy.AllowAnyOrigin(); //mypage.com , www.mypage.net, http://mypage.net
+            policy.AllowAnyHeader(); //application/json, application/xml, application/text, application/html
+            policy.AllowAnyMethod(); //GET, POST, PUT, DELETE
+
+        });
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-//else
+////Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
 //{
 //    app.UseSwagger();
-//    app.UseSwaggerUI(options =>
-//    {
-//        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-//        options.RoutePrefix = string.Empty;
-//    });
+//app.UseSwaggerUI();
 //}
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/")
+    {
+        context.Response.Redirect("/swagger/index.html");
+        return;
+    }
+    await next();
+
+});
+
 
 app.UseHttpsRedirection();
 
@@ -45,16 +53,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.Run();
-//app.UseRouting();
-
 app.UseCors("Demo_Policy");
-
-//app.UseAuthorization();
-
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers();
-//});
 
 app.Run();

@@ -10,17 +10,19 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-    public class UsuarioCrud : CrudFactory
+    public class LaboratorioCrud: CrudFactory
     {
-        UsuarioMapper usuarioMapper;
-        public UsuarioCrud() : base()
+        LaboratorioMapper laboratorioMapper;
+
+        public LaboratorioCrud()
         {
-            usuarioMapper = new UsuarioMapper();
+            laboratorioMapper = new LaboratorioMapper();
             dao = SqlDao.GetInstance();
         }
+
         public override void Create(BaseClass dto)
         {
-            SqlOperation operation = usuarioMapper.GetCreateStatement(dto);
+            SqlOperation operation = laboratorioMapper.GetCreateStatement(dto);
             dao.ExecuteStoredProcedure(operation);
         }
 
@@ -32,17 +34,18 @@ namespace DataAccess.Crud
         public override List<T> RetrieveAll<T>()
         {
             List<T> resultList = new List<T>();
-            SqlOperation operation = usuarioMapper.GetRetrieveAllStatement();
+            SqlOperation operation = laboratorioMapper.GetRetrieveAllStatement();
 
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
             if (dataResults.Count > 0)
             {
-                var dtoList = usuarioMapper.BuildObjects(dataResults);
+                var dtoList = laboratorioMapper.BuildObjects(dataResults);
                 foreach (var dto in dtoList)
                 {
                     resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
                 }
+
             }
             return resultList;
         }
@@ -52,37 +55,9 @@ namespace DataAccess.Crud
             throw new NotImplementedException();
         }
 
-        public List<T> RetrieveCredentials<T>(string correo, string contrasenna)
-        {
-            List<T> resultList = new List<T>();
-            SqlOperation operation = usuarioMapper.GetRetrieveCredentials(correo, contrasenna);
-
-            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
-
-            if (dataResults.Count > 0)
-            {
-
-                var dtoList = usuarioMapper.BuildObjects(dataResults);
-                foreach (var dto in dtoList)
-                {
-                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
-                }
-
-            }
-            return resultList;
-        }
-
-
-
-
-
-
-
         public override void Update(BaseClass dto)
         {
             throw new NotImplementedException();
         }
-
     }
-
 }
