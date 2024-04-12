@@ -273,7 +273,19 @@
 
 }
 
+/*PARA LA LISTA DE EXAMENES*/
+#btn-subir-examen {
+    text-decoration:none;
+   
+}
 
 
-
-
+/* ESTILO  PARA CREAR SEDES */
+#form-crear-sede input{
+    background-color:white;
+    border-color: black
+}
+#form-crear-sede textarea {
+    background-color: white;
+    border-color: black
+}
