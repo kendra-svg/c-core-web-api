@@ -34,6 +34,14 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult ListaCitas()
+        {
+            return View();
+        }
+        public IActionResult Diagnosticos()
+        {
+            return View();
+        }
         public IActionResult DetallesPaciente()
         {
             return View();
