@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    ViewBag.Title = "Detalles del paciente";
+    ViewBag.Title = "Ver Pacientes";
 }
 
 
@@ -59,7 +59,7 @@
 
 
 
-    @Html.Partial("MenuLateralAdmin")
+    @Html.Partial("MenuLateralEnfermero")
 
 
     <div class="col text-left" id="menu-quick-access">
@@ -70,31 +70,6 @@
                     <div class="col-md-6">
 
                         <img src="https://via.placeholder.com/150" class="img-fluid mt-3 mb-1" alt="Imagen">
-                        <button class="btn btn-success d-block mt-1 ml-3">Subir archivo</button>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end align-top">
-                        <p class="mt-2 mr-2">Asignar Rol</p>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle mr-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Rol
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item text-dark" href="#">Doctor</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">Enfermero</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">Secretario</a></li>
-                            </ul>
-                        </div>
-                        <p class="mt-2 mr-2">Asignar sede</p>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                Asignar sedes
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item text-dark" href="#">Sede A</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">Sede B</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">Sede C</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -167,13 +142,6 @@
                     </div>
                     <div class="mb-4">
                         <button type="button" class="btn btn-primary" onclick="window.location.href='BuscadorExpedientes'">Ver expediente</button>
-                    </div>
-                    <div class="mt-5 mb-5">
-                        <button type="button" class="btn btn-info">Activar cuenta</button>
-                        <button type="button" class="btn btn-danger ml-2">Desactivar cuenta</button>
-                    </div>
-                    <div class="text-center mt-5 mb-2">
-                        <button type="button" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
             </div>
