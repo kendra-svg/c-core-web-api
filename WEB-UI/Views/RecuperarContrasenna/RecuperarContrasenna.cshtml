@@ -5,6 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/RecuperarContrasenna/RecuperarContrasenna.js"></script>
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,38 +27,20 @@
             <div class="agileits-top">
              
                 <div class="input-group">
-                    <label for="Correo">Ingresa tu correo electrónico para enviarte un código temporal </label>
-                    @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo Electrónico" })
+                    <label for="Correo">Correo</label>
+                    <input type="email" class="text" id="Correo" name="Correo">
+                    <p>Ingresa tu correo electrónico, y si está registrado, te enviaremos un codigo de verificación.</p>
+                    @* @Html.TextBoxFor(model => model.Correo, new { @class = "text", placeholder = "Correo Electrónico" }) *@
                 </div>
           
                 <p class="verification-message" id="verificationMessage"></p>
-       
                 <div class="input-group">
-                    <input type="text" id="codigoVerificacion" placeholder="Digita el código temporal enviado" style="display: none;">
-                </div>
-   
-                <div class="input-group">
-                    <button type="button" onclick="mostrarTextbox()">Siguiente</button>
+                    <button type="button" id="btnVerificar">Verificar</button>
                 </div>
             </div>
         </div>
     </div>
-
     <script>
-        function mostrarTextbox() {
-            var textbox = document.getElementById("codigoVerificacion");
-            var correo = document.getElementById("Correo").value;
-            var verificationMessage = document.getElementById("verificationMessage");
-
-            if (correo === "") {
-                verificationMessage.innerText = "Por favor, ingresa un correo válido.";
-                textbox.style.display = "none";
-            }
-            else {
-                verificationMessage.innerText = ""; // Limpia el mensaje de verificación
-                textbox.style.display = "block";
-            }
-        }
     </script>
 </body>
 </html>
