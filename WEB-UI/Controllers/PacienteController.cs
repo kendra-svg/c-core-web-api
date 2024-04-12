@@ -52,6 +52,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult ListaExamenes()
+        {
+            return View();
+        }
 
 
     }
