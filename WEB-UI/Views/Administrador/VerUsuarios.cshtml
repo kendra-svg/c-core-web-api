@@ -1,10 +1,7 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "VerUsuarios";
+    ViewBag.Title = "Ver Pacientes";
 }
-
-
-
 
 
 <!DOCTYPE html>
@@ -19,9 +16,11 @@
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 
 
-    
+   
+
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
     <link href="~/css/severalstyles.css" rel="stylesheet" />
@@ -46,6 +45,7 @@
         </div>
 
     </header>
+    <
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
@@ -69,7 +69,7 @@
             <div class="col-md-9">
                 <form class="d-flex mr-4" action="/buscar" method="GET">
                     <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
-                    <button class="btn btn-outline-success mx-15" type="submit">Buscar</button>
+                    <button class="btn btn-outline-success " type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -77,8 +77,7 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <button class="btn btn-success mb-2">Nuevo Usuario</button>
-                    <table class="table" >
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -89,18 +88,19 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="usuariosTableBody">
-
-                            @* <tr>
+                        <tbody>
+                            <tr>
                                 <td>1</td>
                                 <td>usuario1@example.com</td>
                                 <td>Usuario Uno</td>
                                 <td>Doctor</td>
                                 <td>Activo</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
-                                    
+                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
                                     <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal'">Ver expediente</button>
                                 </td>
                             </tr>
                             <tr>
@@ -110,12 +110,59 @@
                                 <td>Enfermero</td>
                                 <td>Inactivo</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
-                                  
+                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
                                     <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal '">Ver expediente</button>
+                                </td>
+                            <tr>
+                                <td>3</td>
+                                <td>usuario3@example.com</td>
+                                <td>Usuario tres</td>
+                                <td>Secretario</td>
+                                <td>Activo</td>
+                                <td>
+                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                    <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal'">Ver expediente</button>
+                                </td>
+                            <tr>
+                                <td>4</td>
+                                <td>usuario4@example.com</td>
+                                <td>Usuario cuatro</td>
+                                <td>Paciente</td>
+                                <td>Activo</td>
+                                <td>
+                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                    <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal'">Ver expediente</button>
+                                </td>
+                            <tr>
+                                <td>5</td>
+                                <td>usuario5@example.com</td>
+                                <td>Usuario cinco</td>
+                                <td>Paciente</td>
+                                <td>Activo</td>
+                                <td>
+                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                    <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal'">Ver expediente</button>
+                                </td>
                             </tr>
- *@
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -127,11 +174,14 @@
 
     @Html.Partial("_Footer")
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     <script src="~/js/usermenu/menufunctions.js"></script>
-    <script src="~/js/listausuarios/listausuarios.js"></script>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 

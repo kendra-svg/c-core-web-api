@@ -39,6 +39,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult DetallesSedes()
+        {
+            return View();
+        }
         public IActionResult ExamenGeneral()
         {
             return View();
