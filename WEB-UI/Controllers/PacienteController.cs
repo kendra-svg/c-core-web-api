@@ -36,6 +36,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult CrearExamen()
+        {
+            return View();
+        }
         public IActionResult MisRecetas()
         {
             return View();
