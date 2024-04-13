@@ -1,6 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Recetas de pacientes";
+}
+
+
+
+
+<!--no quitar -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <title>@ViewData["Title"]</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,63 +38,81 @@
 
     @Html.Partial("MenuLateralDoctor")
 
-    <div class="container mt-4">
-        <h2 class="text-center mb-4">Lista de Recetas</h2>
-        <input type="text" id="searchInput" class="form-control mb-4" placeholder="Buscar por nombre o identificación..." onkeyup="filterTable()">
 
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Identificación</th>
-                    <th>Nombre del Paciente</th>
-                    <th>Médico</th>
-                    <th>Clínica</th>
-                    <th>Fecha de Emisión</th>
-                    <th>Medicamentos</th>
-                    <th>Dosis Recomendada</th>
-                    <th>Cantidad de Días</th>
-                    <th>Recomendaciones</th>
-                    <th>Foto</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>123456789</td>
-                    <td>Juan Pérez</td>
-                    <td>María González</td>
-                    <td>Clínica San José</td>
-                    <td>2024-04-05</td>
-                    <td>Ibuprofeno, Paracetamol</td>
-                    <td>500mg</td>
-                    <td>7</td>
-                    <td>Tomar con alimentos</td>
-                    <td><img src="ruta/de/la/imagen.jpg" style="max-width: 100px;"></td>
-                    <td>
-                        <button class="btn btn-success btn-sm">Editar</button>
-                        <button class="btn btn-danger btn-sm">Eliminar</button>
-                        <button class="btn btn-info btn-sm">Descargar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>987654321</td>
-                    <td>María Rodríguez</td>
-                    <td>Carlos López</td>
-                    <td>Hospital Central</td>
-                    <td>2024-04-06</td>
-                    <td>Amoxicilina, Omeprazol</td>
-                    <td>250mg</td>
-                    <td>10</td>
-                    <td>Tomar con abundante agua</td>
-                    <td><img src="ruta/de/la/imagen.jpg" style="max-width: 100px;"></td>
-                    <td>
-                        <button class="btn btn-success btn-sm">Editar</button>
-                        <button class="btn btn-danger btn-sm">Eliminar</button>
-                        <button class="btn btn-info btn-sm">Descargar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col text-left">
+        <div class="container">
+            <h2 class="text-center">Lista de Recetas</h2>
+
+
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex w-75">
+                        <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre paciente">
+                        <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Identificacion">
+
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <div class="input-group mb-3">
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Identificación</th>
+                        <th>Nombre del Paciente</th>
+                        <th>Médico</th>
+                        <th>Clínica</th>
+                        <th>Fecha de Emisión</th>
+                        <th>Medicamentos</th>
+                        <th>Dosis Recomendada</th>
+                        <th>Cantidad de Días</th>
+                        <th>Recomendaciones</th>
+                        <th>Foto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123456789</td>
+                        <td>Juan Pérez</td>
+                        <td>María González</td>
+                        <td>Clínica San José</td>
+                        <td>2024-04-05</td>
+                        <td>Ibuprofeno, Paracetamol</td>
+                        <td>500mg</td>
+                        <td>7</td>
+                        <td>Tomar con alimentos</td>
+                        <td><img src="ruta/de/la/imagen.jpg" style="max-width: 100px;"></td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                            <button class="btn btn-info btn-sm">Descargar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>987654321</td>
+                        <td>María Rodríguez</td>
+                        <td>Carlos López</td>
+                        <td>Hospital Central</td>
+                        <td>2024-04-06</td>
+                        <td>Amoxicilina, Omeprazol</td>
+                        <td>250mg</td>
+                        <td>10</td>
+                        <td>Tomar con abundante agua</td>
+                        <td><img src="ruta/de/la/imagen.jpg" style="max-width: 100px;"></td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                            <button class="btn btn-info btn-sm">Descargar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
     </div>
 
     @Html.Partial("_Footer")
