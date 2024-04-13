@@ -60,22 +60,25 @@
 
     <div class="col text-left">
         <h2> Encuesta de Servicio</h2>
-        <div class="row mt-3">
-            <div class="col-2">
-                <p>Nombre del medico a evaluar: </p>
+        <form>
+
+
+            <div class="row mt-3">
+                <div class="col-2">
+                    <p>Nombre del medico a evaluar: </p>
+                </div>
+                <div class="col-4">
+                    <input type="text" class="form-control" />
+                </div>
             </div>
-            <div class="col">
-                <input type="text" class="form-text-input" />
+            <div class="row mt-2">
+                <div class="col">
+                    <p>¿El medico mostro interes genuino en su bienestar y preocupaciones?</p>
+                </div>
             </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col">
-                <p>¿El medico mostro interes genuino en su bienestar y preocupaciones?</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-check">
-                <form>
+            <div class="row">
+                <div class="col form-check">
+
                     <input type="radio" class="radio form-check-input" value="2" id="value1" name="interes" />
                     <label for="value1">1.Muy Malo</label><br />
 
@@ -90,17 +93,17 @@
 
                     <input type="radio" class="radio form-check-input" value="5" id="value5" name="interes" />
                     <label for="value5">5.Muy Bueno</label>
-                </form>
+
+                </div>
             </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col">
-                <p>En general,¿como calificaria su experiencia con este medico?</p>
+            <div class="row mt-2">
+                <div class="col">
+                    <p>En general,¿como calificaria su experiencia con este medico?</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col form-check">
-                <form>
+            <div class="row">
+                <div class="col form-check">
+
                     <input type="radio" class="radio form-check-input" value="2" id="value1" name="exp" />
                     <label for="value1">1.Muy Malo</label><br />
 
@@ -115,17 +118,17 @@
 
                     <input type="radio" class="radio form-check-input" value="5" id="value5" name="exp" />
                     <label for="value5">5.Muy Bueno</label>
-                </form>
+
+                </div>
             </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col">
-                <p>¿Como calificaria la amabilidad y cortesia del medico?</p>
+            <div class="row mt-2">
+                <div class="col">
+                    <p>¿Como calificaria la amabilidad y cortesia del medico?</p>
+                </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col form-check">
-                <form>
+            <div class="row ">
+                <div class="col form-check">
+
                     <input type="radio" class="radio form-check-input" value="2" id="value1" name="interes" />
                     <label for="value1">1.Muy Malo</label><br />
 
@@ -140,19 +143,20 @@
 
                     <input type="radio" class="radio form-check-input" value="5" id="value5" name="interes" />
                     <label for="value5">5.Muy Bueno</label>
-                </form>
+
+                </div>
             </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col">
-                <p>Si tiene un comentario o recomendaciones acerca del servicio, por favor señalarlo en el siguiente apartado.</p>
+            <div class="row mt-2">
+                <div class="col">
+                    <p>Si tiene un comentario o recomendaciones acerca del servicio, por favor señalarlo en el siguiente apartado.</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <textarea class="text-form" id="additional-comments"></textarea>
+            <div class="row">
+                <div class="col">
+                    <textarea class="form-control" id="additional-comments"></textarea>
+                </div>
             </div>
-        </div>
+        </form>
         <div class="row text-center mb-2">
             <div class="col">
                 <button class="btn border">Enviar</button>
@@ -166,7 +170,7 @@
 
 
     </div>
-   
+
     @Html.Partial("_Footer")
 
 
