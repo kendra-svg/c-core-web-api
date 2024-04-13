@@ -2,9 +2,9 @@
 
 namespace WEB_UI.Controllers
 {
-    public class VerificaOTP : Controller
+    public class VerificaOTPController : Controller
     {
-        public IActionResult Index()
+        public IActionResult VerificaOTP()
         {
             return View();
         }

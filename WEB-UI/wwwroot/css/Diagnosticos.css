@@ -53,3 +53,32 @@ h2, h3 {
     .patient-info button:hover {
         background-color: #0056b3;
     }
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+
+
+
