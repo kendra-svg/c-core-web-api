@@ -78,7 +78,7 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <button class="btn btn-success mb-2">Nuevo Usuario</button>
-                    <table class="table">
+                    <table class="table" >
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -89,8 +89,9 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="usuariosTableBody">
+
+                            @* <tr>
                                 <td>1</td>
                                 <td>usuario1@example.com</td>
                                 <td>Usuario Uno</td>
@@ -98,7 +99,7 @@
                                 <td>Activo</td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
-                                    <button type="button" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button>
+                                    
                                     <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
@@ -110,11 +111,11 @@
                                 <td>Inactivo</td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
-                                    <button type="button" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button>
+                                  
                                     <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
-
+ *@
                         </tbody>
                     </table>
                 </div>
@@ -127,8 +128,10 @@
     @Html.Partial("_Footer")
 
 
-    <script src="~/js/usermenu/menufunctions.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/usermenu/menufunctions.js"></script>
+    <script src="~/js/listausuarios/listausuarios.js"></script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 

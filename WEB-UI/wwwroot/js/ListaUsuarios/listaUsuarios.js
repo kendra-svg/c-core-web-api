@@ -1,31 +1,32 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
 
     var usuarios = [
-        { identificaion: "1232342",nombre: "Juan ", apellidos: "Perez", rol: "Doctor" , },
-       
-
+        { identificacion: "1223", correo: "Juan@gmail.com", nombre: "Juan", rol: "Doctor", estado: "Activo" }
     ];
-
 
     var usuarioTableBody = $("#usuariosTableBody");
 
-
     usuarioTableBody.empty();
 
+    var detallesUsuarioUrl = "/Administrador/DetallesUsuario";
 
-    var detallesUsuarioUrl = "/Administrador/VerUsuarios";
-
-    usuarios.forEach(function (usuarios) {
+    usuarios.forEach(function (usuario) {
         var row = "<tr>" +
-            "<td>" + usuarios.identificaion + "</td>" +
-            "<td>" + usuarios.nombre + "</td>" +
-            "<td>" + usuarios.apellidos + "</td>" +
-            "<td>" + usuarios.rol + "</td>" +
+            "<td>" + usuario.identificacion + "</td>" +
+            "<td>" + usuario.correo + "</td>" +
+            "<td>" + usuario.nombre + "</td>" +
+            "<td>" + usuario.rol + "</td>" +
+            "<td>" + usuario.estado + "</td>" +
             "<td>" +
-            "<a href='" + detallesUsuarioUrl + "'class='btn btn-sm btn-success'><i class='bi bi-eye'></i></a>" +
+            "<a href='" + detallesUsuarioUrl + "' class='btn btn-success'><i class='bi bi-eye'></i></a>" +
+            "<a href='#' class='btn btn-danger'><i class='bi bi-trash'></i></a>" +
             "</td>" +
             "</tr>";
         usuarioTableBody.append(row);
     });
 });
 
+
+
+ 

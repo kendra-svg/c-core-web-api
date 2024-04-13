@@ -1,0 +1,54 @@
+﻿@model DTO.UsuarioBase
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+@{
+    ViewBag.Title = "Verificar OTP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/recuperarContrasenna.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="main-w3layouts wrapper">
+        <h1>Recuperar Contraseña</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+
+                <div class="input-group">
+                    <label for="codigoVerificacion">Ingresa el codigo de verificación</label>
+                    <input type="text" id="codigoVerificacion">
+                </div>
+
+                <div class="input-group">
+                    <button type="button" id="botonVerificar">Verificar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarTextbox() {
+            var textbox = document.getElementById("codigoVerificacion");
+            var correo = document.getElementById("Correo").value;
+            var verificationMessage = document.getElementById("verificationMessage");
+
+            if (correo === "") {
+                verificationMessage.innerText = "Por favor, ingresa un correo válido.";
+                textbox.style.display = "none";
+            }
+            else {
+                verificationMessage.innerText = ""; // Limpia el mensaje de verificación
+                textbox.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+
