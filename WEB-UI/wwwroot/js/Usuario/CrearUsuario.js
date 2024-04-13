@@ -45,6 +45,7 @@ function CrearUsuario() {
         var fechaActualString = new Date().toISOString().slice(0, 16);
         var fechaActual = new Date(fechaActualString);
         var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+        usuario.otp = generateUniqueOTP();
 
 
         if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
@@ -222,6 +223,20 @@ generateUniqueId = () => {
     generatedIds.push(newId);
     return newId;
 }
+
+generateOTPS = [];
+
+generateUniqueOTP = () => {
+    let newOTP;
+    do {
+        const randomNumber = Math.floor(100000 + Math.random() * 900000);
+        newOTP = parseInt(randomNumber);
+    } while (generateOTPS.includes(newOTP));
+    generateOTPS.push(newOTP);
+    return newOTP;
+}
+
+
 
 
 $(document).ready(function () {
