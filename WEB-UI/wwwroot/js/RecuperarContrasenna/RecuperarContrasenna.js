@@ -1,9 +1,13 @@
 ﻿function CorreoValidation() {
-    this.InitView = function () {
-        this.GetCorreo();
+
+    var self = this; 
+    var view;
+    self.InitView = function () {
+        
         $(btnVerificar).click(function () {
             var view = new CorreoValidation();
-            view.RedirectEmailVerified();
+            self.GetCorreo();
+            
         });
     }
 
@@ -16,8 +20,9 @@
             dataType: "json",
         }).done(function (result) {
             console.log(result);
-        }
-        ).fail(function (error) {
+            RedirectEmailVerified();
+            
+        }).fail(function (error) {
             console.log("Error", error);
         });
 
@@ -31,6 +36,7 @@
 }
 
 $(document).ready(function () {
+
     var view = new CorreoValidation();
     view.InitView();
 });

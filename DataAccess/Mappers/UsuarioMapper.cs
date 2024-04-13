@@ -32,6 +32,7 @@ namespace DataAccess.Mappers
             user.Contrasenna = row["contrasennas"].ToString();
             user.Ubicaciones = row["Ubicaciones"].ToString();
             user.Identificacion = row["indentificaciones"].ToString();
+            user.OTP = int.Parse(row["otp"].ToString());
 
             return user;
         }
@@ -70,6 +71,7 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("ubicaciones", user.Ubicaciones);
             operation.AddVarCharParam("roles", user.Rol);
             operation.AddIntegerParam("estado", user.Estado);
+            operation.AddIntegerParam("otp", user.OTP);
             //operation.AddVarCharParam("expedientesid", app.Expedientes);
 
             return operation;
