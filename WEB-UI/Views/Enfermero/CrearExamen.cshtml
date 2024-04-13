@@ -60,21 +60,43 @@
     @Html.Partial("MenuLateralEnfermero")
 
     <div class="col text-left">
-        <a href="ExamenPersonal" class="btn btn-outline-success me-3 mt-3">Volver</a>
+        <a href="ExamenGeneral" class="btn btn-outline-success me-3 mt-3">Volver</a>
         <h2 class="mt-5 text-center">Crear un examen</h2>
         <div class="container">
 
             <form>
                 <div class="form-group">
                     <label for="especialidad">Especialidad:</label>
-                    <input type="text" class="form-control" id="especialidad">
+                    <select class="form-control" id="Especialidad">
+                        <option>Medicina general</option>
+                        <option>Cardiología</option>
+                        <option>Oftamología</option>
+                        <option>Neumología</option>
+                        <option>Otorrinolaringolía</option>
+                        <option>Gastroenteorología</option>
+                        <option>Laboratorio químico</option>
+                        <option>Ginecología</option>
+                        <option>Oncología</option>
+                        <option>Radiología</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="tipoExamen">Tipo de Examen:</label>
                     <select class="form-control" id="tipoExamen">
-                        <option>Examen A</option>
-                        <option>Examen B</option>
-                        <option>Examen C</option>
+                        <option>Parametros atropmetricos (Medición de talla y peso - Índice de Masa Corporal) </option>
+                        <option>Evaluación oftalmológica (agudeza visual - fondo del ojo) </option>
+                        <option>Pruebas cardiológicas (Electrocardiograma - ecocardiograma - pruebas ergonométricas para evaluar la salud del corazón)</option>
+                        <option>Pruebas pulmonares (radiologia de torax - Espirometría )</option>
+                        <option>Analitica completa ( pruebas hepáticas, lipídicas - tiroideas - marcadores tumorales)</option>
+                        <option>Audiometría (Prueba para evaluar la capacidad auditiva)</option>
+                        <option>Ecografía de abdomen y pelvis (Imágenes de ultrasonido para examinar los órganos internos del abdomen y pelvis)</option>
+                        <option>Estudios endoscópicos (Exámenes para visualizar el interior de los órganos)</option>
+                        <option>citología con test de Papanicolaou (Examen ginecológico para detectar anomalías celulares en el cuello uterino)</option>
+                        <option>Mamografía</option>
+                        <option>prueba de deteccion temprana de cancer </option>
+                        <option>Examen de heces</option>
+                        <option>Estudios endoscópicos</option>
+
                     </select>
                 </div>
                 <div class="form-group">
@@ -89,8 +111,8 @@
                     <label for="comentario">Agregar Comentario:</label>
                     <textarea class="form-control" id="comentario" rows="3"></textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="input-foto" class="form-label">Subir Foto de examen </label>
+                <div class="mb-3 mt-5">
+                    <label for="input-foto" class="form-label"><strong>También puedes Subir la foto del examen</strong></label>
                     <input type="file" class="form-control" id="input-foto">
                 </div>
 
