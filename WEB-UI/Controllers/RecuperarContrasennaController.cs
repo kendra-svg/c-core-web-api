@@ -1,4 +1,6 @@
-﻿using DTO;
+﻿using Azure.Communication.Email;
+using Azure;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -51,14 +53,18 @@ namespace WEB_UI.Controllers
 
                 if (user != null)
                 {
+
                     ViewBag.Correo = user.Correo;
+                   HttpContext.Session.SetString("Correo", user.Correo);
                     return RedirectToAction("VerificarOTP");
                 }
             }
             ViewBag.Message = "Correo no encontrado";
             return View("RecuperarContrasenna");
         }
-                
-            
+
+       
+
+
     }
 }
