@@ -18,7 +18,9 @@ namespace DataAccess.Mappers
             lab.NombreExamen = row["nombre_examen"].ToString();
             lab.Comentario = row["comentario"].ToString();
             lab.Foto = row["foto"].ToString();
+            lab.Fecha = DateTime.Parse(row["fecha"].ToString());
 
+            
             return lab;
         }
 
@@ -36,7 +38,7 @@ namespace DataAccess.Mappers
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_INSERT_laboratorios";
+            operation.ProcedureName = "SP_INSERT_laboratorio";
 
             Laboratorio lab = (Laboratorio)dto;
 
@@ -44,6 +46,7 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("nombreexamen", lab.NombreExamen);
             operation.AddVarCharParam("comentarios", lab.Comentario);
             operation.AddVarCharParam("foto", lab.Foto);
+            operation.AddDatetimeParam("fecha", lab.Fecha);
 
             return operation;
         }
