@@ -104,6 +104,54 @@ function CrearUsuario() {
             return;
         }
 
+        if (usuario.sexo === "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor seleccione un sexo.",
+                title: 'Error'
+            });
+            return;
+        }
+
+
+        if (usuario.nombre === "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor ingrese un nombre.",
+                title: 'Error'
+            });
+            return;
+        }
+
+        if (usuario.apellidos === "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor ingrese un apellido.",
+                title: 'Error'
+            });
+            return;
+        }
+
+        if (usuario.correo === "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor ingrese un correo.",
+                title: 'Error'
+            });
+            return;
+        }
+
+        if (usuario.direccion === "") {
+            Swal.fire({
+                icon: 'error',
+                text: "Por favor ingrese una dirección.",
+                title: 'Error'
+            });
+            return;
+        }
+
+
+
 
         if (usuario.contrasenna.length < 8) {
             Swal.fire({
@@ -164,7 +212,7 @@ function CrearUsuario() {
         }).done(function (result) {
             Swal.fire({
                 title: "Éxito",
-                icon: "info",
+                icon: "success",
                 text: "Se ha completado el registro",
             }).then(
                 function () {
