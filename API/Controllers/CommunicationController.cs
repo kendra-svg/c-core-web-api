@@ -11,10 +11,10 @@ namespace API.Controllers
     public class CommunicationController : ControllerBase
     {
         [HttpPost]
-        public async Task<string> SendEmail(string emailAddresss)
+        public async Task<string> SendEmail(string correo, string cuerpo, int otp, string asunto)
         {
             AdminEmail ae = new AdminEmail();
-            await ae.SendEmail(emailAddresss);
+            await ae.SendEmail(correo, cuerpo, otp, asunto);
             return "Ok";
         }
     }

@@ -33,7 +33,7 @@ function CrearUsuario() {
         usuario.correo = $('#Correo').val();
         usuario.fechaNacimiento = $('#FechaNacimiento').val();
         usuario.sexo = $('#Sexo').find(":selected").val();
-        usuario.contrasenna = $('#Contrasenna').val();
+        /*usuario.contrasenna = $('#Contrasenna').val();*/
         usuario.direccion = $('#Direccion').find(":selected").val();
         usuario.foto = fotoCloudinary.src;
         usuario.identificacion = $('#Identificacion').val();
@@ -46,6 +46,7 @@ function CrearUsuario() {
         var fechaActual = new Date(fechaActualString);
         var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
         usuario.otp = generateUniqueOTP();
+        guardaOtp = usuario.otp;
         localStorage.setItem('correo', usuario.correo);
 
 
@@ -152,29 +153,10 @@ function CrearUsuario() {
             return;
         }
 
+  
 
-
-
-        if (usuario.contrasenna.length < 8) {
-            Swal.fire({
-                icon: 'error',
-                text: "La contraseña debe tener al menos 8 caracteres.",
-                title: 'Error'
-            });
-            $('#Contrasenna').val("");
-            $('#ConfirmarContrasenna').val('')
-            return;
-        }
-
-        if (usuario.contrasenna.length > 12) { 
-            Swal.fire({
-                icon: 'error',
-                text: "La contraseña no puede tener más de 12 caracteres.",
-                title: 'Error'
-            });
-            $('#Contrasenna').val("");
-            $('#ConfirmarContrasenna').val('')
-            return;
+        if ($('#Contrasenna').val() == $('#ConfirmarContrasenna').val()) {
+            usuario.contrasenna = $('#Contrasenna').val();
         }
 
         if (usuario.contrasenna != $('#ConfirmarContrasenna').val()) {
@@ -188,6 +170,29 @@ function CrearUsuario() {
             return;
         }
 
+        if (usuario.contrasenna.length < 8) {
+            Swal.fire({
+                icon: 'error',
+                text: "La contraseña debe tener al menos 8 caracteres.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+        if (usuario.contrasenna.length > 12) {
+            Swal.fire({
+                icon: 'error',
+                text: "La contraseña no puede tener más de 12 caracteres.",
+                title: 'Error'
+            });
+            $('#Contrasenna').val("");
+            $('#ConfirmarContrasenna').val('')
+            return;
+        }
+
+
         if (usuario.telefono.length < 8) { 
             Swal.fire({
                 icon: 'error',
@@ -197,7 +202,7 @@ function CrearUsuario() {
             $('#Telefono').val("");
             return;
         }
-
+        /*console.log(sessionStorage.getItem('correo'))*/
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
 
         $.ajax({
@@ -221,7 +226,9 @@ function CrearUsuario() {
                     var view = new CrearUsuario();
                     view.CommunicatePatient();
                     view.LimpiarFormulario();
-                    view.RedirectToLogin();
+                    /*view.RedirectToLogin()*/;
+                    sessionStorage.setItem('correo', usuario.correo);
+                    window.location = "/VerificaCuenta/VerificaCuenta";
 
                 }
             )
@@ -237,21 +244,37 @@ function CrearUsuario() {
 
     }
     this.CommunicatePatient = function () {
-        var correo = localStorage.getItem('correo');
-        var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?emailAddress=" + correo;
+        var correo = $('#Correo').val();
+        var nombreCompleto = $('#Nombre').val() + " " + $('#Apellidos').val();
+        var otp = guardaOtp;
+        console.log(otp)
+        var cuerpo = "Hola " + nombreCompleto + ",\n\n" + "Gracias por registrarte en Simepci. Para completar tu registro, por favor ingresa el siguiente código de verificación en la página: " + otp + ".\n\n";
+        console.log("Correo enviado en la solicitud:", correo);
+        var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?correo=" + correo + "&cuerpo=" + cuerpo + "&otp=" + otp + "&asunto=Verificación de cuenta";
 
         $.ajax({
             url: apiUrl,
             method: "POST",
             contentType: "application/json;charset=utf-8",
-            dataType: "json",
+            dataType: "json"
 
         }).done(function (data) {
-            console.log("Correo enviado", data);
-        }
-
-        ).fail(function (error) {
-            console.log("Error", error);
+            console.log("Se ha enviado un correo con el código OTP" + data)
+       
+        }).fail(function (xhr, textStatus, errorThrown) {
+            if (xhr.responseText === "Ok") {
+                Swal.fire({
+                    icon: 'success',
+                    text: "Correo de verificación enviado con éxito",
+                    title: 'Success',
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr.responseText,
+                    title: 'Error',
+                });
+            }
         });
 
     }
@@ -269,6 +292,8 @@ function CrearUsuario() {
         $('#FechaNacimiento').val("");
         $('#Sexo').val("");
         $('#Contrasenna').val("");
+        $('#ConfirmarContrasenna').val("");
+        $('#Coordinates').val("");
         $('#Direccion').val("");
         $('#Identificacion').val("");
         $('#Direccion').val("");
