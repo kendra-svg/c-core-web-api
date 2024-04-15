@@ -46,6 +46,8 @@ function CrearUsuario() {
         var fechaActual = new Date(fechaActualString);
         var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
         usuario.otp = generateUniqueOTP();
+        localStorage.setItem('correo', usuario.correo);
+
 
 
         if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
@@ -235,7 +237,23 @@ function CrearUsuario() {
 
     }
     this.CommunicatePatient = function () {
-        console.log("Enviar Correo al Paciente");
+        var correo = localStorage.getItem('correo');
+        var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?emailAddress=" + correo;
+
+        $.ajax({
+            url: apiUrl,
+            method: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+
+        }).done(function (data) {
+            console.log("Correo enviado", data);
+        }
+
+        ).fail(function (error) {
+            console.log("Error", error);
+        });
+
     }
 
     this.RedirectToLogin = function () {
