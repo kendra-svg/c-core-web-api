@@ -1,10 +1,12 @@
 ﻿function SedeList() {
+    var api_url = API_URL_BASE + "/api/Sedes/GetSedes";
     this.InitView = function () {
         this.ListarSede();
     }
     this.ListaSede = function () {
         $.ajax({
-            url: "",
+
+            url: api_url,
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
