@@ -61,43 +61,74 @@
     @Html.Partial("MenuLateralSecretario")
 
 
-    <div class="col text-left" >
+    <div class="col text-left">
         <div class="container">
             <h2 class="text-center">Mis Recetas</h2>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Nombre del Paciente: Juan Pérez</h5>
-                    <p class="card-text"><strong>Identificación del Paciente:</strong> 123456789</p>
-                    <p class="card-text"><strong>Nombre del Médico:</strong> Dra. María González</p>
-                    <p class="card-text"><strong>Clínica:</strong> Clínica San José</p>
-                    <p class="card-text"><strong>Consultorio:</strong> 205</p>
-                    <p class="card-text"><strong>Fecha de Emisión:</strong> 2024-04-05</p>
-                    <p class="card-text"><strong>Medicamentos:</strong> Ibuprofeno, Paracetamol</p>
-                    <p class="card-text"><strong>Dosis Recomendada:</strong> 500mg</p>
-                    <p class="card-text"><strong>Cantidad de Días:</strong> 7</p>
-                    <p class="card-text"><strong>Recomendaciones:</strong> Tomar con alimentos</p>
+
+
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex w-75">
+                        <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre medico">
+
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <div class="input-group mb-3">
+                        </div>
+                    </form>
                 </div>
-                <div class="card-footer d-flex justify-content-center">
-                    <button class="btn btn-success">Descargar Receta</button>
-                </div>
-            </div>
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Nombre del Paciente: María Rodríguez</h5>
-                    <p class="card-text"><strong>Identificación del Paciente:</strong> 987654321</p>
-                    <p class="card-text"><strong>Nombre del Médico:</strong> Dr. Carlos López</p>
-                    <p class="card-text"><strong>Clínica:</strong> Hospital Central</p>
-                    <p class="card-text"><strong>Consultorio:</strong> 305</p>
-                    <p class="card-text"><strong>Fecha de Emisión:</strong> 2024-04-06</p>
-                    <p class="card-text"><strong>Medicamentos:</strong> Amoxicilina, Omeprazol</p>
-                    <p class="card-text"><strong>Dosis Recomendada:</strong> 250mg</p>
-                    <p class="card-text"><strong>Cantidad de Días:</strong> 10</p>
-                    <p class="card-text"><strong>Recomendaciones:</strong> Tomar con abundante agua</p>
-                </div>
-                <div class="card-footer d-flex justify-content-center">
-                    <button class="btn btn-success">Descargar Receta</button>
-                </div>
-            </div>
+            </nav>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Médico</th>
+                        <th>Clínica</th>
+                        <th>Consultorio</th>
+                        <th>Fecha de Emisión</th>
+                        <th>Medicamentos</th>
+                        <th>Dosis Recomendada</th>
+                        <th>Cantidad de Días</th>
+                        <th>Recomendaciones</th>
+                        <th>Foto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>María González</td>
+                        <td>Clínica San José</td>
+                        <td>206</td>
+                        <td>2024-04-05</td>
+                        <td>Ibuprofeno, Paracetamol</td>
+                        <td>500mg</td>
+                        <td>7</td>
+                        <td>Tomar con alimentos</td>
+                        <td><img src="ruta/de/la/imagen.jpg" style="max-width: 100px;"></td>
+                        <td>
+                            <button class="btn btn-info btn-sm">Descargar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Carlos López</td>
+                        <td>Hospital Central</td>
+                        <td>205</td>
+                        <td>2024-04-06</td>
+                        <td>Amoxicilina, Omeprazol</td>
+                        <td>250mg</td>
+                        <td>10</td>
+                        <td>Tomar con abundante agua</td>
+                        <td><img src="ruta/de/la/imagen.jpg" style="max-width: 100px;"></td>
+                        <td>
+                            <button class="btn btn-info btn-sm">Descargar</button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
         </div>
 
     </div>

@@ -1,6 +1,6 @@
 ﻿function setCorreoValue() {
     $("#Correo").val(sessionStorage.getItem("correo"));
-    
+
 }
 
 

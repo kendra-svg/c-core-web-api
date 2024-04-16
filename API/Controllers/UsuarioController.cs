@@ -38,5 +38,12 @@ namespace API.Controllers
             UsuariosManager um = new UsuariosManager();
             return um.GetUserByCorreo(correo);
         }
+
+        [HttpGet]
+        public List<UsuarioBase> GetOTPByEmail(string correo)
+        {
+            UsuariosManager um = new UsuariosManager();
+            return um.GetOTPByEmail(correo);
+        }
     }
 }
