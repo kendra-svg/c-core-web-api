@@ -73,6 +73,7 @@ namespace DataAccess.Mappers
             operation.AddIntegerParam("estado", user.Estado);
             operation.AddIntegerParam("otp", user.OTP);
             operation.AddVarCharParam("verificacion", user.Verificacion);
+            operation.AddDatetimeParam("timeout", user.Timeout);
             //operation.AddVarCharParam("expedientesid", app.Expedientes);
 
             return operation;

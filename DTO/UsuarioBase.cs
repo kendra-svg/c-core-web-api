@@ -37,5 +37,7 @@ namespace DTO
 
         public int OTP { get; set; }
         public string Verificacion { get; set; }
+
+        public DateTime Timeout { get; set; }
     }
 }
