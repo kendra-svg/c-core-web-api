@@ -36,5 +36,6 @@ namespace DTO
         public string Ubicaciones { get; set; } //Hace referencia al Id de la clase Ubicacion
 
         public int OTP { get; set; }
+        public string Verificacion { get; set; }
     }
 }
