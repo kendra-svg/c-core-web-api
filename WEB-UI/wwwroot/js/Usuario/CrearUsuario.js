@@ -41,6 +41,7 @@ function CrearUsuario() {
         usuario.rol = "Paciente";
         usuario.estado = 0;
         usuario.verificacion = "Incompleta";
+        usuario.timeout = fechaActual;
         var fechaNacimientoString = $('#FechaNacimiento').val();
         var fechaNacimiento = new Date(fechaNacimientoString);
         var fechaActualString = new Date().toISOString().slice(0, 16);
