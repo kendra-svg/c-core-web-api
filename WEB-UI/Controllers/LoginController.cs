@@ -1,5 +1,4 @@
-﻿
-using DTO;
+﻿using DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;

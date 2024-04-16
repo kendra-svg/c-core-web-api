@@ -117,6 +117,15 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveUserByOtpAndEmail (string correo, int otp)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_USER_BY_OTP_AND_EMAIL";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddIntegerParam("OTP", otp);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
