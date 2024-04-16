@@ -85,7 +85,7 @@ namespace DataAccess.Mappers
         public SqlOperation GetRetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_GET_ALL_USERS";
+            operation.ProcedureName = "SP_GET_PPATIENTS";
             return operation;
         }
 
