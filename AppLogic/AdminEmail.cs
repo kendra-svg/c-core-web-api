@@ -9,7 +9,7 @@ namespace AppLogic
 {
     public class AdminEmail
     {
-        public async Task<string> SendEmail(string correo, string cuerpo, int otp, string asunto) // DTO Email 
+        public async Task<string> SendEmail(string correo, string cuerpo, string asunto) // DTO Email 
         {
             string connectionString = "endpoint=https://simepci-email.unitedstates.communication.azure.com/;accesskey=2L2jaulXE00cBujlGXm+c7MsfVlTzbr7ZGx321XgdBZgGYicwso177C+2bZ2VCviCAWc8d+f1cxzcENl2/iL0g==";
 
