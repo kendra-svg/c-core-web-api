@@ -16,5 +16,10 @@ namespace AppLogic
             crud.Create(app);
             return "ok";
         }
+        public List<Sede> GetAllSedes()
+        {
+            SedeCrud crud = new SedeCrud();
+            return crud.RetrieveAll<Sede>();
+        }
     }
 }

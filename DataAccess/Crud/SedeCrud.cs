@@ -12,16 +12,16 @@ namespace DataAccess.Crud
 {
     public class SedeCrud : CrudFactory
     {
-        SedeMapper mapper;
+        SedeMapper sedemapper;
 
         public SedeCrud() : base() 
         {
-            mapper = new SedeMapper();
+            sedemapper = new SedeMapper();
             dao = SqlDao.GetInstance();
         }
         public override void Create(BaseClass dto)
         {
-            SqlOperation operation = mapper.GetCreateStatement(dto);
+            SqlOperation operation = sedemapper.GetCreateStatement(dto);
             dao.ExecuteStoredProcedure(operation);
         }
 
@@ -32,7 +32,20 @@ namespace DataAccess.Crud
 
         public override List<T> RetrieveAll<T>()
         {
-            throw new NotImplementedException();
+            List<T> resultList = new List<T>();
+            SqlOperation operation = sedemapper.GetRetrieveAllStatement();
+
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+           
+            if(dataResults.Count > 0)
+            {
+                var dtoList = sedemapper.BuildObjects(dataResults);
+                foreach(var dto in dtoList) 
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
         }
 
         public override T RetrieveById<T>(int id)

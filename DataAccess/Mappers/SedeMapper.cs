@@ -21,7 +21,7 @@ namespace DataAccess.Mappers
             sedes.Direccion = row["direcciones"].ToString();
             sedes.Provincia = row["provincias"].ToString();
             sedes.Canton = row["cantones"].ToString();
-            sedes.Distrito = row["distrito"].ToString();
+            sedes.Distrito = row["distritos"].ToString();
             sedes.Foto = row["fotos"].ToString();
             sedes.Ubicacion = row["ubicaciones"].ToString();
 
@@ -62,14 +62,14 @@ namespace DataAccess.Mappers
 
         public SqlOperation GetDeleteStatement(BaseClass dto)
         {
-            SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_GET_SEDES";
-            return operation;
+            throw new NotImplementedException();
         }
 
         public SqlOperation GetRetrieveAllStatement()
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_SEDES";
+            return operation;
         }
 
         public SqlOperation GetRetrieveByIdStatement(string id)
