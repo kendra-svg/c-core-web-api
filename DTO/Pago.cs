@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Pago
+    public class Pago : BaseClass
     {
         public DateTime FechaEmision { get; set; }
         public DateTime FechaPago { get; set; }
         public int Monto { get; set; }
-        public UsuarioBase Usuario { get; set; }
+       // public UsuarioBase Usuario { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using WEB_UI.Models;
 using DTO; 
 
 namespace WEB_UI.Controllers
@@ -53,7 +52,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult BuscadorExpedientes()
+        public IActionResult ExpedientePaciente()
         {
             return View();
         }
@@ -71,6 +70,10 @@ namespace WEB_UI.Controllers
             return View();
         }
         public IActionResult RecetasPacientes()
+        {
+            return View();
+        }
+        public IActionResult CrearRecetas()
         {
             return View();
         }

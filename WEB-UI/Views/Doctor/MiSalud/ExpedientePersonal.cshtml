@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Mi Expediente";
+    ViewData["Title"] = "Expediente Personal";
 }
 
 
@@ -50,6 +50,7 @@
             </ul>
         </div>
     </div>
+
 
 
 
@@ -114,69 +115,68 @@
         <h3 class="mt-3">Historial Clinico</h3>
         <div class="container mt-3">
             <div class="form-control">
-                <table class="table table-hover">
+                <table class="table table-hover" id="table-historial-clinico">
                     <thead>
                         <tr>
                             <th class="col-2">Historial</th>
-                            <th class="col-1">Si</th>
-                            <th class="col-1">No</th>
+                          
                             <th class="col">Cuales</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Antecedentes Personales</td>
-                            <td><input type="radio" name="antecedentePersonales" /></td>
-                            <td><input type="radio" name="antecedentePersonales" /></td>
-                            <td>Content</td>
+                           
+                            <td><textarea name="antecedentePersonales"></textarea></td>
+                           
                         </tr>
                         <tr>
                             <td>Tratamientos Farmacologicos</td>
-                            <td><input type="radio" name="tratamientos" /></td>
-                            <td><input type="radio" name="tratamientos" /></td>
-                            <td>Content</td>
+                            
+                            <td><textarea name="tratamientos"></textarea></td>
+                        
                         </tr>
                         <tr>
                             <td>Antecedentes Familiares</td>
-                            <td><input type="radio" name="antecedentes" /></td>
-                            <td><input type="radio" name="antecedentes" /></td>
-                            <td>Content</td>
+                      
+                            <td><textarea name="antecedentes"></textarea></td>
+                           
                         </tr>
                         <tr>
                             <td>Enfermedades Cronicas</td>
-                            <td><input type="radio" name="cronicas" /></td>
-                            <td><input type="radio" name="cronicas" /></td>
-                            <td>Content</td>
+                         
+                            <td><textarea name="cronicas" ></textarea></td>
+                    
                         </tr>
                         <tr>
                             <td>Habitos no saludables</td>
-                            <td><input type="radio" name="habitos" /></td>
-                            <td><input type="radio" name="habitos" /></td>
-                            <td>Content</td>
+                          
+                            <td><textarea name="habitos"></textarea></td>
+                        
                         </tr>
                         <tr>
                             <td>Factores de riesgo cardiovasculares</td>
-                            <td><input type="radio" name="cardiovascular" /></td>
-                            <td><input type="radio" name="cardiovascular" /></td>
-                            <td>Content</td>
+                     
+                            <td><textarea name="cardiovascular" ></textarea></td>
+                           
                         </tr>
                         <tr>
                             <td>Diabetes</td>
-                            <td><input type="radio" name="diabetes" /></td>
-                            <td><input type="radio" name="diabetes" /></td>
-                            <td>Content</td>
+                           
+                            <td><textarea name="diabetes" ></textarea></td>
+                            
                         </tr>
                         <tr>
                             <td>Enfermedades Congenitas</td>
-                            <td><input type="radio" name="congenitas" /></td>
-                            <td><input type="radio" name="congenitas" /></td>
-                            <td>Content</td>
+                           
+                            <td><textarea name="congenitas" ></textarea></td>
+                           
                         </tr>
                         <tr>
                             <td>Cancer</td>
-                            <td><input type="radio" name="cancer" /></td>
-                            <td><input type="radio" name="cancer" /></td>
-                            <td>Content</td>
+                           
+                            <td><textarea name="cancer" ></textarea></td>
+                            
                         </tr>
                     </tbody>
                 </table>

@@ -61,8 +61,10 @@
     <div class="col text-left" >
         <div class="container">
             <h2>Examenes Personales</h2>
-            <div class="mt-5 d-flex justify-content-center">
-                <a href="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
+            <div class="mb-3 mt-5 d-flex align-items-center">
+                <label for="input-foto" class="form-label"><strong>Adjuntar documento de exámenes</strong></label>
+                <input type="file" class="form-control me-2" id="input-foto">
+                <button type="button" class="btn btn-success">Subir archivo</button>
             </div>
 
             <form>
@@ -100,14 +102,20 @@
                     </div>
                 </div>
             </form>
-            <div class="container mt-5">
-                <h5>Listado de Exámenes</h5>
+            <div class="container">
+                <h2>Listado de Exámenes</h2>
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Examen 1</h5>
                         <p class="card-text"><strong>Especialidad:</strong> Cardiología</p>
                         <p class="card-text"><strong>Tipo de Examen:</strong> Ecocardiograma</p>
                         <p class="card-text"><strong>Fecha:</strong> 2024-03-15</p>
+                        <p class="card-text"><strong>Diagnóstico:</strong> Hipertrofia ventricular izquierda sospechada debido a cambios en la geometría del ventrículo izquierdo</p>
+                        <p class="card-text">
+                            <strong>Descripción:</strong>
+                            El ecocardiograma reveló cambios en la geometría del ventrículo izquierdo.
+                        </p>
+                        <p class="card-text"><strong>Médico:</strong> Dr. Juan Pérez</p>
                     </div>
                     <div class="card-footer d-flex justify-content-center align-items-center">
                         <button class="btn btn-success">Descargar</button>
@@ -121,6 +129,9 @@
                         <p class="card-text"><strong>Especialidad:</strong> Radiología</p>
                         <p class="card-text"><strong>Tipo de Examen:</strong> Radiografía de tórax</p>
                         <p class="card-text"><strong>Fecha:</strong> 2024-04-10</p>
+                        <p class="card-text"><strong>Diagnóstico:</strong> Neumonía</p>
+                        <p class="card-text"><strong>Descripción:</strong> Se observan infiltrados pulmonares en la radiografía de tórax.</p>
+                        <p class="card-text"><strong>Médico:</strong> Dra. María Gómez</p>
                     </div>
                     <div class="card-footer d-flex justify-content-center align-items-center">
                         <button class="btn btn-success">Descargar</button>

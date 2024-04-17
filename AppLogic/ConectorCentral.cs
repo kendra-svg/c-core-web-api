@@ -1,4 +1,5 @@
 ﻿using DTO;
+using DTO.External;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -25,6 +26,14 @@ namespace AppLogic
             }
             return "";
         }
+        //public SedesInfo GetSedesDeta(int id)
+        //{
+        //    string service = CENTRAL_API + "/api/Sedes/GetsedeById";
+        //    string results = this.InvokeGetMethod(service);
+        //    SedesInfo sedes = JsonConvert.DeserializeObject<SedesInfo>(results);
+        //    return sedes;
+        //}
+        //public
 
     }
 }

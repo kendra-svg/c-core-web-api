@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WEB_UI.Models;
+
 
 namespace WEB_UI.Controllers
 {
@@ -49,7 +49,7 @@ namespace WEB_UI.Controllers
             return View();
         }
 
-        public IActionResult BuscadorExpedientes()
+        public IActionResult ExpedientePaciente()
         {
             return View();
         }

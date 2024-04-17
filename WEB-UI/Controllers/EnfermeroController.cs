@@ -32,7 +32,7 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-        public IActionResult BuscadorExpedientes()
+        public IActionResult ExpedientePaciente()
         {
             return View();
         }
