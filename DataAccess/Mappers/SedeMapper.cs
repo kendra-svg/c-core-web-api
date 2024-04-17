@@ -81,5 +81,13 @@ namespace DataAccess.Mappers
         {
             throw new NotImplementedException();
         }
+        public SqlOperation GetRetrieveByID(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_Sede_By_ID";
+            operation.AddIntegerParam("id", id);
+            
+            return operation;   
+        }
     }
 }

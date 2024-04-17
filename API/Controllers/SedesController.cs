@@ -23,5 +23,11 @@ namespace API.Controllers
             SedesManager pm = new SedesManager();
             return pm.GetAllSedes();
         }
+        [HttpGet]
+        public Sede GetSedeById(int id)
+        {
+            SedesManager pm = new SedesManager();
+            return pm.GetSedeID(id);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using DataAccess.DAO;
 using DataAccess.Mappers;
 using DTO;
+using DTO.External;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,22 @@ namespace DataAccess.Crud
             {
                 var dtoList = sedemapper.BuildObjects(dataResults);
                 foreach(var dto in dtoList) 
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
+        }
+
+        public List<T> RetrieveByIdI<T>(int id)
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = sedemapper.GetRetrieveByID(id);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+            if(dataResults.Count > 0)
+            {
+                var dtoList = sedemapper.BuildObjects(dataResults);
+                foreach(var dto in dtoList)
                 {
                     resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
                 }

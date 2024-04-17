@@ -8,17 +8,28 @@
     { field: "distrito", headerName: "distrito" },
     { field: "direcciones", headerName: "direcciones" },
     { field: "distrito", headerName: "provincia" },
-    { field: "fecha", headerName: "fecha" }
+    { field: "fecha", headerName: "Fecha Creación" }
 ];
+
 const gripOptions = {
-    colmnDefs = columnDefinition, 
+    columnDefs : columnDefinition, 
     rowData: [],
     rowSelection: 'single',
 
-    defaultColDef: { sortable: true, filter: true }
+    defaultColDef: { sortable: true, filter: true },
+
+    onRowDoubleClicked: params => {
+        ProcessDoubleClick(params);
+    }
 
 }
-document.addEventListener('DOMContendtLoaded', () => {
-    const gridDiv = document.querySelector('#grid');
-    new agGrid.Grid(gridDiv, gripOptions)
+
+function ProcessDoubleClick(params) {
+    var view = new SedeList();
+    view.GetSedeDetails(params.data.id);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gripOptions);
 });

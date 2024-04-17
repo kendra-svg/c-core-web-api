@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using Newtonsoft.Json;
-using WEB_UI.Models;
 
 
 namespace WEB_UI.Controllers

@@ -21,5 +21,10 @@ namespace AppLogic
             SedeCrud crud = new SedeCrud();
             return crud.RetrieveAll<Sede>();
         }
+      public List<Sede> GetSedeById(int id)
+        {
+            SedeCrud crud =new SedeCrud(); 
+            return crud.RetrieveByIdI<Sede>(id);
+        }
     }
 }
