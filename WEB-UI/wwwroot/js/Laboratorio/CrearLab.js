@@ -61,14 +61,6 @@ function CreateLab() {
             return;
         }
        
-        if (lab.foto === "") {
-            Swal.fire({
-                icon: 'error',
-                text: "Por favor seleccione una foto.",
-                title: 'Error'
-            });
-            return;
-        }
         var api_url = API_URL_BASE + "/api/Laboratorios/CreateLaboratorio";
 
         $.ajax({

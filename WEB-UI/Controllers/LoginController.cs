@@ -1,8 +1,11 @@
-﻿using DTO;
+﻿
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using Newtonsoft.Json;
+using WEB_UI.Models;
+using Microsoft.AspNetCore.Http;
 
 
 namespace WEB_UI.Controllers
@@ -38,10 +41,19 @@ namespace WEB_UI.Controllers
 
                 if (user != null)
                 {
+                    
                     HttpContext.Session.SetString(user.Correo, JsonConvert.SerializeObject(user));
+
+                    //se pueden mandar los datos que sean necesario a la vista del landing y depues se pueden ir guardando como session storage
+                    HttpContext.Session.SetInt32("UserId", user.Id);
+                    HttpContext.Session.SetString("Email", user.Correo);
+
+
+
                     switch (user.Rol)
                     {
                         case "Paciente":
+                            
                             return RedirectToAction("LandingPaciente", "Paciente");
                         case "Enfermero":
                             return RedirectToAction("LandingEnfermero", "Enfermero");
@@ -66,7 +78,7 @@ namespace WEB_UI.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Login");
         }
 
         public IActionResult RecuperarContrasenna()

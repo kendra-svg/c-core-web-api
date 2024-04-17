@@ -8,6 +8,8 @@ namespace WEB_UI.Controllers
     {
         public IActionResult LandingSecretario()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 

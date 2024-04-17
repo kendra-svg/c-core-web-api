@@ -15,8 +15,6 @@ namespace API
         public string CreateLaboratorio(Laboratorio lab)
         {
             LaboratoriosManager manager = new LaboratoriosManager();
-            Console.WriteLine(lab.Id);
-            Console.WriteLine(lab.NombreExamen);
             return manager.CreateLaboratorio(lab);
         }
 
@@ -26,6 +24,26 @@ namespace API
             LaboratoriosManager lm = new LaboratoriosManager();
             return lm.GetAllLaboratorios();
         }
+
+        [HttpGet]
+        public List<Laboratorio> GetLabsByUserId(int Id)
+        {
+            LaboratoriosManager manager = new LaboratoriosManager();
+         
+            return manager.GetLabByUserId(Id);
+        }
+
+
+        [HttpGet]
+        public string DeleteLabById(int labId)
+        {
+            LaboratoriosManager manager = new LaboratoriosManager();
+            Console.WriteLine(labId);
+            return manager.DeleteLabById(labId);
+        }
+
+
+
     }
    
 }
