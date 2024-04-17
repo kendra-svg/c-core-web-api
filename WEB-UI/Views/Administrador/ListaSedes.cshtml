@@ -1,12 +1,10 @@
-﻿@{
-    Layout = null;
-    ViewData["Title"] = "Lista Sedes";
+﻿@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="~/js/sedes/grid.js"></script>
+    <script src="~/js//Sedes/ListaSede.js"></script> 
 }
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +14,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="~/css/severalstyles.css" rel="stylesheet" />
+   
 </head>
 <body>
     <header id="header-menu" class="text-white">
@@ -24,7 +23,7 @@
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
             <div class="col text-center">
-                <p>Sede a la que pertenece</p>
+                <h1>Sedes</h1>
             </div>
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
@@ -42,81 +41,54 @@
     </div>
     @Html.Partial("MenuLateralAdmin")
     <div class="col text-left">
-        <div class="container">
+        <div class="text-center">
             <h1 class="text-center mt-3">Lista de Sedes</h1>
             <div class="text-center mt-3 mx-15">
                 <div class="btn-group">
                     <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Administrador" asp-action="CrearSedes">Crear nueva sede</a>
                 </div>
             </div>
-            <div class="d-flex w-75 mt-4">
-                <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre sede" aria-label="Buscar">
-            </div>
-            <table class="table" id="sedeTable">
-                <thead class="thead">
-                    <tr>
-                        <th scope="col">Nombre de la Sede</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Provincia</th>
-                        <th scope="col">Canton</th>
-                        <th scope="col">Distrito</th>
-                        <th scope="col">Otras Señas</th>
-                        <th scope="col">Fecha de Creación</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="sedeTableBody">
-                    <tr>
-                        <td>Sede 1</td>
-                        <td>Descripción de la sede 1</td>
-                        <td>Provincia 1</td>
-                        <td>Canton 1</td>
-                        <td>Distrito 1</td>
-                        <td>Otras señas 1</td>
-                        <td>2022-01-01</td>
-                        <td>
-                            <a class="btn btn-sm btn-success" href="DetallesSedes"> <i class="bi bi-eye"></i> </a>
-                            <button class="btn btn-sm btn-success"><i class="bi bi-pencil"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Sede 2</td>
-                        <td>Descripción de la sede 2</td>
-                        <td>Provincia 2</td>
-                        <td>Canton 2</td>
-                        <td>Distrito 2</td>
-                        <td>Otras señas 2</td>
-                        <td>2022-01-02</td>
-                        <td>
-                            <a class="btn btn-sm btn-success" href="DetallesSedes"> <i class="bi bi-eye"></i> </a>
-                            <button class="btn btn-sm btn-success"><i class="bi bi-pencil"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Sede 3</td>
-                        <td>Descripción de la sede 3</td>
-                        <td>Provincia 3</td>
-                        <td>Canton 3</td>
-                        <td>Distrito 3</td>
-                        <td>Otras señas 3</td>
-                        <td>2022-01-03</td>
-                        <td>
-                            <a class="btn btn-sm btn-success" href="DetallesSedes"> <i class="bi bi-eye"></i> </a>
-                            <button class="btn btn-sm btn-success"><i class="bi bi-pencil"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
         </div>
-    </div>
-    @Html.Partial("_Footer")
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="~/js/usermenu/menufunctions.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+       <div class="text-center">
+           <h6 class="display-4">Lista</h6>
+
+            <div id="myGrid" style="height: 300px; width: 70%;" class="ag-theme-alpine"></div>
+       </div>
+       <div class="text-center">
+           <h6 class="display-4">Paz</h6>
+       </div>
+       <form action="ListSede" class="align-content-center">
+           <div>
+               <label for ="txtNombre">Nombre</label>
+               <input id="txtNombre" type="text" class="form-control"/>
+           </div
+           <div>
+               <label for ="txtdescripcion">Descripción</label>
+               <input id="txtdescripcion" type="text"  class="form-control"/>
+           </div>
+           <div >
+               <label for ="txtprovincia">Provincia</label>
+               <input id="txtprovincia" type="text"  class="form-control"/>
+           </div>
+           <div>
+               <label for ="txtcanton">Cantón</label>
+               <input id="txtcanton" type="text"  class="form-control"/>
+           </div>
+           <div>
+               <label for ="txtdistrito">Distrito</label>
+               <input id="txtdistrito" type="text" class="form-control"/>
+           </div>
+           <div>
+               <label for ="txtdirecciones">Direcciones</label>
+               <input id="txtdirecciones" type="text"  class="form-control"/>
+           </div>
+           <div>
+               <label for ="txtdirecciones">Direcciones</label>
+               <input id="txtdirecciones" type="text"  class="form-control"/>
+           </div>
+           <div class="form-group">
+               <button type="button" class="btn btn-success" id="dtnCreate">Ver</button>
+           </div>
+       </form>
 </body>
 </html>

@@ -17,5 +17,17 @@ namespace API.Controllers
             SedesManager manager = new SedesManager();
             return manager.CreateSede(app);
         }
+        [HttpGet]
+        public List<Sede> GetSedes()
+        {
+            SedesManager pm = new SedesManager();
+            return pm.GetAllSedes();
+        }
+        [HttpGet]
+        public Sede GetSedeById(int id)
+        {
+            SedesManager pm = new SedesManager();
+            return pm.GetSedeID(id);
+        }
     }
 }

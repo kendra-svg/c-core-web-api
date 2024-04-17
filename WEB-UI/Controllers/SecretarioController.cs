@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using WEB_UI.Models;
 using DTO; 
 
 namespace WEB_UI.Controllers
