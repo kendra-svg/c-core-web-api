@@ -7,6 +7,8 @@ namespace WEB_UI.Controllers
     {
         public IActionResult LandingDoctor()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 
