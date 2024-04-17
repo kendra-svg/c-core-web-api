@@ -15,10 +15,7 @@ namespace WEB_UI.Controllers
         {
 
             
-            //var sendEmailController = new SendEmailController();
-            //sendEmailController.SendEmail(new Email { To = correoDestinatario, Subject = "Prueba", Body = "Cuerpo de prueba" });
 
-            //EnviarCorreo();
 
             return View();
         

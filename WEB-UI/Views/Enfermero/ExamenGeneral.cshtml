@@ -45,11 +45,11 @@
         </div>
 
     </header>
-    <div class="position-relative">
+    <div class="position-relative ">
         <div class="container">
-            <ul id="other-options-list" class="list-unstyled position-absolute end-0" style="display:none;">
-                <li><a asp-controller="Doctor" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
+            <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
+                <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a <a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -60,10 +60,13 @@
     @Html.Partial("MenuLateralEnfermero")
 
 
-    <div class="col text-left">
+    <div class="col text-left" >
         <div class="container">
             <h2>Examenes del paciente</h2>
-
+            <div class="mt-5 d-flex justify-content-center">
+                <a href="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
+            </div>
+            
             <form>
                 <h2>Buscar Examen</h2>
                 <div class="row d-flex align-items-end justify-content-end">
@@ -97,7 +100,7 @@
                     </div>
                 </div>
             </form>
-            <div class="container mt-5">
+            <div class="container">
                 <h2>Listado de Exámenes</h2>
                 <div class="card">
                     <div class="card-body">
@@ -105,6 +108,12 @@
                         <p class="card-text"><strong>Especialidad:</strong> Cardiología</p>
                         <p class="card-text"><strong>Tipo de Examen:</strong> Ecocardiograma</p>
                         <p class="card-text"><strong>Fecha:</strong> 2024-03-15</p>
+                        <p class="card-text"><strong>Diagnóstico:</strong> Hipertrofia ventricular izquierda sospechada debido a cambios en la geometría del ventrículo izquierdo</p>
+                        <p class="card-text">
+                            <strong>Descripción:</strong>
+                            El ecocardiograma reveló cambios en la geometría del ventrículo izquierdo.
+                        </p>
+                        <p class="card-text"><strong>Médico:</strong> Dr. Juan Pérez</p>
                     </div>
                     <div class="card-footer d-flex justify-content-center align-items-center">
                         <button class="btn btn-success">Descargar</button>
@@ -118,6 +127,9 @@
                         <p class="card-text"><strong>Especialidad:</strong> Radiología</p>
                         <p class="card-text"><strong>Tipo de Examen:</strong> Radiografía de tórax</p>
                         <p class="card-text"><strong>Fecha:</strong> 2024-04-10</p>
+                        <p class="card-text"><strong>Diagnóstico:</strong> Neumonía</p>
+                        <p class="card-text"><strong>Descripción:</strong> Se observan infiltrados pulmonares en la radiografía de tórax.</p>
+                        <p class="card-text"><strong>Médico:</strong> Dra. María Gómez</p>
                     </div>
                     <div class="card-footer d-flex justify-content-center align-items-center">
                         <button class="btn btn-success">Descargar</button>
@@ -126,7 +138,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 
     @Html.Partial("_Footer")

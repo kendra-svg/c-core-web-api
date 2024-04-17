@@ -72,6 +72,8 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("roles", user.Rol);
             operation.AddIntegerParam("estado", user.Estado);
             operation.AddIntegerParam("otp", user.OTP);
+            operation.AddVarCharParam("verificacion", user.Verificacion);
+            operation.AddDatetimeParam("timeout", user.Timeout);
             //operation.AddVarCharParam("expedientesid", app.Expedientes);
 
             return operation;
@@ -105,7 +107,24 @@ namespace DataAccess.Mappers
             operation.ProcedureName = "SP_GET_USER_BY_CORREO";
             operation.AddVarCharParam("Correo", correo);
             return operation;
-        }   
+        } 
+        
+        public SqlOperation GetRetrieveOTPByEmail(string correo)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_OTP_BY_USER_EMAIL";
+            operation.AddVarCharParam("Correo", correo);
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveUserByOtpAndEmail (string correo, int otp)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_USER_BY_OTP_AND_EMAIL";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddIntegerParam("OTP", otp);
+            return operation;
+        }
 
         public SqlOperation GetRetrieveByIdStatement(string id)
         {

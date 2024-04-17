@@ -96,6 +96,8 @@
                                     <option value="Puntarenas">Puntarenas</option>
                                     <option value="Limon">Limon</option>
                                 </select>
+                                <input type="datetime-local" id="timestamp" style="display:none" />
+
                             </div>
                         
                         </div>
@@ -106,7 +108,9 @@
                                 <p>Al menos debe contener de 8 a 12 caracteres.</p>
                             </div>
                             <div class="password-inputs">
+                                <label for="Contrasenna">Contraseña</label>
                                 <input type="password" class="text" placeholder="Contraseña" required="required" id="Contrasenna" name="Contrasenna">
+                                <label for="ConfirmarContrasenna">Confirmar Contraseña</label>
                                 <input type="password" class="text" placeholder="Confirmar Contraseña" required="required" id="ConfirmarContrasenna" name="ConfirmarContrasenna">
                             </div>
                         </div>
@@ -151,6 +155,23 @@
         });
     </script>
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script>
+        function fillTimestamp() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = ('0' + (now.getMonth() + 1)).slice(-2); // Agrega un cero delante si es necesario
+            var day = ('0' + now.getDate()).slice(-2); // Agrega un cero delante si es necesario
+            var hours = ('0' + now.getHours()).slice(-2); // Agrega un cero delante si es necesario
+            var minutes = ('0' + now.getMinutes()).slice(-2); // Agrega un cero delante si es necesario
+            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+            document.getElementById('timestamp').value = datetime;
+        }
+
+        // Llama a la función fillTimestamp cuando se hace clic en el botón "Registrarse"
+        document.getElementById('btnCreate').addEventListener('click', function () {
+            fillTimestamp();
+        });
+    </script>
 
 </body>
 </html>

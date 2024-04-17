@@ -15,6 +15,8 @@ namespace API
         public string CreateLaboratorio(Laboratorio lab)
         {
             LaboratoriosManager manager = new LaboratoriosManager();
+            Console.WriteLine(lab.Id);
+            Console.WriteLine(lab.NombreExamen);
             return manager.CreateLaboratorio(lab);
         }
 
