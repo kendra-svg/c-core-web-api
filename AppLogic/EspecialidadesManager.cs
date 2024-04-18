@@ -17,6 +17,13 @@ namespace AppLogic
             return "ok";
 
         }
+        public string UpdateEspecialidadById(Especialidad espec)
+        {
+            EspecialidadCrud crud = new EspecialidadCrud();
+            crud.Update(espec);
+            return "ok";
+
+        }
 
         public List<Especialidad> GetAllEspecialidades()
         {
@@ -28,3 +35,4 @@ namespace AppLogic
     }
 
 }
+

@@ -20,8 +20,7 @@ public class EspecialidadCrud: CrudFactory
         dao = SqlDao.GetInstance();
     }
 
-    public override void 
-        (BaseClass dto)
+    public override void Create (BaseClass dto)
     {
         SqlOperation operation = especialidadMapper.GetCreateStatement(dto);
         dao.ExecuteStoredProcedure(operation);
@@ -58,6 +57,7 @@ public class EspecialidadCrud: CrudFactory
 
     public override void Update(BaseClass dto)
     {
-        throw new NotImplementedException();
+        SqlOperation operation = especialidadMapper.GetUpdateStatement(dto);
+        dao.ExecuteStoredProcedure(operation);
     }
 }
