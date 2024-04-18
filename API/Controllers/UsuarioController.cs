@@ -45,5 +45,27 @@ namespace API.Controllers
             UsuariosManager um = new UsuariosManager();
             return um.GetOTPByEmail(correo);
         }
+
+        [HttpGet]
+        public List<UsuarioBase> GetUserByOtpAndEmail(string correo, int otp)
+        {
+            UsuariosManager um = new UsuariosManager();
+            return um.GetUserByOtpAndEmail(correo, otp);
+        }
+
+        [HttpPut]
+        public void UpdateOtpAndTimestamp(string correo, int otp)
+        {
+            UsuariosManager um = new UsuariosManager();
+            um.UpdateOtpAndTimestamp(correo, otp);
+        }
+
+        [HttpPut]
+        public void UpdateVerification(string correo)
+        {
+            UsuariosManager um = new UsuariosManager();
+            um.UpdateVerification(correo);
+        }
+        
     }
 }

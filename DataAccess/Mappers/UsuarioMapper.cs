@@ -33,6 +33,8 @@ namespace DataAccess.Mappers
             user.Ubicaciones = row["Ubicaciones"].ToString();
             user.Identificacion = row["indentificaciones"].ToString();
             user.OTP = int.Parse(row["otp"].ToString());
+            user.Verificacion = row["verificacion"].ToString();
+            user.Timeout = DateTime.Parse(row["timeout"].ToString());
 
             return user;
         }
@@ -87,7 +89,7 @@ namespace DataAccess.Mappers
         public SqlOperation GetRetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_GET_ALL_USERS";
+            operation.ProcedureName = "SP_GET_PPATIENTS";
             return operation;
         }
 
@@ -117,9 +119,35 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveUserByOtpAndEmail (string correo, int otp)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_USER_BY_OTP_AND_EMAIL";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddIntegerParam("OTP", otp);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
+        }
+
+        public SqlOperation GetUpdateOtpAndTimestamp(string correo, int otp)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_OTP_AND_TIMEOUT";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddIntegerParam("OTP", otp);
+            return operation;
+        }
+
+        public SqlOperation GetUpdateAccountVerification(string correo)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_USER_ACCOUNT_VERIFICATION";
+            operation.AddVarCharParam("Correo", correo);
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseClass dto)

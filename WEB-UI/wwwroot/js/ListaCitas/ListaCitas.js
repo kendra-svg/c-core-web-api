@@ -13,7 +13,7 @@
     citasTableBody.empty();
 
 
-    var detallesCitasUrl = "/Administrador/DetallesCitas";
+    var detallesCitasUrl = "/Doctor/DetallesCitas";
 
     citas.forEach(function (cita) {
         var row = "<tr>" +

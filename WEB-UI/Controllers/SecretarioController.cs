@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using WEB_UI.Models;
 using DTO; 
 
 namespace WEB_UI.Controllers
@@ -9,6 +8,8 @@ namespace WEB_UI.Controllers
     {
         public IActionResult LandingSecretario()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 

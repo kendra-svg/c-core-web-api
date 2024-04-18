@@ -108,6 +108,36 @@ namespace DataAccess.Crud
             return resultList;
         }
 
+        public List<T> RetrieveByOtpAndEmail<T>(string correo, int otp)
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = usuarioMapper.GetRetrieveUserByOtpAndEmail(correo, otp);
+
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoList = usuarioMapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
+        }
+
+        public void UpdateOtpAndTimestamp(string correo, int otp)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateOtpAndTimestamp(correo, otp);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
+        public void UpdateVerification(string correo)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateAccountVerification(correo);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
 
 
 

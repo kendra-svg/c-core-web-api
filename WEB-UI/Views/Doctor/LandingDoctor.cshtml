@@ -29,17 +29,17 @@
 <body>
 
     <header id="header-menu" class="text-white">
-
+        <input type="hidden" id="userId" value="@ViewBag.UserId" />
         <div class="row align-items-center">
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-            <div class="col text-center">
-                <p>Sede a la que pertenece</p>
-            </div>
+           
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
-                <span>correo@gmail.com </span>
+                <span>@ViewBag.Email</span>
+
+                <input type="hidden" id="userEmail" value="@ViewBag.Email" />
 
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0" style="display:none;">
                 <li><a asp-controller="Doctor" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
+                <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -72,7 +72,7 @@
                     <a asp-controller="Doctor" asp-action="Agenda"><p> Agenda</p></a>
                     </div>
                     <div class="col boxes-quick-access">
-                        <a href="#"><p> Citas de Pacientes</p></a>
+                    <a asp-controller="Doctor" asp-action="ListaCitas"><p> Citas de Pacientes</p></a>
                     </div>
                 </div>
                 <div class="row">
@@ -95,7 +95,19 @@
     @Html.Partial("_Footer")
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var userId = document.getElementById('userId').value;
+        console.log("ID del usuario:", userId);
 
+        var userEmail = document.getElementById('userEmail').value;
+        console.log("Email del usuario:", userEmail);
+
+
+        sessionStorage.setItem('userEmail', userEmail);
+        sessionStorage.setItem('userId', userId);
+
+    </script>
 
 
 

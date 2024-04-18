@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WEB_UI.Models;
+
 
 namespace WEB_UI.Controllers
 {
@@ -7,6 +7,8 @@ namespace WEB_UI.Controllers
     {
         public IActionResult LandingDoctor()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 
@@ -55,7 +57,12 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-       
+        public IActionResult DetallesCitas()
+        {
+            return View();
+        }
+
+
 
 
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL DOC

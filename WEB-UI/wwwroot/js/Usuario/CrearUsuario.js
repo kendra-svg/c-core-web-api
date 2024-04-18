@@ -41,12 +41,26 @@ function CrearUsuario() {
         usuario.rol = "Paciente";
         usuario.estado = 0;
         usuario.verificacion = "Incompleta";
-        usuario.timeout = fechaActual;
+        console.log(usuario.verificacion)
+
         var fechaNacimientoString = $('#FechaNacimiento').val();
         var fechaNacimiento = new Date(fechaNacimientoString);
+
         var fechaActualString = new Date().toISOString().slice(0, 16);
         var fechaActual = new Date(fechaActualString);
+
         var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+        var timeoutstring = $('#timestamp').val();
+       /* var timeout = new Date(timeoutstring);*/
+        usuario.timeout = $('#timestamp').val(); /*timeout;$('#timestamp').val();*/
+        /*usuario.timeout = timeout;*/
+        console.log(usuario.timeout)
+
+
+        //console.log("Fecha actual: " + fechaActual);
+        //console.log("Fecha actual string: " + fechaActualString);
+        //console.log("Timeout: " + usuario.timeout);
         usuario.otp = generateUniqueOTP();
         guardaOtp = usuario.otp;
         localStorage.setItem('correo', usuario.correo);
