@@ -1,7 +1,17 @@
 ﻿@{
     Layout = null;
     ViewData["Title"] = "Crear Examen";
+
 }
+@section Scripts {
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/usermenu/menufunctions.js"></script>
+
+  
+}
+
 
 
 
@@ -24,6 +34,7 @@
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
     <link href="~/css/severalstyles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
 <body>
@@ -34,9 +45,7 @@
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-            <div class="col text-center">
-                <p>Sede a la que pertenece</p>
-            </div>
+         
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
                 <span id="user-email-display"></span>
@@ -48,7 +57,7 @@
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
-                <li><a asp-controller="Doctor" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a asp-controller="Enfermero" asp-action="DatosPersonales">Mi perfil</a></li>
                 <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
@@ -57,7 +66,7 @@
 
 
 
-    @Html.Partial("MenuLateralDoctor")
+    @Html.Partial("MenuLateralEnfermero")
 
     <div class="col text-left">
         <a href="ExamenGeneral" class="btn btn-outline-success me-3 mt-3">Volver</a>
@@ -137,9 +146,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/js/laboratorio/crearlab.js"></script>
 
-        <script src="~/js/usermenu/menufunctions.js"></script>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </body>
+    <script src="~/js/usermenu/menufunctions.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
+</body>
 </html>

@@ -128,6 +128,8 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Administrador/MiSalud/MisFacturas.cshtml");
         }
+
+       
         //usuarios
         //Por favor revisar
         //public IActionResult Usuarios()

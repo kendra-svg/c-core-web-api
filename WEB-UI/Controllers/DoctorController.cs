@@ -57,7 +57,12 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
-       
+        public IActionResult DetallesCitas()
+        {
+            return View();
+        }
+
+
 
 
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL DOC

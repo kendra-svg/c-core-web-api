@@ -19,7 +19,7 @@ namespace AppLogic
 
         }
 
-        public List<Laboratorio> GetAllLaboratorios()
+        public List<Laboratorio> GetAllLabs()
         {
             LaboratorioCrud crud = new LaboratorioCrud();
             return crud.RetrieveAll<Laboratorio>();
