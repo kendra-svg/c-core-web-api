@@ -54,6 +54,10 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult CrearEspecialidad()
+        {
+            return View();
+        }
         public IActionResult RecetasPacientes()
         {
             return View();
