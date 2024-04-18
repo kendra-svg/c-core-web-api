@@ -34,12 +34,14 @@ namespace DataAccess.Mappers
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_INSERT_especialidades";
+            operation.ProcedureName = "SP_INSERT_ESPECIALIDAD";
 
             Especialidad espec = (Especialidad)dto;
 
-            operation.AddIntegerParam("idespecialidades", espec.Id);
-            operation.AddVarCharParam("nombre_especialidades", espec.Nombre);
+            operation.AddIntegerParam("ID_ESPECIALIDAD", espec.Id);
+            operation.AddVarCharParam("NOMBRE", espec.Nombre);
+            operation.AddIntegerParam("COSTO", espec.Costo);
+            operation.AddIntegerParam("IVA", espec.IVA);
 
             return operation;
         }

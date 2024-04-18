@@ -15,6 +15,7 @@ namespace API.Controllers
         public string CreateEspecialidad(Especialidad espec)
         {
             EspecialidadesManager manager = new EspecialidadesManager();
+            Console.WriteLine (espec);
             return manager.CreateEspecialidad(espec);
         }
 

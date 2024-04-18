@@ -9,7 +9,7 @@ namespace DTO
     public class Especialidad : BaseClass
     {
         public string Nombre { get; set; }
-        public double Costo { set; get; }
-        public double IVA { set; get; }
+        public int Costo { set; get; }
+        public int IVA { set; get; }
     }
 }
