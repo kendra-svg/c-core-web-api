@@ -66,7 +66,17 @@ namespace DataAccess.Mappers
 
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_ESPECIALIDAD";
+
+            Especialidad espec = (Especialidad)dto;
+
+            operation.AddIntegerParam("ID_ESPECIALIDAD", espec.Id);
+            operation.AddVarCharParam("NOMBRE", espec.Nombre);
+            operation.AddIntegerParam("COSTO", espec.Costo);
+            operation.AddIntegerParam("IVA", espec.IVA);
+
+            return operation;
         }
     }
 }
