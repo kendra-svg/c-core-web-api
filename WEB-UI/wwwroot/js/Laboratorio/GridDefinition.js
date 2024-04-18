@@ -7,28 +7,23 @@
         headerName: "Acciones",
         cellRenderer: function (params) {
 
-            const buttonPagar = document.createElement("button");
-            const buttonCancelar = document.createElement("button");
+            const buttonDownload = document.createElement("button");
+            
 
 
-            buttonPagar.className = "btn btn-success m-1";
-            buttonPagar.innerHTML = "Descargar";
-            buttonPagar.addEventListener("click", function () {
+            buttonDownload.className = "btn btn-success m-1";
+            buttonDownload.innerHTML = "Descargar";
+            buttonDownload.addEventListener("click", function () {
 
                 handleButtonDescargar(params.data);
             });
 
 
-            buttonCancelar.className = "btn btn-danger m-1"
-            buttonCancelar.innerHTML = "Eliminar";
-            buttonCancelar.addEventListener("click", function () {
-
-                handleButtonEliminar(params.data);
-            });
+            
 
             const wrapper = document.createElement("div");
-            wrapper.appendChild(buttonPagar);
-            wrapper.appendChild(buttonCancelar);
+            wrapper.appendChild(buttonDownload);
+           
 
             return wrapper;
 
@@ -48,68 +43,37 @@ const LaboratorioGridOptions = {
     //defaults
     defaultColDef: { sortable: true, filter: true },
 
-    //Eventos
-    onRowDoubleClicked: params => {
-        ProcessDoubleClick(params);
-    }
+  
+   
 }
 
-function ProcessDoubleClick(params) {
-
-}
 
 
 
 
 function handleButtonDescargar(data) {
     console.log("DESCARGANDO:", data.foto);
+    console.log("DESCARGANDO:", data.nombreExamen);
 
+    const cloudinaryUrl = data.foto.replace('/upload/', '/upload/fl_attachment/');
+    const nameImg = data.nombreExamen + '.jpeg';
+
+    const link = document.createElement('a');
+    link.href = cloudinaryUrl;
+    link.download = nameImg;
+    
+
+    
+    document.body.appendChild(link);
+    link.click();
+
+    
+    document.body.removeChild(link);
 
 }
 
-function handleButtonEliminar(data) {
-    console.log("ELIMINAR EL EXAMEN CON ID:", data.id);
-    
-    //this.DeleteLab = function () {
-    //    api_url = API_URL_BASE + "/api/Laboratorios/DeleteLabById";
-    //    $.ajax({
-    //        url: api_url + "?labId=" + data.id,
-    //        method: "GET",
-    //        contentType: "application/json;charset=utf-8",
-    //        dataType: "json"
-    //    }).done(function (result) {
-    //        if (result) {
-    //            Swal.fire({
-    //                icon: 'sucess',
-    //                title: 'Exito de Ejecucion',
-    //                text: 'Eliminado con exito'
-    //            })
-    //        }
-    //        else {
-    //            Swal.fire({
-    //                icon: 'error',
-    //                title: 'Error de Ejecucion',
-    //                text: 'Hubo un error! ' + result.message
-    //            })
-    //        }
 
 
-    //    }).fail(function (error) {
-    //        console.log(error)
-    //        Swal.fire({
-    //            icon: 'error',
-    //            title: 'Oops...',
-    //            text: 'Hubo un error al cargar sus examenes! ' + error
-    //        })
-
-
-
-    //    });
-    //}
-    
-
-   
-}
 document.addEventListener('DOMContentLoaded', () => {
     const gridDiv = document.querySelector('#gridExamenesPersonales');
     new agGrid.Grid(gridDiv, LaboratorioGridOptions);

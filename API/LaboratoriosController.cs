@@ -18,11 +18,18 @@ namespace API
             return manager.CreateLaboratorio(lab);
         }
 
+        //[HttpGet]
+        //public List<Laboratorio> GetLaboratorios()
+        //{
+        //    LaboratoriosManager lm = new LaboratoriosManager();
+        //    return lm.GetAllLaboratorios();
+        //}
+
         [HttpGet]
-        public List<Laboratorio> GetLaboratorios()
+        public List<Laboratorio> GetAllLabs()
         {
             LaboratoriosManager lm = new LaboratoriosManager();
-            return lm.GetAllLaboratorios();
+            return lm.GetAllLabs();
         }
 
         [HttpGet]
