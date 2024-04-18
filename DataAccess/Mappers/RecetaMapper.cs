@@ -29,8 +29,8 @@ namespace DataAccess.Mappers
             List<BaseClass> results = new List<BaseClass>();
             foreach (var row in rowList)
             {
-                var lab = BuildObject(row);
-                results.Add(lab);
+                var rec = BuildObject(row);
+                results.Add(rec);
             }
             return results;
         }
@@ -73,7 +73,19 @@ namespace DataAccess.Mappers
 
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_RECETAS";
+
+            Receta rec = (Receta)dto;
+
+            operation.AddIntegerParam("id_receta", rec.Id);
+            operation.AddDatetimeParam("fecha_emision", rec.FechaEmision);
+            operation.AddVarCharParam("dosis_recomendada", rec.DosisRecomendada);
+            operation.AddVarCharParam("recomendaciones_adicionales", rec.RecomendacionAdicional);
+            operation.AddVarCharParam("receta_foto", rec.Foto);
+            operation.AddVarCharParam("nombre_medicamento", rec.NombreMedicamento);
+
+            return operation;
         }
     }
 }

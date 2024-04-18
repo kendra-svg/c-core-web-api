@@ -1,4 +1,5 @@
 ﻿using DataAccess.Crud;
+using DataAccess.Mappers;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,15 @@ namespace AppLogic
             return "ok";
 
         }
+
+        public string UpdateRecipeById(Receta rec)
+        {
+            RecetaCrud crud = new RecetaCrud();
+            crud.Update(rec);
+            return "ok";
+
+        }
+
 
         public List<Receta> GetAllRecetas()
         {
