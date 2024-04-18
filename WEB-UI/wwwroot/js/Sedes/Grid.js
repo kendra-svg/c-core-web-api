@@ -1,33 +1,33 @@
 ﻿const columnDefinition = [
-    { field: "id", headerName: "ID" },
-    { field: "nombre", headerName: "Nombre" },
-    { field: "descripcion", headerName: "Descripción" },
-    { field: "provincia", headerName: "provincia" },
-    { field: "canton", headerName: "canton" },
-    { field: "canton", headerName: "canton" },
-    { field: "distrito", headerName: "distrito" },
-    { field: "direcciones", headerName: "direcciones" },
-    { field: "distrito", headerName: "provincia" },
-    { field: "fecha", headerName: "Fecha Creación" }
+    { field: "id", headerName: "ID"},
+    { field: "nombre", headerName: "Nombre"},
+    { field: "descripcion", headerName: "Descripción"},
+    { field: "fechaCreacion", headerName: "Fecha"},
+    { field: "ubicacion", headerName: "Ubicacion"},
+    { field: "canton", headerName: "Cantón"},
+    { field: "provincia", headerName: "Provincia"},
+    { field: "distrito", headerName: "Distrito"},
+    { field: "direccion", headerName: "Direccion"}
+
 ];
 
 const gripOptions = {
-    columnDefs : columnDefinition, 
+    columnDefs : columnDefinition,
     rowData: [],
     rowSelection: 'single',
 
     defaultColDef: { sortable: true, filter: true },
 
-    onRowDoubleClicked: params => {
-        ProcessDoubleClick(params);
-    }
+    //onRowDoubleClicked: params => {
+    //    ProcessDoubleClick(params);
+    //}
 
 }
 
-function ProcessDoubleClick(params) {
-    var view = new SedeList();
-    view.GetSedeDetails(params.data.id);
-}
+//function ProcessDoubleClick(params) {
+//    var view = new SedeList();
+//    view.GetSedeDetails(params.data.id);
+//}
 
 document.addEventListener('DOMContentLoaded', () => {
     const gridDiv = document.querySelector('#myGrid');

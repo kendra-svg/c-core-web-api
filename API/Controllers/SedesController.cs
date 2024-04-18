@@ -29,5 +29,21 @@ namespace API.Controllers
             SedesManager pm = new SedesManager();
             return pm.GetSedeById(id);
         }
+        [HttpGet]
+        public API_Response GetAllSedesA()
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                SedesManager sede = new SedesManager();
+                response.Data = sede.GetAllSedes();
+                response.Result = "OK";
+            }catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
     }
 }
