@@ -45,6 +45,19 @@ namespace AppLogic
         {
             UsuarioCrud crud = new UsuarioCrud();
             return crud.RetrieveByOtpAndEmail<UsuarioBase>(correo, otp);
+
+        }
+
+        public void UpdateVerification(string correo)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            crud.UpdateVerification(correo);
+        }
+
+        public void UpdateOtpAndTimestamp(string correo, int otp)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            crud.UpdateOtpAndTimestamp(correo, otp);
         }
     }
 }
