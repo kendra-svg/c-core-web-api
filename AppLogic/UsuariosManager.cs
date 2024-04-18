@@ -54,10 +54,10 @@ namespace AppLogic
             crud.UpdateVerification(correo);
         }
 
-        public void UpdateOtpAndTimestamp(string correo, int otp)
+        public void UpdateOtpAndTimestamp(string correo)
         {
             UsuarioCrud crud = new UsuarioCrud();
-            crud.UpdateOtpAndTimestamp(correo, otp);
+            crud.UpdateOtpAndTimestamp(correo);
         }
     }
 }

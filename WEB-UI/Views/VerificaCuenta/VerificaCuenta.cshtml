@@ -26,7 +26,7 @@
         <h1>Verificar cuenta</h1>
         <div class="main-agileinfo">
             <div class="agileits-top">
-                <input type="datetime-local"  id="newTimestamp" style="display:none"/>
+                @* <input type="datetime-local"  id="newTimestamp" style="display:"/> *@
 
                 <div class="input-group">
                     <label for="Correo">Correo</label>
@@ -58,7 +58,8 @@
             var hours = ('0' + now.getHours()).slice(-2);
             var minutes = ('0' + now.getMinutes()).slice(-2);
             var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
-            document.getElementById('newTimestamp').value = datetime;
+            // document.getElementById('newTimestamp').value = datetime;
+            // sessionStorage.setItem('newTimestamp', datetime);
         }
 
 
