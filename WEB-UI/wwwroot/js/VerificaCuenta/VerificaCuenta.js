@@ -70,7 +70,7 @@ function VerificarCuenta() {
 
                         Swal.fire({
                             title: "¡Cuenta verificada!",
-                            text: "¡Ahora puedes iniciar sesión! (prueba)",
+                            text: "¡Ahora puedes iniciar sesión!",
                             icon: "success",
                             confirmButtonText: "Aceptar",
                         }).then(function () {
