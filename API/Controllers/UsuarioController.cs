@@ -54,10 +54,10 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public void UpdateOtpAndTimestamp(string correo, int otp)
+        public void UpdateOtpAndTimestamp(string correo)
         {
             UsuariosManager um = new UsuariosManager();
-            um.UpdateOtpAndTimestamp(correo, otp);
+            um.UpdateOtpAndTimestamp(correo);
         }
 
         [HttpPut]

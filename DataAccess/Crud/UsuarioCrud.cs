@@ -126,9 +126,9 @@ namespace DataAccess.Crud
             return resultList;
         }
 
-        public void UpdateOtpAndTimestamp(string correo, int otp)
+        public void UpdateOtpAndTimestamp(string correo)
         {
-            SqlOperation operation = usuarioMapper.GetUpdateOtpAndTimestamp(correo, otp);
+            SqlOperation operation = usuarioMapper.GetUpdateOtpAndTimestamp(correo);
             dao.ExecuteStoredProcedure(operation);
         }
 

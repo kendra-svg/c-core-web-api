@@ -19,7 +19,7 @@ namespace AppLogic
                                                                                         //emailContent.PlainText = "Hemos recibido su solicitud de cita, y nos pondremos en contacto con usted";
 
             EmailContent emailContent = new EmailContent(asunto); // Use the provided 'asunto' parameter
-            emailContent.PlainText = cuerpo; //
+            emailContent.Html = cuerpo; //
 
             List<EmailAddress> emailAddresses = new List<EmailAddress> { new EmailAddress(correo, "Suscriptor de Cita") };
             EmailRecipients emailRecipients = new EmailRecipients(emailAddresses);
