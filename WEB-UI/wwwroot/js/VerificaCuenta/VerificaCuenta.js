@@ -239,8 +239,8 @@ function VerificarCuenta() {
             console.log("Nombre completo: " + nombreCompleto);
             console.log("OTP: " + otp);
 
-            var cuerpo = "Hola " + nombreCompleto + ",<br><br>" +
-                "Para completar tu solicitud de cambio de clave, por favor ingresa el siguiente código de verificación en la página: " + otp + "." + "<br><br>" + 
+            var cuerpo = "Hola " + nombreCompleto + "<br><br>" +
+                "Para completar tu registro, por favor ingresa el nuevo código de verificación en la página: " + otp + "." + "<br><br>" + 
                 "Ten en cuenta que el código expirará en un minuto." + "<br><br>" + 
                 "Hospital SIMEPCI.";
             var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?correo=" + correo + "&cuerpo=" + cuerpo + "&otp=" + otp + "&asunto=Verificación de cuenta";
