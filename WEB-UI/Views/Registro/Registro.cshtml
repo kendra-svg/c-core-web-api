@@ -159,15 +159,15 @@
         function fillTimestamp() {
             var now = new Date();
             var year = now.getFullYear();
-            var month = ('0' + (now.getMonth() + 1)).slice(-2); // Agrega un cero delante si es necesario
-            var day = ('0' + now.getDate()).slice(-2); // Agrega un cero delante si es necesario
-            var hours = ('0' + now.getHours()).slice(-2); // Agrega un cero delante si es necesario
-            var minutes = ('0' + now.getMinutes()).slice(-2); // Agrega un cero delante si es necesario
+            var month = ('0' + (now.getMonth() + 1)).slice(-2); 
+            var day = ('0' + now.getDate()).slice(-2); 
+            var hours = ('0' + now.getHours()).slice(-2); 
+            var minutes = ('0' + now.getMinutes()).slice(-2); 
             var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
             document.getElementById('timestamp').value = datetime;
         }
 
-        // Llama a la función fillTimestamp cuando se hace clic en el botón "Registrarse"
+        
         document.getElementById('btnCreate').addEventListener('click', function () {
             fillTimestamp();
         });
