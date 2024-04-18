@@ -244,6 +244,7 @@ function CrearUsuario() {
                     view.LimpiarFormulario();
                     /*view.RedirectToLogin()*/;
                     sessionStorage.setItem('correo', usuario.correo);
+                    sessionStorage.setItem('timestamp', usuario.timeout);
                     window.location = "/VerificaCuenta/VerificaCuenta";
 
                 }

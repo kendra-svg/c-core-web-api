@@ -163,7 +163,8 @@
             var day = ('0' + now.getDate()).slice(-2); 
             var hours = ('0' + now.getHours()).slice(-2); 
             var minutes = ('0' + now.getMinutes()).slice(-2); 
-            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+            var seconds = ('0' + now.getSeconds()).slice(-2);
+            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes + ':' + seconds;
             document.getElementById('timestamp').value = datetime;
         }
 
