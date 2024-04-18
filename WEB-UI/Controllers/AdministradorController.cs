@@ -10,6 +10,8 @@ namespace WEB_UI.Controllers
     {
         public IActionResult LandingAdministrador()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
         public IActionResult AsignacionCitas()
@@ -126,6 +128,8 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Administrador/MiSalud/MisFacturas.cshtml");
         }
+
+       
         //usuarios
         //Por favor revisar
         //public IActionResult Usuarios()

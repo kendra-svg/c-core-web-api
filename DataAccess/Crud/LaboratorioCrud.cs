@@ -59,5 +59,31 @@ namespace DataAccess.Crud
         {
             throw new NotImplementedException();
         }
+
+
+        public  List<T> RetrieveAllByUserId<T>(int id)
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = laboratorioMapper.GetRetrieveByUserId(id);
+
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoList = laboratorioMapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+
+            }
+            return resultList;
+        }
+
+        public void DeleteLabById(int labID)
+        {
+            SqlOperation operation = laboratorioMapper.DeleteByLabId(labID);
+            dao.ExecuteStoredProcedure(operation);
+        }
     }
 }

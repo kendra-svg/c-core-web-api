@@ -34,26 +34,23 @@
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-            <div class="col text-center">
-                <p>Sede a la que pertenece</p>
-            </div>
+          
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
-                <span>correo@gmail.com </span>
+                <span id="user-email-display"></span>
 
             </div>
         </div>
 
     </header>
-    <div class="position-relative">
+    <div class="position-relative ">
         <div class="container">
-            <ul id="other-options-list" class="list-unstyled position-absolute end-0" style="display:none;">
+            <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
                 <li><a asp-controller="Doctor" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
+                <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
-
 
 
 
@@ -100,42 +97,15 @@
                     </div>
                 </div>
             </form>
-            <div class="container">
-                <h2>Listado de Exámenes</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Examen 1</h5>
-                        <p class="card-text"><strong>Especialidad:</strong> Cardiología</p>
-                        <p class="card-text"><strong>Tipo de Examen:</strong> Ecocardiograma</p>
-                        <p class="card-text"><strong>Fecha:</strong> 2024-03-15</p>
-                        <p class="card-text"><strong>Diagnóstico:</strong> Hipertrofia ventricular izquierda sospechada debido a cambios en la geometría del ventrículo izquierdo</p>
-                        <p class="card-text">
-                            <strong>Descripción:</strong>
-                            El ecocardiograma reveló cambios en la geometría del ventrículo izquierdo.
-                        </p>
-                        <p class="card-text"><strong>Médico:</strong> Dr. Juan Pérez</p>
+            <div class="container mt-5">
+                <h4>Listado de Examenes</h4>
+
+                <div class="row">
+                    <div class="col">
+                        <div id="gridExamenesPersonales" style="height: 300px; width:95%;" class="ag-theme-alpine"></div>
+
                     </div>
-                    <div class="card-footer d-flex justify-content-center align-items-center">
-                        <button class="btn btn-success">Descargar</button>
-                        <div style="margin-left: 10px;"></div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Examen 2</h5>
-                        <p class="card-text"><strong>Especialidad:</strong> Radiología</p>
-                        <p class="card-text"><strong>Tipo de Examen:</strong> Radiografía de tórax</p>
-                        <p class="card-text"><strong>Fecha:</strong> 2024-04-10</p>
-                        <p class="card-text"><strong>Diagnóstico:</strong> Neumonía</p>
-                        <p class="card-text"><strong>Descripción:</strong> Se observan infiltrados pulmonares en la radiografía de tórax.</p>
-                        <p class="card-text"><strong>Médico:</strong> Dra. María Gómez</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center align-items-center">
-                        <button class="btn btn-success">Descargar</button>
-                        <div style="margin-left: 10px;"></div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
+
                 </div>
             </div>
         </div>

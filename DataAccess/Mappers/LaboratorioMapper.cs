@@ -15,8 +15,9 @@ namespace DataAccess.Mappers
         {
             Laboratorio lab = new Laboratorio();
             lab.Id = int.Parse(row["id_laboratorio"].ToString());
+
             lab.NombreExamen = row["nombre_examen"].ToString();
-            lab.Comentario = row["comentario"].ToString();
+            lab.Comentario = row["comentarios"].ToString();
             lab.Foto = row["foto"].ToString();
             lab.Fecha = DateTime.Parse(row["fecha"].ToString());
 
@@ -72,5 +73,30 @@ namespace DataAccess.Mappers
         {
             throw new NotImplementedException();
         }
+        
+        public SqlOperation GetRetrieveByUserId(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "SP_GET_LAB_BY_USER_ID";
+
+            operation.AddIntegerParam("id_usuario", id);
+
+            return operation;
+        }
+
+        public SqlOperation DeleteByLabId(int labId)
+        {
+            SqlOperation operation = new SqlOperation();
+
+            //Deberia de  modificarse  el SP  y tiene que eliminarse primero el que existe dentro registro_citas 
+
+            operation.ProcedureName = "SP_DELETE_LAB_BY_ID";
+
+            operation.AddIntegerParam("id_lab", labId);
+
+            return operation;
+        }
+
     }
 }

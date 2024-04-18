@@ -52,8 +52,9 @@ function CrearUsuario() {
         var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
 
         var timeoutstring = $('#timestamp').val();
-        /*var timeout = new Date(timeoutstring);*/
-        usuario.timeout = /*$('#timestamp').val();*//* timeout;*/$('#timestamp').val();
+       /* var timeout = new Date(timeoutstring);*/
+        usuario.timeout = $('#timestamp').val(); /*timeout;$('#timestamp').val();*/
+        /*usuario.timeout = timeout;*/
         console.log(usuario.timeout)
 
 

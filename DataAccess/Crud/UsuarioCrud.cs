@@ -126,6 +126,18 @@ namespace DataAccess.Crud
             return resultList;
         }
 
+        public void UpdateOtpAndTimestamp(string correo, int otp)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateOtpAndTimestamp(correo, otp);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
+        public void UpdateVerification(string correo)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateAccountVerification(correo);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
 
 
 
