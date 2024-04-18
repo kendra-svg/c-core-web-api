@@ -42,15 +42,35 @@
         }).fail(function (error) {
             console.log("Error", error);
         });
+
     }
 
-    //this.RedirectEmailVerified = function () {
-    //    window.location = "/VerificaOTP/VerificaOTP";
-    //}
+    this.CommunicateUser = function () {
+        var cuerpo = "Hola " + nombreCompleto + ",<br><br>" +
+            "Para completar tu solicitud de cambio de clave, por favor ingresa el siguiente código de verificación en la página: " + otp + "." + "<br><br>" +
+            "Ten en cuenta que el código expirará en un minuto." + "<br><br>" +
+            "Hospital SIMEPCI.";
+        var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?correo=" + correo + "&cuerpo=" + cuerpo + "&otp=" + otp + "&asunto=Verificación de cuenta";
 
-    //this.RedirectEmailVerified = function () {
-    //    window.location = "/VerificaOTP/VerificaOTP";
-    //}
+        // Enviar el correo electrónico
+        $.ajax({
+            url: apiUrl,
+            method: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            processData: false,
+            data: JSON.stringify({}),
+            headers: {
+                'Content-Type': 'text/html'
+            }
+        }).done(function (response) {
+            console.log("Correo enviado:", response);
+        }
+        ).fail(function (error) {
+            console.log("Error", error);
+        });
+    }
+
 
 
 }
