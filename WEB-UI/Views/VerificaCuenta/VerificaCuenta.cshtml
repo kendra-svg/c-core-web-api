@@ -5,8 +5,9 @@
 }
 
 @section Scripts {
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+@*     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/VerificaCuenta/VerificaCuenta.js"></script>
 }
@@ -25,6 +26,7 @@
         <h1>Verificar cuenta</h1>
         <div class="main-agileinfo">
             <div class="agileits-top">
+                <input type="datetime-local"  id="newTimestamp" style="display:none"/>
 
                 <div class="input-group">
                     <label for="Correo">Correo</label>
@@ -39,13 +41,30 @@
                 <div class="input-group">
                     <button type="button" id="btnVerificar">Verificar</button>
                 </div>
+                <div class="input-group">
+                    <button type="button" id="btnSendNewOtp">Reenviar código</button>
+                </div>
+
             </div>
         </div>
     </div>
 
     <script>
+        function fillTimestamp() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = ('0' + (now.getMonth() + 1)).slice(-2);
+            var day = ('0' + now.getDate()).slice(-2);
+            var hours = ('0' + now.getHours()).slice(-2);
+            var minutes = ('0' + now.getMinutes()).slice(-2);
+            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+            document.getElementById('newTimestamp').value = datetime;
+        }
 
 
+        document.getElementById('btnSendNewOtp').addEventListener('click', function () {
+                fillTimestamp();
+        });
     </script>
 </body>
 </html>
