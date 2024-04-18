@@ -8,8 +8,8 @@
     }
     this.ListaSede = function () { 
         $.ajax({
-            url: "https://localhost:7154/api/Sedes/GetAllSedesA",
-            //url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
+            //url: "https://localhost:7154/api/Sedes/GetAllSedesA",
+            url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json" 
