@@ -51,14 +51,16 @@ public class EspecialidadCrud: CrudFactory
     }
 
     //Get by id especialidad
-    //public List<T> RetrieveById<T>()
-    //{
-    //    throw new NotImplementedException();
-    //}
-    //public override T RetrieveById<T>(int id)
-    //{
-    //    throw new NotImplementedException();
-    //}
+    public List<T> RetrieveById<T>()
+    {
+        throw new NotImplementedException();
+    }
+    public override T RetrieveById<T>(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+
 
     public override void Update(BaseClass dto)
     {
