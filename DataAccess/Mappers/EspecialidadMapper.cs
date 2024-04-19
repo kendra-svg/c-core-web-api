@@ -77,15 +77,7 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         } 
 
-        //get retrievebyid
-        //public SqlOperation GetRetrieveByID(int id)
-        //{
-        //    SqlOperation operation = new SqlOperation();
-        //    operation.ProcedureName = "SP_GET_ESPECIALIDAD_BY_ID";
-        //    operation.AddIntegerParam("id", id);
 
-        //    return operation;
-        //}
 
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {

@@ -41,12 +41,7 @@ namespace API.Controllers
             return manager.GetAllEspecialidades();
 
         }
-        //[HttpGet]
-        //public List<Sede> GetEspecialidadById()
-        //{
-        //    EspecialidadesManager manager = new EspecialidadesManager();
-        //    return manager.GetEspecialidadById();
-        //}
+   
 
     }
 }
