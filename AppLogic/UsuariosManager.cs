@@ -59,5 +59,11 @@ namespace AppLogic
             UsuarioCrud crud = new UsuarioCrud();
             crud.UpdateOtpAndTimestamp(correo);
         }
+
+        public void UpdatePassword(string correo, string nuevaClave)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            crud.UpdatePassword(correo, nuevaClave);
+        }
     }
 }

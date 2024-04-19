@@ -121,3 +121,13 @@ input[type="submit"] {
             .signup-link p a:hover {
                 color: #03bb85;
             }
+
+            .signup-link a:hover {
+                color: #0026ff;
+            }
+
+
+.sign-up-hover a:hover {
+    color: white; /* Cambia el color del texto a blanco */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+}

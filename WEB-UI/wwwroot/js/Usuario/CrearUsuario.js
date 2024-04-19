@@ -218,7 +218,7 @@ function CrearUsuario() {
             $('#Telefono').val("");
             return;
         }
-        /*console.log(sessionStorage.getItem('correo'))*/
+
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
 
         $.ajax({
@@ -242,7 +242,7 @@ function CrearUsuario() {
                     var view = new CrearUsuario();
                     view.CommunicatePatient();
                     view.LimpiarFormulario();
-                    /*view.RedirectToLogin()*/;
+
                     sessionStorage.setItem('correo', usuario.correo);
                     sessionStorage.setItem('timestamp', usuario.timeout);
                     window.location = "/VerificaCuenta/VerificaCuenta";

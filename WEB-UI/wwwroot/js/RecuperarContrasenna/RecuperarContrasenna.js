@@ -3,8 +3,6 @@
         
         $(btnVerificar).click(function () {
             var view = new CorreoValidation();
-/*            self.GetCorreo();*/
-            /*view.RedirectEmailVerified();*/
             view.GetCorreo();
             sessionStorage.setItem("timestamp", new Date());
             view.SubmitGenerarOtp();
@@ -31,7 +29,7 @@
                 var nombreCompleto = usuario.nombre + " " + usuario.apellidos;
                 var otp = usuario.otp;
 
-                /*console.log("Correo: " + correo);*/
+
                 console.log("Nombre completo: " + nombreCompleto);
                 console.log("OTP: " + otp);
 
@@ -41,7 +39,7 @@
                     "Hospital SIMEPCI.";
                 var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?correo=" + correo + "&cuerpo=" + cuerpo + "&otp=" + otp + "&asunto=Verificación de cuenta";
 
-                // Enviar el correo electrónico
+
                 $.ajax({
                     url: apiUrl,
                     method: "POST",
@@ -140,33 +138,11 @@
 
 
                     }).done(function (result) {
-                        //console.log("El OTP se ha generado con éxito.");
-                        //Swal.fire({
-                        //    title: "¡Código generado!",
-                        //    text: "¡Se ha enviado un nuevo código a tu correo!",
-                        //    icon: "success",
-                        //    confirmButtonText: "Aceptar",
-                        //});
-                        //Swal.fire({
-                        //    title: 'Generando...',
-                        //    text: 'Espera un momento mientras generamos tu código.',
-                        //    icon: 'info',
-                        //    timer: 9000,
-                        //    showConfirmButton: false,
 
-                        //});
-                        //Swal.fire({
-                        //    title: 'Buscando...',
-                        //    text: 'Espera un momento buscamos tu correo en nuestros registros.',
-                        //    icon: 'info',
-                        //    timer: 9000,
-                        //    showConfirmButton: false,
-
-                        //});
                     }).then(function (result) {
                         console.log("THEN: El OTP se ha generado con éxito.");
                         var view = new CorreoValidation();
-                        /*view.CommunicateUser();*/
+
                     }).fail(function (error) {
                         console.error("Error al realizar la solicitud de generación de OTP:", error);
                         Swal.fire({
@@ -199,34 +175,6 @@
 
         }
     }
-
-    //this.CommunicateUser = function () {
-    //    var cuerpo = "Hola " + nombreCompleto + ",<br><br>" +
-    //        "Para completar tu solicitud de cambio de clave, por favor ingresa el siguiente código de verificación en la página: " + otp + "." + "<br><br>" +
-    //        "Ten en cuenta que el código expirará en un minuto." + "<br><br>" +
-    //        "Hospital SIMEPCI.";
-    //    var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?correo=" + correo + "&cuerpo=" + cuerpo + "&otp=" + otp + "&asunto=Verificación de cuenta";
-
-    //    // Enviar el correo electrónico
-    //    $.ajax({
-    //        url: apiUrl,
-    //        method: "POST",
-    //        contentType: "application/json;charset=utf-8",
-    //        dataType: "json",
-    //        processData: false,
-    //        data: JSON.stringify({}),
-    //        headers: {
-    //            'Content-Type': 'text/html'
-    //        }
-    //    }).done(function (response) {
-    //        console.log("Correo enviado:", response);
-    //    }
-    //    ).fail(function (error) {
-    //        console.log("Error", error);
-    //    });
-    //}
-
-
 
 }
 limpiarOtp = function () {

@@ -77,15 +77,16 @@ function VerificarCuenta() {
                         }).then(function () {
                             sessionStorage.setItem("correo", usuario.correo);
                             console.log("Correo: " + usuario.correo);
-                            window.location = "/CambioClave/CambioClave";
-
-                        }).fail(function (xhr, status, error) {
-                            if (xhr.responseText) {
-                                console.error("Error al realizar la solicitud de actualización de verificación: ", xhr.responseText);
-                            } else {
-                                console.error("Error al realizar la solicitud de actualización de verificación: ", error);
-                            }
+                            window.location = "/CambioContrasenna/CambioContrasenna";
                         });
+
+                        //}).fail(function (xhr, status, error) {
+                        //    if (xhr.responseText) {
+                        //        console.error("Error al realizar la solicitud de actualización de verificación: ", xhr.responseText);
+                        //    } else {
+                        //        console.error("Error al realizar la solicitud de actualización de verificación: ", error);
+                        //    }
+                        //});
 
                 } else {
                     console.log("No se encontró ningún usuario con el OTP y el correo electrónico proporcionados.");
@@ -102,9 +103,13 @@ function VerificarCuenta() {
             }).then(function (result) {
 
 
-
-            }).fail(function (error) {
-                console.error("Error al realizar la solicitud de verificación de cuenta:", error);
+            }).fail(function (xhr, status, error) {
+                if (xhr.responseText) {
+                    console.error("Error al realizar la solicitud de actualización de verificación: ", xhr.responseText);
+                } else {
+                    console.error("Error al realizar la solicitud de actualización de verificación: ", error);
+                }
+            
                 Swal.fire({
                     title: "¡Código incorrecto!",
                     text: "¡Por favor ingrese el código enviado a su correo!",
