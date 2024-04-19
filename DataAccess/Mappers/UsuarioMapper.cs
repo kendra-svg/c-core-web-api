@@ -133,6 +133,42 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveAllDoctors ()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_DOCTORS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllEnfermeros()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_ENFERMEROS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllSecretarios()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_SECRETARIOS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllPacientes()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_PACIENTES";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllAdministradores()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_ADMINISTRADORES";
+            return operation;
+        }
+
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
