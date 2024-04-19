@@ -3,7 +3,13 @@
     ViewData["Title"] = "Configuracion de Cupos";
 }
 
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/listaespecialidades/griddefinition.js"></script>
+    <script src="~/js/listaespecialidades/listaespecialidades.js"></script>
 
+}
 
 
 
@@ -16,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" /> *@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -24,11 +30,11 @@
 
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
-    <link href="~/css/severalstyles.css" rel="stylesheet" />
+    @* <link href="~/css/severalstyles.css" rel="stylesheet" /> *@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/StyleRecetas.css">
+   @*  <link rel="stylesheet" href="~/css/StyleRecetas.css"> *@
 </head>
 <body>
 
@@ -69,7 +75,7 @@
         <div class="container">
             <h2 class="text-center">Configuracion de Cupos</h2>
             <form>
-                    <div class="row pt-3">
+                    @* <div class="row pt-3">
 
 
                         <div class="col-1 ">
@@ -84,8 +90,8 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="row pt-3">
+                    </div> *@
+                   @*  <div class="row pt-3">
                         <div class="col-1 ">
                             <label for="especialidades">Especialidad:</label>
                         </div>
@@ -101,8 +107,8 @@
                             </div>
 
                         </div>
-                    </div>
-                <div class="row pt-3">
+                    </div> *@
+                @* <div class="row pt-3">
                     <div class="col-1 ">
                         <label for="cantidad">Cantidad:</label>
                     </div>
@@ -117,12 +123,32 @@
                         </div>
 
                     </div>
+                </div> *@
+
+                <div>
+                    <label for="ddlEspecialidades">Especialidad:</label>
+                    <select id="ddlEspecialidades" class="form-select">
+                    </select>
+                </div>
+                <div>
+                    <label for="txtCantidad">Cantidad:</label>
+                    <input id="txtCantidad" type="text" class="form-control" />
+                </div>
+                <div>
+                    <label for="txtCronometro">Cronómetro:</label>
+                    <input id="txtCronometro" type="text" class="form-control" />
+                </div>
+
+                <div class="input-group">
+                    <button type="button" id="btnCreateNewCupos">Reenviar código</button>
                 </div>
                 
             </form>
+
         </div>
 
     </div>
+    <div id="cuposGrid" style="height: 300px; width:70%;" class="ag-theme-alpine"></div>
 
     @Html.Partial("_Footer")
 
@@ -140,10 +166,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
+@* 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 
+ *@
