@@ -64,7 +64,7 @@ namespace DataAccess.Mappers
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
-        }
+        } 
 
         //get retrievebyid
         //public SqlOperation GetRetrieveByID(int id)
