@@ -26,6 +26,41 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        public List<UsuarioBase> GetDoctors()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllDoctors();
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetEnfermeros()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllEnfermeros();
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetSecretarios()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllSecretarios();
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetPacientes()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllPacientes();
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetAdministradores()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllAdministradores();
+        }
+
+        [HttpGet]
         public List<UsuarioBase> GetUserCredentials(string correo, string contrasenna)
         {
             UsuariosManager um = new UsuariosManager();
