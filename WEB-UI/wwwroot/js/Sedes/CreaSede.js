@@ -29,11 +29,11 @@ function CreaSede() {
         sede.nombre = $('#input-nombre-sede').val();
         sede.descripcion = $('#input-descripcion').val();
         sede.fechaCreacion = $('#input-fecha-creacion').val();
-        sede.ubicacion = $('#coordinates').val();
+        sede.ubicacion = $('#input-otras-senas').val();
         sede.canton = $('#input-canton').val();
         sede.provincia = $('#input-provincia').val();
         sede.distrito = $('#input-distrito').val();
-        sede.direccion = $('#input-otras-senas').val();
+        sede.direccion = $('coordinates').val();
         sede.foto = fotoCloudinary.src;
         console.log(sede);
         if (sede.nombre === "") {
