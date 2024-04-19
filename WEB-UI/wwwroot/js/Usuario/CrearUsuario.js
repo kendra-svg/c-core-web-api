@@ -218,7 +218,7 @@ function CrearUsuario() {
             $('#Telefono').val("");
             return;
         }
-        /*console.log(sessionStorage.getItem('correo'))*/
+
         var api_url = API_URL_BASE + "/api/Usuario/CreateUsuario";
 
         $.ajax({
@@ -242,8 +242,9 @@ function CrearUsuario() {
                     var view = new CrearUsuario();
                     view.CommunicatePatient();
                     view.LimpiarFormulario();
-                    /*view.RedirectToLogin()*/;
+
                     sessionStorage.setItem('correo', usuario.correo);
+                    sessionStorage.setItem('timestamp', usuario.timeout);
                     window.location = "/VerificaCuenta/VerificaCuenta";
 
                 }
@@ -264,7 +265,10 @@ function CrearUsuario() {
         var nombreCompleto = $('#Nombre').val() + " " + $('#Apellidos').val();
         var otp = guardaOtp;
         console.log(otp)
-        var cuerpo = "Hola " + nombreCompleto + ",\n\n" + "Gracias por registrarte en Simepci. Para completar tu registro, por favor ingresa el siguiente código de verificación en la página: " + otp + ".\n\n";
+        var cuerpo = "Hola " + nombreCompleto + "<br><br>" +
+            "Gracias por registrarte. Para activar tu cuenta, por favor ingresa el siguiente código de verificación en la página: " + otp + "." + "<br><br>" +
+            "Ten en cuenta que el código expirará en un minuto." + "<br><br>" +
+            "Hospital SIMEPCI."
         console.log("Correo enviado en la solicitud:", correo);
         var apiUrl = API_URL_BASE + "/api/Communication/SendEmail?correo=" + correo + "&cuerpo=" + cuerpo + "&otp=" + otp + "&asunto=Verificación de cuenta";
 
@@ -272,7 +276,12 @@ function CrearUsuario() {
             url: apiUrl,
             method: "POST",
             contentType: "application/json;charset=utf-8",
-            dataType: "json"
+            dataType: "json",
+            processData: false,
+            data: JSON.stringify({}),
+            headers: {
+                'Content-Type': 'text/html'
+            }
 
         }).done(function (data) {
             console.log("Se ha enviado un correo con el código OTP" + data)

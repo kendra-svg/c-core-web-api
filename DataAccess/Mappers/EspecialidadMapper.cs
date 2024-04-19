@@ -61,6 +61,17 @@ namespace DataAccess.Mappers
 
         }
 
+        public SqlOperation GetRetrieveById(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ESPECIALIDAD_BY_ID";
+
+           
+
+            operation.AddIntegerParam("idespecialidad", id);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();

@@ -1,5 +1,5 @@
 ﻿function SedeList() {
-    var api_url = API_URL_BASE + "/api/Sedes/GetSedeById";
+
     this.InitView = function () {
         this.ListaSede();
         //$('#dtnCreate').click(function () {
@@ -8,11 +8,11 @@
     }
     this.ListaSede = function () { 
         $.ajax({
-            //url: api_url,
-            url: api_url + "/api/Sedes/GetSedes",
+            //url: "https://localhost:7154/api/Sedes/GetAllSedesA",
+            url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
-            dataType: "json"
+            dataType: "json" 
         }).done(function (result) {
             if (result.result == "OK") {
                 console.log("Estos fueron", result);

@@ -31,8 +31,8 @@
         <div class="main-agileinfo">
             <div class="agileits-top">
                 <form id="registroForm">
-                    <h1>Crea tu cuenta</h1>
-                            <h2>Datos personales</h2>
+                    <h1 style="color:black">Crea tu cuenta</h1>
+                    <h2 style="color:black"> Datos personales</h2>
                                 <div class="btn-container">
                                     <img id="fotoUsuario" class="fotoUsuario">
                                     <button type="button" class="botonGuardar " id="botonFoto" required>Subir foto</button>
@@ -83,8 +83,8 @@
                             <input type="hidden" id="lng" name="longitud">
                             <div id="map" style="height: 300px;"></div>
                             <div class="coordinates-container">
-                                <label for="coordinates">Ubicación</label>
-                                <input type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
+                                <label for="coordinates">Ubicación con las coordenadas del mapa</label>
+                                <input type="text" id="coordinates" class="text" placeholder="Ubicación con las coordenadas del mapa" readonly>
                                 <label for= "Direccion">Dirección</label>
                                 <select class="text" required="required" id="Direccion" name="Direccion">
                                     <option value="" disabled selected>Seleccione dirección</option>
@@ -104,8 +104,8 @@
                         <div class="input-group">
                             <hr class="divider-line">
                             <div class="security-info">
-                                <h2>Seguridad de la cuenta</h2>
-                                <p>Al menos debe contener de 8 a 12 caracteres.</p>
+                            <h2 style="color:black">Seguridad de la cuenta</h2>
+                            <p style="color:black">La contraseña debe ser mayor a 8 caracteres, pero menor a 12 caracteres.</p>
                             </div>
                             <div class="password-inputs">
                                 <label for="Contrasenna">Contraseña</label>
@@ -163,7 +163,8 @@
             var day = ('0' + now.getDate()).slice(-2); 
             var hours = ('0' + now.getHours()).slice(-2); 
             var minutes = ('0' + now.getMinutes()).slice(-2); 
-            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+            var seconds = ('0' + now.getSeconds()).slice(-2);
+            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes + ':' + seconds;
             document.getElementById('timestamp').value = datetime;
         }
 

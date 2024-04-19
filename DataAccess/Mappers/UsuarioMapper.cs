@@ -3,6 +3,7 @@ using DataAccess.Mappers.Interfaces;
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,11 @@ namespace DataAccess.Mappers
             user.Identificacion = row["indentificaciones"].ToString();
             user.OTP = int.Parse(row["otp"].ToString());
             user.Verificacion = row["verificacion"].ToString();
-            user.Timeout = DateTime.Parse(row["timeout"].ToString());
+            //user.Timeout = DateTime.Parse(row["timeout"].ToString());
+            user.Timeout = DateTime.Parse(row["timeout"].ToString());/* == "" ? DateTime.MinValue : DateTime.Parse(row["timeout"].ToString())*/
+
+
+
 
             return user;
         }
@@ -128,17 +133,53 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveAllDoctors ()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_DOCTORS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllEnfermeros()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_ENFERMEROS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllSecretarios()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_SECRETARIOS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllPacientes()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_PACIENTES";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllAdministradores()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_ADMINISTRADORES";
+            return operation;
+        }
+
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
         }
 
-        public SqlOperation GetUpdateOtpAndTimestamp(string correo, int otp)
+        public SqlOperation GetUpdateOtpAndTimestamp(string correo)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_UPDATE_OTP_AND_TIMEOUT";
+            operation.ProcedureName = "SP_PUT_OTP_TIMESTAMP";
             operation.AddVarCharParam("Correo", correo);
-            operation.AddIntegerParam("OTP", otp);
+
             return operation;
         }
 
@@ -150,10 +191,21 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetUpdateUserPassword(string correo, string nuevaClave)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_PUT_PASSWORD";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddVarCharParam("nuevaClave", nuevaClave);
+            return operation;
+        }
+
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
             throw new NotImplementedException();
         }
+
+
         
     }
 }

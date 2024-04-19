@@ -99,21 +99,7 @@ namespace DataAccess.DAO
                 throw ex;
             }
         }
-        public bool VerificarCredenciales(string correo, string contrasenna)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand("SP_VERIFICAR_USUARIO", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Correo", correo);
-                    command.Parameters.AddWithValue("@Contrasenna", contrasenna);
-                    connection.Open();
-                    int resultado = (int)command.ExecuteScalar();
-                    return resultado == 1;
-                }
-            }
-        }
+
 
     }
 }

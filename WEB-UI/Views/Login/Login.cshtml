@@ -32,7 +32,7 @@
     <div class="main-w3layouts wrapper">
         <div class="main-agileinfo">
             <div class="agileits-top">
-                <h1>Iniciar Sesión</h1>
+                <h1 style="color: black">Iniciar Sesión</h1>
 
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post))
                 {
@@ -43,37 +43,17 @@
                          {
                              <div id="validations" style="color: red; display: none">@ViewBag.Message</div>    
                          }
-                           @*  <script>
-                                    $(document).ready(function () {
-                                        var message = "@ViewBag.Message";
-                                        if (message !== "") {
-                                            mostrarAlerta(message);
-                                   
-                                        }
-                                    });
-
-                                    function mostrarAlerta(mensaje) {
-                                        Swal.fire({
-                                            title: 'Error',
-                                            text: mensaje,
-                                            icon: 'error'
-                                        });
-                                    } 
-
-                             </script> *@
-
-                        
-                      
-
 
                      </div>
 
                     <div class="input-group">
                         <div>
-                            @Html.TextBoxFor(model => model.Correo, new { @class = "email", placeholder = "Correo", required = "required" })
+                            <label>Correo</label>
+                            @Html.TextBoxFor(model => model.Correo, new { @class = "email", required = "required" })
                         </div>
                         <div>
-                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", placeholder = "Contraseña", required = "required" })
+                            <label>Contraseña</label>
+                            @Html.PasswordFor(model => model.Contrasenna, new { @class = "text", required = "required" })
                         </div>
                     </div>
 
@@ -84,8 +64,8 @@
                 }
 
 
-                <div class="signup-link">
-                    <p style="text-align: center;">¿No tienes una cuenta? <a href="Registro/Registro">Regístrate aquí</a> &nbsp; |&nbsp; <a href="RecuperarContrasenna/RecuperarContrasenna">¿Olvidaste tu contraseña?</a></p>
+                <div class="sign-up-hover">
+                    <p style="text-align: center;  color: black;"" >¿No tienes una cuenta? <a style=" color: black;" href="Registro/Registro">Regístrate aquí</a> &nbsp; |&nbsp; <a style=" color: black;" href="RecuperarContrasenna/RecuperarContrasenna">¿Olvidaste tu contraseña?</a></p>
                 </div>
             </div>
         </div>

@@ -26,14 +26,21 @@ namespace AppLogic
             }
             return "";
         }
-        //public SedesInfo GetSedesDeta(int id)
-        //{
-        //    string service = CENTRAL_API + "/api/Sedes/GetsedeById";
-        //    string results = this.InvokeGetMethod(service);
-        //    SedesInfo sedes = JsonConvert.DeserializeObject<SedesInfo>(results);
-        //    return sedes;
-        //}
-        //public
+        public SedesInfo GetSedesData(int id)
+        {
+            string service = CENTRAL_API + "/api/Sedes/GetsedeById";
 
+            string results = this.InvokeGetMethod(service);
+
+            SedesInfo sedes = JsonConvert.DeserializeObject<SedesInfo>(results);
+            return sedes;
+        }
+        public List<SedesInfo> GetSedesInfos()
+        {
+            string serviceUri = CENTRAL_API + "/api/Sedes/GetSedes";
+            string results = this.InvokeGetMethod(serviceUri);
+            var dtoObject = JsonConvert.DeserializeObject<List<SedesInfo>>(results);
+            return dtoObject;
+        }
     }
 }
