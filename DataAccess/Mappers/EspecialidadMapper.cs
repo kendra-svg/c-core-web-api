@@ -15,7 +15,9 @@ namespace DataAccess.Mappers
         {
             Especialidad espec = new Especialidad();
             espec.Id = int.Parse(row["id_especialidades"].ToString());
-            espec.Nombre = row["nombre_especialidad"].ToString();
+            espec.Nombre = row["nombre"].ToString();
+            espec.Costo = int.Parse (row["costo"].ToString());
+            espec.IVA = int.Parse (row["IVA"].ToString());
 
             return espec;
         }
@@ -54,7 +56,7 @@ namespace DataAccess.Mappers
         public SqlOperation GetRetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_GET_ALL_ESPECIALIDADES";
+            operation.ProcedureName = "SP_GET_ALL_ESPECIALIDAD";
             return operation;
 
         }
@@ -63,6 +65,16 @@ namespace DataAccess.Mappers
         {
             throw new NotImplementedException();
         }
+
+        //get retrievebyid
+        //public SqlOperation GetRetrieveByID(int id)
+        //{
+        //    SqlOperation operation = new SqlOperation();
+        //    operation.ProcedureName = "SP_GET_ESPECIALIDAD_BY_ID";
+        //    operation.AddIntegerParam("id", id);
+
+        //    return operation;
+        //}
 
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
