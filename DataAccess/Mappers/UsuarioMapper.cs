@@ -155,10 +155,21 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetUpdateUserPassword(string correo, string nuevaClave)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_PUT_PASSWORD";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddVarCharParam("nuevaClave", nuevaClave);
+            return operation;
+        }
+
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
             throw new NotImplementedException();
         }
+
+
         
     }
 }

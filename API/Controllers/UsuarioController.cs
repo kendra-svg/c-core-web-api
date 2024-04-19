@@ -66,6 +66,13 @@ namespace API.Controllers
             UsuariosManager um = new UsuariosManager();
             um.UpdateVerification(correo);
         }
+
+        [HttpPut]
+        public void UpdatePassword(string correo, string nuevaClave)
+        {
+            UsuariosManager um = new UsuariosManager();
+            um.UpdatePassword(correo, nuevaClave);
+        }
         
     }
 }

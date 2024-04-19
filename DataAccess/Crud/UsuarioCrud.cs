@@ -138,6 +138,12 @@ namespace DataAccess.Crud
             dao.ExecuteStoredProcedure(operation);
         }
 
+        public void UpdatePassword(string correo, string nuevaClave)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateUserPassword(correo, nuevaClave);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
 
 
 
