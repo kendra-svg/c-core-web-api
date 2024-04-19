@@ -12,11 +12,20 @@ namespace API.Controllers
     public class RecetasController : Controller
     {
         [HttpPost] //create
-        public string CreateReceta(Receta app)
+        public string CreateReceta(Receta rec)
         {
             RecetasManager manager = new RecetasManager();
-            return manager.CreateReceta(app);
+            return manager.CreateReceta(rec);
         }
+
+        [HttpPost] //update
+        public string UpdateRecipeById(Receta rec)
+        {
+            RecetasManager manager = new RecetasManager();
+            return manager.UpdateRecipeById(rec);
+        }
+
+
 
         [HttpGet] //solicitar datos 
         public List<Receta> GetAllReceta(Receta app)
