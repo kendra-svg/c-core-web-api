@@ -17,13 +17,21 @@ namespace API.Controllers
             EspecialidadesManager manager = new EspecialidadesManager();
             return manager.CreateEspecialidad(espec);
         }
-        [HttpPost]
+
+
+        [HttpPut]
         public string UpdateEspecialidadById(Especialidad espec)
         {
             EspecialidadesManager manager = new EspecialidadesManager();
             return manager.UpdateEspecialidadById(espec);
         }
 
+        [HttpGet]
+        public Especialidad GetEspecialidadById(int idEspecialidad)
+        {
+            EspecialidadesManager manager = new EspecialidadesManager();
+            return manager.GetEspecialidadById(idEspecialidad);
+        }
 
         [HttpGet]
         public List<Especialidad> GetEspecialidades()

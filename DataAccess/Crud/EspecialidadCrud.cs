@@ -50,9 +50,19 @@ public class EspecialidadCrud: CrudFactory
         return resultList;
     }
 
-    public override T RetrieveById<T>(int id)
+    public override T RetrieveById<T>(int idEspecialidad)
     {
-        throw new NotImplementedException();
+
+        SqlOperation operation = especialidadMapper.GetRetrieveById(idEspecialidad);
+        List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+        if (dataResults.Count > 0)
+        {
+            var dtoObject = especialidadMapper.BuildObject(dataResults[0]);
+
+            return (T)Convert.ChangeType(dtoObject, typeof(T));
+        }
+        return default(T);
     }
 
     public override void Update(BaseClass dto)
