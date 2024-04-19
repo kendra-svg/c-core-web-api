@@ -78,12 +78,6 @@ namespace AppLogic
             return crud.RetrieveAll<Especialidad>();
         }
 
-        //public List<Especialidad> GetEspecialidadById(int id)
-        //{
-        //    EspecialidadCrud crud = new EspecialidadCrud();
-        //    return crud.RetrieveById<Especialidad>();
-        //}
-
         public List<Sede> GetEspecialidadById()
         {
             throw new NotImplementedException();
