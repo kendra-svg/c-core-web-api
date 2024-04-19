@@ -33,12 +33,20 @@ namespace API.Controllers
             return manager.GetEspecialidadById(idEspecialidad);
         }
 
+        //get especialidad
         [HttpGet]
-        public List<Especialidad> GetEspecialidades()
+        public List<Especialidad> GetAllEspecialidad ()
         {
-            EspecialidadesManager pm = new EspecialidadesManager();
-            return pm.GetAllEspecialidades();
+            EspecialidadesManager manager = new EspecialidadesManager();
+            return manager.GetAllEspecialidades();
+
         }
+        //[HttpGet]
+        //public List<Sede> GetEspecialidadById()
+        //{
+        //    EspecialidadesManager manager = new EspecialidadesManager();
+        //    return manager.GetEspecialidadById();
+        //}
 
     }
 }

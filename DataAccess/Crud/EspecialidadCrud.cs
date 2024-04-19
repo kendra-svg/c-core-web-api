@@ -63,7 +63,17 @@ public class EspecialidadCrud: CrudFactory
             return (T)Convert.ChangeType(dtoObject, typeof(T));
         }
         return default(T);
+    //Get by id especialidad
+    public List<T> RetrieveById<T>()
+    {
+        throw new NotImplementedException();
     }
+    public override T RetrieveById<T>(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+
 
     public override void Update(BaseClass dto)
     {
