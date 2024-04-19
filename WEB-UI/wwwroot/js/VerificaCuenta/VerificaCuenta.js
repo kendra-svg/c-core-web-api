@@ -173,7 +173,7 @@ function VerificarCuenta() {
                     //});
                     Swal.fire({
                         title: 'Generando...',
-                        text: 'Espere un momento mientras generamos tu código.',
+                        text: 'Espera un momento mientras generamos tu código.',
                         icon: 'info',
                         timer: 9000,
                         showConfirmButton: false,
