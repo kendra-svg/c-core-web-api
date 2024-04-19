@@ -22,9 +22,10 @@
 </head>
 <body>
     <div class="main-w3layouts wrapper">
-        <h1>Recuperar Contraseña</h1>
+        <h1>Verificar cuenta</h1>
         <div class="main-agileinfo">
             <div class="agileits-top">
+                @* <input type="datetime-local"  id="newTimestamp" style="display:"/> *@
 
                 <div class="input-group">
                     <label for="Correo">Correo</label>
@@ -32,21 +33,40 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="codigoVerificacion">Ingresa el codigo de verificación</label>
-                    <input type="text" id="codigoVerificacion">
+                    <label for="Otp">Ingresa el codigo de verificación enviado a su correo</label>
+                    <input type="text" id="Otp">
                 </div>
 
                 <div class="input-group">
-                    <button type="button" id="botonVerificar">Verificar</button>
+                    <button type="button" id="btnVerificar">Verificar</button>
                 </div>
+                <div class="input-group">
+                    <button type="button" id="btnSendNewOtp">Reenviar código</button>
+                </div>
+
             </div>
         </div>
     </div>
 
     <script>
+        function fillTimestamp() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = ('0' + (now.getMonth() + 1)).slice(-2);
+            var day = ('0' + now.getDate()).slice(-2);
+            var hours = ('0' + now.getHours()).slice(-2);
+            var minutes = ('0' + now.getMinutes()).slice(-2);
+            var datetime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+            // document.getElementById('newTimestamp').value = datetime;
+            // sessionStorage.setItem('newTimestamp', datetime);
+        }
 
 
+        document.getElementById('btnSendNewOtp').addEventListener('click', function () {
+            fillTimestamp();
+        });
     </script>
 </body>
 </html>
+
 

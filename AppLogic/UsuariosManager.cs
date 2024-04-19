@@ -23,6 +23,36 @@ namespace AppLogic
 
         }
 
+        public List<UsuarioBase> GetAllDoctors()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllDoctors<UsuarioBase>();
+        }
+
+        public List<UsuarioBase> GetAllEnfermeros()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllEnfermeros<UsuarioBase>();
+        }
+
+        public List<UsuarioBase> GetAllSecretarios()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllSecretarios<UsuarioBase>();
+        }
+
+        public List<UsuarioBase> GetAllPacientes()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllPacientes<UsuarioBase>();
+        }
+
+        public List<UsuarioBase> GetAllAdministradores()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllAdministradores<UsuarioBase>();
+        }
+
         public List<UsuarioBase> GetUserCredentials(string correo, string contrasenna)
         {
             UsuarioCrud crud = new UsuarioCrud();
@@ -58,6 +88,12 @@ namespace AppLogic
         {
             UsuarioCrud crud = new UsuarioCrud();
             crud.UpdateOtpAndTimestamp(correo);
+        }
+
+        public void UpdatePassword(string correo, string nuevaClave)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            crud.UpdatePassword(correo, nuevaClave);
         }
     }
 }
