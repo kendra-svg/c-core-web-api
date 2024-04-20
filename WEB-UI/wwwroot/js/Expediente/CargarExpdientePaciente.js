@@ -13,11 +13,11 @@
     }
 
     this.CargarInfoBasica = function () {
-        
 
+        console.log(sessionStorage["pacienteId"])
         var api_url = API_URL_BASE + "/api/Usuario/GetUserByCorreo";
         $.ajax({
-            url: api_url + "?correo=" + sessionStorage["userEmail"],
+            url: api_url + "?correo=" + sessionStorage["pacienteEmail"],
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -50,17 +50,17 @@
 
 
     this.CargarInfoExp = function () {
-        
+
 
         var api_url = API_URL_BASE + "/api/Expedientes/GetExpedienteById";
         $.ajax({
-            url: api_url + "?idExp=" + sessionStorage["userId"],
+            url: api_url + "?idExp=" + sessionStorage["pacienteId"],
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
         }).done(function (result) {
-           
-            expedienteCargado=result
+
+            expedienteCargado = result
             $('#txt-id-expediente').text(result.id);
             $('#txt-antencedentes-p').val(result.antecedentesPersonales);
             $('#txt-tratamientos').val(result.tratamietosFarmacologicos);
@@ -84,19 +84,19 @@
 
     this.GuardarCambiosExp = function () {
 
-        
 
 
-        
-       
+
+
+
 
         var api_url = API_URL_BASE + "/api/Expedientes/UpdateExpediente";
 
 
 
         var cambiosExpediente = {};
-        
-        
+
+
         cambiosExpediente.id = expedienteCargado.id
         cambiosExpediente.antecedentesPersonales = $('#txt-antencedentes-p').val();
         cambiosExpediente.tratamietosFarmacologicos = $('#txt-tratamientos').val();
@@ -108,7 +108,7 @@
         cambiosExpediente.enfermedadesCongenitas = $('#enfermedades-congenitas').val();
         cambiosExpediente.antecedentesCancer = $('#txt-antecedentes-c').val();
 
-       
+
 
 
         if (cambiosExpediente.antecedentesPersonales == null) {
@@ -186,7 +186,7 @@
 
 
 
-    $(document).ready(function () {
-        var view = new ExpInfo();
-        view.InitView();
-    })
+$(document).ready(function () {
+    var view = new ExpInfo();
+    view.InitView();
+})

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 
 
-   
+
 
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
     <link href="~/css/severalstyles.css" rel="stylesheet" />
-
+    
 </head>
 <body>
 
@@ -34,7 +34,7 @@
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-           
+
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
                 <span id="user-email-display"></span>
@@ -58,59 +58,18 @@
 
     @Html.Partial("MenuLateralDoctor")
 
-    <div class="col text-left" id="menu-quick-access">
+    <div class="col text-left">
         <div class="row align-items-center justify-content-between mt-3 mb-4">
             <div class="col-md-3 mt-3">
-                <p class="ml-1">Buscar Usuario</p>
-            </div>
-            <div class="col-md-9">
-                <form class="d-flex mr-4" action="/buscar" method="GET">
-                    <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                <h2 class="ml-1">Lista de Pacientes</h2>
             </div>
         </div>
 
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Correo</th>
-                                <th>Nombre</th>
-                                <th>Rol</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>usuario1@example.com</td>
-                                <td>Usuario Uno</td>
-                                <td>Doctor</td>
-                                <td>Activo</td>
-                                <td>
-                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal'">Ver expediente</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>usuario2@example.com</td>
-                                <td>Usuario Dos</td>
-                                <td>Enfermero</td>
-                                <td>Inactivo</td>
-                                <td>
-                                    <a href="DetallesPaciente" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                    <button type="button" class="btn btn-primary" onclick="window.location.href='ExpedientePersonal'">Ver expediente</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="container text-start">
+           
+            <div class="row">
+                <div class="container">
+                    <div id="pacientesGrid" style="height: 430px; width: 1100px;" class="ag-theme-alpine justify-content-center"></div>
                 </div>
             </div>
         </div>
@@ -119,9 +78,11 @@
 
     @Html.Partial("_Footer")
 
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
-
+    <script src="~/js/listapacientes/griddefinition.js"></script>
+    <script src="~/js/listapacientes/listapacientes.js"></script>
 
 
 
