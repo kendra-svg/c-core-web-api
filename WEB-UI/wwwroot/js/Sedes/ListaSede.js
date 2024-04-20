@@ -1,4 +1,4 @@
-﻿function SedeList() {
+﻿    function SedeList() {
 
     this.InitView = function () {
         this.ListaSede();

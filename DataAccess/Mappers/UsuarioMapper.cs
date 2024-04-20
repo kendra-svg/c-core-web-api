@@ -98,6 +98,13 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveAllUsers()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_USERS";
+            return operation;
+        }
+
         public SqlOperation GetRetrieveCredentials(string correo, string contrasenna)
         {
             SqlOperation operation = new SqlOperation();
