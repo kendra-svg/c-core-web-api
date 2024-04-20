@@ -31,19 +31,15 @@ function CreateRecipe() {
         var rec = {};
         rec.id = generateUniqueId();
 
-        rec.fechaEmision = $('#fechaEmision').val();
-
-        rec.medicamentos = $('#medicamentos').val();
-        rec.dosisRecomendada = $('#dosisRecomendada').val();
+        rec.FechaEmision = $('#FechaEmision').val();
+        rec.NombreMedicamento = $('#NombreMedicamento').val();
+        rec.DosisRecomendada = $('#DosisRecomendada').val();
+        rec.RecomendacionAdicional = $('#RecomendacionAdicional').val();
+        rec.foto = fotoCloudinary.src;
         //rec.cantidadDias = $('#cantidadDias').val();
 
-        rec.recomendacionAdicional = $('#recomendaciones').val();
-
-        rec.foto = fotoCloudinary.src;
-
-
         console.log(rec);
-        if (rec.fechaEmision === "") {
+        if (rec.FechaEmision === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -51,7 +47,7 @@ function CreateRecipe() {
             });
             return;
         }
-        if (rec.dosisRecomendada === "") {
+        if (rec.DosisRecomendada === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -59,7 +55,7 @@ function CreateRecipe() {
             });
             return;
         }
-        if (rec.cantidadDias === "") {
+        if (rec.NombreMedicamento === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -67,7 +63,7 @@ function CreateRecipe() {
             });
             return;
         }
-        if (rec.recomendacionAdicional === "") {
+        if (rec.RecomendacionAdicional === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -118,20 +114,20 @@ function CreateRecipe() {
                 text: "Error al registrar receta" + error,
                 title: 'Error',
 
-            });
+            })
         });
     }
 
 
     this.LimpiarFormulario = function () {
 
-        $('#fechaEmision').val('');
+        $('#FechaEmision').val('');
 
-        $('#medicamentos').val('');
-        $('#dosisRecomendada').val('');
-        $('#cantidadDias').val('');
-        $('#recomendaciones').val('');
-        $('#input-foto').val('');
+        $('#NombreMedicamento').val('');
+        $('#DosisRecomendada').val('');
+        //$('#cantidadDias').val('');
+        $('#RecomendacionAdicional').val('');
+        //$('#input-foto').val('');
         fotoCloudinary.src = '';
     }
 
