@@ -5,7 +5,7 @@
 
     this.ListaUsuarios = function () {
         $.ajax({
-            url: API_URL_BASE + "/api/Usuario/GetAllUsuariosA",
+            url: /*API_URL_BASE + "/api/Usuario/GetAllUsuariosA",*/ "https://apisimepci.azurewebsites.net/api/Usuario/GetAllUsuariosA";
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
