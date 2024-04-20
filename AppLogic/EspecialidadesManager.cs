@@ -1,4 +1,5 @@
-﻿using DataAccess.Mappers;
+﻿using DataAccess.Crud;
+using DataAccess.Mappers;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -77,7 +78,10 @@ namespace AppLogic
             return crud.RetrieveAll<Especialidad>();
         }
 
-
+        public List<Sede> GetEspecialidadById()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
