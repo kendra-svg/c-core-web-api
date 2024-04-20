@@ -41,6 +41,23 @@ namespace API.Controllers
             return manager.GetAllEspecialidades();
 
         }
+        [HttpGet]
+        public API_Response GetAllEspecialidadesA()
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                EspecialidadesManager espe = new EspecialidadesManager();
+                response.Data = espe.GetAllEspecialidades();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
    
 
     }

@@ -8,8 +8,8 @@
     }
     this.ListaEspecialidad = function () {
         $.ajax({
-            //url: "https://localhost:7154/api/Especialidades/GetAllEspecialidades",
-            url: "https://apisimepci.azurewebsites.net/api/Especialidades/GetAllEspecialidad",
+            //url: "https://localhost:7154/api/Especialidades/GetAllEspecialidadesA",
+            url: "https://apisimepci.azurewebsites.net/api/Especialidades/GetAllEspecialidadesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
