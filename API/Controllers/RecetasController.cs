@@ -9,7 +9,7 @@ namespace API.Controllers
     [EnableCors("Demo_Policy")]
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class RecetasController : Controller
+    public class RecetasController : ControllerBase
     {
         [HttpPost] //create
         public string CreateReceta(Receta rec)
@@ -18,20 +18,28 @@ namespace API.Controllers
             return manager.CreateReceta(rec);
         }
 
-        [HttpPost] //update
+        [HttpPut] //update
         public string UpdateRecipeById(Receta rec)
         {
             RecetasManager manager = new RecetasManager();
-            return manager.UpdateRecipeById(rec);
+            return manager.UpdateRecetaById(rec);
         }
 
+        [HttpGet] //id
+        public Receta GetRecetaById(int idReceta)
+        {
+            RecetasManager manager = new RecetasManager();
+            return manager.GetRecetaById(idReceta);
+        }
 
-
-        [HttpGet] //solicitar datos 
-        public List<Receta> GetAllReceta(Receta app)
+        [HttpGet] //Get all
+        public List<Receta> GetAllReceta()
         {
             RecetasManager rec = new RecetasManager();
             return rec.GetAllRecetas();
         }
+        
+        
+        
     }
 }

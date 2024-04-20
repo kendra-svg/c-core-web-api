@@ -17,12 +17,13 @@ botonFoto.addEventListener('click', () => {
     widget_cloudinary.open();
 }, false);
 
-//------------------------------------
+//-------------
 function CreateRecipe() {
     this.InitView = function () {
         //cambiar al id de agregar receta, agregarle id al boton de agregar
         $('#createRecipeButton').click(function (event) {
             var view = new CreateRecipe();
+           // event.preventDefault();
             view.SubmitCreateRecipe();
         })
     }
@@ -30,34 +31,15 @@ function CreateRecipe() {
         var rec = {};
         rec.id = generateUniqueId();
 
-         //cambiar por atributos de recetas de dto          lo rojo son los ids de los campos
-        //rec.nombreMedico = $('nombreMedico').val();
-        //rec.clinica = $('clinica').val();
-        // rec.consultorio = $('consultorio').val();
-
-        rec.fechaEmision = $('#fechaEmision').val();
-
-        rec.medicamentos = $('#medicamentos').val();
-        rec.dosisRecomendada = $('#dosisRecomendada').val();
-        rec.cantidadDias = $('#cantidadDias').val();
-
-        rec.recomendaciones = $('#recomendaciones').val();
-
+        rec.FechaEmision = $('#FechaEmision').val();
+        rec.NombreMedicamento = $('#NombreMedicamento').val();
+        rec.DosisRecomendada = $('#DosisRecomendada').val();
+        rec.RecomendacionAdicional = $('#RecomendacionAdicional').val();
         rec.foto = fotoCloudinary.src;
-
-        //cambiar por atributos de recetas. son validaciones de campos
-        //cambiar por atributos de recetas de dto
+        //rec.cantidadDias = $('#cantidadDias').val();
 
         console.log(rec);
-        /*if (rec.nombreMedico === "") {
-            Swal.fire({
-                icon: 'error',
-                text: "Por agregue su comentario.",
-                title: 'Error'
-            });
-            return;
-        }
-        if (rec.clinica === "") {
+        if (rec.FechaEmision === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -65,17 +47,7 @@ function CreateRecipe() {
             });
             return;
         }
-        if (rec.consultorio === "") {
-            Swal.fire({
-                icon: 'error',
-                text: "Por favor seleccione una foto.",
-                title: 'Error'
-            });
-            return;
-        }*/
-
-
-        if (rec.fechaEmision === "") {
+        if (rec.DosisRecomendada === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -83,7 +55,7 @@ function CreateRecipe() {
             });
             return;
         }
-        if (rec.dosisRecomendada === "") {
+        if (rec.NombreMedicamento === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -91,15 +63,7 @@ function CreateRecipe() {
             });
             return;
         }
-        if (rec.cantidadDias === "") {
-            Swal.fire({
-                icon: 'error',
-                text: "Por favor seleccione una foto.",
-                title: 'Error'
-            });
-            return;
-        }
-        if (rec.recomendaciones === "") {
+        if (rec.RecomendacionAdicional === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una foto.",
@@ -139,10 +103,11 @@ function CreateRecipe() {
                 text: "Se ha completado el registro de la receta",
             }).then(
                 function () {
-                    var view = new CreateRecipe()
+                    var view = new CreateRecipe();
                     view.LimpiarFormulario();
                 }
             )
+        
         }).fail(function (error) {
             Swal.fire({
                 icon: 'error',
@@ -155,23 +120,15 @@ function CreateRecipe() {
 
 
     this.LimpiarFormulario = function () {
-        //los inputs del principio, cambiar por los de receta, genera un id random
-        //$('nombrePaciente').val("");
-        //$('identificacionPaciente').val("");
-        //$('nombreMedico').val("");
 
-        //$('clinica').val('');
-        //$('consultorio').val('');
+        $('#FechaEmision').val('');
 
-        $('#fechaEmision').val('');
-
-        $('#medicamentos').val('');
-        $('#dosisRecomendada').val('');
-        $('#cantidadDias').val('');
-
-        $('#recomendaciones').val('');
-
-        $('#input-foto').val('');
+        $('#NombreMedicamento').val('');
+        $('#DosisRecomendada').val('');
+        //$('#cantidadDias').val('');
+        $('#RecomendacionAdicional').val('');
+        //$('#input-foto').val('');
+        fotoCloudinary.src = '';
     }
 
 }
