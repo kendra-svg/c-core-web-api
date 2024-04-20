@@ -1,13 +1,13 @@
 ﻿const columnDefinition = [
-    { field: "Identificacion", headerName: "Identificación" },
-    { field: "Nombre", headerName: "Nombre" },
-    { field: "Apellidos", headerName: "Apellidos" },
-    { field: "Telefono", headerName: "Teléfono" },
-    { field: "Correo", headerName: "Correo" },
-    { field: "Sexo", headerName: "Sexo" },
-    { field: "Rol", headerName: "Rol" },
-    { field: "Estado", headerName: "Estado" },
-    { field: "Ubicacion", headerName: "Ubicación" }
+    { field: "identificacion", headerName: "Identificación" },
+    { field: "nombre", headerName: "Nombre" },
+    { field: "apellidos", headerName: "Apellidos" },
+    /*{ field: "telefono", headerName: "Teléfono" },*/
+    { field: "correo", headerName: "Correo" },
+    { field: "sexo", headerName: "Sexo" },
+    { field: "rol", headerName: "Rol" }
+    //{ field: "estado", headerName: "Estado" },
+    //{ field: "ubicaciones", headerName: "Ubicación" }
 ];
 
 const gripOptions = {

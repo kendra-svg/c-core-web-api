@@ -5,13 +5,13 @@
 
     this.ListaUsuarios = function () {
         $.ajax({
-            url: /*API_URL_BASE + "/api/Usuario/GetAllUsuariosA",*/ "https://apisimepci.azurewebsites.net/api/Usuario/GetAllUsuariosA";
+            url: /*API_URL_BASE + */"https://localhost:7154/api/Usuario/GetAllUsuariosA", /*"https://apisimepci.azurewebsites.net/api/Usuario/GetAllUsuariosA"*/
             method: "GET",
             contentType: "application/json;charset=utf-8",
-            dataType: "json",
+            dataType: "json"
         }).done(function (result) {
             if (result.result == "OK") {
-            console.log("Estos fueron: " + result);
+                console.log("Estos fueron", result);
                 gripOptions.api.setRowData(result.data);
             }
             else {
