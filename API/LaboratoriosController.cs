@@ -12,10 +12,12 @@ namespace API
     public class LaboratoriosController: ControllerBase
     {
         [HttpPost]
-        public string CreateLaboratorio(Laboratorio lab)
+        public string CreateLaboratorio(Laboratorio lab, int idUsuario)
         {
             LaboratoriosManager manager = new LaboratoriosManager();
-            return manager.CreateLaboratorio(lab);
+            Console.WriteLine(idUsuario);
+            Console.WriteLine(lab);
+            return manager.CreateLaboratorio(lab,idUsuario);
         }
 
         //[HttpGet]

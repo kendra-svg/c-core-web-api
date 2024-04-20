@@ -11,11 +11,25 @@ namespace API.Controllers
     [ApiController]
     public class ExpedientesController : ControllerBase
     {
-        [HttpPost]
-        public string CreateExpediente(Expediente exp)
+        [HttpGet]
+
+        public Expediente GetExpedienteById(int idExp)
         {
             ExpedientesManager manager = new ExpedientesManager();
-            return manager.CreateExpediente(exp);
+            
+            return manager.GetExpedienteById(idExp);
+
+        }
+
+
+
+        [HttpPut]
+        public string UpdateExpediente(Expediente exp)
+        {
+            ExpedientesManager manager = new ExpedientesManager();
+            
+
+            return manager.UpdateExpediente(exp);
         }
     }
 }
