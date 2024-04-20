@@ -252,6 +252,12 @@ namespace DataAccess.Crud
             dao.ExecuteStoredProcedure(operation);
         }
 
+        public void UpdateRol(string correo, string nuevoRol)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateUserRol(correo, nuevoRol);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
 
 
 

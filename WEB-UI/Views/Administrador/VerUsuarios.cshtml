@@ -90,52 +90,38 @@
 
            <div class="container">
                 <div id="myGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
-           </div>
+               <form action="ListUsers" >
+                   <div class="mb-3 text-left">
+                       <label for ="txtIdentificacion">Identificación</label>
+                            <input id="txtIdentificacion" type="text" readonly="readonly" class="form-control " />
+                   </div>
+                   <div class="mb-3 text-left">
+                       <label for ="txtNombre">Nombre</label>
+                            <input id="txtNombre" type="text" readonly="readonly" class="form-control" />
+                   </div>
+                   <div class="mb-3 text-left">
+                       <label for ="txtApellidos">Apellidos</label>
+                            <input id="txtApellidos" type="text" readonly="readonly" class="form-control" />
+                   </div>
+                   <div class="mb-3 text-left">
+                       <label for ="txtCorreo">Correo</label>
+                            <input id="txtCorreo" type="text" readonly="readonly" class="form-control" />
+                   </div>
+                   <div class="mb-3 text-left">
+                       <label for ="txtRol">Rol</label>
+
+                            <select select-direccion required="required" id="Rol" name="Rol" class="form-control">
+
+                       </select>
+                   </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-success" id="btnActRol">Guardar rol</button>
+                    </div>
+               </form>
+            </div>
 
        </div>
-       @* <div class="text-center">
-           <h6 class="display-4 align-content-center">Lista</h6>
-       </div> *@
-       @* <div class="container">
-           <form action="ListSede" >
-               <div class="mb-3">
-                   <label for ="txtNombre">Nombre</label>
-                   <input id="txtNombre" type="text" class="form-control "/>
-               </div
-               <div class="mb-3">
-                   <label for ="txtdescripcion">Descripción</label>
-                   <input id="txtdescripcion" type="text"  class="form-control"/>
-               </div>
-               <div class="mb-3">
-                   <label for ="txtprovincia">Provincia</label>
-                   <input id="txtprovincia" type="text"  class="form-control"/>
-               </div>
-               <div class="mb-3">
-                   <label for ="txtcanton">Cantón</label>
-                   <input id="txtcanton" type="text"  class="form-control"/>
-               </div>
-               <div class="mb-3">
-                   <label for ="txtdistrito">Distrito</label>
-                   <input id="txtdistrito" type="text" class="form-control"/>
-               </div>
-               <div class="mb-3">
-                   <label for ="txtdirecciones">Direcciones</label>
-                   <input id="txtdirecciones" type="text"  class="form-control"/>
-               </div>
-               <div class="mb-3">
-                   <label for ="txtdirecciones">Direcciones</label>
-                   <input id="txtdirecciones" type="text"  class="form-control"/>
-               </div>
-               <div class="mb-3">
-                   <button type="button" class="btn btn-success" id="dtnCreate">Ver</button>
-               </div>
-           </form>
-       </div> *@
-
-    @* @Html.Partial("_Footer")
-
-@*     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"> *@
+      
 
 
 

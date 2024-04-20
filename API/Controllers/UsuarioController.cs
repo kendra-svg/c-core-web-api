@@ -110,6 +110,13 @@ namespace API.Controllers
             um.UpdatePassword(correo, nuevaClave);
         }
 
+        [HttpPut]
+        public void UpdateRol(string correo, string nuevoRol)
+        {
+            UsuariosManager um = new UsuariosManager();
+            um.UpdateRol(correo, nuevoRol);
+        }
+
         [HttpGet]
         public API_Response GetAllUsuariosA()
         {
@@ -127,6 +134,25 @@ namespace API.Controllers
             }
             return response;
         }
+
+        [HttpGet]
+        public API_Response GetUserByCorreoA(string correo)
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                UsuariosManager um = new UsuariosManager();
+                response.Data = um.GetUserByCorreo(correo);
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
 
         [HttpGet]
         public List<UsuarioBase> GetUsuarios()

@@ -96,6 +96,11 @@ namespace AppLogic
             crud.UpdatePassword(correo, nuevaClave);
         }
 
+        public void UpdateRol(string correo, string nuevoRol) { 
+            UsuarioCrud crud = new UsuarioCrud();
+            crud.UpdateRol(correo, nuevoRol);
+        }
+
 
     }
 }

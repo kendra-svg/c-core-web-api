@@ -2,12 +2,11 @@
     { field: "identificacion", headerName: "Identificación" },
     { field: "nombre", headerName: "Nombre" },
     { field: "apellidos", headerName: "Apellidos" },
-    /*{ field: "telefono", headerName: "Teléfono" },*/
+
     { field: "correo", headerName: "Correo" },
     { field: "sexo", headerName: "Sexo" },
     { field: "rol", headerName: "Rol" }
-    //{ field: "estado", headerName: "Estado" },
-    //{ field: "ubicaciones", headerName: "Ubicación" }
+
 ];
 
 const gripOptions = {
@@ -18,6 +17,18 @@ const gripOptions = {
     defaultColDef: { sortable: true, filter: true },
 
 
+    onRowDoubleClicked: params => {
+        ProcessDoubleClick(params);
+    }
+
+
+
+}
+
+function ProcessDoubleClick(params) {
+    var view = new UsuariosList();
+    view.GetUsersDetails(params.data.correo);
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {
