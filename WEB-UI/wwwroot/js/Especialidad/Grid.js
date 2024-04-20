@@ -2,7 +2,7 @@
     { field: "id", headerName: "ID" },
     { field: "nombre", headerName: "Nombre" },
     { field: "costo", headerName: "Costo" },
-    { field: "IVA", headerName: "IVA" }
+    { field: "iva", headerName: "IVA" }
 ];
 
 const gripOptions = {
