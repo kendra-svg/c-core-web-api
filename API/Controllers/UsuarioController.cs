@@ -17,12 +17,48 @@ namespace API.Controllers
             UsuariosManager manager = new UsuariosManager();
             return manager.CreateUsuario(user);
         }
+        //[HttpGet]
+        //public List<UsuarioBase> GetUsuarios()
+        //{
+        //    UsuariosManager pm = new UsuariosManager();
+        //    return pm.GetAllUsuarios();
+
+        //}
+
         [HttpGet]
-        public List<UsuarioBase> GetUsuarios()
+        public List<UsuarioBase> GetDoctors()
         {
             UsuariosManager pm = new UsuariosManager();
-            return pm.GetAllUsuarios();
+            return pm.GetAllDoctors();
+        }
 
+        [HttpGet]
+        public List<UsuarioBase> GetEnfermeros()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllEnfermeros();
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetSecretarios()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllSecretarios();
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetPacientes()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllPacientes();
+        }
+
+ 
+        [HttpGet]
+        public List<UsuarioBase> GetAdministradores()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllAdministradores();
         }
 
         [HttpGet]
@@ -73,6 +109,32 @@ namespace API.Controllers
             UsuariosManager um = new UsuariosManager();
             um.UpdatePassword(correo, nuevaClave);
         }
-        
+
+        [HttpGet]
+        public API_Response GetAllUsuariosA()
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                UsuariosManager um = new UsuariosManager();
+                response.Data = um.GetAllUsuarios();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetUsuarios()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllUsuarios();
+
+        }
+
     }
 }

@@ -35,8 +35,12 @@ namespace DataAccess.Mappers
             }
             return results;
         }
-
         public SqlOperation GetCreateStatement(BaseClass dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SqlOperation GetCreateStatementLab(BaseClass dto,int idUsuario)
         {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName = "SP_INSERT_laboratorio";
@@ -49,6 +53,8 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("foto", lab.Foto);
             operation.AddDatetimeParam("fecha", lab.Fecha);
 
+
+            operation.AddIntegerParam("idusuario", idUsuario);
             return operation;
         }
 

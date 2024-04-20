@@ -24,16 +24,22 @@ function CreateLab() {
         })
     }
     this.SubmitCreateLab = function () {
+        var idusuario = sessionStorage["userId"]
+        console.log(idusuario)
+
+
         var lab = {};
         lab.id = generateUniqueId();
-        
+
         lab.nombreExamen = $('#input-nombre-examen').val();
         lab.comentario = $('#input-comentario').val();
-        
-       
-        
+
+
+
         lab.foto = fotoCloudinary.src;
         lab.fecha = $('#input-fecha').val();
+
+
         console.log(lab);
         if (lab.nombre === "") {
             Swal.fire({
@@ -43,7 +49,7 @@ function CreateLab() {
             });
             return;
         }
-        
+
         if (lab.fecha === "") {
             Swal.fire({
                 icon: 'error',
@@ -60,7 +66,7 @@ function CreateLab() {
             });
             return;
         }
-       
+
         var api_url = API_URL_BASE + "/api/Laboratorios/CreateLaboratorio";
 
         $.ajax({
@@ -69,7 +75,7 @@ function CreateLab() {
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: api_url,
+            url: api_url + "?idUsuario=" + idusuario,
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             data: JSON.stringify(lab),

@@ -98,6 +98,13 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveAllUsers()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_USERS";
+            return operation;
+        }
+
         public SqlOperation GetRetrieveCredentials(string correo, string contrasenna)
         {
             SqlOperation operation = new SqlOperation();
@@ -132,6 +139,42 @@ namespace DataAccess.Mappers
             operation.AddIntegerParam("OTP", otp);
             return operation;
         }
+
+        public SqlOperation GetRetrieveAllDoctors ()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_DOCTORS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllEnfermeros()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_ENFERMEROS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllSecretarios()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_SECRETARIOS";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllPacientes()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_PACIENTES";
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveAllAdministradores()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_ADMINISTRADORES";
+            return operation;
+        }
+
 
         public SqlOperation GetRetrieveByIdStatement(string id)
         {

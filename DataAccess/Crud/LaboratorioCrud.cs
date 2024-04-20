@@ -22,7 +22,11 @@ namespace DataAccess.Crud
 
         public override void Create(BaseClass dto)
         {
-            SqlOperation operation = laboratorioMapper.GetCreateStatement(dto);
+            throw new NotImplementedException();
+        }
+        public  void CreateLab(BaseClass dto, int idUsuario)
+        {
+            SqlOperation operation = laboratorioMapper.GetCreateStatementLab(dto,idUsuario);
             dao.ExecuteStoredProcedure(operation);
         }
 

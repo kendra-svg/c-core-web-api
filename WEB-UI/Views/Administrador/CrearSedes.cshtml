@@ -93,7 +93,6 @@
                         <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
                     </div>
                     <div class="mb-3">
-                        <label for="input-ubicacion" class="form-label">Ubicación</label>
                         <div class="form-inline">
                             <label for="input-provincia" style="display: block;">Provincia</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" id="input-provincia" placeholder="Provincia" required>
@@ -111,10 +110,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="input-foto" class="form-label">Foto</label>
-                       @*  <input type="file" class="form-control" id="input-foto"> *@
                         <div class="btn-container">
                             <img id="fotoUsuario" class="fotoUsuario">
-                            <button type="button" class="botonGuardar " id="botonFoto" required>Subir foto</button>
+                            <button type="button" class="botonGuardar" id="botonFoto" required>Subir foto</button>
                         </div>
                     </div>
                     
@@ -143,11 +141,6 @@
         </div>
 
     </div>
-
-    @Html.Partial("_Footer")
-
-
-
     <script>
         function previewImage(event) {
             var input = event.target;
