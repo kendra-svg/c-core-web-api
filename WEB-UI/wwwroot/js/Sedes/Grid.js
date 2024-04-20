@@ -18,16 +18,15 @@ const gripOptions = {
 
     defaultColDef: { sortable: true, filter: true },
 
-    //onRowDoubleClicked: params => {
-    //    ProcessDoubleClick(params);
-    //}
+    onRowDoubleClicked: params => {
+        ProcessDoubleClick(params);
+    }
 
 }
-
-//function ProcessDoubleClick(params) {
-//    var view = new SedeList();
-//    view.GetSedeDetails(params.data.id);
-//}
+function ProcessDoubleClick(params) {
+    var view = new SedeList();
+    view.GetSedeDetails(params.data.id);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const gridDiv = document.querySelector('#myGrid');

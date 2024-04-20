@@ -2,9 +2,10 @@
 
     this.InitView = function () {
         this.ListaSede();
-        //$('#dtnCreate').click(function () {
-        //    var view = new SedeList();
-        //});
+        $('#btnUpdate').click(function () {
+            var view = new SedeList();
+            view.showSedes();
+        });
     }
     this.ListaSede = function () { 
         $.ajax({
