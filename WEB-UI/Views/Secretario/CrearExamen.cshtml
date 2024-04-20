@@ -56,7 +56,7 @@
     @Html.Partial("MenuLateralSecretario")
 
     <div class="col text-left">
-        <a href="ExamenGeneral" class="btn btn-outline-success me-3 mt-3">Volver</a>
+        <a asp-controller="Secretario" asp-action="ExamenPersonal" class="btn btn-outline-success me-3 mt-3">Volver</a>
         <h2 class="mt-5 text-center">Crear un examen</h2>
         <div class="container">
 
@@ -125,11 +125,13 @@
             <button type="submit" class="btn btn-success" id="btnCreateLab">Registrar Examen</button>
         </div>
     </div>
+    @Html.Partial("_Footer")
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="~/js/laboratorio/crearlab.js"></script>
+    <script src="~/js/laboratorio/crearlabPaciente.js"></script>
 
 
 
