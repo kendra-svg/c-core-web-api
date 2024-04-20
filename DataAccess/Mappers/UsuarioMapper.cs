@@ -207,6 +207,15 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetUpdateUserRol(string correo, string nuevoRol)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_ROL";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddVarCharParam("nuevoRol", nuevoRol);
+            return operation;
+        }
+
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
             throw new NotImplementedException();
