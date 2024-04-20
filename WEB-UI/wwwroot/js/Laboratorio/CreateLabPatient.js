@@ -83,7 +83,7 @@ function CreateLab() {
         }).done(function (result) {
             Swal.fire({
                 title: "Éxito",
-                icon: "info",
+                icon: "success",
                 text: "Se ha completado el registro del examen",
             }).then(
                 function () {
