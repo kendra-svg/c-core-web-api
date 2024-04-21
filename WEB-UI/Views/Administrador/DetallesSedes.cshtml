@@ -1,22 +1,21 @@
-﻿@{
-    Layout = null;
-    ViewData["Title"] = "Detalles Sedes";
+﻿@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/registrofuncionariosasedes/griddefinition.js"></script>
+    <script src="~/js/registrofuncionariosasedes/registrofuncionarios.js"></script>
 }
 
-
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
-    <title>@ViewData["Title"]</title>
+    <title>Detalles Sedes</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+   @*  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" /> *@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -25,6 +24,7 @@
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
     <link href="~/css/severalstyles.css" rel="stylesheet" />
+    <link href="~/css/overflow.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -65,20 +65,22 @@
     <div class="col text-left" >
         <h1 class="text-center mt-3">Datos de la sede</h1>
         <div class="col text-end m-3 ">
-            <button class="btn border">Subir Foto</button>
-            <img src="https://i.imgur.com/EOUOikS.png" id="img-profile-personal-data" />
-        </div>
+            @* <button class="btn border">Subir Foto</button>
+            <img src="https://i.imgur.com/EOUOikS.png" id="img-profile-personal-data" /> *@
+       @*  </div>
         <div class="d-flex justify-content-between">
             <a asp-action="ListaSedes" class="btn btn-outline-success text-success mr-auto" style="text-decoration: none;">Regresar</a>
             <div class="mx-auto">
                 <button id="editarBtn" class="btn btn-outline-success">Editar</button>
-            </div>
+            </div> *@
         </div>
 
         <div class="container mt-3">
             <div class="card mb-3">
                 <div class="card-body">
-                    <h4 class="card-title">Detalles de la Sede</h4>
+                    <div id="myGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+
+                    @* <h4 class="card-title">Detalles de la Sede</h4>
                     <hr />
                     <dl class="row">
 
@@ -105,13 +107,16 @@
 
                         <dt class="col-sm-3">Ubicación:</dt>
                         <dd class="col-sm-9">Ubicación de la sede</dd>
-                    </dl>
+                    </dl> *@
+
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
+                    <div id="especGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+
+                    @* <div class="row">
                         <div class="col">
                             <h4 class="card-title">Especilidades de esta sede:</h4>
                         </div>
@@ -119,7 +124,8 @@
                             <input type="button" value="Agregar" class="btn btn-success"/>
                         </div>
 
-                    </div>
+                    </div> *@
+                </div>
                     
                 
                     <table class="table ">
