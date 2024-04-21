@@ -38,14 +38,14 @@ namespace DataAccess.Mappers
     {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "SP_INSERT_ESPECIALIDADES_INTO_SEDES";
+            operation.ProcedureName = "INSERT_sede_especialidad";
 
             SedeEspecialidad app = (SedeEspecialidad)dto;
 
-            operation.AddIntegerParam("id_sede_especialidad", app.Id);
+            operation.AddIntegerParam("idsedeespe", app.Id);
             operation.AddIntegerParam("id_sedes", app.IdSede);
-            operation.AddIntegerParam("id_especialidad", app.IdEspecialidad);
-            operation.AddIntegerParam("id_usuario", app.IdUsuario);
+            operation.AddIntegerParam("id_usuarios", app.IdUsuario);
+            operation.AddIntegerParam("id_especialidades", app.IdEspecialidad);
            
             return operation;
         }
