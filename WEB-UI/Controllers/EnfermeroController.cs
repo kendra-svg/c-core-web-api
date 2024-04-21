@@ -90,6 +90,9 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Enfermero/MiSalud/MisRecetas.cshtml");
         } //Ver pacientes
-        
+        public IActionResult SubirExamen()
+        {
+            return View("~/Views/Enfermero/MiSalud/SubirExamen.cshtml");
+        }
     }
 }

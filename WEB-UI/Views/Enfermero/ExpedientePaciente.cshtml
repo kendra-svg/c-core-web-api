@@ -31,12 +31,12 @@
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-            <div class="col text-center">
-                <p>Sede a la que pertenece</p>
-            </div>
+         
+            
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
-                <span>correo@gmail.com </span>
+
+                <span id="user-email-display"></span>
 
             </div>
         </div>
@@ -45,8 +45,8 @@
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
-                <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a <a asp-controller="Registro" asp-action="Registro">Cerrar Sesión</a></li>
+                <li><a asp-controller="Enfermero" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a <a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -62,13 +62,16 @@
         <h2>Expediente</h2>
         <div class="row mt-3">
             <div class="col-2">
-                <img src="https://i.imgur.com/6hfDzu7.png" />
+                <img src="https://i.imgur.com/6hfDzu7.png" id="profile-img" />
             </div>
             <div class="col">
-                <h4>Nombre Paciente</h4>
-                <p>paciente@gmail.com</p>
+                <h2 id="txt-nombre"> </h2>
+                <p id="txt-correo">paciente@gmail.com</p>
+                <p>ID del expediente:</p><p id="txt-id-expediente"></p>
             </div>
+
         </div>
+
         <h3 class="mt-5">Datos Generales</h3>
         <div class="container mt-3 ">
             <div class="row border">
@@ -76,7 +79,7 @@
                     <h5>Identificacion: </h5>
                 </div>
                 <div class="col-3">
-                    <p>Content</p>
+                    <p id="txt-identificaion">Content</p>
                 </div>
             </div>
             <div class="row border">
@@ -84,7 +87,7 @@
                     <h5>Sexo: </h5>
                 </div>
                 <div class="col-3">
-                    <p>Content</p>
+                    <p id="txt-sexo">Content</p>
                 </div>
             </div>
             <div class="row border">
@@ -92,7 +95,7 @@
                     <h5>Telefono: </h5>
                 </div>
                 <div class="col-3">
-                    <p>Content</p>
+                    <p id="txt-telefono"> Content</p>
                 </div>
             </div>
             <div class="row border">
@@ -100,7 +103,7 @@
                     <h5>Edad: </h5>
                 </div>
                 <div class="col-3">
-                    <p>Content</p>
+                    <p id="txt-edad">Content</p>
                 </div>
             </div>
             <div class="row border">
@@ -108,11 +111,20 @@
                     <h5>Direccion: </h5>
                 </div>
                 <div class="col-3">
-                    <p>Content</p>
+                    <p id="txt-direccion">Content</p>
                 </div>
             </div>
         </div>
-        <h3 class="mt-3">Historial Clinico</h3>
+
+        <div>
+            <div class="row mt-2">
+                <div class="col-3">
+                    <h3>Historial Clinico</h3>
+                </div>
+
+            </div>
+        </div>
+
         <div class="container mt-3">
             <div class="form-control">
                 <table class="table table-hover" id="table-historial-clinico">
@@ -127,59 +139,62 @@
                         <tr>
                             <td>Antecedentes Personales</td>
 
-                            <td><textarea name="antecedentePersonales"></textarea></td>
+                            <td><textarea name="antecedentePersonales" id="txt-antencedentes-p" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Tratamientos Farmacologicos</td>
 
-                            <td><textarea name="tratamientos"></textarea></td>
+                            <td><textarea name="tratamientos" id="txt-tratamientos" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Antecedentes Familiares</td>
 
-                            <td><textarea name="antecedentes"></textarea></td>
+                            <td><textarea name="antecedentes" id="txt-antecedentes-f" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Enfermedades Cronicas</td>
 
-                            <td><textarea name="cronicas"></textarea></td>
+                            <td><textarea name="cronicas" id="enfermedades-cronicas" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Habitos no saludables</td>
 
-                            <td><textarea name="habitos"></textarea></td>
+                            <td><textarea name="habitos" id="habitos" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Factores de riesgo cardiovasculares</td>
 
-                            <td><textarea name="cardiovascular"></textarea></td>
+                            <td><textarea name="cardiovascular" id="riesgos" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Diabetes</td>
 
-                            <td><textarea name="diabetes"></textarea></td>
+                            <td><textarea name="diabetes" id="diabetes" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Enfermedades Congenitas</td>
 
-                            <td><textarea name="congenitas"></textarea></td>
+                            <td><textarea name="congenitas" id="enfermedades-congenitas" class="form-control"></textarea></td>
 
                         </tr>
                         <tr>
                             <td>Cancer</td>
 
-                            <td><textarea name="cancer"></textarea></td>
+                            <td><textarea name="cancer" id="txt-antecedentes-c" class="form-control"></textarea></td>
 
                         </tr>
                     </tbody>
                 </table>
+                <div class="align-content-center">
+                    <button class="btn btn-outline-success" id="btn-editar">Editar </button>
+                </div>
 
 
             </div>
@@ -213,9 +228,9 @@
 
 
     @Html.Partial("_Footer")
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/expediente/cargarexpdientepaciente.js"></script>
 
 
 
