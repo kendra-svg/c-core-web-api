@@ -36,8 +36,19 @@ namespace DataAccess.Mappers
 
     public SqlOperation GetCreateStatement(BaseClass dto)
     {
-        throw new NotImplementedException();
-    }
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "SP_INSERT_ESPECIALIDADES_INTO_SEDES";
+
+            SedeEspecialidad app = (SedeEspecialidad)dto;
+
+            operation.AddIntegerParam("id_sede_especialidad", app.Id);
+            operation.AddIntegerParam("id_sedes", app.IdSede);
+            operation.AddIntegerParam("id_especialidad", app.IdEspecialidad);
+            operation.AddIntegerParam("id_usuario", app.IdUsuario);
+           
+            return operation;
+        }
 
     public SqlOperation GetDeleteStatement(BaseClass dto)
     {
