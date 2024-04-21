@@ -49,7 +49,7 @@
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
                 <li><a asp-controller="Enfermero" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a <a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
+                <li> <a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -64,44 +64,44 @@
         <div class="container">
             <h2>Lista Total de Examenes Personales</h2>
             <div class="mt-5 d-flex justify-content-center">
-                <a href="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
+                <a asp-controller="Enfermero" asp-action="SubirExamen" class="btn btn-success me-3">Crear Examen</a>
             </div>
 
-            <form>
-                <h5>Buscar Examen</h5>
-                <div class="row d-flex align-items-end justify-content-end">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control" id="especialidad">
-                                <option value="">Especialidad</option>
-                                <option value="cardiologia">Cardiología</option>
-                                <option value="radiologia">Radiología</option>
-                                <option value="oftalmologia">Oftalmología</option>
-                                <!-- Agrega más opciones según sea necesario -->
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control" id="tipoExamen">
-                                <option value="">Tipo de examen</option>
-                                <option value="ecocardiograma">Ecocardiograma</option>
-                                <option value="radiografia">Radiografía</option>
-                                <option value="examenocular">Examen ocular</option>
-                                <!-- Agrega más opciones según sea necesario -->
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <input type="date" class="form-control" id="fecha">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <button type="submit" class="btn btn-success btn-block">Buscar</button>
-                    </div>
-                </div>
-            </form>
+            @* <form>
+            <h5>Buscar Examen</h5>
+            <div class="row d-flex align-items-end justify-content-end">
+            <div class="col-md-3">
+            <div class="form-group">
+            <select class="form-control" id="especialidad">
+            <option value="">Especialidad</option>
+            <option value="cardiologia">Cardiología</option>
+            <option value="radiologia">Radiología</option>
+            <option value="oftalmologia">Oftalmología</option>
+            <!-- Agrega más opciones según sea necesario -->
+            </select>
+            </div>
+            </div>
+            <div class="col-md-3">
+            <div class="form-group">
+            <select class="form-control" id="tipoExamen">
+            <option value="">Tipo de examen</option>
+            <option value="ecocardiograma">Ecocardiograma</option>
+            <option value="radiografia">Radiografía</option>
+            <option value="examenocular">Examen ocular</option>
+            <!-- Agrega más opciones según sea necesario -->
+            </select>
+            </div>
+            </div>
+            <div class="col-md-3">
+            <div class="form-group">
+            <input type="date" class="form-control" id="fecha">
+            </div>
+            </div>
+            <div class="col-md-3">
+            <button type="submit" class="btn btn-success btn-block">Buscar</button>
+            </div>
+            </div>
+            </form> *@
             <div class="container mt-5">
 
 
@@ -127,9 +127,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
 
+    
 
 
-     @Html.Partial("_Footer") 
+
+  
 
 
 
