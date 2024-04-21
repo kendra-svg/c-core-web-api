@@ -8,16 +8,13 @@ namespace DTO
 {
     public class SedeEspecialidad: BaseClass
     {
+        public int IdSede {  get; set; }
+        public int IdUsuario {  get; set; }
+        public int IdEspecialidad { get; set; }
 
-        public SedeEspecialidad()
-        {
-            this.Sede = new List<Sede>();
-            this.Especialidad = new List<Especialidad>();
-            this.Usuario = new List<UsuarioBase>();
-        }
-        public List<Sede> Sede { get; set; }
-        public List<Especialidad> Especialidad { get; set; }
-        public List<UsuarioBase> Usuario { get; set; }
+        //public List<Sede> Sede { get; set; }
+        //public List<Especialidad> Especialidad { get; set; }
+        //public List<UsuarioBase> Usuario { get; set; }
 
     }
 }
