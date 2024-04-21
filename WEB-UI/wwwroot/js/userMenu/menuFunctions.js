@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     
-    // Recuperar el correo electrónico almacenado en sessionStorage
+    
     var storedUserEmail = sessionStorage.getItem('userEmail');
     console.log(storedUserEmail)
 
-    // Mostrar el correo electrónico en el div correspondiente
-    var userEmailElement = document.getElementById('user-email-display'); // Asegúrate de tener un elemento con el id "userEmail" donde quieras mostrar el correo
+    
+    var userEmailElement = document.getElementById('user-email-display'); 
     if (userEmailElement) {
-        userEmailElement.innerText= storedUserEmail; // Si es un input, usa .value; si es un elemento que muestra texto, usa .innerText o .textContent
+        userEmailElement.innerText= storedUserEmail; /
     }
 
 })
