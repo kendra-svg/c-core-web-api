@@ -61,67 +61,52 @@
     <div class="col text-left">
         <div class="container">
             <h2>Examenes del paciente</h2>
+            <div class="mt-5 d-flex justify-content-center">
+                <a asp-controller="Enfermero" asp-action="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
+            </div>
 
-            <form>
-                <h2>Buscar Examen</h2>
-                <div class="row d-flex align-items-end justify-content-end">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control" id="especialidad">
-                                <option value="">Especialidad</option>
-                                <option value="cardiologia">Cardiología</option>
-                                <option value="radiologia">Radiología</option>
-                                <option value="oftalmologia">Oftalmología</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control" id="tipoExamen">
-                                <option value="">Tipo de examen</option>
-                                <option value="ecocardiograma">Ecocardiograma</option>
-                                <option value="radiografia">Radiografía</option>
-                                <option value="examenocular">Examen ocular</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <input type="date" class="form-control" id="fecha">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <button type="submit" class="btn btn-success btn-block">Buscar</button>
-                    </div>
-                </div>
-            </form>
+            @* <form>
+            <h2>Buscar Examen</h2>
+            <div class="row d-flex align-items-end justify-content-end">
+            <div class="col-md-3">
+            <div class="form-group">
+            <select class="form-control" id="especialidad">
+            <option value="">Especialidad</option>
+            <option value="cardiologia">Cardiología</option>
+            <option value="radiologia">Radiología</option>
+            <option value="oftalmologia">Oftalmología</option>
+            </select>
+            </div>
+            </div>
+            <div class="col-md-3">
+            <div class="form-group">
+            <select class="form-control" id="tipoExamen">
+            <option value="">Tipo de examen</option>
+            <option value="ecocardiograma">Ecocardiograma</option>
+            <option value="radiografia">Radiografía</option>
+            <option value="examenocular">Examen ocular</option>
+            </select>
+            </div>
+            </div>
+            <div class="col-md-3">
+            <div class="form-group">
+            <input type="date" class="form-control" id="fecha">
+            </div>
+            </div>
+            <div class="col-md-3">
+            <button type="submit" class="btn btn-success btn-block">Buscar</button>
+            </div>
+            </div>
+            </form> *@
             <div class="container mt-5">
-                <h2>Listado de Exámenes</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Examen 1</h5>
-                        <p class="card-text"><strong>Especialidad:</strong> Cardiología</p>
-                        <p class="card-text"><strong>Tipo de Examen:</strong> Ecocardiograma</p>
-                        <p class="card-text"><strong>Fecha:</strong> 2024-03-15</p>
+                <h4>Listado de Examenes</h4>
+
+                <div class="row">
+                    <div class="col">
+                        <div id="gridExamenesPersonales" style="height: 300px; width:95%;" class="ag-theme-alpine"></div>
+
                     </div>
-                    <div class="card-footer d-flex justify-content-center align-items-center">
-                        <button class="btn btn-success">Descargar</button>
-                        <div style="margin-left: 10px;"></div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Examen 2</h5>
-                        <p class="card-text"><strong>Especialidad:</strong> Radiología</p>
-                        <p class="card-text"><strong>Tipo de Examen:</strong> Radiografía de tórax</p>
-                        <p class="card-text"><strong>Fecha:</strong> 2024-04-10</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center align-items-center">
-                        <button class="btn btn-success">Descargar</button>
-                        <div style="margin-left: 10px;"></div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -129,8 +114,11 @@
 
     @Html.Partial("_Footer")
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/laboratorio/griddefinition.js"></script>
+    <script src="~/js/laboratorio/searchlabsbeingemployee.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
 
 
 

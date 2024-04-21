@@ -202,21 +202,21 @@
         <div class="container" id="btns-expediente">
             <div class="row">
                 <div class="col-4 m-1">
-                    <a asp-controller="Administrador" asp-action="CitasPersonales">
+                    <a asp-controller="Enfermero" asp-action="CitasPersonales">
                         <button class="btn border">Citas</button>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 m-1">
-                    <a asp-controller="Administrador" asp-action="ExamenPersonal">
+                    <a asp-controller="Enfermero" asp-action="ExamenPersonal">
                         <button class="btn border">Examenes</button>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 m-1">
-                    <a asp-controller="Administrador" asp-action="MisRecetas">
+                    <a asp-controller="Enfermero" asp-action="MisRecetas">
                         <button class="btn border">Recetas</button>
                     </a>
                 </div>
@@ -225,10 +225,8 @@
 
     </div>
 
-    
+
     @Html.Partial("_Footer")
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
