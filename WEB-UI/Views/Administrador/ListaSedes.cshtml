@@ -56,21 +56,23 @@
        <div class="text-center align-content-center" >
            <h6 class="display-4">Lista</h6>
 
-            <div id="myGrid" style="height: 300px; width: 80%;" class="ag-theme-alpine justify-content-center"></div>
+            <div id="myGrid" style="height: 400px; width: 97%;" class="ag-theme-alpine justify-content-center"></div>
        </div>
        <div class="text-center">
-           <h6 class="display-4 align-content-center">Lista</h6>
+           <h6 class="display-4 align-content-center"></h6>
        </div>
-       <div class="container">
-           <form action="ListSede" >
-               <div class="mb-3">
-                   <label for ="txtNombre">Nombre</label>
-                   <input id="txtNombre" type="text" class="form-control "/>
-               </div
-               <div class="mb-3">
-                   <label for ="txtdescripcion">Descripción</label>
-                   <input id="txtdescripcion" type="text"  class="form-control"/>
-               </div>
+       <div class="col text-left">
+           <div class="container">
+               <form action="ListSede" >
+                <div class="mb-3">
+                    <label for="txtnombre">Nombre</label>
+                    <input id="txtnombre" type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="txtdescripcion">Descripcion</label>
+                    <input id="txtdescripcion" type="text" class="form-control" />
+                </div>
+
                <div class="mb-3">
                    <label for ="txtprovincia">Provincia</label>
                    <input id="txtprovincia" type="text"  class="form-control"/>
@@ -95,6 +97,8 @@
                    <button type="button" class="btn btn-success" id="btnUpdate">Ver</button>
                </div>
            </form>
+           </div>
+           
        </div>
 </body>
 </html>
