@@ -34,8 +34,8 @@ namespace DataAccess.Mappers
         return results;
     }
 
-    public SqlOperation GetCreateStatement(BaseClass dto)
-    {
+        public SqlOperation GetCreateStatement(BaseClass dto)
+        {
             SqlOperation operation = new SqlOperation();
 
             operation.ProcedureName = "INSERT_sede_especialidad";
@@ -50,26 +50,37 @@ namespace DataAccess.Mappers
             return operation;
         }
 
-    public SqlOperation GetDeleteStatement(BaseClass dto)
-    {
-        throw new NotImplementedException();
-    }
+        public SqlOperation GetDeleteStatement(BaseClass dto)
+        {
+            throw new NotImplementedException();
+        }
 
-    public SqlOperation GetRetrieveAllStatement()
-    {
-        SqlOperation operation = new SqlOperation();
-        operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
-        return operation;
-    }
+        public SqlOperation GetRetrieveAllStatement()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
+            return operation;
+        }
 
-    public SqlOperation GetRetrieveByIdStatement(string id)
-    {
-        throw new NotImplementedException();
-    }
+        public SqlOperation GetRetrieveByIdStatementu(int id)
+        {
+            SqlOperation operation = new SqlOperation();
 
-    public SqlOperation GetUpdateStatement(BaseClass dto)
-    {
+            operation.ProcedureName = "SP_GET_Sede_By_ID_usua_espe_sede";
+
+            operation.AddIntegerParam("id", id);
+
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveByIdStatement(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SqlOperation GetUpdateStatement(BaseClass dto)
+        {
         throw new NotImplementedException();
+        }
     }
-}
 }
