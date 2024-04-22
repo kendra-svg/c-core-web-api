@@ -57,28 +57,42 @@
 
     @Html.Partial("MenuLateralEnfermero")
 
-
     <div class="col text-left" id="menu-quick-access">
         <input type="hidden" id="userId" value="@ViewBag.UserId" />
         <h4>Accesos Rápidos</h4>
         <div class="row">
             <div class="col boxes-quick-access">
-                <a asp-controller="Enfermero" asp-action="ListaCitas" style="color: black"><p class="font-weight-bold fs-5">Citas de Pacientes</p></a>
+                <a asp-controller="Enfermero" asp-action="ListaCitas" style="color: black">
+                    <p class="font-weight-bold fs-5">
+                        <img src="https://i.imgur.com/THIRYTR.png" alt="Citas de pacientes" style="max-width: 50px; max-height: 50px;"> Citas de pacientes
+                    </p>
+                </a>
             </div>
         </div>
         <div class="row">
             <div class="col boxes-quick-access">
-                <a asp-controller="Enfermero" asp-action="DatosPersonales" style="color: black"><p class="font-weight-bold fs-5">Datos Personales</p></a>
+                <a asp-controller="Enfermero" asp-action="DatosPersonales" style="color: black">
+                    <p class="font-weight-bold fs-5">
+                        <img src="https://i.imgur.com/ikceLsI.png" alt="Datos personales" style="max-width: 50px; max-height: 50px;"> Datos personales
+                    </p>
+                </a>
             </div>
             <div class="col boxes-quick-access">
-                <a asp-controller="Enfermero" asp-action="Sedes" style="color: black"><p class="font-weight-bold fs-5">Sedes</p></a>
+                <a asp-controller="Enfermero" asp-action="Sedes" style="color: black">
+                    <p class="font-weight-bold fs-5">
+                        <img src="https://i.imgur.com/LgzLQ2K.png" alt="Sedes" style="max-width: 50px; max-height: 50px;"> Sedes
+                    </p>
+                </a>
             </div>
             <div class="col boxes-quick-access">
-                <a asp-controller="Enfermero" asp-action="ExpedientePersonal" style="color: black"><p class="font-weight-bold fs-5">Mi Expediente</p></a>
+                <a asp-controller="Enfermero" asp-action="ExpedientePersonal" style="color: black">
+                    <p class="font-weight-bold fs-5">
+                        <img src="https://i.imgur.com/1h4hgpn.png" alt="Mi expediente" style="max-width: 50px; max-height: 50px;"> Mi expediente
+                    </p>
+                </a>
             </div>
         </div>
     </div>
-
 
     @Html.Partial("_Footer")
 

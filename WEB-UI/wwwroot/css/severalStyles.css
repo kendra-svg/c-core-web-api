@@ -220,19 +220,32 @@
     PARA LANDING DE CADA ROL
 */
 .boxes-quick-access {
-    border-color: black;
-    border-radius: 5px;
-    border-style: double;
-    margin: 5%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
     background-color: #68ddbd;
-    height: 90px;
-    width: 50px;
-    color:white;
+    height: 170px;
+    width: calc(33.33% - 20px); 
+    color: white;
 }
+
+    .boxes-quick-access p {
+        text-align: center;
+    }
+
+
+.row:last-child .boxes-quick-access {
+    width: calc(20% - 20px); 
+}
+
+
+
+
+
     
 
 
