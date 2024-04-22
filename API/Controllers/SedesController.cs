@@ -24,11 +24,11 @@ namespace API.Controllers
             return pm.GetAllSedes();
         }
         [HttpGet]
-        public List <Sede> GetSedeById(int id)
-        {
-            SedesManager pm = new SedesManager();
-            return pm.GetSedeById(id);
-        }
+        //public  Sede GetSedeById(int id)
+        //{
+        //    SedesManager pm = new SedesManager();
+        //    return pm.GetSedeById(id);
+        //}
         [HttpGet]
         public API_Response GetAllSedesA()
         {
