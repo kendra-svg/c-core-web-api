@@ -15,7 +15,9 @@
             if (result.result == "OK") {
                 console.log("Estos fueron", result);
                 gripOptions.api.setRowData(result.data);
+                sessionStorage.SeItem("idEspecialidad", result.data.id_especialidades);
             }
+
             else {
                 Swal.fire({
                     icon: "error",

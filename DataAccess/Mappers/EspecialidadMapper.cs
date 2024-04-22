@@ -18,6 +18,7 @@ namespace DataAccess.Mappers
             espec.Nombre = row["nombre"].ToString();
             espec.Costo = int.Parse (row["costo"].ToString());
             espec.IVA = int.Parse (row["IVA"].ToString());
+            //espec.IdSede = int.Parse(row["id_sede"].ToString());
 
             return espec;
         }
