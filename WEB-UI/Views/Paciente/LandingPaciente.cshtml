@@ -66,45 +66,36 @@
     @Html.Partial("MenuLateralPaciente")
 
 
-
     <div class="col text-left" id="menu-quick-access">
-            <input type="hidden" id="userId" value="@ViewBag.UserId" />
-            <p class="pl-4">Accesos Rapidos</p>
-            <div class="container">
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="ExpedientePersonal"><p> Expediente</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="CitasPersonales"><p> Citas</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="ExamenPersonal"><p> Examenes</p></a>
-                    </div>
+        <input type="hidden" id="userId" value="@ViewBag.UserId" />
+
+        <h4>Accesos Rápidos</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col boxes-quick-access">
+                    <a asp-controller="Paciente" asp-action="ExpedientePersonal" style="color: black"><p class="font-weight-bold fs-5">Expediente</p></a>
                 </div>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="Diagnosticos"><p> Diagnosticos</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="Medicos"><p> Medicos</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Paciente" asp-action="EncuestaServicio"> <p> Encuesta de Servicios</p></a>
-                    </div>
+                <div class="col boxes-quick-access">
+                    <a asp-controller="Paciente" asp-action="CitasPersonales" style="color: black"><p class="font-weight-bold fs-5">Citas</p></a>
+                </div>
+                <div class="col boxes-quick-access">
+                    <a asp-controller="Paciente" asp-action="ExamenPersonal" style="color: black"><p class="font-weight-bold fs-5">Examenes</p></a>
                 </div>
             </div>
-
-            
-            
-
-
-
-
-
-
-
+            <div class="row">
+                <div class="col boxes-quick-access">
+                    <a asp-controller="Paciente" asp-action="Diagnosticos" style="color: black"><p class="font-weight-bold fs-5">Diagnosticos</p></a>
+                </div>
+                <div class="col boxes-quick-access">
+                    <a asp-controller="Paciente" asp-action="Medicos" style="color: black"><p class="font-weight-bold fs-5">Medicos</p></a>
+                </div>
+                <div class="col boxes-quick-access">
+                    <a asp-controller="Paciente" asp-action="EncuestaServicio" style="color: black"><p class="font-weight-bold fs-5">Encuesta servicio</p></a>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     @Html.Partial("_Footer")
 

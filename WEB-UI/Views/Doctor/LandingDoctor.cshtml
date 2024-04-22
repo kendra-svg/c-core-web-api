@@ -61,36 +61,29 @@
     @Html.Partial("MenuLateralDoctor")
 
 
-            <div class="col text-left" id="menu-quick-access">
-                <h3 class="text-center mb-5">Bienvenido, Usuario!</h3>
-                <p class="pl-4">Accesos Rapidos</p>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Doctor"asp-action="BuscadorExpedientes"><p> Buscador de Expedientes</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                    <a asp-controller="Doctor" asp-action="Agenda"><p> Agenda</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                    <a asp-controller="Doctor" asp-action="ListaCitas"><p> Citas de Pacientes</p></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Doctor" asp-action="DatosPersonales"><p> Datos Personales</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Doctor" asp-action="Sedes"><p> Sedes</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Doctor" asp-action="ExpedientePersonal"> <p> Mi Expediente</p></a>
-                    </div>
-                </div>
-
-
+    <div class="col text-left" id="menu-quick-access">
+        <h4>Accesos Rápidos</h4>
+        <div class="row">
+            <div class="col boxes-quick-access">
+                <a asp-controller="Doctor" asp-action="CrearRecetas" style="color: black"><p class="font-weight-bold fs-5">Crear Receta</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Doctor" asp-action="ListaCitas" style="color: black"><p class="font-weight-bold fs-5">Citas de Pacientes</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col boxes-quick-access">
+                <a asp-controller="Doctor" asp-action="DatosPersonales" style="color: black"><p class="font-weight-bold fs-5">Datos Personales</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Doctor" asp-action="Sedes" style="color: black"><p class="font-weight-bold fs-5">Sedes</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Doctor" asp-action="ExpedientePersonal" style="color: black"><p class="font-weight-bold fs-5">Mi Expediente</p></a>
             </div>
         </div>
     </div>
+
 
     @Html.Partial("_Footer")
 

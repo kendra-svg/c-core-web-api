@@ -57,6 +57,14 @@ namespace WEB_UI.Controllers
         {
             return View();
         }
+        public IActionResult CitasPacientes()
+        {
+            return View();
+        }
+        public IActionResult CrearCitasPaciente()
+        {
+            return View();
+        }
         public IActionResult DetallesCitas()
         {
             return View();
