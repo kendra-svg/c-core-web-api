@@ -52,6 +52,22 @@ namespace DataAccess.Crud
             throw new NotImplementedException();
         }
 
+        public List<T> RetrieveEspecialidadBySedeId <T>(int id_sede)
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = sedeespemapper.GetRetrieveEspecialidadesBySedeId(id_sede);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+            if (dataResults.Count > 0)
+            {
+                var dtoList = sedeespemapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
+        }
+
         public override void Update(BaseClass dto)
         {
             throw new NotImplementedException();

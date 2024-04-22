@@ -8,13 +8,22 @@ namespace DTO
 {
     public class SedeEspecialidad: BaseClass
     {
+        public SedeEspecialidad()
+        {
+            this.Especialidad = new List<Especialidad>(); /*Aca se inicializa para que no sea nula*/
+        }
+
         public int IdSede {  get; set; }
         public int IdUsuario {  get; set; }
         public int IdEspecialidad { get; set; }
 
-        //public List<Sede> Sede { get; set; }
-        //public List<Especialidad> Especialidad { get; set; }
-        //public List<UsuarioBase> Usuario { get; set; }
+        public List<Especialidad> Especialidad { get; set; } 
+
+
+
+
+
+
 
     }
 }

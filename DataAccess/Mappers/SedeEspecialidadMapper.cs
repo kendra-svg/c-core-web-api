@@ -46,7 +46,9 @@ namespace DataAccess.Mappers
             operation.AddIntegerParam("id_sedes", app.IdSede);
             operation.AddIntegerParam("id_usuarios", app.IdUsuario);
             operation.AddIntegerParam("id_especialidades", app.IdEspecialidad);
-           
+
+            //operation.AddVarCharParam("nombreEspecialidad", app.nombreEspecialidad);
+
             return operation;
         }
 
@@ -59,6 +61,14 @@ namespace DataAccess.Mappers
     {
         SqlOperation operation = new SqlOperation();
         operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
+        return operation;
+    }
+
+    public SqlOperation GetRetrieveEspecialidadesBySedeId(int id_sede)
+        {
+        SqlOperation operation = new SqlOperation();
+        operation.ProcedureName = "SP_GET_ESPECIALIDADES_BY_SEDE_ID";
+        operation.AddIntegerParam("id_sede", id_sede);
         return operation;
     }
 
