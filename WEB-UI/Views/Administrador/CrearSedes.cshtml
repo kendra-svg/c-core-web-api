@@ -1,13 +1,14 @@
 ﻿@section Scripts {
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/usermenu/menufunctions.js"></script>
-    
     <script src="~/js/sedes/creasede.js"></script>
+    <script src="~/js/sedes/ubicacion.js"></script>
 }
 
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html lang="en">
 <head>
 
@@ -32,9 +33,8 @@
     <link href="~/css/registro.css" rel="stylesheet" />
     <link href="~/css/severalstyles.css" rel="stylesheet" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
 </head>
-<body>
+<body onload="print_provincia('combobox1')">
 
     <header id="header-menu" class="text-white">
 
@@ -69,77 +69,74 @@
 
 
     <div class="col text-left" >
-        <h1 class="text-center mt-3">Crea una nueva sede</h1>
-        <!-- <div class="row mt-3">
-            <div class="col-md-8">
-                <a href="ListaSedes" class="btn btn-outline-success">Regresar</a>
-            </div>
-        </div>-->
-        <hr />
         <div class="container">
-            <div class="container" id="form-crear-sede">
-                <form id="Registro-sede">
+            <h1 style=" color: black;" class="text-center mt-3">Crea una nueva sede</h1>
+            <form id="Registro-sede">
                     
-                    <div class="mb-3">
-                        <label for="input-nombre-sede" class="form-label">Nombre de la Sede</label>
-                        <input type="text" class="form-control" id="input-nombre-sede" placeholder="Nombre de la Sede" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="input-descripcion" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="input-descripcion" rows="3" placeholder="Descripción" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
-                        <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-inline">
-                            <label for="input-provincia" style="display: block;">Provincia</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" id="input-provincia" placeholder="Provincia" required>
-
-                            <label for="input-canton" style="display: block;">Cantón</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" id="input-canton" placeholder="Cantón" required>
-
-                            <label for="input-distrito" style="display: block;">Distrito</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" id="input-distrito" placeholder="Distrito" required>
+                <div class="mb-3">
+                    <label for="input-nombre-sede" class="form-label">Nombre de la Sede</label>
+                <input style=" color: black; background-color: white; border-block-color:black" type="text" class="form-control" id="input-nombre-sede" placeholder="Nombre de la Sede" required>
+                </div>
+                <div class="mb-3">
+                    <label for="input-descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="input-descripcion" rows="3" placeholder="Descripción" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
+                    <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
+                </div>
+                <div class="mb-3">
+                    <div class="form-inline">
+                        <div class="mt-3 mb-3">
+                            <select style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)">
+                                <option value="" disabled selected>Seleccione una provincia</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="input-otras-senas" class="form-label" >Otras Señas</label>
-                        <input type="text" class="form-control" id="input-otras-senas" placeholder="Otras Señas" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="input-foto" class="form-label">Foto</label>
-                        <div class="btn-container">
-                            <img id="fotoUsuario" class="fotoUsuario">
-                            <button type="button" class="botonGuardar" id="botonFoto" required>Subir foto</button>
+
+                        <div class="mt-3 mb-3">
+                            <select style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)">
+                                <option value="" disabled selected>Seleccione un Canton</option>
+                            </select>
                         </div>
+
+                        <div >
+                            <select style=" color: black; background-color: white; border-block-color:black" id="combobox3" >
+                                <option value="" disabled selected>Seleccione un Distrito</option>
+                            </select>
+                        </div>
+
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="input-otras-senas" class="form-label" >Otras Señas</label>
+                <input style=" color: black; background-color: white; border-block-color:black" type="text" class="form-control" id="input-otras-senas" placeholder="Otras Señas" required>
+                </div>
+                <div class="mb-3">
+                    <label for="input-foto" class="form-label">Foto</label>
+                    <div class="btn-container">
+                        <img id="fotoUsuario" class="fotoUsuario">
+                        <button type="button" class="botonGuardar" id="botonFoto" required>Subir foto</button>
+                    </div>
+                </div>
                     
-                    <div class="input-group">
-                        <input type="hidden" id="lat" name="latitud">
-                        <input type="hidden" id="lng" name="longitud">
-                        <div id="map" style="height: 300px;"></div>
-                        <div class="coordinates-container">
-                            <label for="coordinates">Ubicación</label>
-                            <input type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
+                <div class="input-group">
+                    <input type="hidden" id="lat" name="latitud">
+                    <input type="hidden" id="lng" name="longitud">
+                    <div id="map" style="height: 300px;"></div>
+                    <div class="coordinates-container">
+                        <label for="coordinates">Ubicación</label>
+                        <input style=" color: black; background-color: white; border-block-color:black" type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
                             
-                        </div>
-
                     </div>
 
-
-                   
-
-                    <div class="text-center mt-3 mx-15">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-success my-2 my-sm-0" id="btnCreateSede">Crear Sede</button>
-                        </div>
+                </div>
+                <div class="text-center mt-3 mx-15">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success my-2 my-sm-0" id="btnCreateSede">Crear Sede</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-
     </div>
     <script>
         function previewImage(event) {
