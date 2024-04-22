@@ -65,44 +65,41 @@
     @Html.Partial("MenuLateralAdmin")
 
 
-            <div class="col text-left" id="menu-quick-access">
-                <input type="hidden" id="userId" value="@ViewBag.UserId" />
-                <h3 class="text-center mb-5">Bienvenido, Usuario!</h3>
-                <p class="pl-4">Accesos Rapidos</p>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Administrador" asp-action="CrearSedes"><p> Crear Sede</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="CrearRecetas"><p>Crear Receta</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ConfiguracionCupos"><p>Configuracion de Cupos</p></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ResultadosEncuestas"><p> Reporte de Calidad</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ReportesFinancieros"><p> Reporte Financiero</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ConfiguracionAlertas"> <p> Configuracion de alertas</p></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Administrador" asp-action="ListaExamenes"><p> Lista de Examenes</p></a>
-                    </div>
-                    <div class="col boxes-quick-access">
-                        <a asp-controller="Administrador" asp-action="CrearEspecialidad"><p> Crear Especialidad</p></a>
-                    </div>
-                    
-                </div>
-
-
+    <div class="col text-left" id="menu-quick-access">
+        <input type="hidden" id="userId" value="@ViewBag.UserId" />
+        <h4>Accesos Rápidos</h4>
+        <div class="row">
+            <div style="color: black" class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="CrearSedes" style="color: black"><p class="font-weight-bold fs-5">Crear Sede</p></a>
             </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="CrearRecetas" style="color: black"><p class="font-weight-bold fs-5">Crear Receta</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="ConfiguracionCupos" style="color: black"><p class="font-weight-bold fs-5">Configuración de Cupos</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="ResultadosEncuestas" style="color: black"><p class="font-weight-bold fs-5">Reporte de Calidad</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="ReportesFinancieros" style="color: black"><p class="font-weight-bold fs-5">Reporte Financiero</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="ConfiguracionAlertas" style="color: black"> <p class="font-weight-bold fs-5">Configuración de Alertas</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="ListaExamenes" style="color: black"><p class="font-weight-bold fs-5">Lista de Exámenes</p></a>
+            </div>
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="CrearEspecialidad" style="color: black"><p class="font-weight-bold fs-5">Crear Especialidad</p></a>
+            </div>
+        </div>
+    </div>
+
         </div>
     </div>
 

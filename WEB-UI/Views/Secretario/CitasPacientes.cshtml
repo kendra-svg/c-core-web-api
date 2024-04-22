@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Citas Personales";
+    ViewData["Title"] = "Citas Pacientes";
 }
 
 
@@ -31,10 +31,9 @@
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-            
+
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
-
                 <span id="user-email-display"></span>
 
             </div>
@@ -44,8 +43,8 @@
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
-                <li><a asp-controller="Enfermero" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a <a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
+                <li><a asp-controller="Secretario" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -53,7 +52,7 @@
 
 
 
-    @Html.Partial("MenuLateralEnfermero")
+    @Html.Partial("MenuLateralSecretario")
 
 
 
@@ -62,7 +61,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h2>Citas Personales</h2>
+                    <h2>Citas Del paciente</h2>
                 </div>
 
             </div>
@@ -71,7 +70,7 @@
                     <input class="form-control me-sm-2" type="search" placeholder="Search">
                 </div>
                 <div class="col text-end ">
-                    <a asp-controller="Enfermero" asp-action="CrearCitasPersonales">
+                    <a asp-controller="Secretario" asp-action="AsignacionCitas">
                         <button class=" btn btn-light border mt-1">Crear una cita</button>
                     </a>
                 </div>

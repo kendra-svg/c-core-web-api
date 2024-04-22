@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     var userEmailElement = document.getElementById('user-email-display'); 
     if (userEmailElement) {
-        userEmailElement.innerText= storedUserEmail; /
+        userEmailElement.innerText= storedUserEmail; 
     }
 
 })
