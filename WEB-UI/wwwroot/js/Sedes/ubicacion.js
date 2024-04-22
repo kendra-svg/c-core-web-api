@@ -1,5 +1,5 @@
 ﻿
-var provincia_arr = new Array("San Jose", "Alajuela", "Cartago", "Heredia", "Guanacaste", "Puntarenas", "Limon");
+var provincia_arr = new Array("San José", "Alajuela", "Cartago", "Heredia", "Guanacaste", "Puntarenas", "Limón");
 
 var canton_arr = new Array();
 canton_arr[0] = "";
