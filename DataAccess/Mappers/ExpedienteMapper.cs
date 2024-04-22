@@ -11,24 +11,50 @@ namespace DataAccess.Mappers
 {
     public class ExpedienteMapper : IObjectMapper, ICrudStatements
     {
+        public BaseClass BuildObject(Dictionary<string, object> row)
+        {
+           Expediente exp = new Expediente();
+            exp.Id = int.Parse(row["id_expedientes"].ToString());
+            exp.AntecedentesPersonales = row["antecedentes_personales"].ToString();
+            exp.TratamietosFarmacologicos = row["tratamientos_farmacologicos"].ToString();
+            exp.AntecedentesFamiliades = row["antecedentes_familiares"].ToString();
+            exp.EnfermedadesCronicas = row["enfermedades_cronicas"].ToString();
+            exp.MalosHabitos = row["malos_habitos"].ToString();
+            exp.RiesgosCardiovasculares= row["riesgos_cardiovasculares"].ToString();
+            exp.Diabetes = row["diabetes"].ToString();
+            exp.EnfermedadesCongenitas = row["enfermedades_congenitas"].ToString();
+            exp.AntecedentesCancer = row["antecedentes_cancer"].ToString();
+            return exp;
+        }
+
+        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
+
+
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
 
             operation.ProcedureName = "SP_INSERT_expedientes";
 
-            Expediente app = (Expediente)dto;
+            Expediente exp = (Expediente)dto;
 
-            operation.AddIntegerParam("idexpediente", app.Id);
-            operation.AddVarCharParam("historialesclinicos", app.AntecedentesPersonales);
-            operation.AddVarCharParam("historialesclinicos", app.TratamietosFarmacologicos);
-            operation.AddVarCharParam("historialesclinicos", app.AntecedentesFamiliades);
-            operation.AddVarCharParam("historialesclinicos", app.EnfermedadesCronicas);
-            operation.AddVarCharParam("historialesclinicos", app.MalosHabitos);
-            operation.AddVarCharParam("historialesclinicos", app.RiesgosCardiovasculares);
-            operation.AddVarCharParam("historialesclinicos", app.Diabetes);
-            operation.AddVarCharParam("historialesclinicos", app.EnfermedadesCongenitas);
-            operation.AddVarCharParam("historialesclinicos", app.AntecedentesCancer);
+            operation.AddIntegerParam("idexpediente", exp.Id);
+            operation.AddVarCharParam("historialesclinicos", exp.AntecedentesPersonales);
+            operation.AddVarCharParam("historialesclinicos", exp.TratamietosFarmacologicos);
+            operation.AddVarCharParam("historialesclinicos", exp.AntecedentesFamiliades);
+            operation.AddVarCharParam("historialesclinicos", exp.EnfermedadesCronicas);
+            operation.AddVarCharParam("historialesclinicos", exp.MalosHabitos);
+            operation.AddVarCharParam("historialesclinicos", exp.RiesgosCardiovasculares);
+            operation.AddVarCharParam("historialesclinicos", exp.Diabetes);
+            operation.AddVarCharParam("historialesclinicos", exp.EnfermedadesCongenitas);
+            operation.AddVarCharParam("historialesclinicos", exp.AntecedentesCancer);
             return operation;
         }
 
@@ -42,25 +68,42 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         }
 
-        public SqlOperation GetRetrieveByIdStatement(string id)
+        public SqlOperation GetRetrieveByIdStatement(int id)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "SP_GET_EXPEDIENTE_BY_ID";
+
+            operation.AddIntegerParam("idExpediente", id);
+
+            return operation;
+
         }
 
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "SP_UPDATE_EXPEDIENTE";
+
+            Expediente exp = (Expediente)dto;
+
+            operation.AddIntegerParam("idexpediente", exp.Id);
+            operation.AddVarCharParam("antecedentespersonales", exp.AntecedentesPersonales);
+            operation.AddVarCharParam("tratamientos", exp.TratamietosFarmacologicos);
+            operation.AddVarCharParam("antecentesfamiliares", exp.AntecedentesFamiliades);
+            operation.AddVarCharParam("enfermedadescronicas", exp.EnfermedadesCronicas);
+            operation.AddVarCharParam("maloshabitos", exp.MalosHabitos);
+            operation.AddVarCharParam("riesgos", exp.RiesgosCardiovasculares);
+            operation.AddVarCharParam("diabetes", exp.Diabetes);
+            operation.AddVarCharParam("enfermedadescongenitas", exp.EnfermedadesCongenitas);
+            operation.AddVarCharParam("cancer", exp.AntecedentesCancer);
+            return operation;
         }
 
-        public BaseClass BuildObject(Dictionary<string, object> row)
+        public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();
         }
-
-        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

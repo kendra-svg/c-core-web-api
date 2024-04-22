@@ -61,10 +61,10 @@
         <div class="container">
             <h2>Examenes del paciente</h2>
             <div class="mt-5 d-flex justify-content-center">
-                <a href="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
+                <a asp-controller="Doctor" asp-action="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
             </div>
 
-            <form>
+            @* <form>
                 <h2>Buscar Examen</h2>
                 <div class="row d-flex align-items-end justify-content-end">
                     <div class="col-md-3">
@@ -96,7 +96,7 @@
                         <button type="submit" class="btn btn-success btn-block">Buscar</button>
                     </div>
                 </div>
-            </form>
+            </form> *@
             <div class="container mt-5">
                 <h4>Listado de Examenes</h4>
 
@@ -113,9 +113,11 @@
 
     @Html.Partial("_Footer")
 
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/laboratorio/griddefinition.js"></script>
+    <script src="~/js/laboratorio/searchlabsbeingemployee.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
 
 
     <script src="~/js/usermenu/menufunctions.js"></script>

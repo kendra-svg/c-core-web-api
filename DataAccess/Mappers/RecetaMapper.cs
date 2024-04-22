@@ -34,9 +34,7 @@ namespace DataAccess.Mappers
             }
             return results;
         }
-
-
-        //listo
+        //create
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
@@ -53,31 +51,29 @@ namespace DataAccess.Mappers
 
             return operation;
         }
-
-        public SqlOperation GetDeleteStatement(BaseClass dto)
-        {
-            throw new NotImplementedException();
-        }
-
+        //Get all
         public SqlOperation GetRetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName = "SP_GET_ALL_RECETAS";
             return operation;
         }
-
-        public SqlOperation GetRetrieveByIdStatement(string id)
+        //ById
+        public SqlOperation GetRetrieveById(int id)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_RECETA_BY_ID";
+            operation.AddIntegerParam("idreceta", id);
+            return operation;
         }
 
+        //Update
         public SqlOperation GetUpdateStatement(BaseClass dto)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_UPDATE_RECETAS";
+            operation.ProcedureName = "SP_UPDATE_RECETAS"; // Asegúrate de que esto no sea "SP_GET_ALL_RECETAS"
 
             Receta rec = (Receta)dto;
-
             operation.AddIntegerParam("id_receta", rec.Id);
             operation.AddDatetimeParam("fecha_emision", rec.FechaEmision);
             operation.AddVarCharParam("dosis_recomendada", rec.DosisRecomendada);
@@ -86,6 +82,17 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("nombre_medicamento", rec.NombreMedicamento);
 
             return operation;
+        }
+
+
+        public SqlOperation GetDeleteStatement(BaseClass dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SqlOperation GetRetrieveByIdStatement(string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

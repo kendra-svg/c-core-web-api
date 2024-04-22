@@ -111,6 +111,11 @@ namespace WEB_UI.Controllers
             return View("~/Views/Doctor/MiSalud/ExamenPersonal.cshtml");
         }
 
+        public IActionResult SubirExamen()
+        {
+            return View("~/Views/Doctor/MiSalud/SubirExamen.cshtml");
+        }
+
         //Diagnosticos
         public IActionResult Diagnosticos()
         {

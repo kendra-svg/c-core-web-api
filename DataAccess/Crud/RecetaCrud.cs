@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-
     public class RecetaCrud : CrudFactory
     {
         RecetaMapper mapper;
@@ -20,6 +19,7 @@ namespace DataAccess.Crud
             mapper = new RecetaMapper();
             dao = SqlDao.GetInstance();
         }
+        //------------
         public override void Create(BaseClass dto)
         {
             SqlOperation operation = mapper.GetCreateStatement(dto);
@@ -33,17 +33,38 @@ namespace DataAccess.Crud
 
         public override List<T> RetrieveAll<T>()
         {
-            throw new NotImplementedException();
-        }
+            List<T> resultList = new List<T>();
+            SqlOperation operation = mapper.GetRetrieveAllStatement();
 
-        public override T RetrieveById<T>(int id)
-        {
-            throw new NotImplementedException();
-        }
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
-        public override void Update(BaseClass dto)
+            if (dataResults.Count > 0)
+            {
+                var dtoList = mapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+
+            }
+            return resultList;
+        }
+        public override T RetrieveById<T>(int idReceta)
         {
-            SqlOperation operation = mapper.GetUpdateStatement(dto);
+            SqlOperation operation = mapper.GetRetrieveById(idReceta);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoObject = mapper.BuildObject(dataResults[0]);
+
+                return (T)Convert.ChangeType(dtoObject, typeof(T));
+            }
+            return default(T);
+        }
+        public override void Update(BaseClass dto) //Revisado
+        {
+            var operation = mapper.GetUpdateStatement(dto);
             dao.ExecuteStoredProcedure(operation);
         }
     }

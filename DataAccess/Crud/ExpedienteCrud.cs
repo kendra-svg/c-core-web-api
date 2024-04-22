@@ -38,12 +38,23 @@ namespace DataAccess.Crud
 
         public override T RetrieveById<T>(int id)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = mapper.GetRetrieveByIdStatement(id);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoObject = mapper.BuildObject(dataResults[0]);
+
+                return (T)Convert.ChangeType(dtoObject, typeof(T));
+            }
+            return default(T);
         }
 
         public override void Update(BaseClass dto)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = mapper.GetUpdateStatement(dto);
+           
+            dao.ExecuteStoredProcedure(operation);
         }
     }
 }

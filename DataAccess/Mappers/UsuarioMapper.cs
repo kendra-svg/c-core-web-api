@@ -98,6 +98,13 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveAllUsers()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_USERS";
+            return operation;
+        }
+
         public SqlOperation GetRetrieveCredentials(string correo, string contrasenna)
         {
             SqlOperation operation = new SqlOperation();
@@ -197,6 +204,15 @@ namespace DataAccess.Mappers
             operation.ProcedureName = "SP_PUT_PASSWORD";
             operation.AddVarCharParam("Correo", correo);
             operation.AddVarCharParam("nuevaClave", nuevaClave);
+            return operation;
+        }
+
+        public SqlOperation GetUpdateUserRol(string correo, string nuevoRol)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_ROL";
+            operation.AddVarCharParam("Correo", correo);
+            operation.AddVarCharParam("nuevoRol", nuevoRol);
             return operation;
         }
 

@@ -129,7 +129,10 @@ namespace WEB_UI.Controllers
         {
             return View("~/Views/Secretario/MiSalud/MisRecetas.cshtml");
         }
-
+        public IActionResult SubirExamen()
+        {
+            return View("~/Views/Secretario/MiSalud/SubirExamen.cshtml");
+        }
         //Facturacion
 
 

@@ -306,3 +306,10 @@
     border-style: dashed;
 }
 
+/**PARA AJUSTER EL TAMAÑO DE LA IMAGEN DEL EXPDIENTE*/
+#profile-img{
+    width:160px;
+    height:160px;
+    border-radius:50%
+    
+}

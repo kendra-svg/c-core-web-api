@@ -35,9 +35,7 @@
             <div class="col text-left">
                 <img src="https://i.imgur.com/JisFGwG.png" id="img-logo-nav-bar" />
             </div>
-            <div class="col text-center">
-                <p>Sede a la que pertenece</p>
-            </div>
+         
             <div class="col text-end p-5" id="other-options">
                 <i class="bi bi-person"></i>
                 <span id="user-email-display"></span>
@@ -65,10 +63,10 @@
         <div class="container">
             <h2>Lista Total de Examenes Personales</h2>
             <div class="mt-5 d-flex justify-content-center">
-                <a href="CrearExamen" class="btn btn-success me-3">Crear Examen</a>
+                <a  asp-controller="Doctor" asp-action="SubirExamen" class="btn btn-success me-3">Crear Examen</a>
             </div>
 
-            <form>
+            @* <form>
                 <h5>Buscar Examen</h5>
                 <div class="row d-flex align-items-end justify-content-end">
                     <div class="col-md-3">
@@ -102,7 +100,7 @@
                         <button type="submit" class="btn btn-success btn-block">Buscar</button>
                     </div>
                 </div>
-            </form>
+            </form> *@
             <div class="container mt-5">
 
 

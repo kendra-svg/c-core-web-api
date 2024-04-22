@@ -47,6 +47,24 @@ namespace DataAccess.Crud
             return resultList;
         }
 
+        public  List<T> RetrieveAllUsers<T>()
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = usuarioMapper.GetRetrieveAllUsers();
+
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoList = usuarioMapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
+        }
+
         public override T RetrieveById<T>(int id)
         {
             throw new NotImplementedException();
@@ -231,6 +249,12 @@ namespace DataAccess.Crud
         public void UpdatePassword(string correo, string nuevaClave)
         {
             SqlOperation operation = usuarioMapper.GetUpdateUserPassword(correo, nuevaClave);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
+        public void UpdateRol(string correo, string nuevoRol)
+        {
+            SqlOperation operation = usuarioMapper.GetUpdateUserRol(correo, nuevoRol);
             dao.ExecuteStoredProcedure(operation);
         }
 

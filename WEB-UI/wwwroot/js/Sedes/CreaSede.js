@@ -33,7 +33,7 @@ function CreaSede() {
         sede.canton = $('#input-canton').val();
         sede.provincia = $('#input-provincia').val();
         sede.distrito = $('#input-distrito').val();
-        sede.direccion = $('coordinates').val();
+        sede.direccion = $('#coordinates').val();
         sede.foto = fotoCloudinary.src;
         console.log(sede);
         if (sede.nombre === "") {

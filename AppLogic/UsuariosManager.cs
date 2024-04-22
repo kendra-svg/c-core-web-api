@@ -19,7 +19,7 @@ namespace AppLogic
         public List<UsuarioBase> GetAllUsuarios()
         {
             UsuarioCrud crud = new UsuarioCrud();
-            return crud.RetrieveAll<UsuarioBase>();
+            return crud.RetrieveAllUsers<UsuarioBase>();
 
         }
 
@@ -95,5 +95,12 @@ namespace AppLogic
             UsuarioCrud crud = new UsuarioCrud();
             crud.UpdatePassword(correo, nuevaClave);
         }
+
+        public void UpdateRol(string correo, string nuevoRol) { 
+            UsuarioCrud crud = new UsuarioCrud();
+            crud.UpdateRol(correo, nuevoRol);
+        }
+
+
     }
 }

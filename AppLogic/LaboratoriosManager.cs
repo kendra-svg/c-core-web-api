@@ -11,10 +11,10 @@ namespace AppLogic
 {
     public class LaboratoriosManager
     {
-        public string CreateLaboratorio(Laboratorio lab)
+        public string CreateLaboratorio(Laboratorio lab, int idUsurios)
         {
             LaboratorioCrud crud = new LaboratorioCrud();
-            crud.Create(lab);
+            crud.CreateLab(lab, idUsurios);
             return "ok";
 
         }
