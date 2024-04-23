@@ -62,13 +62,8 @@ namespace AppLogic
                 especialidadActualizada.Nombre = espec.Nombre;
             }
 
-
-
-
-
             crud.Update(especialidadActualizada);
             return "ok";
-
         }
 
 
@@ -81,6 +76,12 @@ namespace AppLogic
         public List<Sede> GetEspecialidadById()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Especialidad> GetEspecById(int idespec)
+        {
+            EspecialidadCrud crud = new EspecialidadCrud();
+            return crud.RetrieveEspecById<Especialidad>(idespec);
         }
     }
 

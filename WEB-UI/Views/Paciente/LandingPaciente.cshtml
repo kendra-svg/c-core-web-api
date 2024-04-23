@@ -73,28 +73,40 @@
         <div class="container">
             <div class="row">
                 <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="ExpedientePersonal" style="color: black"><p class="font-weight-bold fs-5">Expediente</p></a>
+                    <a asp-controller="Paciente" asp-action="ExpedientePersonal" style="color: black">
+                        <p class="font-weight-bold fs-5">
+                            <img src="https://i.imgur.com/1h4hgpn.png" alt="Expediente" style="max-width: 50px; max-height: 50px;"> Expediente
+                        </p>
+                    </a>
                 </div>
                 <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="CitasPersonales" style="color: black"><p class="font-weight-bold fs-5">Citas</p></a>
+                    <a asp-controller="Paciente" asp-action="CitasPersonales" style="color: black">
+                        <p class="font-weight-bold fs-5">
+                            <img src="https://i.imgur.com/qnHMLFP.png" alt="Citas" style="max-width: 50px; max-height: 50px;"> Citas
+                        </p>
+                    </a>
                 </div>
                 <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="ExamenPersonal" style="color: black"><p class="font-weight-bold fs-5">Examenes</p></a>
+                    <a asp-controller="Paciente" asp-action="ExamenPersonal" style="color: black">
+                        <p class="font-weight-bold fs-5">
+                            <img src="https://i.imgur.com/6tK9Xt7.png" alt="Examenes" style="max-width: 50px; max-height: 50px;"> Examenes
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="row">
+
                 <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="Diagnosticos" style="color: black"><p class="font-weight-bold fs-5">Diagnosticos</p></a>
-                </div>
-                <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="Medicos" style="color: black"><p class="font-weight-bold fs-5">Medicos</p></a>
-                </div>
-                <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="EncuestaServicio" style="color: black"><p class="font-weight-bold fs-5">Encuesta servicio</p></a>
+                    <a asp-controller="Paciente" asp-action="EncuestaServicio" style="color: black">
+                        <p class="font-weight-bold fs-5">
+                            <img src="https://i.imgur.com/vPGdAvL.png" alt="Encuesta servicio" style="max-width: 50px; max-height: 50px;"> Encuesta servicio
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     @Html.Partial("_Footer")

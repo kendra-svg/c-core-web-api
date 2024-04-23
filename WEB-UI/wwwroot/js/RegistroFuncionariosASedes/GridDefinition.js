@@ -25,8 +25,10 @@ const gripOptions = {
 }
 
 const especColumnDefinition = [
-    { field: "id_especialidades", headerName: "ID" },
-    { field: "nombre", headerName: "Nombre" }
+    { field: "id", headerName: "ID" },
+    { field: "nombre", headerName: "Especialidad" },
+    { field: "costo", headerName: "Costo" },
+    { field: "iva", headerName: "IVA" }
 ];
 
 const especGridOptions = {
@@ -43,7 +45,7 @@ const especGridOptions = {
 }
 
 function ProcessDoubleClick(params) {
-    var view = new SedeList();
+    var view = new RegistroFuncionarios();
     view.GetSedeEspecialidadesDetails(params.data.id);
 }
 
