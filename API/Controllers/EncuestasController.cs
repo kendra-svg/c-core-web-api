@@ -1,45 +1,61 @@
-﻿//using AppLogic;
-//using DTO;
-//using Microsoft.AspNetCore.Cors;
-//using Microsoft.AspNetCore.Mvc;
+﻿using AppLogic;
+using DTO;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-//namespace API.Controllers
-//{
-//    [EnableCors("Demo_Policy")]
-//    [Route("api/[controller]/[action]")]
-//    [ApiController]
-//    public class EncuestasController : Controller
-//    {
-//        [HttpPost]//crear
-//        public string CreateEncuesta(Encuestas enc)
-//        {
-//            EncuestasManager manager = new EncuestasManager();
-//            return manager.CreateEncuesta(enc);
-//        }
-
-//        [HttpGet]
-//        public List<Laboratorio> GetAllLabs()
-//        {
-//            LaboratoriosManager lm = new LaboratoriosManager();
-//            return lm.GetAllLabs();
-//        }
-
-//        [HttpGet]
-//        public List<Laboratorio> GetLabsByUserId(int Id)
-//        {
-//            LaboratoriosManager manager = new LaboratoriosManager();
-
-//            return manager.GetLabByUserId(Id);
-//        }
+namespace API.Controllers
+{
+    [EnableCors("Demo_Policy")]
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class EncuestasController : Controller
+    {
+        [HttpPost]//crear
+        public string CreateEncuesta(Encuestas enc)
+        {
+            EncuestasManager manager = new EncuestasManager();
+            return manager.CreateEncuesta(enc);
+        }
 
 
-//        [HttpGet]
-//        public string DeleteLabById(int labId)
-//        {
-//            LaboratoriosManager manager = new LaboratoriosManager();
-//            Console.WriteLine(labId);
-//            return manager.DeleteLabById(labId);
-//        }
+        [HttpGet]//get all
+        public List<Encuestas> GetAllEncuestas()
+        {
+            EncuestasManager enc = new EncuestasManager();
+            return enc.GetAllEncuestas();
+        }
 
-//    }
-//}
+
+        [HttpGet]//id
+        public Encuestas GetEncuestasById(int idEncuestas)
+        {
+            EncuestasManager manager = new EncuestasManager();
+
+            return manager.GetEncuestasById(idEncuestas);
+        }
+
+
+
+
+
+        //[HttpGet]
+        //public API_Response GetAllEspecialidadesA()
+        //{
+        //    API_Response response = new API_Response();
+        //    try
+        //    {
+        //        EspecialidadesManager espe = new EspecialidadesManager();
+        //        response.Data = espe.GetAllEspecialidades();
+        //        response.Result = "OK";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        response.Result = "ERROR";
+        //        response.Message = ex.Message;
+        //    }
+        //    return response;
+        //}
+
+    }
+}
