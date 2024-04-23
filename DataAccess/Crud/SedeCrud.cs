@@ -74,5 +74,11 @@ namespace DataAccess.Crud
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones, string fotos) 
+        {
+            SqlOperation operation = sedemapper.UpdateSede(id, nombre, descripcion, date, direccion, provincia, canton, distrito, ubicaciones, fotos);
+            dao.ExecuteStoredProcedure(operation);
+        }
     }
 }

@@ -4,7 +4,7 @@
         this.ListaSede();
         $('#btnUpdate').click(function () {
             var view = new SedeList();
-            view.showSedes();
+            view.GetSedesDetails(id);
         });
     }
     this.ListaSede = function () {
@@ -48,7 +48,7 @@
             var sede = result[0];
             console.log("Resultado", result);
             $('#txtnombre').val(result.nombre);
-            nombre.nombre;
+            
             $('#txtdescripcion').val(result.descripcion);
             $('#input-fecha-creacion').val(result.fechaCreacion);
             $('#input-otras-senas').val(result.ubicacion);

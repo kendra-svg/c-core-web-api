@@ -27,7 +27,7 @@ const gripOptions = {
 
 function ProcessDoubleClick(params) {
     var view = new UsuariosList();
-    view.GetSedesDetails(params.data.correo);
+    view.GetUsersDetails(params.data.correo);
     
 }
 

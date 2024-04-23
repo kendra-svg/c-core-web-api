@@ -45,5 +45,10 @@ namespace API.Controllers
             }
             return response;
         }
+        public void updateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones, string fotos)
+        {
+            SedesManager sede = new SedesManager();
+            sede.UpdateSede(id, nombre,descripcion,date,direccion,provincia,canton,distrito,ubicaciones, fotos);
+        }
     }
 }
