@@ -9,8 +9,8 @@
     }
     this.ListaSede = function () {
         $.ajax({
-            url: "https://localhost:7154/api/Sedes/GetAllSedesA",
-            //url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
+            //url: "https://localhost:7154/api/Sedes/GetAllSedesA",
+            url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -39,7 +39,7 @@
     this.GetSedesDetails = function (id) {
         $.ajax({
             //url: API_URL_BASE + 
-            url: /*API_URL_BASE +*/ "https://localhost:7154/api/Sedes/GetSedeById?id=" + id,
+            url: "https://apisimepci.azurewebsites.net" + "/api/Sedes/GetSedeById?id=" + id,
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -51,11 +51,11 @@
             $('#txtnombre').val(sede.nombre);
             $('#txtdescripcion').val(sede.descripcion);
             $('#input-fecha-creacion').val(sede.fechaCreacion);
-            $('#coordinates').val(sede.ubicacion);
+            $('#coordinates').val(sede.direccion);
             $('#combobox2').val(result.canton);
             $('#combobox1').val(result.provincia);
             $('#combobox3').val(result.distrito);
-            $('#input-otras-senas').val(result.direccion);
+            $('#input-otras-senas').val(result.ubicacion);
         }).fail(function (error) {
             console.log("Error", error);
             Swal.fire({
@@ -140,13 +140,6 @@
                 title: 'Error'
             });
             return;
-        }{
-            Swal.fire({
-                icon: 'error',
-                text: "Por favor llenar el espacio de distrito.",
-                title: 'Error'
-            });
-            return;
         }
         $.ajax({
             headers: {
@@ -154,7 +147,7 @@
                 'Content-Type': "application/json"
             },
             method: "PUT",
-            url: "https://localhost:7154/api/Sedes/updateSede?id=" + sede.id + "&nombre=" + sede.nombre + "&descripcion=" + sede.descripcion + "&date=" + sede.fechaCreacion + "&direccion=" + sede.ubicacion + "&provincia=" + sede.provincia + "&canton=" + sede.canton + "&distrito=" + sede.distrito + "&ubicaciones=" + sede.direccion,
+            url: "https://apisimepci.azurewebsites.net" +"/api/Sedes/updateSede?id=" + sede.id + "&nombre=" + sede.nombre + "&descripcion=" + sede.descripcion + "&date=" + sede.fechaCreacion + "&direccion=" + sede.ubicacion + "&provincia=" + sede.provincia + "&canton=" + sede.canton + "&distrito=" + sede.distrito + "&ubicaciones=" + sede.direccion,
             ///api/Sedes/updateSede?id=2356&nombre=Liberia%20Centro&descripcion=Sede%20en%20Guanacasteca&date=2024-04-16&direccion=De%20pochos%20bar&provincia=Guanacaste&canton=Liberia&distrito=Liberia&ubicaciones=xd'
             contentType: "application/json;charset=utf-8",
             dataType: "text",
