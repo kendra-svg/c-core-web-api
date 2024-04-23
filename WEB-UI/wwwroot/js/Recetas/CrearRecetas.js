@@ -129,7 +129,7 @@ function CreateRecipe() {
         $('#RecomendacionAdicional').val('');
         //$('#input-foto').val('');
         fotoCloudinary.src = '';
-    }
+     }
 
 }
 
