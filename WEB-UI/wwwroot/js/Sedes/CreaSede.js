@@ -30,9 +30,9 @@ function CreaSede() {
         sede.descripcion = $('#input-descripcion').val();
         sede.fechaCreacion = $('#input-fecha-creacion').val();
         sede.ubicacion = $('#input-otras-senas').val();
-        sede.canton = $('#input-canton').val();
-        sede.provincia = $('#input-provincia').val();
-        sede.distrito = $('#input-distrito').val();
+        sede.canton = $('#combobox2').find(":selected").val();
+        sede.provincia = $('#combobox1').find(":selected").val();
+        sede.distrito = $('#combobox3').find(":selected").val();
         sede.direccion = $('#coordinates').val();
         sede.foto = fotoCloudinary.src;
         console.log(sede);
