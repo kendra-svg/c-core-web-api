@@ -22,25 +22,16 @@ namespace AppLogic
             SedeCrud crud = new SedeCrud();
             return crud.RetrieveAll<Sede>();
         }
-        public List<Sede> GetSedeById(int id)
+        public List<Sede> GetSedeByIDI(int id)
         {
-            SedeCrud crud =new SedeCrud(); 
+            SedeCrud crud = new SedeCrud();
             return crud.RetrieveByIdI<Sede>(id);
-        }
-        private void CompleteSedes(Sede sede)
-        {
-            ConectorCentral conector = new ConectorCentral(); 
-            SedesInfo info = conector.GetSedesData(sede.Id);
-            var listSedes = conector.GetSedesInfos();
-            sede.Nombre = info.nombre;
-            sede.FechaCreacion = info.FechaCreacion;
-            sede.Ubicacion = info.ubicacion;
-            sede.Canton = info.canton;
-            sede.Provincia = info.provincia;
-            sede.Distrito = info.distrito;
-            sede.Direccion = info.direccion;
-        }
 
-        
+        }
+        public void UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones)
+        {
+            SedeCrud crud = new SedeCrud();
+            crud.UpdateSede(id, nombre, descripcion, date, direccion, provincia,canton, distrito, ubicaciones);
+        }
     }
 }
