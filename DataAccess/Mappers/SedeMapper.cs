@@ -89,7 +89,7 @@ namespace DataAccess.Mappers
             
             return operation;   
         }
-        public SqlOperation UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones, string fotos)
+        public SqlOperation UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones)
         {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName ="SP_UPDATE_SEDE";
@@ -102,7 +102,6 @@ namespace DataAccess.Mappers
             operation.AddVarCharParam("cantones", canton);
             operation.AddVarCharParam("distritos", distrito);
             operation.AddVarCharParam("ubicaciones", ubicaciones);
-            operation.AddVarCharParam("fotos", fotos);
             return operation;
         }
 

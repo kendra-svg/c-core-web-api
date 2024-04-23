@@ -75,9 +75,9 @@ namespace DataAccess.Crud
             throw new NotImplementedException();
         }
 
-        public void UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones, string fotos) 
+        public void UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones) 
         {
-            SqlOperation operation = sedemapper.UpdateSede(id, nombre, descripcion, date, direccion, provincia, canton, distrito, ubicaciones, fotos);
+            SqlOperation operation = sedemapper.UpdateSede(id, nombre, descripcion, date, direccion, provincia, canton, distrito, ubicaciones);
             dao.ExecuteStoredProcedure(operation);
         }
     }

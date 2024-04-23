@@ -28,10 +28,10 @@ namespace AppLogic
             return crud.RetrieveByIdI<Sede>(id);
 
         }
-        public void UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones, string fotos)
+        public void UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones)
         {
             SedeCrud crud = new SedeCrud();
-            crud.UpdateSede(id, nombre, descripcion, date, direccion, provincia,canton, distrito, ubicaciones, fotos);
+            crud.UpdateSede(id, nombre, descripcion, date, direccion, provincia,canton, distrito, ubicaciones);
         }
     }
 }

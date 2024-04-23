@@ -4,13 +4,13 @@
         this.ListaSede();
         $('#btnUpdate').click(function () {
             var view = new SedeList();
-            view.GetSedesDetails(id);
+            view.GetSedesDetails(idi);
         });
     }
     this.ListaSede = function () {
         $.ajax({
-            //url: "https://localhost:7154/api/Sedes/GetAllSedesA",
-            url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
+            url: "https://localhost:7154/api/Sedes/GetAllSedesA",
+            //url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -36,22 +36,22 @@
 
         });
     }
-    this.GetSedesDetails = function (id) {
-        alert(id + "si");
+    this.GetSedesDetails = function (idi) {
         $.ajax({
             //url: API_URL_BASE + 
-            url: API_URL_BASE + "" + id,
+            url: /*API_URL_BASE +*/ "https://localhost:7154/api/Sedes/GetSedeById?id=" + idi,
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
         }).done(function (result) {
             var sede = result[0];
             console.log("Resultado", result);
-            $('#txtnombre').val(result.nombre);
             
-            $('#txtdescripcion').val(result.descripcion);
-            $('#input-fecha-creacion').val(result.fechaCreacion);
-            $('#input-otras-senas').val(result.ubicacion);
+            $('#txtid').val(sede.id);
+            $('#txtnombre').val(sede.nombre);
+            $('#txtdescripcion').val(sede.descripcion);
+            $('#input-fecha-creacion').val(sede.fechaCreacion);
+            $('#input-otras-senas').val(sede.ubicacion);
             //$('#combobox2').val(result.canton);
             //$('#combobox1').val(result.provincia);
             //$('#combobox3').val(result.distrito);
@@ -66,6 +66,10 @@
             });
         });
     }
+    //this.PutSede = function () {
+    //    var sede = {};
+    //    sede.id =
+    //}
 }
 
 $(document).ready(function () {
