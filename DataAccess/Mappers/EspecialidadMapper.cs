@@ -73,6 +73,15 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetEspecById (int idespec)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ESPEC_BY_ID";
+
+            operation.AddIntegerParam("idespec", idespec);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveByIdStatement(string id)
         {
             throw new NotImplementedException();

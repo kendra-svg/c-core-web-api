@@ -28,5 +28,11 @@ namespace AppLogic
             return crud.RetrieveEspecialidadBySedeId<SedeEspecialidad>(id_sede);
         }
 
+        public List<SedeEspecialidad> GetAllSedesEspecNormal()
+        {
+            SedeEspecialidCrud crud = new SedeEspecialidCrud();
+            return crud.RetrieveAllSedesEspec<SedeEspecialidad>();
+        }
+
     }
 }

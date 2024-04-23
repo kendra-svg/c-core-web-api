@@ -35,10 +35,35 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        public List<SedeEspecialidad> GetAllSedesEspecNormal()
+        {
+            SedeEspeManager sedeespe = new SedeEspeManager();
+            return sedeespe.GetAllSedesEspecNormal();
+        }
+
+        [HttpGet]
         public List <SedeEspecialidad> GetEspecialidadesBySedeId(int id_sede)
         {
             SedeEspeManager pm = new SedeEspeManager();
             return pm.GetEspecialidadesBySedeId(id_sede);
+        }
+
+        [HttpGet]
+        public API_Response GetEspecialidadesBySedeIdA (int id_sede)
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                SedeEspeManager sedeespe = new SedeEspeManager();
+                response.Data = sedeespe.GetEspecialidadesBySedeId(id_sede);
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
         }
 
     }

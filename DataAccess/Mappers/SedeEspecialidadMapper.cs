@@ -17,9 +17,9 @@ namespace DataAccess.Mappers
         SedeEspecialidad sedeespe = new SedeEspecialidad();
         sedeespe.Id = int.Parse(row["sede_especialidad"].ToString());
         sedeespe.IdSede = int.Parse(row["sedes_id_sedes"].ToString());
-        sedeespe.IdUsuario = int.Parse(row["especialidades_id_especialidades"].ToString());
-        sedeespe.IdEspecialidad = int.Parse(row["usuarios_id_usuario"].ToString());
-
+        sedeespe.IdUsuario = int.Parse(row["usuarios_id_usuario"].ToString());
+        sedeespe.IdEspecialidad = int.Parse(row["especialidades_id_especialidades"].ToString());
+     
         return sedeespe;
     }
 
@@ -64,7 +64,14 @@ namespace DataAccess.Mappers
         return operation;
     }
 
-    public SqlOperation GetRetrieveEspecialidadesBySedeId(int id_sede)
+    public SqlOperation GetRetrieveAllSedeEspecNormal()
+    {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
+            return operation;
+    }
+
+        public SqlOperation GetRetrieveEspecialidadesBySedeId(int id_sede)
         {
         SqlOperation operation = new SqlOperation();
         operation.ProcedureName = "SP_GET_ESPECIALIDADES_BY_SEDE_ID";
