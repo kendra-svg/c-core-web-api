@@ -39,7 +39,7 @@ function CreaSede() {
         if (sede.nombre === "") {
             Swal.fire({
                 icon: 'error',
-                text: "Por favor llenar el espacion de nombre.",
+                text: "Por favor llenar el espacio de nombre.",
                 title: 'Error'
             });
             return;

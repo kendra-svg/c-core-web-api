@@ -86,37 +86,37 @@
                            </div>
                            <div class="mb-3">
                                <label for="txtnombre">Nombre</label>
-                                    <input id="txtnombre" type="text" class="form-control" placeholder="Nombre"  />
+                                    <input id="txtnombre" type="text" class="form-control" placeholder="Nombre"  required/>
                            </div>
                            <div class="mb-3">
                                <label for="txtdescripcion">Descripcion</label>
-                                    <input id="txtdescripcion" type="text" class="form-control" placeholder="Descripción"  />
+                        <input id="txtdescripcion" type="text" class="form-control" placeholder="Descripción" required />
                            </div>
                            <div class="mb-3">
                                <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
-                                    <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" >
+                        <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
                            </div>
                            <div class="mb-3">
                                <label for="input-otras-senas" class="form-label">Otras señas</label>
-                                    <input type="text" class="form-control" id="input-otras-senas" placeholder="Otras señas" >
+                        <input type="text" class="form-control" id="input-otras-senas" placeholder="Otras señas" required>
                            </div>
                            <div class="mt-3 mb-3">
                                     <div class="form-inline">
                                         <div class="mt-3 mb-3">
                                             <label for="txtProvincia"></label>
-                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control">
+                                <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione una provincia</option>
                                             </select>
                                         </div>
                                         <div class="mt-3 mb-3">
                                             <label for="txtCanton"></label>
-                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control">
+                                <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione un Canton</option>
                                             </select>
                                         </div>
                                         <div class="mt-3 mb-3">
                                             <label for="txtDistrito"></label>
-                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control">
+                                <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione un Distrito</option>
                                             </select>
                                         </div>
