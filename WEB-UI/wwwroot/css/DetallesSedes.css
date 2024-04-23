@@ -2,8 +2,17 @@
 #CostoEspecialidad,
 #IvaEspecialidad,
 #agregarEspecialidadBtn,
-label[for="NombreEspecialidad"],
-label[for="CostoEspecialidad"],
-label[for="IvaEspecialidad"] {
+label[for="NombreEspecialidadLabel"],
+label[for="CostoEspecialidadLabel"],
+label[for="IvaEspecialidadLabel"] {
     display: none;
 }
+
+
+/*.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}*/
