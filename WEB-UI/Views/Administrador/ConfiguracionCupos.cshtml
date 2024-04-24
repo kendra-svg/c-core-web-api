@@ -120,10 +120,14 @@
 
                     </div>
                 </div> *@
-
+                <div>
+                    <label for="ddlSedes">Sede:</label>
+                    <select id="ddlSedes" class="form-select">
+                    </select>
+                </div>
                 <div>
                     <label for="ddlEspecialidades">Especialidad:</label>
-                    <select id="ddlEspecialidades" class="form-select">
+                    <select id="ddlEspecialidades" class="form-select text-black">
                     </select>
                 </div>
                 <div>
@@ -132,41 +136,53 @@
                 </div>
                 <div>
                     <label for="txtCronometro">Cronómetro:</label>
-                    <input id="txtCronometro" type="text" class="form-control" />
+                    <input id="txtCronometro" type="text" class="form-control" values="30" placeholder="30 minutos" readonly/>
                 </div>
+                <div class="row mt-2">
+                    <div class="col-1">
+                        <div class="input-group">
+                            <button type="button" id="btn-save" class="btn btn-success "> Guardar </button>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group">
+                            <button type="button" id="btn-update" class="btn btn-success"> Actualizar </button>
+                        </div>
+                    </div>
 
-                <div class="input-group">
-                    <button type="button" id="btnCreateNewCupos">Reenviar código</button>
                 </div>
                 
+
+                
+                
             </form>
-
+            <h5 class="mt-5">Lista de Cupos Previamente Configurados</h5>
+            <div id="cupos-grid" style="height: 300px; width:90%;" class="ag-theme-alpine"></div>
         </div>
-
+        
     </div>
-    <div id="cuposGrid" style="height: 300px; width:70%;" class="ag-theme-alpine"></div>
+   
 
     @Html.Partial("_Footer")
 
 
 
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/js/usermenu/menufunctions.js"></script>
-
-
+    <script src="~/js/cupos/configurecupos.js"></script>
+    <script src="~/js/cupos/griddefinition.js"></script>
     @*     <script src="~/js/Recetas/CrearRecetas.js"></script> *@
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-@* 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 
 
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 
- *@
