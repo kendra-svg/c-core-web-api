@@ -10,5 +10,9 @@ namespace DTO
     {
         public int Cronometro {  get; set; }
         public int Cantidad { get; set; }
+
+        //PARA PROBAR
+        public string nombreEspecialidad { get; set; }  
+        public string nombreSede { get; set; }
     }
 }
