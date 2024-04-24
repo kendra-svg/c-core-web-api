@@ -8,7 +8,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/especialidad/crearespecialidad.js"></script>
     <script src="~/js/especialidad/listarespecialidad.js"></script>
-    <script src="~/js/especialidad/actualizarespecialidad.js"></script>
+    
     <script src="~/js/especialidad/grid.js"></script>
 
 }
@@ -79,6 +79,7 @@
                 </div>
             </div>
         </form>
+        <form>
         <div class="row mt-3">
             <div class="col-4">
                 <div>
@@ -91,6 +92,46 @@
 
             <div id="myGrid" style="height: 400px; width: 80%;" class="ag-theme-alpine justify-content-center"></div>
         </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <div>
+                    <label for="id">ID</label>
+                    <input id="ID" type="text" name="id" class="form-control" readonly />
+                </div>
+            </div>
+        </div>
+            <div class="row mt-3">
+                <div class="col-4">
+                    <div>
+                        <label for="Nombre">Nombre</label>
+                        <input id="NombreEspecialidad" type="text" name="Nombre" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <div>
+                    <label for="Costo">Costo</label>
+                    <input id="Costo" type="text" name="costo" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <div>
+                    <label for="iva">IVA</label>
+                    <input id="iva" type="text" name="costo" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <div>
+                    <input id="btnPUT" type="button" class="btn border" value="Actualizar" />
+                </div>
+            </div>
+        </div>
+        </form>
     </div>
 </body>
 </html>

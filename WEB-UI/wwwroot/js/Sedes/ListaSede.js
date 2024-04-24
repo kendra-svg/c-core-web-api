@@ -52,10 +52,10 @@
             $('#txtdescripcion').val(sede.descripcion);
             $('#input-fecha-creacion').val(sede.fechaCreacion);
             $('#coordinates').val(sede.ubicacion);
-            $('#combobox2').val(result.canton);
-            $('#combobox1').val(result.provincia);
-            $('#combobox3').val(result.distrito);
-            $('#input-otras-senas').val(result.direccion);
+            //$('#combobox2').val(sede.canton);
+            //$('#combobox1').val(sede.provincia);
+            //$('#combobox3').val(sede.distrito);
+            $('#input-otras-senas').val(sede.direccion);
         }).fail(function (error) {
             console.log("Error", error);
             Swal.fire({
@@ -161,8 +161,8 @@
             });
         }).fail(function (error) {
             Swal.fire({
-                title: '¡Erro!',
-                text: 'No se actualizo la informacion',
+                title: '¡Error!',
+                text: 'No se actualizo la información',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
             });
