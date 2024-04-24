@@ -29,6 +29,12 @@ namespace DataAccess.Crud
             throw new NotImplementedException();
         }
 
+        public void DeleteBySedeEspecId(int id)
+        {
+            SqlOperation operation = sedeespemapper.DeleteBySedeEspecId(id);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
         public override List<T> RetrieveAll<T>()
         {
             List<T> resultList = new List<T>();
