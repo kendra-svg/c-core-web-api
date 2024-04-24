@@ -25,6 +25,7 @@
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
     
     <link href="~/css/severalstyles.css" rel="stylesheet" />
+    <link href="~/css/overflow.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -67,6 +68,14 @@
         <input type="hidden" id="userId" value="@ViewBag.UserId" />
         <h4>Accesos Rápidos</h4>
         <div class="row">
+            <div class="col boxes-quick-access">
+                <a asp-controller="Administrador" asp-action="DetallesSedes" style="color: black">
+                    <p class="font-weight-bold fs-5">
+                        <img src="https://i.imgur.com/8DPIZFt.png" alt="Configuración de sedes" style="max-width: 50px; max-height: 50px;"> Configuración de sedes
+                    </p>
+                </a>
+            </div>
+
             <div style="color: black" class="col boxes-quick-access">
                 <a asp-controller="Administrador" asp-action="CrearSedes" style="color: black">
                     <p class="font-weight-bold fs-5">
@@ -114,7 +123,7 @@
         </div>
         <div class="row">
             <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ListaExamenes" style="color: black">
+                <a asp-controller="Administrador" asp-action="ExamenGeneral" style="color: black">
                     <p class="font-weight-bold fs-5">
                         <img src="https://i.imgur.com/4MrLDXt.png" alt="Lista de exámenes" style="max-width: 50px; max-height: 50px;"> Lista de exámenes
                     </p>
