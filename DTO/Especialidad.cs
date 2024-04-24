@@ -11,5 +11,8 @@ namespace DTO
         public string Nombre { get; set; }
         public int Costo { set; get; }
         public int IVA { set; get; }
+
+        //public int IdSede { get; set; }
+
     }
 }

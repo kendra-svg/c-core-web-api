@@ -33,6 +33,31 @@ namespace API.Controllers
             return manager.GetEspecialidadById(idEspecialidad);
         }
 
+        [HttpGet]
+        public API_Response GetEspecByIdA(int idespec)
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                EspecialidadesManager espe = new EspecialidadesManager();
+                response.Data = espe.GetEspecById(idespec);
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        [HttpGet]
+        public List<Especialidad> GetEspecById(int idespec)
+        {
+            EspecialidadesManager manager = new EspecialidadesManager();
+            return manager.GetEspecById(idespec);
+        }
+
         //get especialidad
         [HttpGet]
         public List<Especialidad> GetAllEspecialidad ()

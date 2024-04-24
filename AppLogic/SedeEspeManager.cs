@@ -21,6 +21,20 @@ namespace AppLogic
             SedeEspecialidCrud crud = new SedeEspecialidCrud();
             return crud.RetrieveAll<SedeEspecialidad>();
         }
-
+        public SedeEspecialidad GetSedeEspecialidad(int id)
+        {
+            SedeEspecialidCrud crud = new SedeEspecialidCrud();
+            return crud.RetrieveById<SedeEspecialidad>(id);
+        }
+        public List<SedeEspecialidad> GetAllSedesEspecNormal()
+        {
+            SedeEspecialidCrud crud = new SedeEspecialidCrud();
+            return crud.RetrieveAllSedesEspec<SedeEspecialidad>();
+        }
+        public List<SedeEspecialidad> GetEspecialidadesBySedeId(int id_sede)
+        {
+            SedeEspecialidCrud crud = new SedeEspecialidCrud();
+            return crud.RetrieveEspecialidadBySedeId<SedeEspecialidad>(id_sede);
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace DataAccess.Mappers
             espec.Nombre = row["nombre"].ToString();
             espec.Costo = int.Parse (row["costo"].ToString());
             espec.IVA = int.Parse (row["IVA"].ToString());
+            //espec.IdSede = int.Parse(row["id_sede"].ToString());
 
             return espec;
         }
@@ -69,6 +70,15 @@ namespace DataAccess.Mappers
            
 
             operation.AddIntegerParam("idespecialidad", id);
+            return operation;
+        }
+
+        public SqlOperation GetEspecById (int idespec)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ESPEC_BY_ID";
+
+            operation.AddIntegerParam("idespec", idespec);
             return operation;
         }
 

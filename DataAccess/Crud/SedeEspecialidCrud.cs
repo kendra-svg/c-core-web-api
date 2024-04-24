@@ -47,10 +47,53 @@ namespace DataAccess.Crud
             return resultList;
         }
 
+        public List<T> RetrieveAllSedesEspec<T>()
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = sedeespemapper.GetRetrieveAllSedeEspecNormal();
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+            if (dataResults.Count > 0)
+            {
+                var dtoList = sedeespemapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
+        }
+
         public override T RetrieveById<T>(int id)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = sedeespemapper.GetRetrieveByIdStatementu(id);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoObject = sedeespemapper.BuildObject(dataResults[0]);
+
+                return (T)Convert.ChangeType(dtoObject, typeof(T));
+            }
+            return default(T);
         }
+
+        public List<T> RetrieveEspecialidadBySedeId <T>(int id_sede)
+        {
+            List<T> resultList = new List<T>();
+            SqlOperation operation = sedeespemapper.GetRetrieveEspecialidadesBySedeId(id_sede);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+            if (dataResults.Count > 0)
+            {
+                var dtoList = sedeespemapper.BuildObjects(dataResults);
+                foreach (var dto in dtoList)
+                {
+                    resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
+                }
+            }
+            return resultList;
+        }
+
+
 
         public override void Update(BaseClass dto)
         {

@@ -85,19 +85,20 @@
                 <div class="mb-3">
                     <div class="form-inline">
                         <div class="mt-3 mb-3">
-                            <select style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)">
+                            <label for="txtProvincia"></label>
+                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control">
                                 <option value="" disabled selected>Seleccione una provincia</option>
                             </select>
                         </div>
-
                         <div class="mt-3 mb-3">
-                            <select style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)">
+                            <label for="txtCanton"></label>
+                            <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control">
                                 <option value="" disabled selected>Seleccione un Canton</option>
                             </select>
                         </div>
-
-                        <div >
-                            <select style=" color: black; background-color: white; border-block-color:black" id="combobox3" >
+                        <div class="mt-3 mb-3">
+                            <label for="txtDistrito"></label>
+                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control">
                                 <option value="" disabled selected>Seleccione un Distrito</option>
                             </select>
                         </div>
