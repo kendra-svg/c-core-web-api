@@ -80,9 +80,12 @@
                 <div class="card-body">
                     <h4 class="card-title text-center mt-3">Especialidades de la sede</h4>
                     <div id="especGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+                    <!--seccion de editar especialidad-->
+                    <label for="IdEspecialidadLabel">ID: </label>
+                    <input type="text" id="IdEspecialidad" class="form-control" readonly: readonly />
 
                     <label for="NombreEspecialidadLabel">Especialidad: </label>
-                    <input type="text" id="NombreEspecialidad" class="form-control" />
+                    <input type="text" id="NombreEspecialidad" class="form-control" readonly: readonly />
 
                     <label for="CostoEspecialidadLabel">Costo: </label>
                     <input type="text" id="CostoEspecialidad" class="form-control" />
@@ -91,6 +94,21 @@
                     <input type="text" id="IvaEspecialidad" class="form-control" />
 
                     <button id="agregarEspecialidadBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Editar</button>
+                    <!-- seccion de eliminar especialidad-->
+                    <label for="IdEspecialidadEliminarLabel">ID: </label>
+                    <input type="text" id="IdEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                    <label for="NombreEspecialidadEliminarLabel">Especialidad: </label>
+                    <input type="text" id="NombreEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                    <label for="CostoEspecialidadEliminarLabel">Costo: </label>
+                    <input type="text" id="CostoEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                    <label for="IvaEspecialidadEliminarLabel">IVA: </label>
+                    <input type="text" id="IvaEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                    <button id="eliminarEspecialidadBtn" class="btn btn-danger mt-3"><i class="fas fa-plus"></i> Eliminar</button>
+
                 </div>
                
             </div>

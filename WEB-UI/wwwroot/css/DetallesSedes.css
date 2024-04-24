@@ -1,10 +1,21 @@
 ﻿#NombreEspecialidad,
 #CostoEspecialidad,
 #IvaEspecialidad,
+#IdEspecialidad,
 #agregarEspecialidadBtn,
 label[for="NombreEspecialidadLabel"],
 label[for="CostoEspecialidadLabel"],
-label[for="IvaEspecialidadLabel"] {
+label[for="IvaEspecialidadLabel"],
+label[for="IdEspecialidadLabel"],
+#IdEspecialidadEliminar,
+#NombreEspecialidadEliminar,
+#CostoEspecialidadEliminar,
+#IvaEspecialidadEliminar,
+#eliminarEspecialidadBtn,
+label[for="IdEspecialidadEliminarLabel"],
+label[for="NombreEspecialidadEliminarLabel"],
+label[for="CostoEspecialidadEliminarLabel"],
+label[for="IvaEspecialidadEliminarLabel"] {
     display: none;
 }
 

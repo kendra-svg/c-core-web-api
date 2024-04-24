@@ -72,5 +72,12 @@ namespace API.Controllers
             return response;
         }
 
+        [HttpDelete]
+        public void DeleteSedeEspec(int id)
+        {
+            SedeEspeManager sedeespe = new SedeEspeManager();
+            sedeespe.DeleteSedeEspec(id);
+        }
+
     }
 }

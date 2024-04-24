@@ -1,7 +1,16 @@
 ﻿function RegistroFuncionarios() {
-
     this.InitView = function () {
         this.ListaSedes();
+
+        $('#agregarEspecialidadBtn').click(function () {
+            var view = new RegistroFuncionarios();
+            view.EditarEspecialidad();
+        });
+
+        $('#eliminarEspecialidadBtn').click(function () {
+            var view = new RegistroFuncionarios();
+            view.EliminarEspecialidad();
+        });
     }
 
     this.ListaSedes = function () {
@@ -177,6 +186,75 @@
             });
         }
     }
+
+    this.EditarEspecialidad = function () {
+        var especialidades = {};
+        especialidades.nombre = $('#NombreEspecialidad').val();
+        especialidades.costo = $('#CostoEspecialidad').val();
+        especialidades.iva = $('#IvaEspecialidad').val();
+        especialidades.id = $('#IdEspecialidad').val();
+
+        var api_url = API_URL_BASE + "/api/Especialidades/UpdateEspecialida?id=" + especialidades.id + "&costo=" + especialidades.costo + "&iva=" + especialidades.iva;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "PUT",
+            url: api_url,
+            contentType: "application/json;charset=utf-8",
+            dataType: "text",
+            data: JSON.stringify(especialidades)
+        }).done(function (response) {
+            Swal.fire({
+                icon: "success",
+                title: "Especialidad actualizada",
+                text: "La especialidad ha sido actualizada exitosamente"
+            });
+        }).then(function (result) {
+            console.log("ENTRO AL THEN DEL AJAX")
+        }).fail(function (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Error al actualizar la especialidad",
+                text: "Hubo un error al actualizar la especialidad" + error.message
+            });
+        });
+    }
+
+    this.EliminarEspecialidad = function () {
+        var especialidades = {};
+        especialidades.Id = $('#IdEspecialidadEliminar').val();
+
+        var api_url = API_URL_BASE + "/api/SedeEspec/DeleteSedeEspec?id=" + especialidades.Id;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "DELETE",
+            url: api_url,
+            contentType: "application/json;charset=utf-8",
+            dataType: "text",
+            data: JSON.stringify(especialidades)
+        }).done(function (response) {
+            Swal.fire({
+                icon: "success",
+                title: "Especialidad eliminada",
+                text: "La especialidad ha sido eliminada exitosamente"
+            });
+        }).then(function (result) {
+            console.log("ENTRO AL THEN DEL AJAX")
+        }).fail(function (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Error al eliminar la especialidad",
+                text: "Hubo un error al eliminar la especialidad" + error.message
+            });
+        });
+    }
+
+
 }
 
                    
