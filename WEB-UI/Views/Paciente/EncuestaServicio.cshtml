@@ -2,29 +2,20 @@
     Layout = null;
     ViewData["Title"] = "Encuesta";
 }
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <title>@ViewData["Title"]</title>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
-
-
+    @*   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" /> *@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="~/css/usersmenustyle.css" rel="stylesheet" />
     <link href="~/css/severalstyles.css" rel="stylesheet" />
+    <link href="~/css/overflow.css" rel="stylesheet" />
 </head>
-<body>
 
+<body>
     <header id="header-menu" class="text-white">
 
         <div class="row align-items-center">
@@ -38,8 +29,8 @@
 
             </div>
         </div>
-
     </header>
+
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
@@ -50,13 +41,95 @@
     </div>
 
 
-
-
     @Html.Partial("MenuLateralPaciente")
 
 
-
     <div class="col text-left">
+        <h2> Encuesta de Servicio</h2>
+        <form>
+
+            @* <div class="row mt-3">
+                <div class="col-2">
+                    <label for="nombre-medico">Nombre del médico a evaluar:</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" class="form-control" id="nombre-medico" />
+                </div>
+            </div> *@
+
+            @* INTERES *@
+            <div class="row mt-2">
+                <div class="col">
+                    <p>¿El médico mostró interés genuino en su bienestar y preocupaciones?</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="InteresGenuino">Interés genuino:</label>
+                    <select class="form-select" aria-label="Interés" id="InteresGenuino" name="InteresGenuino">
+                        <option selected disabled>Seleccionar</option>
+                        <option value="1">Muy Malo</option>
+                        <option value="2">Malo</option>
+                        <option value="3">Regular</option>
+                        <option value="4">Bueno</option>
+                        <option value="5">Muy Bueno</option>
+                    </select>
+                </div>
+            </div>
+
+            @* EXPERIENCIA *@
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="Experiencia">En general, ¿cómo calificaría su experiencia con este médico?</label>
+                    <select class="form-select" aria-label="Experiencia" id="Experiencia" name="Experiencia">
+                        <option selected disabled>Seleccionar</option>
+                        <option value="1">Muy Malo</option>
+                        <option value="2">Malo</option>
+                        <option value="3">Regular</option>
+                        <option value="4">Bueno</option>
+                        <option value="5">Muy Bueno</option>
+                    </select>
+                </div>
+            </div>
+
+            @* AMABILIDAD CORTESIA *@
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="AmabilidadCortesia">¿Cómo calificaría la amabilidad y cortesía del médico?</label>
+                    <select class="form-select" aria-label="Amabilidad" id="AmabilidadCortesia" name="AmabilidadCortesia">
+                        <option selected disabled>Seleccionar</option>
+                        <option value="1">Muy Malo</option>
+                        <option value="2">Malo</option>
+                        <option value="3">Regular</option>
+                        <option value="4">Bueno</option>
+                        <option value="5">Muy Bueno</option>
+                    </select>
+                </div>
+            </div>
+
+            @* COMENTARIOS ADICIONALES *@
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="ComentariosAdicionales">Comentarios adicionales (opcional):</label>
+                    <textarea class="form-control" id="ComentariosAdicionales"></textarea>
+                </div>
+            </div>
+
+            @* SUBMIT *@
+            <div class="row text-center mt-3">
+                <div class="col">
+                    <button id="CreateSurvey" type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    @* <div class="col text-left">
         <h2> Encuesta de Servicio</h2>
         <form>
 
@@ -69,28 +142,30 @@
                     <input type="text" class="form-control" />
                 </div>
             </div>
+
             <div class="row mt-2">
                 <div class="col">
                     <p>¿El medico mostro interes genuino en su bienestar y preocupaciones?</p>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col form-check">
 
                     <input type="radio" class="radio form-check-input" value="2" id="value1" name="interes" />
-                    <label for="value1">1.Muy Malo</label><br />
+                    <label for="value1">1. Muy Malo</label><br />
 
                     <input type="radio" class="radio form-check-input" value="2" id="value2" name="interes" />
-                    <label for="value2">2.Malo</label><br />
+                    <label for="value2">2. Malo</label><br />
 
                     <input type="radio" class="radio form-check-input" value="3" id="value3" name="interes" />
-                    <label for="value3">3.Regular</label><br />
+                    <label for="value3">3. Regular</label><br />
 
                     <input type="radio" class="radio form-check-input" value="4" id="value4" name="interes" />
-                    <label for="value4">4.Bueno</label><br />
+                    <label for="value4">4. Bueno</label><br />
 
                     <input type="radio" class="radio form-check-input" value="5" id="value5" name="interes" />
-                    <label for="value5">5.Muy Bueno</label>
+                    <label for="value5">5. Muy Bueno</label>
 
                 </div>
             </div>
@@ -160,30 +235,24 @@
                 <button class="btn border">Enviar</button>
             </div>
 
-        </div>
-
-
-
-
+        </div> *@
 
 
     </div>
 
     @Html.Partial("_Footer")
 
-
-
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-
+    <script src="~/js/Encuestas/CrearEncuestas.js"></script>
     <script src="~/js/usermenu/menufunctions.js"></script>
 
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
 

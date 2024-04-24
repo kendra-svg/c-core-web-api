@@ -65,7 +65,16 @@ namespace DataAccess.Crud
 
         public override T RetrieveById<T>(int id)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = sedeespemapper.GetRetrieveByIdStatementu(id);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoObject = sedeespemapper.BuildObject(dataResults[0]);
+
+                return (T)Convert.ChangeType(dtoObject, typeof(T));
+            }
+            return default(T);
         }
 
         public List<T> RetrieveEspecialidadBySedeId <T>(int id_sede)

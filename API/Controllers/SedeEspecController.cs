@@ -33,6 +33,12 @@ namespace API.Controllers
             }
             return response;
         }
+        [HttpGet]
+        public SedeEspecialidad GetSedeEspecialidadByID(int id)
+        {
+            SedeEspeManager apm = new SedeEspeManager();
+            return apm.GetSedeEspecialidad(id);
+        }
 
         [HttpGet]
         public List<SedeEspecialidad> GetAllSedesEspecNormal()

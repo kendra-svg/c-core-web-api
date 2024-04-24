@@ -24,10 +24,10 @@ namespace API.Controllers
             return pm.GetAllSedes();
         }
         [HttpGet]
-        public List <Sede> GetSedeById(int id)
+        public List<Sede> GetSedeById(int id)
         {
             SedesManager pm = new SedesManager();
-            return pm.GetSedeById(id);
+            return pm.GetSedeByIDI(id);
         }
         [HttpGet]
         public API_Response GetAllSedesA()
@@ -44,6 +44,12 @@ namespace API.Controllers
                 response.Message = ex.Message;
             }
             return response;
+        }
+        [HttpPut]
+        public void updateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones)
+        {
+            SedesManager sede = new SedesManager();
+            sede.UpdateSede(id, nombre,descripcion,date,direccion,provincia,canton,distrito,ubicaciones);
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DataAccess.Mappers
         sedeespe.IdSede = int.Parse(row["sedes_id_sedes"].ToString());
         sedeespe.IdUsuario = int.Parse(row["usuarios_id_usuario"].ToString());
         sedeespe.IdEspecialidad = int.Parse(row["especialidades_id_especialidades"].ToString());
-     
-        return sedeespe;
+
+            return sedeespe;
     }
 
     public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
@@ -34,8 +34,8 @@ namespace DataAccess.Mappers
         return results;
     }
 
-    public SqlOperation GetCreateStatement(BaseClass dto)
-    {
+        public SqlOperation GetCreateStatement(BaseClass dto)
+        {
             SqlOperation operation = new SqlOperation();
 
             operation.ProcedureName = "INSERT_sede_especialidad";
@@ -46,47 +46,54 @@ namespace DataAccess.Mappers
             operation.AddIntegerParam("id_sedes", app.IdSede);
             operation.AddIntegerParam("id_usuarios", app.IdUsuario);
             operation.AddIntegerParam("id_especialidades", app.IdEspecialidad);
-
-            //operation.AddVarCharParam("nombreEspecialidad", app.nombreEspecialidad);
-
+           
             return operation;
         }
 
-    public SqlOperation GetDeleteStatement(BaseClass dto)
-    {
-        throw new NotImplementedException();
-    }
+        public SqlOperation GetDeleteStatement(BaseClass dto)
+        {
+            throw new NotImplementedException();
+        }
 
-    public SqlOperation GetRetrieveAllStatement()
-    {
-        SqlOperation operation = new SqlOperation();
-        operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
-        return operation;
-    }
-
-    public SqlOperation GetRetrieveAllSedeEspecNormal()
-    {
+        public SqlOperation GetRetrieveAllStatement()
+        {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
             return operation;
-    }
+        }
 
+        public SqlOperation GetRetrieveByIdStatementu(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "SP_GET_Sede_By_ID_usua_espe_sede";
+
+            operation.AddIntegerParam("id", id);
+
+            return operation;
+        }
+        public SqlOperation GetRetrieveAllSedeEspecNormal()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_SEDEESPECIALIDAD";
+            return operation;
+        }
         public SqlOperation GetRetrieveEspecialidadesBySedeId(int id_sede)
         {
-        SqlOperation operation = new SqlOperation();
-        operation.ProcedureName = "SP_GET_ESPECIALIDADES_BY_SEDE_ID";
-        operation.AddIntegerParam("id_sede", id_sede);
-        return operation;
-    }
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ESPECIALIDADES_BY_SEDE_ID";
+            operation.AddIntegerParam("id_sede", id_sede);
+            return operation;
+        }
 
-    public SqlOperation GetRetrieveByIdStatement(string id)
-    {
-        throw new NotImplementedException();
-    }
+        public SqlOperation GetRetrieveByIdStatement(string id)
+        {
+            throw new NotImplementedException();
+        }
 
-    public SqlOperation GetUpdateStatement(BaseClass dto)
-    {
+        public SqlOperation GetUpdateStatement(BaseClass dto)
+        {
         throw new NotImplementedException();
+        }
     }
-}
 }

@@ -89,5 +89,21 @@ namespace DataAccess.Mappers
             
             return operation;   
         }
+        public SqlOperation UpdateSede(int id, string nombre, string descripcion, DateTime date, string direccion, string provincia, string canton, string distrito, string ubicaciones)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName ="SP_UPDATE_SEDE";
+            operation.AddIntegerParam("id_sedes",id);
+            operation.AddVarCharParam("nombres_sedes", nombre);
+            operation.AddVarCharParam("descripciones", descripcion);
+            operation.AddDatetimeParam("fechas_creacion", date);
+            operation.AddVarCharParam("direcciones", direccion);
+            operation.AddVarCharParam("provincias", provincia);
+            operation.AddVarCharParam("cantones", canton);
+            operation.AddVarCharParam("distritos", distrito);
+            operation.AddVarCharParam("ubicaciones", ubicaciones);
+            return operation;
+        }
+
     }
 }

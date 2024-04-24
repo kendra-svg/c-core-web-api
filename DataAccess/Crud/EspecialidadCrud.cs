@@ -87,4 +87,9 @@ public class EspecialidadCrud: CrudFactory
         SqlOperation operation = especialidadMapper.GetUpdateStatement(dto);
         dao.ExecuteStoredProcedure(operation);
     }
+    public void UpdateEspe(int id, int costo, int iva)
+    {
+        SqlOperation operation = especialidadMapper.UpdateEspecialidad(id, costo, iva);
+        dao.ExecuteStoredProcedure(operation);
+    }
 }

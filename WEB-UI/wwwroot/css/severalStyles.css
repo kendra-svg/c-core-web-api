@@ -4,6 +4,7 @@
     PARA LANDING PRODUCTO
 */
 
+
 #welcome-section {
     background-image: url(https://i.imgur.com/iYoRiG9.png);
     background-size: cover;
@@ -167,8 +168,10 @@
 #sidebar-menu {
     background-color: #038554;
     text-align: left;
+    height: 100%;
     padding-left: 5px;
-    color: white
+    color: white;
+
 }
 
     #sidebar-menu.active {
