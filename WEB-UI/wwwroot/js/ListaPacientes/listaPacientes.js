@@ -1,4 +1,4 @@
-﻿function PacienesList() {
+﻿function PacientesList() {
     this.InitView = function () {
         this.ListaPacientes();
     }
