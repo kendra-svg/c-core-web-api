@@ -103,5 +103,14 @@ namespace DataAccess.Mappers
 
             return operation;
         }
+        public SqlOperation UpdateEspecialidad(int id, int costo, int iva)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_ESPECIALIDAD";
+            operation.AddIntegerParam("ID_ESPECIALIDAD", id);
+            operation.AddIntegerParam("COSTO", costo);
+            operation.AddIntegerParam("IVA", iva);
+            return operation;
+        }
     }
 }

@@ -17,15 +17,6 @@ namespace API.Controllers
             EspecialidadesManager manager = new EspecialidadesManager();
             return manager.CreateEspecialidad(espec);
         }
-
-
-        [HttpPut]
-        public string UpdateEspecialidadById(Especialidad espec)
-        {
-            EspecialidadesManager manager = new EspecialidadesManager();
-            return manager.UpdateEspecialidadById(espec);
-        }
-
         [HttpGet]
         public Especialidad GetEspecialidadById(int idEspecialidad)
         {
@@ -82,6 +73,12 @@ namespace API.Controllers
                 response.Message = ex.Message;
             }
             return response;
+        }
+        [HttpPut]
+        public void UpdateEspecialida(int id, int costo, int iva)
+        {
+            EspecialidadesManager espe = new EspecialidadesManager();
+            espe.UpdateEspe(id, costo, iva);
         }
    
 
