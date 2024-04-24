@@ -83,6 +83,11 @@ namespace AppLogic
             EspecialidadCrud crud = new EspecialidadCrud();
             return crud.RetrieveEspecById<Especialidad>(idespec);
         }
+        public void UpdateEspe(int id, int costo, int iva)
+        {
+            EspecialidadCrud crud=new EspecialidadCrud();
+            crud.UpdateEspe(id, costo, iva);
+        }
     }
 
 }
