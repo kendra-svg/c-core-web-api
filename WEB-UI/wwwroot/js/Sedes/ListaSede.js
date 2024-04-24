@@ -51,11 +51,11 @@
             $('#txtnombre').val(sede.nombre);
             $('#txtdescripcion').val(sede.descripcion);
             $('#input-fecha-creacion').val(sede.fechaCreacion);
-            $('#coordinates').val(sede.direccion);
-            $('#combobox2').val(result.canton);
-            $('#combobox1').val(result.provincia);
-            $('#combobox3').val(result.distrito);
-            $('#input-otras-senas').val(result.ubicacion);
+            $('#coordinates').val(sede.ubicacion);
+            //$('#combobox2').val(sede.canton);
+            //$('#combobox1').val(sede.provincia);
+            //$('#combobox3').val(sede.distrito);
+            $('#input-otras-senas').val(sede.direccion);
         }).fail(function (error) {
             console.log("Error", error);
             Swal.fire({
@@ -71,11 +71,11 @@
         sede.nombre = $('#txtnombre').val();
         sede.descripcion = $('#txtdescripcion').val();
         sede.fechaCreacion = $('#input-fecha-creacion').val();
-        sede.ubicacion = $('#coordinates').val();
+        sede.direccion = $('#coordinates').val();
         sede.canton = $('#combobox2').find(":selected").val();
         sede.provincia = $('#combobox1').find(":selected").val();
         sede.distrito = $('#combobox3').find(":selected").val();
-        sede.direccion = $('#input-otras-senas').val(); //coodinates
+        sede.ubicacion = $('#input-otras-senas').val(); //coodinates
         if (sede.id === "") {
             Swal.fire({
                 icon: 'error',
@@ -161,8 +161,8 @@
             });
         }).fail(function (error) {
             Swal.fire({
-                title: '¡Erro!',
-                text: 'No se actualizo la informacion',
+                title: '¡Error!',
+                text: 'No se actualizo la información',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
             });

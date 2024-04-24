@@ -18,10 +18,10 @@ namespace API.Controllers
             return manager.CreateEspecialidad(espec);
         }
         [HttpGet]
-        public Especialidad GetEspecialidadById(int idEspecialidad)
+        public Especialidad GetEspecialidadById(int id)
         {
             EspecialidadesManager manager = new EspecialidadesManager();
-            return manager.GetEspecialidadById(idEspecialidad);
+            return manager.GetEspecialidadById(id);
         }
 
         [HttpGet]
