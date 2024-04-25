@@ -140,6 +140,22 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveUsersBySedeId(int id_sede)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_USERS_BY_SEDE_ID";
+            operation.AddIntegerParam("id_sede", id_sede);
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveUserByUserId(int id_usuario)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_USER_BY_ID";
+            operation.AddIntegerParam("idusuario", id_usuario);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveAllDoctors ()
         {
             SqlOperation operation = new SqlOperation();

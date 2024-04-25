@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card mb-3">
 
                 <div class="card-body">
                     <h4 class="card-title text-center mt-3">Especialidades de la sede</h4>
@@ -108,7 +108,9 @@
                     <input type="text" id="IvaEspecialidadEliminar" class="form-control" readonly: readonly />
 
                     <button id="eliminarEspecialidadBtn" class="btn btn-danger mt-3"><i class="fas fa-plus"></i> Eliminar</button>
-
+                    <div class="text-center">
+                        <button id="agregarBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Agregar nueva especialidad a sede</button>
+                    </div>
                 </div>
                
             </div>
@@ -116,7 +118,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title text-center mt-3">Profesionales de la sede</h4>
-                    <button id="editarBtn" class="btn btn-success"><i class="fas fa-plus"></i> Agregar profesional</button>
+                    
+                    <div id="userGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+                    <div class="text-center">
+                        <button id="agregarProfesionalBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Agregar profesional a sede</button>
+                    </div>
                     @* <div class="d-flex justify-content-center">
                         <p>Información genérica sobre profesionales de la sede.</p>
                     </div>
