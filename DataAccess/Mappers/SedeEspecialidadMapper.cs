@@ -55,6 +55,14 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         }
 
+        public SqlOperation GetDeleteUserFromSedeEspecialidad(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_DELETE_USER_FROM_SEDE_ESPECIALIDAD";
+            operation.AddIntegerParam("id", id);
+            return operation;
+        }
+
         public SqlOperation DeleteBySedeEspecId(int id)
         {
             SqlOperation operation = new SqlOperation();

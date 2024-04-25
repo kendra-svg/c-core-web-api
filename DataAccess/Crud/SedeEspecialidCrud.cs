@@ -35,6 +35,12 @@ namespace DataAccess.Crud
             dao.ExecuteStoredProcedure(operation);
         }
 
+        public void DeleteUserFromSedeEspecialidad(int id)
+        {
+            SqlOperation operation = sedeespemapper.GetDeleteUserFromSedeEspecialidad(id);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
         public override List<T> RetrieveAll<T>()
         {
             List<T> resultList = new List<T>();

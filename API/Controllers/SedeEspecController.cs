@@ -79,5 +79,12 @@ namespace API.Controllers
             sedeespe.DeleteSedeEspec(id);
         }
 
+        [HttpDelete]
+        public void DeleteUserFromSedeEspecialidad(int id)
+        {
+            SedeEspeManager sedeespe = new SedeEspeManager();
+            sedeespe.DeleteUserFromSedeEspecialidad(id);
+        }
+
     }
 }
