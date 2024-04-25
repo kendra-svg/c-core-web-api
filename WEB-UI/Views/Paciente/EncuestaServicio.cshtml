@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
@@ -45,9 +47,14 @@
 
 
     <div class="col text-left">
-        <h2> Encuesta de Servicio</h2>
-        <form>
-
+        <div class="container">
+            <h2 class="text-center">Encuesta de servico</h2>
+            <form>
+                <div class="row mt-2">
+                    <div class="col">
+                        <p>Nos gustaria saber tu opinion</p>
+                    </div>
+                </div>
             @* <div class="row mt-3">
                 <div class="col-2">
                     <label for="nombre-medico">Nombre del médico a evaluar:</label>
@@ -58,15 +65,9 @@
             </div> *@
 
             @* INTERES *@
-            <div class="row mt-2">
-                <div class="col">
-                    <p>¿El médico mostró interés genuino en su bienestar y preocupaciones?</p>
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col">
-                    <label for="InteresGenuino">Interés genuino:</label>
+                        <label for="InteresGenuino">¿El médico mostró interés genuino en su bienestar y preocupaciones?:</label>
                     <select class="form-select" aria-label="Interés" id="InteresGenuino" name="InteresGenuino">
                         <option selected disabled>Seleccionar</option>
                         <option value="1">Muy Malo</option>
@@ -117,131 +118,18 @@
             </div>
 
             @* SUBMIT *@
-            <div class="row text-center mt-3">
-                <div class="col">
-                    <button id="CreateSurvey" type="button" class="btn btn-primary">Enviar</button>
+
+                <div class="form-group mt-4 d-flex justify-content-center">
+                    <button id="CreateSurvey" type="button" class="btn btn-success">Enviar</button>
                 </div>
-            </div>
-        </form>
-    </div>
 
-
-
-
-
-    @* <div class="col text-left">
-        <h2> Encuesta de Servicio</h2>
-        <form>
-
-
-            <div class="row mt-3">
-                <div class="col-2">
-                    <p>Nombre del medico a evaluar: </p>
-                </div>
-                <div class="col-4">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-
-            <div class="row mt-2">
-                <div class="col">
-                    <p>¿El medico mostro interes genuino en su bienestar y preocupaciones?</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col form-check">
-
-                    <input type="radio" class="radio form-check-input" value="2" id="value1" name="interes" />
-                    <label for="value1">1. Muy Malo</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="2" id="value2" name="interes" />
-                    <label for="value2">2. Malo</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="3" id="value3" name="interes" />
-                    <label for="value3">3. Regular</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="4" id="value4" name="interes" />
-                    <label for="value4">4. Bueno</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="5" id="value5" name="interes" />
-                    <label for="value5">5. Muy Bueno</label>
-
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <p>En general,¿como calificaria su experiencia con este medico?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col form-check">
-
-                    <input type="radio" class="radio form-check-input" value="2" id="value1" name="exp" />
-                    <label for="value1">1.Muy Malo</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="2" id="value2" name="exp" />
-                    <label for="value2">2.Malo</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="3" id="value3" name="exp" />
-                    <label for="value3">3.Regular</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="4" id="value4" name="exp" />
-                    <label for="value4">4.Bueno</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="5" id="value5" name="exp" />
-                    <label for="value5">5.Muy Bueno</label>
-
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <p>¿Como calificaria la amabilidad y cortesia del medico?</p>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col form-check">
-
-                    <input type="radio" class="radio form-check-input" value="2" id="value1" name="interes" />
-                    <label for="value1">1.Muy Malo</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="2" id="value2" name="interes" />
-                    <label for="value2">2.Malo</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="3" id="value3" name="interes" />
-                    <label for="value3">3.Regular</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="4" id="value4" name="interes" />
-                    <label for="value4">4.Bueno</label><br />
-
-                    <input type="radio" class="radio form-check-input" value="5" id="value5" name="interes" />
-                    <label for="value5">5.Muy Bueno</label>
-
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <p>Si tiene un comentario o recomendaciones acerca del servicio, por favor señalarlo en el siguiente apartado.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <textarea class="form-control" id="additional-comments"></textarea>
-                </div>
-            </div>
-        </form>
-        <div class="row text-center mb-2">
-            <div class="col">
-                <button class="btn border">Enviar</button>
-            </div>
-
-        </div> *@
-
-
+            </form>
+        </div>
     </div>
 
     @Html.Partial("_Footer")
 
+    <script src="~/js/site.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
