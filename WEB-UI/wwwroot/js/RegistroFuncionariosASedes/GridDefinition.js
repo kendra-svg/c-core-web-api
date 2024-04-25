@@ -73,6 +73,62 @@ const especColumnDefinition = [
     
 ];
 
+const userColumnDefinition = [
+    { field: "id", headerName: "ID" },
+    { field: "nombreCompleto", headerName: "Nombre completo" },
+    { field: "especialidad", headerName: "ID Especialidad" },
+    /*{ field: "identificacion", headerName: "Cédula" },*/
+    //{ field: "nombre", headerName: "Nombre" },
+    //{ field: "apellidos", headerName: "Apellidos" },
+    { field: "correo", headerName: "Correo" },
+    { field: "rol", headerName: "Rol" },
+    /*{ field: "sexo", headerName: "Sexo" },*/
+
+
+    {
+        headerName: "Editar",
+        cellRenderer: function (params) {
+
+            const button = document.createElement("button");
+
+            button.className = "btn btn-success m-1";
+            button.innerHTML = "Editar";
+
+            button.addEventListener("click", function () {
+                handleButtonEditarUsuario(params.data);
+            });
+
+            const wrapper = document.createElement("div");
+            wrapper.appendChild(button);
+
+            return wrapper;
+        }
+    },
+
+
+    {
+        headerName: "Eliminar",
+        cellRenderer: function (params) {
+
+            const button = document.createElement("button");
+
+            button.className = "btn btn-danger m-1";
+            button.innerHTML = "Eliminar";
+
+            button.addEventListener("click", function () {
+                handleButtonEliminarUsuario(params.data);
+            });
+
+            const wrapper = document.createElement("div");
+            wrapper.appendChild(button);
+
+            return wrapper;
+        }
+    }
+
+    
+];
+
 function handleButtonEliminar(data) {
 
 
@@ -147,7 +203,17 @@ function handleButtonEditar(data) {
 
 
     
+const userGridOptions = {
+    columnDefs: userColumnDefinition,
+    rowData: [],
+    rowSelection: 'single',
 
+    defaultColDef: { sortable: true, filter: true },
+
+    localeText: {
+        noRowsToShow: 'Si no se muestra el usuario, debe seleccionar una sede. Si ya seleccionó una sede y aún no se muestran usuarios, eso significa que no hay usuarios registrados a dicha sede.' // Personaliza el mensaje aquí
+    },
+}
 
 
 
@@ -224,6 +290,7 @@ function ProcessDoubleClick(params) {
 
     var view = new RegistroFuncionarios();
     view.GetSedeEspecialidadesDetails(params.data.id);
+    view.GetSedeUsuariosDetails(params.data.id);
 }
 
 function hideEditFields() {
@@ -247,5 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gridDestination = document.querySelector('#especGrid');
     new agGrid.Grid(gridDestination, especGridOptions);
+
+    const gridUser = document.querySelector('#userGrid');
+    new agGrid.Grid(gridUser, userGridOptions);
+
+
 
 });
