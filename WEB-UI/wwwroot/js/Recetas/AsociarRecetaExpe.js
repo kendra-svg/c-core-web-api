@@ -45,6 +45,7 @@ function Configure() {
                 timer: 2000
             });
         });
+        console.log(idReceta);
     }
     this.PopulateExpediente = function () {
         $.ajax({
@@ -78,6 +79,7 @@ function Configure() {
                 timer: 2000
             });
         });
+        console.log(idExpediente);
     }
     this.insertexperec = function () {
 
