@@ -16,6 +16,13 @@ namespace AppLogic
             se.Create(sedeEspe);
             return "ok";
         }
+
+        public string InsertEspecialidadesYFuncionariosIntoSedes(int id, int idSede, int idEspecialidad, int idUsuario)
+        {
+            SedeEspecialidCrud se = new SedeEspecialidCrud();
+            se.InsertEspecialidadesYFuncionariosIntoSedes(id, idSede, idEspecialidad, idUsuario);
+            return "ok";
+        }
         public List<SedeEspecialidad> GetAllSedes()
         {
             SedeEspecialidCrud crud = new SedeEspecialidCrud();
