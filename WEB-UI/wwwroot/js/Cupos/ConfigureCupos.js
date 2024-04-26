@@ -30,7 +30,7 @@ function Configure() {
             dataType: "json"
         }).done(function (data) {
             infoSedes = data
-            
+            console.log(data)
             var select = $('#ddlSedes');
             select.find('option').remove();
 
@@ -39,8 +39,9 @@ function Configure() {
             }
             select.on('change', function () {
                 let id = $(this).val();
+                
                 idSede = id;
-
+                console.log(idSede)
             });
             
         }).fail(function (error) {
@@ -92,53 +93,81 @@ function Configure() {
     }
     this.InsertCuposConfig = function () {
         let cupos = {};
-        cupos.id = generateUniqueId()
+        cupos.id = generateUniqueId();
         cupos.cronometro = 30;
-
-        //LOS NOMBRES DE ABAJO NO AFECTAN QUE VAYAN COMO STRINGS POR QUE NO SE ALMACENAN EN LA BD, SOLO SU ID
-        //Los nombres son mas para poder mostrarlo en el GRID
-        
         cupos.nombreEspecialidad = "string";
         cupos.nombreSede = "string";
         cupos.cantidad = $('#txtCantidad').val();
 
-        
+        console.log(idEspecialidad,idSede); 
 
-        var api_url = API_URL_BASE + "/api/Cupos/CreateCupos";
-
-        $.ajax({
-            headers: {
-                'Accept': "application/json",
-                'Content-Type': "application/json"
-            },
-            method: "POST",
-            url: api_url + "?idEspecialidad=" + idEspecialidad + "&idSede=" + idSede,
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            data: JSON.stringify(cupos),
-            hasContent: true
-        }).done(function (result) {
-            Swal.fire({
-                title: "success",
-                icon: "success",
-                text: "Cita creada correctamente",
-                timer: 2000
-            }).then(
-                function () {
-                    var view = new Configure();
-                    view.InitView();
-                }
-            )
-        }).fail(function (error) {
-            Swal.fire({
-                title: "error",
-                icon: "error",
-                text: "Error al guardar el cupo"+ error,
-                timer: 2000
-            });
+        this.RevisarExistenciaDeSedeEspecialidad(idEspecialidad, idSede, function (existe) {
+            if (existe) {
+                var api_url = API_URL_BASE + "/api/Cupos/CreateCupos";
+                $.ajax({
+                    headers: {
+                        'Accept': "application/json",
+                        'Content-Type': "application/json"
+                    },
+                    method: "POST",
+                    url: api_url + "?idEspecialidad=" + idEspecialidad + "&idSede=" + idSede,
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(cupos),
+                    hasContent: true
+                }).done(function (result) {
+                    Swal.fire({
+                        title: "success",
+                        icon: "success",
+                        text: "Creación de cupo exitosa!",
+                        timer: 2000
+                    }).then(
+                        function () {
+                            var view = new Configure();
+                            view.InitView();
+                        }
+                    );
+                }).fail(function (error) {
+                    Swal.fire({
+                        title: "error",
+                        icon: "error",
+                        text: "Error al guardar el cupo: " + error,
+                        timer: 2000
+                    });
+                });
+            } else {
+                Swal.fire({
+                    title: "Información",
+                    icon: "info",
+                    text: "Revisar si la sede dispone de dicha especialidad.",
+                    timer: 2000
+                });
+            }
         });
-    }
-   
+    };
+
+    this.RevisarExistenciaDeSedeEspecialidad = function (idEspecialidad, idSede, callback) {
+        var api_url = API_URL_BASE + "/api/SedeEspec/GetSedeEspecialidadesBySedeIdAndEspecialidadId";
+        console.log(idEspecialidad, idSede)
+        $.ajax({
+            url: api_url + "?id_sede=" + idSede + "&id_especialidad=" + idEspecialidad,
+            method: "GET",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json"
+        }).done(function (result) {
+            console.log(result)
+            if (!result || result.id == 0 || result.id == null) {
+                callback(false);
+            } else {
+                callback(true);
+            }
+
+        }).fail(function (error) {
+            callback(false);
+        });
+    };
+
+    
     
     this.GetCupos = function () {
         var apiUrl = API_URL_BASE + "/api/Cupos/GetCupos";
@@ -149,7 +178,7 @@ function Configure() {
             contentType: "application/json;charset=utf-8",
             dataType: "json"
         }).done(function (result) {
-            console.log(result)
+            //console.log(result)
             if (result)
                 
                 cuposGridOptions.api.setRowData(result);
@@ -268,6 +297,9 @@ function Configure() {
 
 
     }
+
+
+   
 
 
 }
