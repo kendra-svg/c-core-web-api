@@ -73,12 +73,12 @@ namespace DataAccess.Mappers
             return operation;
         }
 
-        public SqlOperation GetEspecById (int idespec)
+        public SqlOperation GetEspecById (int id)
         {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName = "SP_GET_ESPEC_BY_ID";
 
-            operation.AddIntegerParam("idespec", idespec);
+            operation.AddIntegerParam("idespec", id);
             return operation;
         }
 
@@ -101,6 +101,15 @@ namespace DataAccess.Mappers
             operation.AddIntegerParam("COSTO", espec.Costo);
             operation.AddIntegerParam("IVA", espec.IVA);
 
+            return operation;
+        }
+        public SqlOperation UpdateEspecialidad(int id, int costo, int iva)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_UPDATE_ESPECIALIDAD";
+            operation.AddIntegerParam("ID_ESPECIALIDAD", id);
+            operation.AddIntegerParam("COSTO", costo);
+            operation.AddIntegerParam("IVA", iva);
             return operation;
         }
     }

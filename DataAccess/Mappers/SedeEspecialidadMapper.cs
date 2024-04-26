@@ -55,6 +55,14 @@ namespace DataAccess.Mappers
             throw new NotImplementedException();
         }
 
+        public SqlOperation DeleteBySedeEspecId(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_DELETE_SedeEspecialidad_BY_ID";
+            operation.AddIntegerParam("Id", id);
+            return operation;
+        }
+
         public SqlOperation GetRetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
@@ -95,5 +103,16 @@ namespace DataAccess.Mappers
         {
         throw new NotImplementedException();
         }
+        public SqlOperation GetRetrieveBySedeIdAndEspecialidadId(int idSede, int idEspecialidad)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_SEDEESPEC_BY_SEDE_ID_AND_ESPECIALIDAD_ID";
+            operation.AddIntegerParam("id_sede", idSede);
+            operation.AddIntegerParam("id_especialidad", idEspecialidad);
+            return operation;
+        }
+
+
+        
     }
 }

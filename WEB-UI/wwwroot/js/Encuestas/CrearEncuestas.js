@@ -1,17 +1,18 @@
 function CreateSurvey() {
     this.InitView = function () {
-        //cambiar al id de agregar encuesta, agregarle id al boton de agregar
+        // Cambiar al id de agregar encuesta, agregarle id al boton de agregar
         $('#CreateSurvey').click(function (event) {
             var view = new CreateSurvey();
             // event.preventDefault();
             view.SubmitCreateSurvey();
-        })
-    }
+        });
+    };
+
     this.SubmitCreateSurvey = function () {
         var enc = {};
         enc.id = generateUniqueId();
 
-        // del dto                  del html
+        // Del HTML
         enc.InteresGenuino = $('#InteresGenuino').val();
         enc.Experiencia = $('#Experiencia').val();
         enc.AmabilidadCortesia = $('#AmabilidadCortesia').val();
@@ -19,23 +20,7 @@ function CreateSurvey() {
 
         console.log(enc);
 
-        if (enc.InteresGenuino === "") {
-            Swal.fire({
-                icon: 'error',
-                text: "Por favor seleccione una opcion.",
-                title: 'Error'
-            });
-            return;
-        }
-        if (enc.Experiencia === "") {
-            Swal.fire({
-                icon: 'error',
-                text: "Por favor seleccione una opcion.",
-                title: 'Error'
-            });
-            return;
-        }
-        if (enc.AmabilidadCortesia === "") {
+        if (enc.InteresGenuino === "" || enc.Experiencia === "" || enc.AmabilidadCortesia === "") {
             Swal.fire({
                 icon: 'error',
                 text: "Por favor seleccione una opcion.",
@@ -44,7 +29,7 @@ function CreateSurvey() {
             return;
         }
 
-        //conexion con api
+        // Conexión con la API
         var api_url = API_URL_BASE + "/api/Encuestas/CreateEncuesta";
 
         $.ajax({
@@ -65,7 +50,7 @@ function CreateSurvey() {
                 text: "Se ha completado la encuesta",
             }).then(
                 function () {
-                    var view = new CreateRecipe();
+                    var view = new CreateSurvey();
                     view.LimpiarFormulario();
                 }
             )
@@ -73,22 +58,18 @@ function CreateSurvey() {
         }).fail(function (error) {
             Swal.fire({
                 icon: 'error',
-                text: "Error al completar encuesta" + error,
-                title: 'Error',
-
-            })
+                text: "Error al completar encuesta",
+                title: 'Error'
+            });
         });
-    }
-
+    };
 
     this.LimpiarFormulario = function () {
-
         $('#InteresGenuino').val('');
         $('#Experiencia').val('');
         $('#AmabilidadCortesia').val('');
         $('#ComentariosAdicionales').val('');
-    }
-
+    };
 }
 
 generatedIds = [];
@@ -101,7 +82,7 @@ generateUniqueId = () => {
     } while (generatedIds.includes(newId));
     generatedIds.push(newId);
     return newId;
-}
+};
 
 $(document).ready(function () {
     var view = new CreateSurvey();

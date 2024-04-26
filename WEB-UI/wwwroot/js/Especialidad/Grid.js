@@ -19,8 +19,8 @@ const gripOptions = {
 }
 
 function ProcessDoubleClick(params) {
-    var view = new SedeList();
-    view.GetSedeDetails(params.data.id);
+    var view = new ListSpeciality();
+    view.GetEspe(params.data.id);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

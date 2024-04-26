@@ -72,5 +72,21 @@ namespace API.Controllers
             return response;
         }
 
+        [HttpDelete]
+        public void DeleteSedeEspec(int id)
+        {
+            SedeEspeManager sedeespe = new SedeEspeManager();
+            sedeespe.DeleteSedeEspec(id);
+        }
+
+        [HttpGet]
+        public SedeEspecialidad GetSedeEspecialidadesBySedeIdAndEspecialidadId(int id_sede, int id_especialidad)
+        {
+            SedeEspeManager pm = new SedeEspeManager();
+            Console.WriteLine(id_sede);
+            Console.WriteLine(id_especialidad);
+            return pm.GetEspecialidadesBySedeIdAndEspecialidadId(id_sede, id_especialidad);
+        }
+
     }
 }
