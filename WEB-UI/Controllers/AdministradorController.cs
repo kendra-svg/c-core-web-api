@@ -97,6 +97,11 @@ namespace WEB_UI.Controllers
             return View();
         }
 
+        public IActionResult AgregarFuncionariosEspecialidadesASedes()
+        {
+            return View();
+        }
+
         //DE AQUI PARA ABAJO ES PARA LA PARTE DE MI SALUD DEL ADMIN
         public IActionResult CitasPersonales()
         {

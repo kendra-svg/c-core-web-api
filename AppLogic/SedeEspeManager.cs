@@ -16,6 +16,13 @@ namespace AppLogic
             se.Create(sedeEspe);
             return "ok";
         }
+
+        public string InsertEspecialidadesYFuncionariosIntoSedes(int id, int idSede, int idEspecialidad, int idUsuario)
+        {
+            SedeEspecialidCrud se = new SedeEspecialidCrud();
+            se.InsertEspecialidadesYFuncionariosIntoSedes(id, idSede, idEspecialidad, idUsuario);
+            return "ok";
+        }
         public List<SedeEspecialidad> GetAllSedes()
         {
             SedeEspecialidCrud crud = new SedeEspecialidCrud();
@@ -46,6 +53,12 @@ namespace AppLogic
         {
             SedeEspecialidCrud crud = new SedeEspecialidCrud();
             return crud.RetrieveBySedeIdAndEspecialidadId<SedeEspecialidad>(idSede, idEspecialidad);
+        }
+
+        public void DeleteUserFromSedeEspecialidad(int id)
+        {
+            SedeEspecialidCrud crud = new SedeEspecialidCrud();
+            crud.DeleteUserFromSedeEspecialidad(id);
         }
     }
 }

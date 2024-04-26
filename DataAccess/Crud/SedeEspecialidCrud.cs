@@ -24,6 +24,12 @@ namespace DataAccess.Crud
             SqlOperation operation = sedeespemapper.GetCreateStatement(dto);
             dao.ExecuteStoredProcedure(operation);
         }
+
+        public void InsertEspecialidadesYFuncionariosIntoSedes(int id, int idSede, int idEspecialidad, int idUsuario)
+        {
+            SqlOperation operation = sedeespemapper.GetInsertEspecialidadesYFuncionariosIntoSedes(id, idSede, idEspecialidad, idUsuario);
+            dao.ExecuteStoredProcedure(operation);
+        }
         public override void Delete(BaseClass dto)
         {
             throw new NotImplementedException();
@@ -32,6 +38,12 @@ namespace DataAccess.Crud
         public void DeleteBySedeEspecId(int id)
         {
             SqlOperation operation = sedeespemapper.DeleteBySedeEspecId(id);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
+        public void DeleteUserFromSedeEspecialidad(int id)
+        {
+            SqlOperation operation = sedeespemapper.GetDeleteUserFromSedeEspecialidad(id);
             dao.ExecuteStoredProcedure(operation);
         }
 

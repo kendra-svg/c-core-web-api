@@ -11,6 +11,11 @@
             var view = new RegistroFuncionarios();
             view.EliminarEspecialidad();
         });
+
+        $('#eliminarUsuarioBtn').click(function () {
+            var view = new RegistroFuncionarios();
+            view.EliminarUsuario();
+        });
     }
 
     this.ListaSedes = function () {
@@ -272,6 +277,38 @@
         });
     }
 
+    this.EliminarUsuario = function () {
+        var usuario = {};
+        usuario.Id = $('#IdUsuario').val();
+
+        var api_url = API_URL_BASE + "/api/SedeEspec/DeleteUserFromSedeEspecialidad?id=" + usuario.Id;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "DELETE",
+            url: api_url,
+            contentType: "application/json;charset=utf-8",
+            dataType: "text",
+            data: JSON.stringify(usuario)
+        }).done(function (response) {
+            Swal.fire({
+                icon: "success",
+                title: "Usuario removido",
+                text: "El usuario ha sido removido exitosamente"
+            });
+        }).then(function (result) {
+            console.log("ENTRO AL THEN DEL AJAX")
+        }).fail(function (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Error al remover el usuario",
+                text: "Hubo un error al remover el usuario" + error.message
+            });
+        });
+    }
+
 
     this.GetSedeUsuariosDetails = function (id) {
         var sedes = JSON.parse(sessionStorage.getItem("Sedes"));
@@ -346,8 +383,6 @@
                             
 
                         });
-
-                        //hacer if para que se muestre el nombre de la especialidad relacionada al usuario y que se muestre en el grid para cada usuario
 
                         // Cuando todas las promesas se resuelvan, agregar las especialidades al grid
                         $.when.apply($, promises).done(function () {
