@@ -51,70 +51,83 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralDoctor")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Citas Personales</h2>
+                            </div>
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-3 ">
+                                <input class="form-control me-sm-2" type="search" placeholder="Search">
+                            </div>
+                            <div class="col text-end">
+                                <a asp-controller="Administrador" asp-action="CrearCitasPersonales">
+                                    <button class="btn btn-success mt-1">Crear una cita</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="row mt-4 ">
+                            <div class="col-2  text-center align-content-center " id="main-box-appointments">
+                                <h2>30 <br /> MARZO</h2>
+
+                            </div>
+                            <div class="col-4 " id="other-box-appointments">
+                                <p>HOSPITAL SU SALUD PRIMERO</p>
+                                <p>08:30PM</p>
+                                <p>SABADO 30 DE MARZO 2024</p>
+                                <p>RADIOLOGIA</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 mt-4">
+                                <h5>Resumen de la cita</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m-4 text-end">
+                                <button type="button" class="btn btn-outline-success text-success mt-1">Pagar</button>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div id="gridCitasPersonales" style="height: 300px; width:70%;" class="ag-theme-alpine"></div>
+
+                            </div>
 
 
-    @Html.Partial("MenuLateralDoctor")
+                        </div>
+                        <div class="row m-4 text-center">
+                            <div class="col ">
+                                <button type="button" class="btn btn-ligth mt-1 border">Cancelar Cita</button>
+                            </div>
+                        </div>
 
+                    </div>
 
-
-    <div class="col text-left">
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <h2>Citas Personales</h2>
                 </div>
 
             </div>
-            <div class="row mt-5">
-                <div class="col-3 ">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
-                </div>
-                <div class="col text-end ">
-                    <a asp-controller="Doctor" asp-action="CrearCitasPersonales">
-                        <button class=" btn btn-light border mt-1">Crear una cita</button>
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-4 ">
-                <div class="col-2  text-center align-content-center " id="main-box-appointments">
-                    <h2>30 <br /> MARZO</h2>
-
-                </div>
-                <div class="col-4 " id="other-box-appointments">
-                    <p>HOSPITAL SU SALUD PRIMERO</p>
-                    <p>08:30PM</p>
-                    <p>SABADO 30 DE MARZO 2024</p>
-                    <p>RADIOLOGIA</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3 mt-4">
-                    <h5>Resumen de la cita</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col m-4 text-end">
-                    <button type="button" class="btn btn-light border mt-1  ">Pagar</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div id="gridCitasPersonales" style="height: 300px; width:70%;" class="ag-theme-alpine"></div>
-
-                </div>
-
-
-            </div>
-            <div class="row m-4 text-center">
-                <div class="col ">
-                    <button type="button" class="btn btn-ligth mt-1 border">Cancelar Cita</button>
-                </div>
-            </div>
-
         </div>
-
     </div>
+
+
+
+
+
 
     @Html.Partial("_Footer")
 

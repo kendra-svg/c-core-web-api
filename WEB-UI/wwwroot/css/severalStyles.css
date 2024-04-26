@@ -3,8 +3,6 @@
 /*
     PARA LANDING PRODUCTO
 */
-
-
 #welcome-section {
     background-image: url(https://i.imgur.com/iYoRiG9.png);
     background-size: cover;
@@ -171,7 +169,7 @@
     height: 100%;
     padding-left: 5px;
     color: white;
-
+    width: 100%;
 }
 
     #sidebar-menu.active {
