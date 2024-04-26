@@ -78,10 +78,10 @@ namespace AppLogic
             throw new NotImplementedException();
         }
 
-        public List<Especialidad> GetEspecById(int idespec)
+        public List<Especialidad> GetEspecById(int id)
         {
             EspecialidadCrud crud = new EspecialidadCrud();
-            return crud.RetrieveEspecById<Especialidad>(idespec);
+            return crud.RetrieveEspecById<Especialidad>(id);
         }
         public void UpdateEspe(int id, int costo, int iva)
         {

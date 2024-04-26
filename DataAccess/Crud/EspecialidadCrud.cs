@@ -65,9 +65,9 @@ public class EspecialidadCrud: CrudFactory
         return default(T);
     }
 
-    public List<T>  RetrieveEspecById  <T> (int idespec) { 
+    public List<T>  RetrieveEspecById  <T> (int id) { 
         List<T> resultList = new List<T>();
-        SqlOperation operation = especialidadMapper.GetEspecById(idespec);
+        SqlOperation operation = especialidadMapper.GetEspecById(id);
 
         List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 

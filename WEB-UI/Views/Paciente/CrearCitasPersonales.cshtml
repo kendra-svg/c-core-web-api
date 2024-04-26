@@ -51,121 +51,132 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralPaciente")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <h2>Crear Citas Personales</h2>
+                    <div class="container-fluid">
+                        <form id="creacionCita">
+                            <div class="row pt-3">
+                                <div class="row pt-3">
 
 
-    @Html.Partial("MenuLateralPaciente")
+                                    <div class="col-1 ">
+                                        <label for="sedes">Sede:</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <div>
 
+                                            <select id="sedes" class="form-select">
+                                            </select>
 
+                                        </div>
 
-    <div class="col text-left">
-        <h2>Crear Citas Personales</h2>
-        <div class="container-fluid">
-            <form id="creacionCita">
-                <div class="row pt-3">
-                    <div class="row pt-3">
-
-
-                        <div class="col-1 ">
-                            <label for="sedes">Sede:</label>
-                        </div>
-                        <div class="col-3">
-                            <div>
-
-                                <select id="sedes" class="form-select">
-                                </select>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row pt-3">
-                        <div class="col-1 ">
-                            <label for="especialidades">Especialidad:</label>
-                        </div>
-                        <div class="col-3">
-                            <div>
-                                <div>
-
-                                    <select id="especialidades" class="form-select">
-                                    </select>
-
+                                    </div>
                                 </div>
 
-                            </div>
 
-                        </div>
-                    </div>
+                                <div class="row pt-3">
+                                    <div class="col-1 ">
+                                        <label for="especialidades">Especialidad:</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <div>
+                                            <div>
 
-                    <div class="row pt-3">
-                        <div class="col-1 ">
-                            <label for="medicos">Medico:</label>
-                        </div>
-                        <div class="col-3">
-                            <div>
-                                <div>
+                                                <select id="especialidades" class="form-select">
+                                                </select>
 
-                                    <select id="medicos" class="form-select">
-                                    </select>
+                                            </div>
 
+                                        </div>
+
+                                    </div>
                                 </div>
 
+                                <div class="row pt-3">
+                                    <div class="col-1 ">
+                                        <label for="medicos">Medico:</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <div>
+                                            <div>
+
+                                                <select id="medicos" class="form-select">
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row pt-3">
+                                    <div class="col-1 ">
+                                        <p>Fecha y hora: </p>
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="datetime-local" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <p>Tiempo de atencion:</p>
+                                </div>
+                                <div class="col-1">
+                                    <input type="text" readonly placeholder="30 minutos" class="form-control" />
+                                </div>
                             </div>
 
+                        </form>
+
+
+                        <div class="row pt-3">
+                            <div class="col-3">
+                                <p>Confirmacion de cita por medio de: </p>
+
+                            </div>
+                            <div class="col-1">
+                                <input type="checkbox" name="email" checked disabled>
+                                <label for="vehicle2"> Email</label><br>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row pt-3">
-                        <div class="col-1 ">
-                            <p>Fecha y hora: </p>
+                        <div class="row pt-3 text-center">
+                            <div class="col">
+                                <button type="submit" class="btn border" id="btn-buscar">Buscar</button>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <input type="datetime-local" class="form-control" />
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div id="grid-posibles-citas" style="height: 300px; width:50%;" class="ag-theme-alpine mt-5"></div>
+
+                            </div>
+
+
                         </div>
+
+
                     </div>
 
-                    <div class="col-1">
-                        <p>Tiempo de atencion:</p>
-                    </div>
-                    <div class="col-1">
-                        <input type="text" readonly placeholder="30 minutos" class="form-control" />
-                    </div>
-                </div>
-
-            </form>
-
-
-            <div class="row pt-3">
-                <div class="col-3">
-                    <p>Confirmacion de cita por medio de: </p>
 
                 </div>
-                <div class="col-1">
-                    <input type="checkbox" name="email" checked disabled>
-                    <label for="vehicle2"> Email</label><br>
-                </div>
-            </div>
-            <div class="row pt-3 text-center">
-                <div class="col">
-                    <button type="submit" class="btn border" id="btn-buscar">Buscar</button>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col">
-                    <div id="grid-posibles-citas" style="height: 300px; width:50%;" class="ag-theme-alpine mt-5"></div>
-
-                </div>
-
 
             </div>
-
-
         </div>
-
-
     </div>
+
+
+
+
+
 
     @Html.Partial("_Footer")
 

@@ -53,22 +53,29 @@ const LaboratorioGridOptions = {
 
 function handleButtonDescargar(data) {
     console.log("DESCARGANDO:", data.foto);
-    console.log("DESCARGANDO:", data.nombreExamen);
+    if (data.foto == null || data.foto=="string") {
+        Swal.fire({
+            icon: 'info',
+            text: "Cuando se registro el examen no se subio ningun archivo.",
+            title: 'Aviso'
+        });
+    }
+    else {
+        const cloudinaryUrl = data.foto.replace('/upload/', '/upload/fl_attachment/');
+        const nameImg = data.nombreExamen;
 
-    const cloudinaryUrl = data.foto.replace('/upload/', '/upload/fl_attachment/');
-    const nameImg = data.nombreExamen + '.jpeg';
+        const link = document.createElement('a');
+        link.href = cloudinaryUrl;
+        link.download = nameImg;
 
-    const link = document.createElement('a');
-    link.href = cloudinaryUrl;
-    link.download = nameImg;
-    
 
-    
-    document.body.appendChild(link);
-    link.click();
 
-    
-    document.body.removeChild(link);
+        document.body.appendChild(link);
+        link.click();
+
+
+        document.body.removeChild(link);
+    }
 
 }
 

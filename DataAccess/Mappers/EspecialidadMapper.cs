@@ -73,12 +73,12 @@ namespace DataAccess.Mappers
             return operation;
         }
 
-        public SqlOperation GetEspecById (int idespec)
+        public SqlOperation GetEspecById (int id)
         {
             SqlOperation operation = new SqlOperation();
             operation.ProcedureName = "SP_GET_ESPEC_BY_ID";
 
-            operation.AddIntegerParam("idespec", idespec);
+            operation.AddIntegerParam("idespec", id);
             return operation;
         }
 
