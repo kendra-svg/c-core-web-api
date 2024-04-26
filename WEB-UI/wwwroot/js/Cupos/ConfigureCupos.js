@@ -72,8 +72,10 @@ function Configure() {
             
             for (var row in data) {
                 
-                select.append('<option   value=' + data[row].id + '>' + data[row].nombre + '</option>');
-               
+                
+                for (var srow in data) {
+                    select.append('<option   value=' + data[row].id + '>' + data[srow].nombre + '</option>');
+                }
             }
             select.on('change', function () {
                 let id = $(this).val();
