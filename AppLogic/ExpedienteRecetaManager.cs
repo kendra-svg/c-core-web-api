@@ -16,5 +16,10 @@ namespace AppLogic
             crud.Create(app);
             return "ok";
         }
+        public List<ExpedienteReceta> GetAllexpediente()
+        {
+            ExpedienteRecetaCrud crud = new ExpedienteRecetaCrud();
+            return crud.RetrieveAll<ExpedienteReceta>();
+        }
     }
 }

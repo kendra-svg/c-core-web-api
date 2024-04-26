@@ -18,7 +18,7 @@ function Configure() {
     this.PopulateReceta = function () {
         $.ajax({
             // url: apiUrl,
-            url: "https://localhost:7154" + "/api/Recetas/GetRecetas",
+            url: "https://apisimepci.azurewebsites.net/api/Recetas/GetRecetas",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -41,7 +41,7 @@ function Configure() {
             Swal.fire({
                 title: "Error",
                 icon: "error",
-                text: "Error al cargar las sedes" + error,
+                text: "Error al cargar las recetas" + error,
                 timer: 2000
             });
         });
@@ -50,7 +50,7 @@ function Configure() {
     this.PopulateExpediente = function () {
         $.ajax({
             // url: apiUrl,
-            url: "https://localhost:7154" + "/api/Expedientes/GetExpedientes",
+            url: "https://apisimepci.azurewebsites.net" + "/api/Expedientes/GetExpedientes",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -95,7 +95,7 @@ function Configure() {
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:7154"+"/api/ExpedienteReceta/CreateExpedienteReceta",
+            url: "https://apisimepci.azurewebsites.net"+"/api/ExpedienteReceta/CreateExpedienteReceta",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             data: JSON.stringify(exrec),
@@ -107,7 +107,7 @@ function Configure() {
                 text: "Se ha completado la asignacion",
             }).then(
                 function () {
-                    var view = new CreaSede()
+                    var view = new Configure();
                     view.LimpiarFormulario();
                 }
             )

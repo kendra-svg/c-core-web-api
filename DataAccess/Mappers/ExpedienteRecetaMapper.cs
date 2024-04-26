@@ -13,12 +13,33 @@ namespace DataAccess.Mappers
     {
         public BaseClass BuildObject(Dictionary<string, object> row)
         {
-            throw new NotImplementedException();
+            ExpedienteReceta expedienteReceta = new ExpedienteReceta();
+            expedienteReceta.Id = int.Parse(row["id_recetas_expedient"].ToString());
+            expedienteReceta.RecetaList = new List<Receta>
+    {
+        new Receta
+        {
+            NombreMedicamento = row["recetas"].ToString(),
+            RecomendacionAdicional = row["rec"].ToString()
         }
+    };
+            expedienteReceta.usuarioBases = new List<UsuarioBase>
+    {
+        new UsuarioBase { Nombre = row["usuarios"].ToString() }
+    };
+            return expedienteReceta;
+        }
+
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
         {
-            throw new NotImplementedException();
+            List<BaseClass> results = new List<BaseClass>();
+            foreach (var row in rowList)
+            {
+                var e = BuildObject(row);
+                results.Add(e);
+            }
+            return results;
         }
 
         public SqlOperation GetCreateStatement(BaseClass dto)
@@ -43,7 +64,9 @@ namespace DataAccess.Mappers
 
         public SqlOperation GetRetrieveAllStatement()
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_Get_all_Expediente_Receta";
+            return operation;
         }
 
         public SqlOperation GetRetrieveByIdStatement(string id)

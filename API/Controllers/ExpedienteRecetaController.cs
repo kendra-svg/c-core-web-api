@@ -15,5 +15,23 @@ namespace API.Controllers
             ExpedienteRecetaManager manager = new ExpedienteRecetaManager();
             return manager.CreateSede(app);
         }
+        [HttpGet]
+        public API_Response GetAllExpedienteReceta()
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                ExpedienteRecetaManager expe = new ExpedienteRecetaManager();
+                response.Data = expe.GetAllexpediente();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+      
     }
 }
