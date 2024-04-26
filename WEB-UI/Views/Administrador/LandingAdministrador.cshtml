@@ -59,86 +59,95 @@
 
 
 
-
-
-    @Html.Partial("MenuLateralAdmin")
-
-
-    <div class="col text-left" id="menu-quick-access">
-        <input type="hidden" id="userId" value="@ViewBag.UserId" />
-        <h4>Accesos Rápidos</h4>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="DetallesSedes" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/8DPIZFt.png" alt="Configuración de sedes" style="max-width: 50px; max-height: 50px;"> Configuración de sedes
-                    </p>
-                </a>
-            </div>
 
-            <div style="color: black" class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="CrearSedes" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/LgzLQ2K.png" alt="Crear sede" style="max-width: 50px; max-height: 50px;"> Crear sede
-                    </p>
-                </a>
+            <div class="col-md-3 >
+                @Html.Partial("MenuLateralAdmin")
             </div>
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="CrearRecetas" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/6tK9Xt7.png" alt="Crear receta" style="max-width: 50px; max-height: 50px;"> Crear receta
-                    </p>
-                </a>
-            </div>
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ConfiguracionCupos" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/DJW4hYw.png" alt="Configuración de cupos" style="max-width: 50px; max-height: 50px;"> Configuración de cupos
-                    </p>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ResultadosEncuestas" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/vPGdAvL.png" alt="Reporte de calidad" style="max-width: 50px; max-height: 50px;"> Reporte de calidad
-                    </p>
-                </a>
-            </div>
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ReportesFinancieros" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/8HkiPGM.png" alt="Reporte financiero" style="max-width: 50px; max-height: 50px;"> Reporte financiero
-                    </p>
-                </a>
-            </div>
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ConfiguracionAlertas" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/KMgmIPG.png" alt="Configuración de alertas" style="max-width: 50px; max-height: 50px;"> Configuración de alertas
-                    </p>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="ExamenGeneral" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/4MrLDXt.png" alt="Lista de exámenes" style="max-width: 50px; max-height: 50px;"> Lista de exámenes
-                    </p>
-                </a>
-            </div>
-            <div class="col boxes-quick-access">
-                <a asp-controller="Administrador" asp-action="CrearEspecialidad" style="color: black">
-                    <p class="font-weight-bold fs-5">
-                        <img src="https://i.imgur.com/bek0VZm.png" alt="Crear especialidad" style="max-width: 50px; max-height: 50px;"> Crear especialidad
-                    </p>
-                </a>
+            <!-- Contenido de la página -->
+            <div class="col-md-9 ">
+                <div class="col text-left" id="menu-quick-access">
+
+                    <input type="hidden" id="userId" value="@ViewBag.UserId" />
+                    <h4>Accesos Rápidos</h4>
+                    <div class="row">
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="DetallesSedes" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/8DPIZFt.png" alt="Configuración de sedes" style="max-width: 50px; max-height: 50px;"> Configuración de sedes
+                                </p>
+                            </a>
+                        </div>
+
+                        <div style="color: black" class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="CrearSedes" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/LgzLQ2K.png" alt="Crear sede" style="max-width: 50px; max-height: 50px;"> Crear sede
+                                </p>
+                            </a>
+                        </div>
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="CrearRecetas" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/6tK9Xt7.png" alt="Crear receta" style="max-width: 50px; max-height: 50px;"> Crear receta
+                                </p>
+                            </a>
+                        </div>
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="ConfiguracionCupos" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/DJW4hYw.png" alt="Configuración de cupos" style="max-width: 50px; max-height: 50px;"> Configuración de cupos
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="ResultadosEncuestas" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/vPGdAvL.png" alt="Reporte de calidad" style="max-width: 50px; max-height: 50px;"> Reporte de calidad
+                                </p>
+                            </a>
+                        </div>
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="ReportesFinancieros" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/8HkiPGM.png" alt="Reporte financiero" style="max-width: 50px; max-height: 50px;"> Reporte financiero
+                                </p>
+                            </a>
+                        </div>
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="ConfiguracionAlertas" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/KMgmIPG.png" alt="Configuración de alertas" style="max-width: 50px; max-height: 50px;"> Configuración de alertas
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="ExamenGeneral" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/4MrLDXt.png" alt="Lista de exámenes" style="max-width: 50px; max-height: 50px;"> Lista de exámenes
+                                </p>
+                            </a>
+                        </div>
+                        <div class="col boxes-quick-access">
+                            <a asp-controller="Administrador" asp-action="CrearEspecialidad" style="color: black">
+                                <p class="font-weight-bold fs-5">
+                                    <img src="https://i.imgur.com/bek0VZm.png" alt="Crear especialidad" style="max-width: 50px; max-height: 50px;"> Crear especialidad
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
+   
      @Html.Partial("_Footer")
 
 

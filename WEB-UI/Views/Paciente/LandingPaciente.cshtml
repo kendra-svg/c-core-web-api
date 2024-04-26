@@ -60,48 +60,55 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
 
-
-    @Html.Partial("MenuLateralPaciente")
-
-
-    <div class="col text-left" id="menu-quick-access">
-        <input type="hidden" id="userId" value="@ViewBag.UserId" />
-
-        <h4>Accesos Rápidos</h4>
-        <div class="container">
-            <div class="row">
-                <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="ExpedientePersonal" style="color: black">
-                        <p class="font-weight-bold fs-5">
-                            <img src="https://i.imgur.com/1h4hgpn.png" alt="Expediente" style="max-width: 50px; max-height: 50px;"> Expediente
-                        </p>
-                    </a>
-                </div>
-                <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="CitasPersonales" style="color: black">
-                        <p class="font-weight-bold fs-5">
-                            <img src="https://i.imgur.com/qnHMLFP.png" alt="Citas" style="max-width: 50px; max-height: 50px;"> Citas
-                        </p>
-                    </a>
-                </div>
-                <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="ExamenPersonal" style="color: black">
-                        <p class="font-weight-bold fs-5">
-                            <img src="https://i.imgur.com/6tK9Xt7.png" alt="Examenes" style="max-width: 50px; max-height: 50px;"> Examenes
-                        </p>
-                    </a>
-                </div>
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralPaciente")
             </div>
-            <div class="row">
 
-                <div class="col boxes-quick-access">
-                    <a asp-controller="Paciente" asp-action="EncuestaServicio" style="color: black">
-                        <p class="font-weight-bold fs-5">
-                            <img src="https://i.imgur.com/vPGdAvL.png" alt="Encuesta servicio" style="max-width: 50px; max-height: 50px;"> Encuesta servicio
-                        </p>
-                    </a>
+            <div class="col-md-9">
+                <div class="col text-left" id="menu-quick-access">
+                    <input type="hidden" id="userId" value="@ViewBag.UserId" />
+
+                    <h4>Accesos Rápidos</h4>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col boxes-quick-access">
+                                <a asp-controller="Paciente" asp-action="ExpedientePersonal" style="color: black">
+                                    <p class="font-weight-bold fs-5">
+                                        <img src="https://i.imgur.com/1h4hgpn.png" alt="Expediente" style="max-width: 50px; max-height: 50px;"> Expediente
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="col boxes-quick-access">
+                                <a asp-controller="Paciente" asp-action="CitasPersonales" style="color: black">
+                                    <p class="font-weight-bold fs-5">
+                                        <img src="https://i.imgur.com/qnHMLFP.png" alt="Citas" style="max-width: 50px; max-height: 50px;"> Citas
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="col boxes-quick-access">
+                                <a asp-controller="Paciente" asp-action="ExamenPersonal" style="color: black">
+                                    <p class="font-weight-bold fs-5">
+                                        <img src="https://i.imgur.com/6tK9Xt7.png" alt="Examenes" style="max-width: 50px; max-height: 50px;"> Examenes
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col boxes-quick-access">
+                                <a asp-controller="Paciente" asp-action="EncuestaServicio" style="color: black">
+                                    <p class="font-weight-bold fs-5">
+                                        <img src="https://i.imgur.com/vPGdAvL.png" alt="Encuesta servicio" style="max-width: 50px; max-height: 50px;"> Encuesta servicio
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

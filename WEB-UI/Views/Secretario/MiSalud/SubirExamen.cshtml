@@ -53,80 +53,91 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralSecretario")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <a asp-controller="Secretario" asp-action="ExamenPersonal" class="btn btn-outline-success me-3 mt-3">Volver</a>
+                    <h2 class="mt-5 text-center">Crear un examen</h2>
+                    <div class="container">
+
+                        <form>
+                            @*  <div class="form-group">
+                            <label for="especialidad">Especialidad:</label>
+                            <select class="form-control" id="Especialidad">
+                            <option>Medicina general</option>
+                            <option>Cardiología</option>
+                            <option>Oftamología</option>
+                            <option>Neumología</option>
+                            <option>Otorrinolaringolía</option>
+                            <option>Gastroenteorología</option>
+                            <option>Laboratorio químico</option>
+                            <option>Ginecología</option>
+                            <option>Oncología</option>
+                            <option>Radiología</option>
+                            </select>
+                            </div> *@
+                            <div class="form-group">
+                                <label for="tipoExamen">Tipo de Examen:</label>
+                                <select class="form-control" id="input-nombre-examen">
+                                    <option>Parametros atropmetricos (Medición de talla y peso - Índice de Masa Corporal) </option>
+                                    <option>Evaluación oftalmológica (agudeza visual - fondo del ojo) </option>
+                                    <option>Pruebas cardiológicas (Electrocardiograma - ecocardiograma - pruebas ergonométricas para evaluar la salud del corazón)</option>
+                                    <option>Pruebas pulmonares (radiologia de torax - Espirometría )</option>
+                                    <option>Analitica completa ( pruebas hepáticas, lipídicas - tiroideas - marcadores tumorales)</option>
+                                    <option>Audiometría (Prueba para evaluar la capacidad auditiva)</option>
+                                    <option>Ecografía de abdomen y pelvis (Imágenes de ultrasonido para examinar los órganos internos del abdomen y pelvis)</option>
+                                    <option>Estudios endoscópicos (Exámenes para visualizar el interior de los órganos)</option>
+                                    <option>citología con test de Papanicolaou (Examen ginecológico para detectar anomalías celulares en el cuello uterino)</option>
+                                    <option>Mamografía</option>
+                                    <option>prueba de deteccion temprana de cancer </option>
+                                    <option>Examen de heces</option>
+                                    <option>Estudios endoscópicos</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha">Fecha:</label>
+                                <input type="date" class="form-control" id="input-fecha">
+                            </div>
+                            @*  <div class="form-group">
+                            <label for="centroMedico">Centro Médico:</label>
+                            <input type="text" class="form-control" id="centroMedico">
+                            </div> *@
+                            <div class="form-group">
+                                <label for="comentario">Agregar Comentario:</label>
+                                <textarea class="form-control" id="input-comentario" rows="3"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="input-foto" class="form-label">Foto del examen</label>
+
+                                <div class="btn-container">
+                                    <img id="fotoExamen" class="fotoExamen">
+                                    <button type="button" class="botonGuardar btn btn-outline-success " id="botonFoto" required>Subir foto</button>
+                                </div>
+                            </div>
 
 
-    @Html.Partial("MenuLateralSecretario")
 
-    <div class="col text-left">
-        <a asp-controller="Secretario" asp-action="ExamenPersonal" class="btn btn-outline-success me-3 mt-3">Volver</a>
-        <h2 class="mt-5 text-center">Crear un examen</h2>
-        <div class="container">
-
-            <form>
-                @*  <div class="form-group">
-                <label for="especialidad">Especialidad:</label>
-                <select class="form-control" id="Especialidad">
-                <option>Medicina general</option>
-                <option>Cardiología</option>
-                <option>Oftamología</option>
-                <option>Neumología</option>
-                <option>Otorrinolaringolía</option>
-                <option>Gastroenteorología</option>
-                <option>Laboratorio químico</option>
-                <option>Ginecología</option>
-                <option>Oncología</option>
-                <option>Radiología</option>
-                </select>
-                </div> *@
-                <div class="form-group">
-                    <label for="tipoExamen">Tipo de Examen:</label>
-                    <select class="form-control" id="input-nombre-examen">
-                        <option>Parametros atropmetricos (Medición de talla y peso - Índice de Masa Corporal) </option>
-                        <option>Evaluación oftalmológica (agudeza visual - fondo del ojo) </option>
-                        <option>Pruebas cardiológicas (Electrocardiograma - ecocardiograma - pruebas ergonométricas para evaluar la salud del corazón)</option>
-                        <option>Pruebas pulmonares (radiologia de torax - Espirometría )</option>
-                        <option>Analitica completa ( pruebas hepáticas, lipídicas - tiroideas - marcadores tumorales)</option>
-                        <option>Audiometría (Prueba para evaluar la capacidad auditiva)</option>
-                        <option>Ecografía de abdomen y pelvis (Imágenes de ultrasonido para examinar los órganos internos del abdomen y pelvis)</option>
-                        <option>Estudios endoscópicos (Exámenes para visualizar el interior de los órganos)</option>
-                        <option>citología con test de Papanicolaou (Examen ginecológico para detectar anomalías celulares en el cuello uterino)</option>
-                        <option>Mamografía</option>
-                        <option>prueba de deteccion temprana de cancer </option>
-                        <option>Examen de heces</option>
-                        <option>Estudios endoscópicos</option>
-
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" class="form-control" id="input-fecha">
-                </div>
-                @*  <div class="form-group">
-                <label for="centroMedico">Centro Médico:</label>
-                <input type="text" class="form-control" id="centroMedico">
-                </div> *@
-                <div class="form-group">
-                    <label for="comentario">Agregar Comentario:</label>
-                    <textarea class="form-control" id="input-comentario" rows="3"></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label for="input-foto" class="form-label">Foto del examen</label>
-
-                    <div class="btn-container">
-                        <img id="fotoExamen" class="fotoExamen">
-                        <button type="button" class="botonGuardar btn btn-outline-success " id="botonFoto" required>Subir foto</button>
+                        </form>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success" id="btnCreateLab">Registrar Examen</button>
                     </div>
                 </div>
 
-
-
-            </form>
-        </div>
-        <div class="mt-5 d-flex justify-content-center">
-            <button type="submit" class="btn btn-success" id="btnCreateLab">Registrar Examen</button>
+            </div>
         </div>
     </div>
+
+
+
     @Html.Partial("_Footer")
 
 

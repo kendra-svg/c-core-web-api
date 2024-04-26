@@ -51,58 +51,69 @@
 
 
 
-
-
-
-
-
-    @Html.Partial("MenuLateralAdmin")
-
-    <div class="col text-left">
-        <h2>Reporte de Calidad</h2>
-        <div class="row mt-3">
-            <div class="col">
-                <input type="text" class="form-text-input" placeholder="Buscar" />
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
             </div>
-        </div>
-@*         <table class="table table-hover">
-            <thead>
-                <tr>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <h2>Reporte de Calidad</h2>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" class="form-text-input" placeholder="Buscar" />
+                        </div>
+                    </div>
+                    @*         <table class="table table-hover">
+                    <thead>
+                    <tr>
                     <th class="col">Usuario evaluador</th>
                     <th class="col">Medico Evaluado</th>
                     <th class="col">Interes del medico</th>
                     <th class="col">Experiencia con el medico</th>
                     <th class="col">Actitud del medico</th>
                     <th class="col">Comentarios Adicionales</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
                     <td>David Ramirez</td>
                     <td>Dr.Gabriel</td>
                     <td>Bueno</td>
                     <td>Muy bueno</td>
                     <td>Bueno</td>
                     <td>El servicio completo fue muy bueno</td>
-                </tr>
-                <tr>
+                    </tr>
+                    <tr>
                     <td>Gerarado Jimenez</td>
                     <td>Dr.Daniel</td>
                     <td>Regular</td>
                     <td>Malo</td>
                     <td>Regular</td>
                     <td>El doctor necesita ser mas amable</td>
-                </tr>
-        </table> *@
+                    </tr>
+                    </table> *@
 
-        <div class="text-center align-content-center">
-            <h6 class="display-6">Lista</h6>
+                    <div class="text-center align-content-center">
+                        <h6 class="display-6">Lista</h6>
 
-            <div id="myGrid" style="height: 400px; width: 80%;" class="ag-theme-alpine justify-content-center"></div>
+                        <div id="myGrid" style="height: 400px; width: 80%;" class="ag-theme-alpine justify-content-center"></div>
+                    </div>
+
+
+                </div>
+
+            </div>
         </div>
-
-
     </div>
+
+
+
+
+
+
 
 
 
