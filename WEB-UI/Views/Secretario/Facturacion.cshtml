@@ -44,14 +44,7 @@
         </div>
 
     </header>
-    <div class="position-relative ">
-        <div class="container">
-            <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
-                <li><a asp-controller="Secretario" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
-            </ul>
-        </div>
-    </div>
+
 
     <!--
     <div class="barra-busqueda">
@@ -74,9 +67,16 @@
             <!-- Contenido de la página -->
             <div class="col-md-9">
                 <div class="col text-left">
+                    <div class="position-relative ">
+                        <div class="container">
+                            <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
+                                <li><a asp-controller="Secretario" asp-action="DatosPersonales">Mi perfil</a></li>
+                                <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="container">
                         <h2>Facturación</h2>
-
                         <h3>Información</h3>
                         <form action="/Facturacion/GenerarFactura" method="post">
                             <div class="form-group">
