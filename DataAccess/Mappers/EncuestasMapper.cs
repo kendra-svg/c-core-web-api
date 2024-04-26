@@ -51,7 +51,7 @@ namespace DataAccess.Mappers
         public SqlOperation GetRetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "SP_GET_ALL_ENCUESTAS";
+            operation.ProcedureName = "SP_GET_ENCUESTAS";
             return operation;
         }
         //ById
