@@ -34,13 +34,14 @@ header {
 .elementos-nav {
 
     display: flex;
-    margin-left: 13vw;
+    margin-right:50px;
+    margin-left: 10vw;
 }
 
     .elementos-nav a {
         margin-left:10px;
         max-width: 220px;
-        margin-left: 50px;
+        margin-left: 40px;
         color: white;
         text-decoration: none;
     }

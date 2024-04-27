@@ -23,6 +23,12 @@ namespace AppLogic
 
         }
 
+        public List<UsuarioBase> GetAllFuncionarios()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllFuncionarios<UsuarioBase>();
+        }
+
         public List<UsuarioBase> GetAllDoctors()
         {
             UsuarioCrud crud = new UsuarioCrud();
@@ -76,6 +82,18 @@ namespace AppLogic
             UsuarioCrud crud = new UsuarioCrud();
             return crud.RetrieveByOtpAndEmail<UsuarioBase>(correo, otp);
 
+        }
+
+        public List<UsuarioBase> GetUserBySedeId(int id_sede)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveUserBySedeId<UsuarioBase>(id_sede);
+        }
+
+        public List<UsuarioBase> GetUserByUserId(int id_usuario)
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveUserByUserId<UsuarioBase>(id_usuario);
         }
 
         public void UpdateVerification(string correo)

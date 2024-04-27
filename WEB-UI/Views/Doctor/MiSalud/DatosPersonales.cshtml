@@ -23,6 +23,7 @@
     <link href="~/css/usersmenustyle.css" rel="stylesheet" />
     <link href="~/css/severalstyles.css" rel="stylesheet" />
     <link href="~/css/overflow.css" rel="stylesheet" />
+    <link href="~/css/foto.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -50,93 +51,105 @@
         </div>
     </div>
 
-
-
-
-    @Html.Partial("MenuLateralDoctor")
-
-
-
-    <div class="col text-left">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <h2>Datos Personales</h2>
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralDoctor")
             </div>
-            <div class="col text-end m-3 ">
-                <button class="btn border">Subir Foto</button>
-                <img src="https://i.imgur.com/EOUOikS.png" id="img-profile-personal-data" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="ID" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Nombre" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Apellidos" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Telefono" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Correo" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Sexo" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Fecha de Naciemiento" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Edad" />
-            </div>
-        </div>
-        <div class="row m-3">
-            <p>Direccion</p>
-            <div class="col">
-                <input type="text" class="form-control" readonly placeholder="Coordenadas" />
-            </div>
-            <div class="col">
-                <button class="btn border">Editar</button>
-            </div>
-            
-
-        </div>
-
-        <div class="row m-3 mt-5">
-            <div class="col">
-                <h5>Cambio de Contraseña</h5>
-                <span> Al menos debe de contener 8 a 12 caracteres.<BR /> Te recomendamnos una contraseña segura.</span><BR />
-                <i class="bi bi-key" id="i-new-password"></i>
-                <span>¿Olvido su contraseña? </span>
-            </div>
-            <div class="col">
-                <span>Contraseña Actual</span>
-                <input type="password" class="form-control" />
-                <span>Nueva Contraseña</span>
-                <input type="password" class="form-control" />
-            </div>
-        </div>
-        <div class="row p-3 text-center">
-            <div class="col">
-                <button type="submit" class="btn border">Guardar</button>
-            </div>
-        </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Datos Personales</h2>
+                        </div>
+                        <div class="btn-container">
+                            <img id="fotoReceta" class="foto">
+                            <button type="button" class="botonGuardar" id="botonFoto" required>Subir foto</button>
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="ID" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Nombre" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Apellidos" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Telefono" />
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Correo" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Sexo" />
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Fecha de Naciemiento" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Edad" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <p>Direccion</p>
+                        <div class="col">
+                            <input type="text" class="form-control" readonly placeholder="Coordenadas" />
+                        </div>
+                        <div class="col">
+                            <button class="btn border">Editar</button>
+                        </div>
 
 
+                    </div>
+
+                    <div class="row m-3 mt-5">
+                        <div class="col">
+                            <h5>Cambio de Contraseña</h5>
+                            <span> Al menos debe de contener 8 a 12 caracteres.<BR /> Te recomendamnos una contraseña segura.</span><BR />
+                            <i class="bi bi-key" id="i-new-password"></i>
+                            <span>¿Olvido su contraseña? </span>
+                        </div>
+                        <div class="col">
+                            <span>Contraseña Actual</span>
+                            <input type="password" class="form-control" />
+                            <span>Nueva Contraseña</span>
+                            <input type="password" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row p-3 text-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success mx-auto">Guardar</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
 
     @Html.Partial("_Footer")
 
