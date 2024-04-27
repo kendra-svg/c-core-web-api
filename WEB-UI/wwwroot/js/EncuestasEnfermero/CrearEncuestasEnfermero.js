@@ -1,4 +1,4 @@
-function CreateSurvey() {
+﻿function CreateSurvey() {
     this.InitView = function () {
         // Cambiar al id de agregar encuesta, agregarle id al boton de agregar
         $('#CreateSurvey').click(function (event) {
@@ -29,7 +29,7 @@ function CreateSurvey() {
             return;
         }
 
-        // Conexi�n con la API
+        // Conexión con la API
         var api_url = API_URL_BASE + "/api/Encuestas/CreateEncuesta";
 
         $.ajax({
@@ -45,7 +45,7 @@ function CreateSurvey() {
             hasContent: true
         }).done(function (result) {
             Swal.fire({
-                title: "Exito",
+                title: "Éxito",
                 icon: "info",
                 text: "Se ha completado la encuesta",
             }).then(

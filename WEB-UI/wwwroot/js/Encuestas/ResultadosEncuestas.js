@@ -1,47 +1,4 @@
-﻿//function ShowSurveyResults(idEncuesta) {
-//    // Obtener detalles de la encuesta por su ID
-//    $.ajax({
-//        url: API_URL_BASE + "/api/Encuestas/GetEncuestasById/" + idEncuesta,
-//        type: "GET",
-//        success: function (encuesta) {
-//            // Mostrar los detalles de la encuesta
-//            $("#encuesta-details").html(`
-//                <p>Interes Genuino: ${encuesta.InteresGenuino}</p>
-//                <p>Experiencia: ${encuesta.Experiencia}</p>
-//                <p>Amabilidad/Cortesía: ${encuesta.AmabilidadCortesia}</p>
-//                <p>Comentarios Adicionales: ${encuesta.ComentariosAdicionales}</p>
-//            `);
-//        },
-//        error: function (jqXHR, textStatus, errorThrown) {
-//            console.log("Error al obtener detalles de la encuesta:", errorThrown);
-//        }
-//    });
-
-//    // Obtener y mostrar el promedio general de servicio
-//    $.ajax({
-//        url: API_URL_BASE + "/api/Encuestas/PromedioServicio",
-//        type: "GET",
-//        success: function (promedio) {
-//            $("#promedio-servicio").text(`Promedio de Servicio: ${promedio}`);
-//        },
-//        error: function (jqXHR, textStatus, errorThrown) {
-//            console.log("Error al obtener el promedio de servicio:", errorThrown);
-//        }
-//    });
-//}
-
-//$(document).ready(function () {
-//    // Mostrar los resultados de la encuesta y el promedio general de servicio
-//    var idEncuesta = ObtenerParametroURL("idEncuesta");
-//    ShowSurveyResults(idEncuesta);
-
-//    // Función para obtener parámetro de la URL
-//    function ObtenerParametroURL(nombreParametro) {
-//        var urlParams = new URLSearchParams(window.location.search);
-//        return urlParams.get(nombreParametro);
-//    }
-//});
-function EncuestaList() {
+﻿function EncuestaList() {
 
     this.InitView = function () {
         this.ListaEncuesta();
@@ -58,6 +15,7 @@ function EncuestaList() {
             if (result.result == "OK") {
                 console.log("Estos fueron", result);
                 gripOptions.api.setRowData(result.data);
+                calcularPromedio(result.data);
             }
             else {
                 Swal.fire({
@@ -76,9 +34,56 @@ function EncuestaList() {
 
         });
     }
+
+    function calcularPromedio(encuestas) {
+        var totalVotos = encuestas.length;
+
+        var sumas = {
+            muyMalo: 0,
+            malo: 0,
+            regular: 0,
+            bueno: 0,
+            muyBueno: 0
+        };
+
+        for (var i = 0; i < totalVotos; i++) {
+            // Verificar que los valores sean numéricos antes de sumarlos
+            if (!isNaN(parseInt(encuestas[i]["interesGenuino"]))) {
+                sumas.muyMalo += parseInt(encuestas[i]["interesGenuino"]);
+            }
+            if (!isNaN(parseInt(encuestas[i]["experiencia"]))) {
+                sumas.malo += parseInt(encuestas[i]["experiencia"]);
+            }
+            if (!isNaN(parseInt(encuestas[i]["amabilidadCortesia"]))) {
+                sumas.regular += parseInt(encuestas[i]["amabilidadCortesia"]);
+            }
+            // Asegurar que las propiedades existan antes de acceder a ellas
+            if (!isNaN(parseInt(encuestas[i]["otroCampo"]))) {
+                sumas.bueno += parseInt(encuestas[i]["otroCampo"]);
+            }
+            if (!isNaN(parseInt(encuestas[i]["otroCampo2"]))) {
+                sumas.muyBueno += parseInt(encuestas[i]["otroCampo2"]);
+            }
+        }
+
+        // Calcular promedio
+        var promedio = {
+            muyMalo: sumas.muyMalo / totalVotos,
+            malo: sumas.malo / totalVotos,
+            regular: sumas.regular / totalVotos,
+            bueno: sumas.bueno / totalVotos,
+            muyBueno: sumas.muyBueno / totalVotos
+        };
+
+        $("#promedioInteres").text("Promedio de Interés Genuino para Muy Bueno: " + promedio.muyMalo.toFixed(2));
+        $("#promedioExperiencia").text("Promedio de Experiencia para Muy Bueno: " + promedio.malo.toFixed(2));
+        $("#promedioAmabilidad").text("Promedio de Amabilidad y Cortesía para Muy Bueno: " + promedio.regular.toFixed(2));
+    }
+
+
     this.GetEncuestaDetails = function () {
         $.ajax({
-            url:"https://localhost:7154/api/Encuestas/GetAllEncuestasA",
+            url: "https://localhost:7154/api/Encuestas/GetAllEncuestasA",
             //url: "https://apisimepci.azurewebsites.net" + "/api/Encuestas/GetAllEncuestasById?id=" + id,
             method: "GET",
             contentType: "application/json;charset=utf-8",
@@ -91,22 +96,23 @@ function EncuestaList() {
             else {
                 Swal.fire({
                     icon: "error",
-                    title: "Hubo un problema al cargar las Sedes",
-                    text: "Hubo un problema al cargar las Sedes " + result.message
+                    title: "Hubo un problema al cargar las Encuestas",
+                    text: "Hubo un problema al cargar las Encuestas " + result.message
                 });
             }
         }).fail(function (error) {
             console.log("El error" + error.data);
             Swal.fire({
                 icon: "error",
-                title: "Error al cargar las Sedes",
+                title: "Error al cargar las encuestas",
                 text: "Hubo un error" + error.message
             });
 
         });
     }
-    
+
 }
+
 
 $(document).ready(function () {
     var view = new EncuestaList();
