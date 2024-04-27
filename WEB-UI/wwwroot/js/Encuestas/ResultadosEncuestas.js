@@ -6,8 +6,8 @@
     this.ListaEncuesta = function () {
         $.ajax({
             //change
-            url: "https://localhost:7154/api/Encuestas/GetAllEncuestasA",
-            //url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
+            //url: "https://localhost:7154/api/Encuestas/GetAllEncuestasA",
+            url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -83,8 +83,8 @@
 
     this.GetEncuestaDetails = function () {
         $.ajax({
-            url: "https://localhost:7154/api/Encuestas/GetAllEncuestasA",
-            //url: "https://apisimepci.azurewebsites.net" + "/api/Encuestas/GetAllEncuestasById?id=" + id,
+           // url: "https://localhost:7154/api/Encuestas/GetAllEncuestasA",
+            url: "https://apisimepci.azurewebsites.net" + "/api/Encuestas/GetAllEncuestasById?id=" + id,
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"

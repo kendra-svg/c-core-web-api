@@ -42,8 +42,8 @@
     this.GetEspe = function (id) {
         $.ajax({
             
-            //url: "https://apisimepci.azurewebsites.net/api/Especialidades/GetEspecialidadById?id=" + id,
-            url: "https://localhost:7154" + "/api/Especialidades/GetEspecialidadById?id=" + id,
+            url: "https://apisimepci.azurewebsites.net/api/Especialidades/GetEspecialidadById?id=" + id,
+            //url: "https://localhost:7154" + "/api/Especialidades/GetEspecialidadById?id=" + id,
 
             method: "GET",
             contentType: "application/json;charset=utf-8",
