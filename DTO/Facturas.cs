@@ -8,9 +8,11 @@ namespace DTO
 {
     public class Facturas : BaseClass
     {
-        public DateTime FechaEmision { get; set; }
         public DateTime FechaPago { get; set; }
-        public int Monto { get; set; }
-        //public Cita cita { get; set; }
+        public string Estado { get; set; }
+
+        public int MontoFinal { get; set; }
+
+        public int  IdCita { get; set; }
     }
 }
