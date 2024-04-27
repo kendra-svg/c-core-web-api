@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 
 
@@ -24,6 +25,13 @@
     <link href="~/css/severalstyles.css" rel="stylesheet" />
     <link href="~/css/overflow.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/Registro.css" />
+
+    <style>
+        #mapa {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -104,7 +112,17 @@
                             <input type="text" id="txt-edad" class="form-control" readonly placeholder="Edad" />
                         </div>
                     </div>
+
+
                     <div class="row m-3">
+                        <div class="col">
+                            <input type="text" id="txt-coordenadas" class="form-control" placeholder="Coordenadas" />
+                        </div>
+                        <div class="col">
+                            <div id="mapa"></div>
+                        </div>
+                    </div>
+                    @* <div class="row m-3">
                         <p>Direccion</p>
                         <div class="col">
                             <input type="text" id="txt-coodernadas" class="form-control" readonly placeholder="Coordenadas" />
@@ -114,7 +132,7 @@
                         </div>
 
 
-                    </div>
+                    </div> *@
 
                     <div class="row m-3 mt-5">
                         <div class="col">
@@ -152,8 +170,9 @@
 
     @Html.Partial("_Footer")
 
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="~/js/usuario/getdatospersonales.js"></script>
 
 
@@ -165,6 +184,7 @@
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    
 </body>
 </html>
 
