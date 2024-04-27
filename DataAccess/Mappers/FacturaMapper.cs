@@ -17,9 +17,9 @@ namespace DataAccess.Mappers
             Facturas fact = new Facturas();
 
             fact.Id = int.Parse(row["id_factura"].ToString());
-            //fact.FechaPago = DateTime.Parse(row["fecha_pago"].ToString());
-            //fact.Estado = row["estado"].ToString();
-            //fact.MontoFinal = int.Parse(row["monto_final"].ToString());
+            fact.FechaPago = DateTime.Parse(row["fecha_pago"].ToString());
+            fact.Estado = row["estado"].ToString();
+            fact.MontoFinal = int.Parse(row["monto_final"].ToString());
             fact.IdCita = int.Parse(row["id_cita"].ToString());
 
             return fact;

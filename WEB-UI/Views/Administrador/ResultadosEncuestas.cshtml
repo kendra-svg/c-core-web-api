@@ -1,11 +1,7 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Resultado de Encuestas";
+    ViewData["Title"] = "Resultados de encuestas";
 }
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,14 +11,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-   
     <link href="~/css/severalstyles.css" rel="stylesheet" />
     <link href="~/css/overflow.css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -51,59 +44,41 @@
 
 
 
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Barra lateral -->
-            <div class="col-md-3">
-                @Html.Partial("MenuLateralAdmin")
-            </div>
-            <!-- Contenido de la página -->
-            <div class="col-md-9">
-                <div class="col text-left">
-                    <h2>Reporte de Calidad</h2>
-                    <div class="row mt-3">
-                        <div class="col">
-                            <input type="text" class="form-text-input" placeholder="Buscar" />
-                        </div>
-                    </div>
-                    @*         <table class="table table-hover">
-                    <thead>
-                    <tr>
-                    <th class="col">Usuario evaluador</th>
-                    <th class="col">Medico Evaluado</th>
-                    <th class="col">Interes del medico</th>
-                    <th class="col">Experiencia con el medico</th>
-                    <th class="col">Actitud del medico</th>
-                    <th class="col">Comentarios Adicionales</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <td>David Ramirez</td>
-                    <td>Dr.Gabriel</td>
-                    <td>Bueno</td>
-                    <td>Muy bueno</td>
-                    <td>Bueno</td>
-                    <td>El servicio completo fue muy bueno</td>
-                    </tr>
-                    <tr>
-                    <td>Gerarado Jimenez</td>
-                    <td>Dr.Daniel</td>
-                    <td>Regular</td>
-                    <td>Malo</td>
-                    <td>Regular</td>
-                    <td>El doctor necesita ser mas amable</td>
-                    </tr>
-                    </table> *@
-
-                    <div class="text-center align-content-center">
-                        <h6 class="display-6">Lista</h6>
-
-                        <div id="myGrid" style="height: 400px; width: 80%;" class="ag-theme-alpine justify-content-center"></div>
-                    </div>
 
 
+
+
+
+    @Html.Partial("MenuLateralAdmin")
+
+    <div class="col text-left">
+@*         <div class="text-center align-content-center">
+            <h6 class="display-4">Resultados de encuestas</h6>
+
+            <div id="myGrid" style="height: 400px; width: 97%;" class="ag-theme-alpine justify-content-center"></div>
+        </div> *@
+        <div class="text-center">
+            <h6 class="display-4 align-content-center"></h6>
+        </div>
+        <div class="col text-left">
+            <div class="container">
+                
+                <div class="text-center align-content-center">
+                    <h2 class="display-4">Resultados de encuestas de calidad</h2>
+                    <h6 class="mt-5">Los numeros representan 1(muy malo), 2(malo), 3(regular), 4(bueno), 4(muy bueno).</h6>
+
+
+                    <div id="myGrid" style="height: 400px; width: 97%;" class="ag-theme-alpine justify-content-center"></div>
                 </div>
+
+                <h6 class="mt-5">Promedio de personas que votan muy bueno para monitorear si han recibido un buen servicio.</h6>
+                <div id="promedioContainer" class="text-center mt-5">
+                    <h6 class="display-4">Promedio de Resultados</h6>
+                    <div id="promedioInteres" class="mt-3"></div>
+                    <div id="promedioExperiencia" class="mt-3"></div>
+                    <div id="promedioAmabilidad" class="mt-3"></div>
+                </div>
+
 
             </div>
         </div>
@@ -113,22 +88,23 @@
 
 
 
-
-
-
-
     @Html.Partial("_Footer")
 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/encuestas/crearencuestas.js"></script>
+    <script src="~/js/encuestas/resultadosencuestas.js"></script>
+    <script src="~/js/encuestas/grid.js"></script>
 
     <script src="~/js/usermenu/menufunctions.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
+    
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
