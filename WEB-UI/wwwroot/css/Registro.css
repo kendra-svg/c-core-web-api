@@ -169,9 +169,7 @@ select-direccion {
     text-align: center;
 
 }
-.botonGuardar {
-    margin-left: 40px;
-}
+
 .image-container {
     width: 200px; 
     height: 200px;
@@ -278,26 +276,25 @@ select-direccion {
     background-color: white;
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    margin-left: 39.59%;
+    margin: 5px auto; /* Centra verticalmente y establece márgenes horizontales automáticos */
     border-radius: 4px;
     border-width: 1px;
     border-color: #BDC1CAFF;
     border-style: dashed;
 }
 
+
 .botonGuardar {
     background-color: #a4fff7;
     border: none;
     border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px auto; /* Centra verticalmente y establece márgenes horizontales automáticos */
     padding-top: 10px;
     padding-bottom: 10px;
     width: 180px;
     font-size: 16px;
-    margin-right: 20px;
 }
+
 
 
 
