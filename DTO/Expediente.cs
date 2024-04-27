@@ -8,6 +8,12 @@ namespace DTO
 {
     public class Expediente : BaseClass
     {
+        public Expediente() 
+        {
+            this.Cita = new List<Cita>();
+            this.usuario = new List<UsuarioBase>();
+            this.recetas = new List<Receta>();
+        }
         public string AntecedentesPersonales { set; get; }
         public string TratamietosFarmacologicos { set; get; }
         public string AntecedentesFamiliades { set; get; }
@@ -17,8 +23,8 @@ namespace DTO
         public string Diabetes { set; get; }
         public string EnfermedadesCongenitas { set; get; }
         public string AntecedentesCancer { set; get; }
-        //public int registro_citas_id_citas { set; get; }
-        //public int usuarios_id_usuario { set; get; }
-        //public int recetas_id_receta { set; get; }
+        public List<Cita> Cita { set; get; }
+        public List<UsuarioBase> usuario {  set; get; }
+        public List<Receta> recetas { set; get; }
     }
 }

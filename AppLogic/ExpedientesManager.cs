@@ -16,7 +16,11 @@ namespace AppLogic
         
             return crud.RetrieveById<Expediente>(idExp); ;
         }
-
+        public List<Expediente> GetAllexpediente()
+        {
+            ExpedienteCrud crud = new ExpedienteCrud();
+            return crud.RetrieveAll<Expediente>();
+        }
 
         public string UpdateExpediente(Expediente expChanges)
         {
