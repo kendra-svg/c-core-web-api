@@ -17,13 +17,32 @@ namespace API.Controllers
             UsuariosManager manager = new UsuariosManager();
             return manager.CreateUsuario(user);
         }
-        //[HttpGet]
-        //public List<UsuarioBase> GetUsuarios()
-        //{
-        //    UsuariosManager pm = new UsuariosManager();
-        //    return pm.GetAllUsuarios();
 
-        //}
+
+        [HttpGet]
+        public List<UsuarioBase> GetAllFuncionarios()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllFuncionarios();
+        }
+
+        [HttpGet]
+        public API_Response GetAllFuncionariosA()
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                UsuariosManager um = new UsuariosManager();
+                response.Data = um.GetAllFuncionarios();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
 
         [HttpGet]
         public List<UsuarioBase> GetDoctors()

@@ -105,6 +105,13 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetRetrieveAllFuncionarios()
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_FUNCIONARIOS";
+            return operation;
+        }
+
         public SqlOperation GetRetrieveCredentials(string correo, string contrasenna)
         {
             SqlOperation operation = new SqlOperation();

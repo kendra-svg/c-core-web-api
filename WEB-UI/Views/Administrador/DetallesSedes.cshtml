@@ -52,113 +52,108 @@
         </div>
     </div>
 
-
-
-
-
-    @Html.Partial("MenuLateralAdmin")
-
-
-    <div class="col text-left" >
-        <h1 class="text-center mt-3">Datos de la sede</h1>
-        <div class="col text-end m-3 ">
-
-        </div>
-
-        <div class="container mt-3">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div id="myGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
-
-                    
-
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
             </div>
-
-            <div class="card mb-3">
-
-                <div class="card-body">
-                    <h4 class="card-title text-center mt-3">Especialidades de la sede</h4>
-                    <div id="especGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
-                    <!--seccion de editar especialidad-->
-                    <label for="IdEspecialidadLabel">ID: </label>
-                    <input type="text" id="IdEspecialidad" class="form-control" readonly: readonly />
-
-                    <label for="NombreEspecialidadLabel">Especialidad: </label>
-                    <input type="text" id="NombreEspecialidad" class="form-control" readonly: readonly />
-
-                    <label for="CostoEspecialidadLabel">Costo: </label>
-                    <input type="text" id="CostoEspecialidad" class="form-control" />
-
-                    <label for="IvaEspecialidadLabel">IVA: </label>
-                    <input type="text" id="IvaEspecialidad" class="form-control" />
-
-                    <button id="agregarEspecialidadBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Editar</button>
-                    <!-- seccion de eliminar especialidad-->
-                    <label for="IdEspecialidadEliminarLabel">ID: </label>
-                    <input type="text" id="IdEspecialidadEliminar" class="form-control" readonly: readonly />
-
-                    <label for="NombreEspecialidadEliminarLabel">Especialidad: </label>
-                    <input type="text" id="NombreEspecialidadEliminar" class="form-control" readonly: readonly />
-
-                    <label for="CostoEspecialidadEliminarLabel">Costo: </label>
-                    <input type="text" id="CostoEspecialidadEliminar" class="form-control" readonly: readonly />
-
-                    <label for="IvaEspecialidadEliminarLabel">IVA: </label>
-                    <input type="text" id="IvaEspecialidadEliminar" class="form-control" readonly: readonly />
-
-                    <button id="eliminarEspecialidadBtn" class="btn btn-danger mt-3"><i class="fas fa-plus"></i> Eliminar</button>
-                    <div class="text-center">
-                        <button id="agregarBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Agregar nueva especialidad a sede</button>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <h1 class="text-center mt-3">Datos de la sede</h1>
+                    <div class="col text-end m-3 ">
                     </div>
+
+                    <div class="container mt-3">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div id="myGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+                                <h4 class="card-title text-center mt-3">Especialidades de la sede</h4>
+                                <div id="especGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+                                <!--seccion de editar especialidad-->
+                                <label for="IdEspecialidadLabel">ID: </label>
+                                <input type="text" id="IdEspecialidad" class="form-control" readonly: readonly />
+
+                                <label for="NombreEspecialidadLabel">Especialidad: </label>
+                                <input type="text" id="NombreEspecialidad" class="form-control" readonly: readonly />
+
+                                <label for="CostoEspecialidadLabel">Costo: </label>
+                                <input type="text" id="CostoEspecialidad" class="form-control" />
+
+                                <label for="IvaEspecialidadLabel">IVA: </label>
+                                <input type="text" id="IvaEspecialidad" class="form-control" />
+
+                                <button id="agregarEspecialidadBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Editar</button>
+                                <!-- seccion de eliminar especialidad-->
+                                <label for="IdEspecialidadEliminarLabel">ID: </label>
+                                <input type="text" id="IdEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                                <label for="NombreEspecialidadEliminarLabel">Especialidad: </label>
+                                <input type="text" id="NombreEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                                <label for="CostoEspecialidadEliminarLabel">Costo: </label>
+                                <input type="text" id="CostoEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                                <label for="IvaEspecialidadEliminarLabel">IVA: </label>
+                                <input type="text" id="IvaEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                                <button id="eliminarEspecialidadBtn" class="btn btn-danger mt-3"><i class="fas fa-plus"></i> Eliminar</button>
+                                <div class="text-center">
+                                    <button id="agregarBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Agregar nueva especialidad a sede</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title text-center mt-3">Profesionales de la sede</h4>
+
+                                <div id="userGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
+
+                                <label for="IdUsuarioLabel">ID: </label>
+                                <input type="text" id="IdUsuario" class="form-control" readonly: readonly />
+
+                                <label for="NombreUsuarioEliminarLabel">Nombre completo: </label>
+                                <input type="text" id="NombreUsuarioEliminar" class="form-control" readonly: readonly />
+
+                                <label for="IdUsuarioEspecialidadEliminarLabel">Id Especialidad: </label>
+                                <input type="text" id="IdUsuarioEspecialidadEliminar" class="form-control" readonly: readonly />
+
+                                <label for="CorreoUsuarioEliminarLabel">Correo: </label>
+                                <input type="text" id="CorreoUsuarioEliminar" class="form-control" readonly: readonly />
+
+                                <label for="RolUsuarioEliminarLabel">Rol: </label>
+                                <input type="text" id="RolUsuarioEliminar" class="form-control" readonly: readonly />
+
+                                <button id="eliminarUsuarioBtn" class="btn btn-danger mt-3"><i class="fas fa-plus"></i> Remover usuario de sede seleccionada</button>
+
+                                <div class="text-center">
+                                    <button id="agregarBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Agregar nuevo profesional a sede</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-               
-            </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-center mt-3">Profesionales de la sede</h4>
-                    
-                    <div id="userGrid" style="height: 430px; width: 1225px;" class="ag-theme-alpine justify-content-center"></div>
-                    <div class="text-center">
-                        <button id="agregarProfesionalBtn" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Agregar profesional a sede</button>
-                    </div>
-                    @* <div class="d-flex justify-content-center">
-                        <p>Información genérica sobre profesionales de la sede.</p>
-                    </div>
-                    <table class="table table-striped">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Fecha</th>
-                                <th scope="col">Rol</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="citasTableBody">
-                            <tr>
-                                <td>01/04/2024</td>
-                                <td>Médico</td>
-                                <td>
-                                    <button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>
-                                    <button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/04/2024</td>
-                                <td>Enfermera</td>
-                                <td>
-                                    <button class='btn btn-sm btn-success'><i class='bi bi-pencil'></i></button>
-                                    <button class='btn btn-sm btn-danger'><i class='bi bi-trash'></i></button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table> *@
-                </div>
             </div>
         </div>
-
     </div>
+
+
+
 
     <script src="~/js/usermenu/menufunctions.js"></script>
 

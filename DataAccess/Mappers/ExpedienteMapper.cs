@@ -24,12 +24,24 @@ namespace DataAccess.Mappers
             exp.Diabetes = row["diabetes"].ToString();
             exp.EnfermedadesCongenitas = row["enfermedades_congenitas"].ToString();
             exp.AntecedentesCancer = row["antecedentes_cancer"].ToString();
+
+            exp.usuario = new List<UsuarioBase>
+            {
+                new UsuarioBase {Nombre = row["usuarios"].ToString()}
+            };
+
             return exp;
         }
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
         {
-            throw new NotImplementedException();
+            List<BaseClass> results = new List<BaseClass>();
+            foreach (var row in rowList)
+            {
+                var e = BuildObject(row);
+                results.Add(e);
+            }
+            return results;
         }
 
 
@@ -65,7 +77,9 @@ namespace DataAccess.Mappers
 
         public SqlOperation GetRetrieveAllStatement()
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_ALL_expedientes";
+            return operation;
         }
 
         public SqlOperation GetRetrieveByIdStatement(int id)

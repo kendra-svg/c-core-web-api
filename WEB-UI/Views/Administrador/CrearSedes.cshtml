@@ -60,82 +60,99 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <div class="container">
+                        <h1 style=" color: black;" class="text-center mt-3">Crea una nueva sede</h1>
+                        <div class="card mt-3 mb-3">
+                            <div class="card-body">
 
+                                <div class="mb-3">
+                                    <label for="input-nombre-sede" class="form-label">Nombre de la Sede</label>
+                                    <input style=" color: black; background-color: white; border-block-color:black" type="text" class="form-control" id="input-nombre-sede" placeholder="Nombre de la Sede" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input-descripcion" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="input-descripcion" rows="3" placeholder="Descripción" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
+                                    <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-inline">
+                                        <div class="mt-3 mb-3">
+                                            <label for="txtProvincia"></label>
+                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control">
+                                                <option value="" disabled selected>Seleccione una provincia</option>
+                                            </select>
+                                        </div>
+                                        <div class="mt-3 mb-3">
+                                            <label for="txtCanton"></label>
+                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control">
+                                                <option value="" disabled selected>Seleccione un Canton</option>
+                                            </select>
+                                        </div>
+                                        <div class="mt-3 mb-3">
+                                            <label for="txtDistrito"></label>
+                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control">
+                                                <option value="" disabled selected>Seleccione un Distrito</option>
+                                            </select>
+                                        </div>
 
-    @Html.Partial("MenuLateralAdmin")
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input-otras-senas" class="form-label">Otras Señas</label>
+                                    <input style=" color: black; background-color: white; border-block-color:black" type="text" class="form-control" id="input-otras-senas" placeholder="Otras Señas" required>
+                                </div>
+                                <div class="mb-3">
+                                
+                                </div>
 
+                                <div class="input-group">
+                                    <input type="hidden" id="lat" name="latitud">
+                                    <input type="hidden" id="lng" name="longitud">
+                                    <label for="coordinates">Ubicación</label>
+                                    <div id="map" style="height: 300px; width: 100%;"></div>
+                                    <div class="coordinates-container">
+                                        <div class="mt-3 mb-3">
+                                            <input style=" color: black; background-color: white; border-block-color:black" id="coordinates" type="text" class="form-control" placeholder="Coordenadas" style="width: 500px" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="mb-3">
+                                        <label for="input-foto" class="form-label">Foto</label>
+                                        <div class="btn-container">
+                                            <img id="fotoUsuario" class="fotoUsuario">
+                                            <button type="button" class="botonGuardar btn-outline-success " id="botonFoto" required>Subir foto</button>
+                                        </div>
+                                    </div>
 
-    <div class="col text-left" >
-        <div class="container">
-            <h1 style=" color: black;" class="text-center mt-3">Crea una nueva sede</h1>
-            <form id="Registro-sede">
-                    
-                <div class="mb-3">
-                    <label for="input-nombre-sede" class="form-label">Nombre de la Sede</label>
-                <input style=" color: black; background-color: white; border-block-color:black" type="text" class="form-control" id="input-nombre-sede" placeholder="Nombre de la Sede" required>
-                </div>
-                <div class="mb-3">
-                    <label for="input-descripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="input-descripcion" rows="3" placeholder="Descripción" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
-                    <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
-                </div>
-                <div class="mb-3">
-                    <div class="form-inline">
-                        <div class="mt-3 mb-3">
-                            <label for="txtProvincia"></label>
-                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control">
-                                <option value="" disabled selected>Seleccione una provincia</option>
-                            </select>
+                                </div>
+                                <div class="text-center mt-3 mb-3 mx-15">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-success my-2 my-sm-0" id="btnCreateSede">Crear Sede</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mt-3 mb-3">
-                            <label for="txtCanton"></label>
-                            <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control">
-                                <option value="" disabled selected>Seleccione un Canton</option>
-                            </select>
-                        </div>
-                        <div class="mt-3 mb-3">
-                            <label for="txtDistrito"></label>
-                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control">
-                                <option value="" disabled selected>Seleccione un Distrito</option>
-                            </select>
-                        </div>
-
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="input-otras-senas" class="form-label" >Otras Señas</label>
-                <input style=" color: black; background-color: white; border-block-color:black" type="text" class="form-control" id="input-otras-senas" placeholder="Otras Señas" required>
-                </div>
-                <div class="mb-3">
-                    <label for="input-foto" class="form-label">Foto</label>
-                    <div class="btn-container">
-                        <img id="fotoUsuario" class="fotoUsuario">
-                        <button type="button" class="botonGuardar" id="botonFoto" required>Subir foto</button>
-                    </div>
-                </div>
-                    
-                <div class="input-group">
-                    <input type="hidden" id="lat" name="latitud">
-                    <input type="hidden" id="lng" name="longitud">
-                    <div id="map" style="height: 300px;"></div>
-                    <div class="coordinates-container">
-                        <label for="coordinates">Ubicación</label>
-                        <input style=" color: black; background-color: white; border-block-color:black" type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
-                            
-                    </div>
-
-                </div>
-                <div class="text-center mt-3 mx-15">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-success my-2 my-sm-0" id="btnCreateSede">Crear Sede</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
+
+
+
+
+
     <script>
         function previewImage(event) {
             var input = event.target;

@@ -56,68 +56,80 @@
 
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <div class="text-center mt-3 mx-15">
+                        <div class="btn-group">
+                            <a class="btn btn-success my-2 my-sm-0" asp-controller="Administrador" asp-action="AsignacionCitas">Crear Cita</a>
+                        </div>
+
+                    </div>
+
+                    <h3>Lista de Citas de pacientes</h3>
+
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="container-fluid">
+                            <form class="d-flex w-75">
+                                <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre paciente" aria-label="Buscar">
+                                <select class="form-select" name="filtro">
+                                    <option value="">Todas las citas</option>
+                                    <option value="hoy">Citas de hoy</option>
+                                </select>
+                                <select class="form-select" name="especialidad">
+                                    <option value="">Todas las especialidades</option>
+                                    <!-- Opciones de especialidades aquí -->
+                                </select>
+                                <select class="form-select" name="doctor">
+                                    <option value="">Todos los doctores</option>
+                                    <!-- Opciones de doctores aquí -->
+                                </select>
 
 
-    @Html.Partial("MenuLateralAdmin")
 
 
-    <div class="col text-left">
-        <div class="text-center mt-3 mx-15">
-            <div class="btn-group">
-                <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Administrador" asp-action="AsignacionCitas">Crear Cita</a>
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                <div class="input-group mb-3">
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Inicio</th>
+                                <th scope="col">Fin</th>
+                                <th scope="col">Paciente</th>
+                                <th scope="col">Médico</th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Pago de la Cita</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="citasTableBody">
+                        </tbody>
+                    </table>
+
+
+                </div>
+
             </div>
         </div>
-
-        <h3>Lista de Citas de pacientes</h3>
-
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <form class="d-flex w-75">
-                    <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre paciente" aria-label="Buscar">
-                    <select class="form-select" name="filtro">
-                        <option value="">Todas las citas</option>
-                        <option value="hoy">Citas de hoy</option>
-                    </select>
-                    <select class="form-select" name="especialidad">
-                        <option value="">Todas las especialidades</option>
-                        <!-- Opciones de especialidades aquí -->
-                    </select>
-                    <select class="form-select" name="doctor">
-                        <option value="">Todos los doctores</option>
-                        <!-- Opciones de doctores aquí -->
-                    </select>
-
-
-
-
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                    <div class="input-group mb-3">
-                    </div>
-                </form>
-            </div>
-        </nav>
-
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Inicio</th>
-                    <th scope="col">Fin</th>
-                    <th scope="col">Paciente</th>
-                    <th scope="col">Médico</th>
-                    <th scope="col">Especialidad</th>
-                    <th scope="col">Pago de la Cita</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="citasTableBody">
-            </tbody>
-        </table>
-
-        
     </div>
+
+
+
+
 
     @Html.Partial("_Footer")
 
