@@ -12,6 +12,7 @@
 
     this.ListaFacturas = function () {
         $.ajax({
+            //url: "https://localhost:7154" + "/api/Factura/GetFacturasByUserId?id_usuario=" + sessionStorage.getItem("userId"),
             url: API_URL_BASE + "/api/Factura/GetFacturasByUserId?id_usuario=" + sessionStorage.getItem("userId"),
             method: "GET",
             contentType: "application/json;charset=utf-8",
@@ -25,6 +26,13 @@
                 console.log("Estos fueron los mappeados", mappedData);
                 // Establece los datos mapeados en la cuadrícula
                 facturasGridOptions.api.setRowData(mappedData);
+                var select = document.getElementById("montoFinalSelect");
+                for (var i = 0; i < mappedData.length; i++) {
+                    var opt = document.createElement('option');
+                    opt.value = mappedData[i].monto_final;
+                    opt.innerHTML = mappedData[i].monto_final;
+                    select.appendChild(opt);
+                }
             } else {
                 console.log("No se encontraron facturas.");
                 // Opcional: Mostrar un mensaje si no hay facturas
@@ -42,7 +50,6 @@
                 text: 'No se pudo cargar las facturas!' + error.message
             });
         });
-
     }
 }
 

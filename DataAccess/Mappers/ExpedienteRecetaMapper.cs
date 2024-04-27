@@ -15,18 +15,15 @@ namespace DataAccess.Mappers
         {
             ExpedienteReceta expedienteReceta = new ExpedienteReceta();
             expedienteReceta.Id = int.Parse(row["id_recetas_expedient"].ToString());
-            expedienteReceta.RecetaList = new List<Receta>
-    {
-        new Receta
-        {
-            NombreMedicamento = row["recetas"].ToString(),
-            RecomendacionAdicional = row["rec"].ToString()
-        }
-    };
-            expedienteReceta.usuarioBases = new List<UsuarioBase>
-    {
-        new UsuarioBase { Nombre = row["usuarios"].ToString() }
-    };
+            expedienteReceta.RecetaList = new List<Receta>{
+            new Receta{
+                NombreMedicamento = row["recetas"].ToString(),
+                RecomendacionAdicional = row["rec"].ToString()
+            }
+            };
+            expedienteReceta.usuarioBases = new List<UsuarioBase>{
+            new UsuarioBase { Nombre = row["usuarios"].ToString() }
+            };
             return expedienteReceta;
         }
 
