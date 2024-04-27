@@ -65,51 +65,50 @@
                             <h2>Datos Personales</h2>
                         </div>
                         <div class="btn-container">
-                            <div class="btn-container">
-                                <img id="fotoUsuario" class="fotoUsuario">
-                                <button type="button" class="botonGuardar " id="botonFoto" required>Subir foto</button>
-                            </div>
-                    </div>
-                    <div class="row m-3">
-                        <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="ID" />
+                            <img id="profile-img" class="fotoUsuario">
+                            <button type="button" class="botonGuardar " id="botonFoto" required>Subir foto</button>
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Nombre" />
+                            <input type="text" id="txt-identificaion" class="form-control" readonly placeholder="ID" />
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Apellidos" />
+                            <input type="text" id="txt-nombre" class="form-control" readonly placeholder="Nombre" />
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Telefono" />
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Correo" />
+                            <input type="text" id="txt-apellidos" class="form-control" readonly placeholder="Apellidos" />
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Sexo" />
+                            <input type="text" id="txt-telefono" class="form-control" readonly placeholder="Telefono" />
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Fecha de Naciemiento" />
+                            <input type="text" id="txt-correo" class="form-control" readonly placeholder="Correo" />
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Edad" />
+                            <input type="text" id="txt-sexo" class="form-control" readonly placeholder="Sexo" />
+                        </div>
+                        <div class="col">
+                            <input type="text" id="txt-fecha-naciemiento" class="form-control" readonly placeholder="Fecha de Naciemiento" />
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col">
+                            <input type="text" id="txt-edad" class="form-control" readonly placeholder="Edad" />
                         </div>
                     </div>
                     <div class="row m-3">
                         <p>Direccion</p>
                         <div class="col">
-                            <input type="text" class="form-control" readonly placeholder="Coordenadas" />
+                            <input type="text" id="txt-coodernadas" class="form-control" readonly placeholder="Coordenadas" />
                         </div>
                         <div class="col">
                             <button class="btn border">Editar</button>
@@ -155,12 +154,8 @@
     @Html.Partial("_Footer")
 
 
-
-
-
-
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/usuario/getdatospersonales.js"></script>
 
 
     <script src="~/js/usermenu/menufunctions.js"></script>
