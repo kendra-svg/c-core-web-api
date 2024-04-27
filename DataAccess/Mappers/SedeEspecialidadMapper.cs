@@ -131,8 +131,17 @@ namespace DataAccess.Mappers
             operation.AddIntegerParam("id_especialidad", idEspecialidad);
             return operation;
         }
+        public SqlOperation GetRetrieveBySedeIdAndEspecialidadIdAndUsuarioId(int idSede, int idEspecialidad, int idUsuario)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_GET_SEDEESPEC_BY_SEDE_ID_AND_ESPECIALIDAD_ID_AND_USUARIO_ID";
+            operation.AddIntegerParam("id_sede", idSede);
+            operation.AddIntegerParam("id_especialidad", idEspecialidad);
+            operation.AddIntegerParam("id_usuario", idUsuario);
+            return operation;
+        }
 
 
-        
+
     }
 }

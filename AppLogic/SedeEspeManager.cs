@@ -60,5 +60,10 @@ namespace AppLogic
             SedeEspecialidCrud crud = new SedeEspecialidCrud();
             crud.DeleteUserFromSedeEspecialidad(id);
         }
+        public SedeEspecialidad GetSedeEspecialidadesBySedeIdAndEspecialidadIdAndUserId(int idSede, int idEspecialidad, int idUsuario)
+        {
+            SedeEspecialidCrud crud = new SedeEspecialidCrud();
+            return crud.RetrieveBySedeIdAndEspecialidadIdAndUserId<SedeEspecialidad>(idSede, idEspecialidad, idUsuario);
+        }
     }
 }
