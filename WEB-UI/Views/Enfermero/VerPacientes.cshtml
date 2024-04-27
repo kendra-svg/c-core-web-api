@@ -1,14 +1,20 @@
-﻿@{
-    Layout = null;
-    ViewBag.Title = "Ver Pacientes";
+﻿@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @* <script src="~/js/registrofuncionariosasedes/griddefinition.js"></script>
+    <script src="~/js/registrofuncionariosasedes/registrofuncionarios.js"></script> *@
+    <script src="~/js/listapacientes/griddefinition.js"></script>
+    <script src="~/js/listapacientes/listapacientes.js"></script>
 }
+
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <title>@ViewData["Title"]</title>
+    <title>Ver pacientes</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -64,16 +70,13 @@
             <div class="col-md-9">
                 <div class="col text-left">
                     <div class="row align-items-center justify-content-between mt-3 mb-4">
-                        <div class="col-md-3 mt-3">
-                            <h2 class="ml-1">Lista de Pacientes</h2>
-                        </div>
                     </div>
 
-                    <div class="container text-start">
-
-                        <div class="row">
-                            <div class="container">
-                                <div id="pacientesGrid" style="height: 430px; width: 1100px;" class="ag-theme-alpine justify-content-center"></div>
+                    <div class="container mt-3">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Lista de pacientes</h4>
+                                <div id="pacientesGrid" style="height: 430px; width: 1050px;" class="ag-theme-alpine justify-content-center"></div>
                             </div>
                         </div>
                     </div>
