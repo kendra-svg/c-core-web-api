@@ -5,7 +5,7 @@
 
     this.ListaExRec = function () {
         $.ajax({
-            url: "https://apisimepci.azurewebsites.ne" +" /api/ExpedienteReceta/GetAllExpedienteReceta",
+            url: "https://apisimepci.azurewebsites.net" +" /api/ExpedienteReceta/GetAllExpedienteReceta",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
