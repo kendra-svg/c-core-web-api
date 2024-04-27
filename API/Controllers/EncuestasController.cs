@@ -20,11 +20,23 @@ namespace API.Controllers
 
 
         [HttpGet]//get all
-        public List<Encuestas> GetAllEncuestas()
+        public API_Response GetAllEncuestasA()
         {
-            EncuestasManager enc = new EncuestasManager();
-            return enc.GetAllEncuestas();
+            API_Response response = new API_Response();
+            try
+            {
+                EncuestasManager enc = new EncuestasManager();
+                response.Data = enc.GetAllEncuestas();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
         }
+
 
 
         [HttpGet]//id
