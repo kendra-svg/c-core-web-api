@@ -9,8 +9,7 @@
     }
     this.ListaSede = function () {
         $.ajax({
-            //url: "https://localhost:7154/api/Sedes/GetAllSedesA",
-            url: "https://apisimepci.azurewebsites.net/api/Sedes/GetAllSedesA",
+            url:API_URL_BASE + "/api/Sedes/GetAllSedesA",
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -38,8 +37,7 @@
     }
     this.GetSedesDetails = function (id) {
         $.ajax({
-            //url: API_URL_BASE + 
-            url: "https://apisimepci.azurewebsites.net" + "/api/Sedes/GetSedeById?id=" + id,
+            url: API_URL_BASE + "/api/Sedes/GetSedeById?id=" + id,
             method: "GET",
             contentType: "application/json;charset=utf-8",
             dataType: "json"
@@ -147,7 +145,7 @@
                 'Content-Type': "application/json"
             },
             method: "PUT",
-            url: "https://apisimepci.azurewebsites.net" +"/api/Sedes/updateSede?id=" + sede.id + "&nombre=" + sede.nombre + "&descripcion=" + sede.descripcion + "&date=" + sede.fechaCreacion + "&direccion=" + sede.ubicacion + "&provincia=" + sede.provincia + "&canton=" + sede.canton + "&distrito=" + sede.distrito + "&ubicaciones=" + sede.direccion,
+            url: API_URL_BASE  +"/api/Sedes/updateSede?id=" + sede.id + "&nombre=" + sede.nombre + "&descripcion=" + sede.descripcion + "&date=" + sede.fechaCreacion + "&direccion=" + sede.ubicacion + "&provincia=" + sede.provincia + "&canton=" + sede.canton + "&distrito=" + sede.distrito + "&ubicaciones=" + sede.direccion,
             ///api/Sedes/updateSede?id=2356&nombre=Liberia%20Centro&descripcion=Sede%20en%20Guanacasteca&date=2024-04-16&direccion=De%20pochos%20bar&provincia=Guanacaste&canton=Liberia&distrito=Liberia&ubicaciones=xd'
             contentType: "application/json;charset=utf-8",
             dataType: "text",

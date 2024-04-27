@@ -23,6 +23,12 @@ namespace AppLogic
 
         }
 
+        public List<UsuarioBase> GetAllFuncionarios()
+        {
+            UsuarioCrud crud = new UsuarioCrud();
+            return crud.RetrieveAllFuncionarios<UsuarioBase>();
+        }
+
         public List<UsuarioBase> GetAllDoctors()
         {
             UsuarioCrud crud = new UsuarioCrud();

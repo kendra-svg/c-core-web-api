@@ -13,26 +13,26 @@ namespace DataAccess.Mappers
     public class SedeEspecialidadMapper : IObjectMapper, ICrudStatements
     {
         public BaseClass BuildObject(Dictionary<string, object> row)
-    {
-        SedeEspecialidad sedeespe = new SedeEspecialidad();
-        sedeespe.Id = int.Parse(row["sede_especialidad"].ToString());
-        sedeespe.IdSede = int.Parse(row["sedes_id_sedes"].ToString());
-        sedeespe.IdUsuario = int.Parse(row["usuarios_id_usuario"].ToString());
-        sedeespe.IdEspecialidad = int.Parse(row["especialidades_id_especialidades"].ToString());
+        {
+            SedeEspecialidad sedeespe = new SedeEspecialidad();
+            sedeespe.Id = int.Parse(row["sede_especialidad"].ToString());
+            sedeespe.IdSede = int.Parse(row["sedes_id_sedes"].ToString());
+            sedeespe.IdUsuario = int.Parse(row["usuarios_id_usuario"].ToString());
+            sedeespe.IdEspecialidad = int.Parse(row["especialidades_id_especialidades"].ToString());
 
             return sedeespe;
-    }
-
-    public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
-    {
-        List<BaseClass> results = new List<BaseClass>();
-        foreach (var row in rowList)
-        {
-            var sedeespe = BuildObject(row);
-            results.Add(sedeespe);
         }
-        return results;
-    }
+
+        public List<BaseClass> BuildObjects(List<Dictionary<string, object>> rowList)
+        {
+            List<BaseClass> results = new List<BaseClass>();
+            foreach (var row in rowList)
+            {
+                var sedeespe = BuildObject(row);
+                results.Add(sedeespe);
+            }
+            return results;
+        }
 
         public SqlOperation GetCreateStatement(BaseClass dto)
         {
@@ -50,9 +50,29 @@ namespace DataAccess.Mappers
             return operation;
         }
 
+        public SqlOperation GetInsertEspecialidadesYFuncionariosIntoSedes(int id, int idSede, int idEspecialidad, int idUsuario)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_INSERT_ESPECIALIDADES_INTO_SEDES";
+            operation.AddIntegerParam("id_sede_especialidad", id);
+            operation.AddIntegerParam("id_sede", idSede);
+            operation.AddIntegerParam("id_especialidad", idEspecialidad);
+            operation.AddIntegerParam("id_usuario", idUsuario);
+            return operation;
+        }
+
+
         public SqlOperation GetDeleteStatement(BaseClass dto)
         {
             throw new NotImplementedException();
+        }
+
+        public SqlOperation GetDeleteUserFromSedeEspecialidad(int id)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "SP_DELETE_USER_FROM_SEDE_ESPECIALIDAD";
+            operation.AddIntegerParam("id", id);
+            return operation;
         }
 
         public SqlOperation DeleteBySedeEspecId(int id)

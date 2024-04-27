@@ -48,104 +48,115 @@
             </ul>
         </div>
     </div>
-    @Html.Partial("MenuLateralAdmin")
-    <div class="col text-left">
-        <div class="text-center">
-            <h1 class="text-center mt-3">Lista de Sedes</h1>
-            <div class="text-center mt-3 mx-15">
-                <div class="btn-group">
-                    <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Administrador" asp-action="CrearSedes">Crear nueva sede</a>
-                </div>
-            </div>
-        </div>
-       <div class="text-center align-content-center" >
-           <h6 class="display-4">Lista</h6>
 
-            <div id="myGrid" style="height: 400px; width: 97%;" class="ag-theme-alpine justify-content-center"></div>
-       </div>
-       <div class="text-center">
-           <h6 class="display-4 align-content-center"></h6>
-       </div>
-       <div class="col text-left">
-           <div class="container">
-                   <form action="ListSede" >
-                           <div class="mb-3">
-                               <label for="txtid">Id</label>
-                               <input id="txtid" type="text" class="form-control" placeholder="Id" readonly/>
-                           </div>
-                           <div class="mb-3">
-                               <label for="txtnombre">Nombre</label>
-                                    <input id="txtnombre" type="text" class="form-control" placeholder="Nombre"  required/>
-                           </div>
-                           <div class="mb-3">
-                               <label for="txtdescripcion">Descripcion</label>
-                        <input id="txtdescripcion" type="text" class="form-control" placeholder="Descripción" required />
-                           </div>
-                           <div class="mb-3">
-                               <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
-                        <input type="date" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
-                           </div>
-                           <div class="mb-3">
-                               <label for="input-otras-senas" class="form-label">Otras señas</label>
-                        <input type="text" class="form-control" id="input-otras-senas" placeholder="Otras señas" required>
-                           </div>
-                           <div class="mt-3 mb-3">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <div class="col text-left">
+                        <div class="container">
+                            <form action="ListSede">
+                                <div class="card mt-3 mb-3">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center mt-3">Lista de sedes </h4>
+                                        <div id="myGrid" style="height: 400px; width: 1240px;" class="ag-theme-alpine justify-content-center"></div>
+                                        <div class="text-center mt-3 mx-15">
+                                            <div class="btn-group">
+                                                <a class="btn btn-success my-2 my-sm-0" asp-controller="Administrador" asp-action="CrearSedes">Crear nueva sede</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 mb-3">
+                                    <label for="txtid">Id</label>
+                                    <input id="txtid" type="text" class="form-control" placeholder="Id" readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="txtnombre">Nombre</label>
+                                    <input id="txtnombre" type="text" class="form-control" placeholder="Nombre" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="txtdescripcion">Descripcion</label>
+                                    <input id="txtdescripcion" type="text" class="form-control" placeholder="Descripción" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input-fecha-creacion" class="form-label">Fecha de Creación</label>
+                                    <input type="datetime-local" class="form-control" id="input-fecha-creacion" placeholder="Fecha de Creación" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input-otras-senas" class="form-label">Otras señas</label>
+                                    <input type="text" class="form-control" id="input-otras-senas" placeholder="Otras señas" required>
+                                </div>
+                                <div class="mt-3 mb-3">
                                     <div class="form-inline">
                                         <div class="mt-3 mb-3">
                                             <label for="txtProvincia"></label>
-                                <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control" required>
+                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox1" onchange="print_canton('combobox2', this.selectedIndex)" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione una provincia</option>
                                             </select>
                                         </div>
                                         <div class="mt-3 mb-3">
                                             <label for="txtCanton"></label>
-                                <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control" required>
+                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black;" id="combobox2" onchange="print_distrito('combobox3', this.value)" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione un Canton</option>
                                             </select>
                                         </div>
                                         <div class="mt-3 mb-3">
                                             <label for="txtDistrito"></label>
-                                <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control" required>
+                                            <select select-direccion style=" color: black; background-color: white; border-block-color:black" id="combobox3" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione un Distrito</option>
                                             </select>
                                         </div>
                                     </div>
-                           </div>
-                            <div class="mt-3 mb-3">
-                                <input type="hidden" id="lat" name="latitud">
-                                <input type="hidden" id="lng" name="longitud">
-                                <div id="map" style="height: 300px;"></div>
-                                <div class="coordinates-container">
-                                    <label for="coordinates">Ubicación</label>
-                                    <input style=" color: black; background-color: white; border-block-color:black" type="text" id="coordinates" class="text" placeholder="Coordenadas" readonly>
-
                                 </div>
-                            </div>
-                        <div class="text-center mt-3 mx-15">
-                           <div class="form-group">
-                           <button type="button" class="btn btn-success" id="btnUpdate">Actualizar</button>
-                           </div>
-                       </div>
+                                
+                                <div class="input-group">
+                                    <input type="hidden" id="lat" name="latitud">
+                                    <input type="hidden" id="lng" name="longitud">
+                                    <label for="coordinates">Ubicación</label>
+                                    <div id="map" style="height: 300px; width: 100%;"></div>
+                                    <div class="coordinates-container">
+                                        <div class="mt-3 mb-3">
+                                            <input id="coordinates" type="text" class="form-control" placeholder="Coordenadas" style= "width: 1270px" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center align-content-center">
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-success" id="btnUpdate">Actualizar</button>
+                                    </div>
+                                </div>
 
-               </form>
-           </div>
-       </div>
-        <script>
-      
-            var map = L.map('map').setView([9.933, -84.08], 8);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
 
-            var marker = L.marker([9.933, -84.08]).addTo(map);
+        var map = L.map('map').setView([9.933, -84.08], 8);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-            map.on('click', function (e) {
-                var lat = e.latlng.lat.toFixed(6);
-                var lng = e.latlng.lng.toFixed(6);
-                var coordinates = lat + ', ' + lng;
-                document.getElementById('coordinates').value = coordinates;
-            });
-        </script>
+        var marker = L.marker([9.933, -84.08]).addTo(map);
+
+        map.on('click', function (e) {
+            var lat = e.latlng.lat.toFixed(6);
+            var lng = e.latlng.lng.toFixed(6);
+            var coordinates = lat + ', ' + lng;
+            document.getElementById('coordinates').value = coordinates;
+        });
+    </script>
 
 </body>
 </html>

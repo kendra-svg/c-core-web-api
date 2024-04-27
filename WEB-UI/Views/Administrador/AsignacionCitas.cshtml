@@ -53,94 +53,103 @@
 
 
 
-
-
-
-
-    @Html.Partial("MenuLateralAdmin")
-   
-    <div class="col text-left">
-        <h2>Crear Citas</h2>
-        <div class="container-fluid">
-            <form id="creacionCita">
-                <div class="row pt-3">
-                    <div class="col">
-                        <label for="sedes" class="form-label">Sede:</label>
-                        <select id="sedes" class="form-select w-100">
-
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row pt-3">
-                    <div class="col">
-                        <label for="especialidades" class="form-label">Especialidad:</label>
-                        <select id="especialidades" class="form-select w-100">
-
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row pt-3">
-                    <div class="col">
-                        <label for="medicos" class="form-label">Médico:</label>
-                        <select id="medicos" class="form-select w-100">
-
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row pt-3">
-                    <div class="col-1">
-                        <label for="fecha_hora" class="form-label">Fecha y hora:</label>
-                    </div>
-                    <div class="col">
-                        <input type="datetime-local" id="fecha_hora" class="form-control">
-                    </div>
-                </div>
-
-                <div class="row pt-3">
-                    <div class="col-1">
-                        <label for="tiempo_atencion" class="form-label">Tiempo de atención:</label>
-                    </div>
-                    <div class="col">
-                        <input type="text" id="tiempo_atencion" class="form-control" value="30 minutos" readonly>
-                    </div>
-                </div>
-            </form>
-
-
-
-            <div class="row pt-3">
-                <div class="col-3">
-                    <p>Confirmacion de cita por medio de: </p>
-
-                </div>
-                <div class="col-1">
-                    <input type="checkbox" name="email" checked disabled>
-                    <label for="vehicle2"> Email</label><br>
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
             </div>
-            <div class="row pt-3 text-center">
-                <div class="col">
-                    <button type="submit" class="btn border" id="btn-buscar">Buscar</button>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <h2>Crear Citas</h2>
+                    <div class="container-fluid">
+                        <form id="creacionCita">
+                            <div class="row pt-3">
+                                <div class="col">
+                                    <label for="sedes" class="form-label">Sede:</label>
+                                    <select id="sedes" class="form-select w-100">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row pt-3">
+                                <div class="col">
+                                    <label for="especialidades" class="form-label">Especialidad:</label>
+                                    <select id="especialidades" class="form-select w-100">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row pt-3">
+                                <div class="col">
+                                    <label for="medicos" class="form-label">Médico:</label>
+                                    <select id="medicos" class="form-select w-100">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row pt-3">
+                                <div class="col-1">
+                                    <label for="fecha_hora" class="form-label">Fecha y hora:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="datetime-local" id="fecha_hora" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row pt-3">
+                                <div class="col-1">
+                                    <label for="tiempo_atencion" class="form-label">Tiempo de atención:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" id="tiempo_atencion" class="form-control" value="30 minutos" readonly>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                        <div class="row pt-3">
+                            <div class="col-3">
+                                <p>Confirmacion de cita por medio de: </p>
+
+                            </div>
+                            <div class="col-1">
+                                <input type="checkbox" name="email" checked disabled>
+                                <label for="vehicle2"> Email</label><br>
+                            </div>
+                        </div>
+                        <div class="row pt-3 text-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-outline-success" id="btn-buscar">Buscar</button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div id="grid-posibles-citas" style="height: 300px; width:50%;" class="ag-theme-alpine mt-5"></div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
                 </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col">
-                    <div id="grid-posibles-citas" style="height: 300px; width:50%;" class="ag-theme-alpine mt-5"></div>
-
-                </div>
-
 
             </div>
-
-
         </div>
-
     </div>
+
+
+
+
+   
 
 
 
