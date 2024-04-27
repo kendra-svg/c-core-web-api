@@ -285,7 +285,8 @@ select-direccion {
 
 
 .botonGuardar {
-    background-color: #a4fff7;
+    background-color: #038554;
+    color:white;
     border: none;
     border-radius: 5px;
     margin: 20px auto; /* Centra verticalmente y establece márgenes horizontales automáticos */
