@@ -15,7 +15,18 @@ label[for="IdEspecialidadLabel"],
 label[for="IdEspecialidadEliminarLabel"],
 label[for="NombreEspecialidadEliminarLabel"],
 label[for="CostoEspecialidadEliminarLabel"],
-label[for="IvaEspecialidadEliminarLabel"] {
+label[for="IvaEspecialidadEliminarLabel"],
+#IdUsuario,
+#NombreUsuarioEliminar,
+#IdUsuarioEspecialidadEliminar,
+#CorreoUsuarioEliminar,
+#RolUsuarioEliminar,
+#eliminarUsuarioBtn,
+label[for="IdUsuarioLabel"],
+label[for="NombreUsuarioEliminarLabel"],
+label[for="IdUsuarioEspecialidadEliminarLabel"],
+label[for="CorreoUsuarioEliminarLabel"],
+label[for="RolUsuarioEliminarLabel"] {
     display: none;
 }
 

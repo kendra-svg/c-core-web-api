@@ -26,6 +26,31 @@ namespace API.Controllers
         //}
 
         [HttpGet]
+        public List<UsuarioBase> GetAllFuncionarios()
+        {
+            UsuariosManager pm = new UsuariosManager();
+            return pm.GetAllFuncionarios();
+        }
+
+        [HttpGet]
+        public API_Response GetAllFuncionariosA()
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                UsuariosManager um = new UsuariosManager();
+                response.Data = um.GetAllFuncionarios();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        [HttpGet]
         public List<UsuarioBase> GetDoctors()
         {
             UsuariosManager pm = new UsuariosManager();
@@ -73,6 +98,56 @@ namespace API.Controllers
         {
             UsuariosManager um = new UsuariosManager();
             return um.GetUserByCorreo(correo);
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetUsersBySedeId(int id_sede)
+        {
+            UsuariosManager um = new UsuariosManager();
+            return um.GetUserBySedeId(id_sede);
+        }
+
+        [HttpGet]
+        public API_Response GetUsersBySedeIdA(int id_sede)
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                UsuariosManager um = new UsuariosManager();
+                response.Data = um.GetUserBySedeId(id_sede);
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        [HttpGet]
+        public List<UsuarioBase> GetUserByUserId(int id_usuario)
+        {
+            UsuariosManager um = new UsuariosManager();
+            return um.GetUserByUserId(id_usuario);
+        }
+
+        [HttpGet]
+        public API_Response GetUserByUserIdA(int id_usuario)
+        {
+            API_Response response = new API_Response();
+            try
+            {
+                UsuariosManager um = new UsuariosManager();
+                response.Data = um.GetUserByUserId(id_usuario);
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
         }
 
         [HttpGet]

@@ -16,6 +16,15 @@ namespace API.Controllers
             SedeEspeManager manager = new SedeEspeManager();
             return manager.CreateSedeEspe(app);
         }
+
+        [HttpPost]
+        public string InsertEspecialidadesYFuncionariosIntoSedes(int id, int idSede, int idEspecialidad, int idUsuario)
+        {
+            SedeEspeManager manager = new SedeEspeManager();
+            return manager.InsertEspecialidadesYFuncionariosIntoSedes(id, idSede, idEspecialidad, idUsuario);
+        }
+
+
         [HttpGet]
         public API_Response GetAllSedesEspeA()
         {
@@ -77,6 +86,22 @@ namespace API.Controllers
         {
             SedeEspeManager sedeespe = new SedeEspeManager();
             sedeespe.DeleteSedeEspec(id);
+        }
+
+        [HttpGet]
+        public SedeEspecialidad GetSedeEspecialidadesBySedeIdAndEspecialidadId(int id_sede, int id_especialidad)
+        {
+            SedeEspeManager pm = new SedeEspeManager();
+            Console.WriteLine(id_sede);
+            Console.WriteLine(id_especialidad);
+            return pm.GetEspecialidadesBySedeIdAndEspecialidadId(id_sede, id_especialidad);
+        }
+
+        [HttpDelete]
+        public void DeleteUserFromSedeEspecialidad(int id)
+        {
+            SedeEspeManager sedeespe = new SedeEspeManager();
+            sedeespe.DeleteUserFromSedeEspecialidad(id);
         }
 
     }

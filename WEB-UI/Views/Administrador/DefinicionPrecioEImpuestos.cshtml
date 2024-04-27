@@ -43,53 +43,68 @@
         </div>
     </div>
 
-    @Html.Partial("MenuLateralAdmin")
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <div class="container">
+                        <h2>Definicion de Precios e Impuestos</h2>
+                        <form>
+                            <div class="mb-3">
+                                <div>
+                                    <label for="especialidad">Seleccione la especialidad:</label>
+                                    <select name="especialidad" class="form-control" id="combobox1" onchange="print_Precio('combobox2', this.selectedIndex)"></select>
+                                </div>
+                            </div>
 
-    <div class="col text-left">
-        <div class="container">
-            <h2>Definicion de Precios e Impuestos</h2>
-            <form>
-                <div class="mb-3">
-                    <div>
-                        <label for="especialidad">Seleccione la especialidad:</label>
-                        <select name="especialidad" class="form-control" id="combobox1" onchange="print_Precio('combobox2', this.selectedIndex)"></select  >
+                            <div class="mb-3">
+                                <div>
+                                    <label for="precio">Precio por consulta:</label>
+                                    <select name="precio" class="form-control" id="combobox2" onchange="print_impuesto('combobox3', this.value)"></select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div>
+                                    <label for="impuesto">Impuesto por servicio:</label>
+                                    <select name="impuesto" class="form-control" id="combobox3"></select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div>
+                                    <label for="iva">IVA:</label>
+                                    <select name="iva" class="form-control" disabled>
+                                        <option value="13">13%</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="row mt-3">
+                            <div class="col-4 mx-auto">
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-success border" value="Guardar" />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
 
-                <div class="mb-3">
-                    <div>
-                        <label for="precio">Precio por consulta:</label>
-                        <select name="precio" class="form-control" id="combobox2" onchange="print_impuesto('combobox3', this.value)"></select>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <div>
-                        <label for="impuesto">Impuesto por servicio:</label>
-                        <select name="impuesto" class="form-control" id="combobox3"></select>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <div>
-                        <label for="iva">IVA:</label>
-                        <select name="iva" class="form-control" disabled>
-                            <option value="13">13%</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-
-            <div class="row mt-3">
-                <div class="col-4">
-                    <div>
-                        <input type="submit" class="btn border" value="Guardar" />
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
 
-        </div>
+
+
+
         
     @Html.Partial("_Footer")
 

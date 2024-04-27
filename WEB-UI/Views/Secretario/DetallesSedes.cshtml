@@ -52,95 +52,106 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralSecretario")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <h1 class="text-center mt-3">Sedes</h1>
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Sedes" class="btn btn-outline-success text-success mr-auto" style="text-decoration: none;">Regresar</a>
+                        <div class="mx-auto"></div>
+                    </div>
+                    <div class="container mt-3">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title">Datos de la sede</h4>
+                                <hr />
+                                <dl class="row">
+                                    <dt class="col-sm-3">Foto:</dt>
+                                    <dd class="col-sm-9">
+                                        <img src="https://via.placeholder.com/150" class="img-fluid" alt="Foto de la sede" />
+                                    </dd>
+
+                                    <dt class="col-sm-3">Nombre de la Sede:</dt>
+                                    <dd class="col-sm-9">Sede A</dd>
+
+                                    <dt class="col-sm-3">Descripción:</dt>
+                                    <dd class="col-sm-9">Descripción de la Sede A</dd>
+
+                                    <dt class="col-sm-3">Fecha de Creación:</dt>
+                                    <dd class="col-sm-9">01/01/2022</dd>
+
+                                    <dt class="col-sm-3">Provincia:</dt>
+                                    <dd class="col-sm-9">Provincia A</dd>
+
+                                    <dt class="col-sm-3">Cantón:</dt>
+                                    <dd class="col-sm-9">Cantón A</dd>
+
+                                    <dt class="col-sm-3">Distrito:</dt>
+                                    <dd class="col-sm-9">Distrito A</dd>
+
+                                    <dt class="col-sm-3">Otras Señas:</dt>
+                                    <dd class="col-sm-9">Otras señas de la Sede A</dd>
+
+                                    <dt class="col-sm-3">Ubicación:</dt>
+                                    <dd class="col-sm-9">Ubicación de la Sede A</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Profesionales de la Sede</h4>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nombre medico</th>
+                                            <th scope="col">Especialidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="citasTableBody">
+                                        <tr>
+                                            <td> Juan Pérez</td>
+                                            <td>Medicina General</td>
+                                        </tr>
+                                        <tr>
+                                            <td>María González</td>
+                                            <td>Audiometria</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="CrearCitasPErsonales" class="btn btn-outline-success">Agendar cita en esta sede</a>
+                            </div>
+
+                        </div>
+                    </div>
 
 
-    @Html.Partial("MenuLateralSecretario")
 
 
 
-    <div class="col text-left">
-        <h1 class="text-center mt-3">Sedes</h1>
-        <div class="d-flex justify-content-between">
-            <a asp-action="Sedes" class="btn btn-outline-success text-success mr-auto" style="text-decoration: none;">Regresar</a>
-            <div class="mx-auto"></div>
-        </div>
-        <div class="container mt-3">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Datos de la sede</h4>
-                    <hr />
-                    <dl class="row">
-                        <dt class="col-sm-3">Foto:</dt>
-                        <dd class="col-sm-9">
-                            <img src="https://via.placeholder.com/150" class="img-fluid" alt="Foto de la sede" />
-                        </dd>
 
-                        <dt class="col-sm-3">Nombre de la Sede:</dt>
-                        <dd class="col-sm-9">Sede A</dd>
 
-                        <dt class="col-sm-3">Descripción:</dt>
-                        <dd class="col-sm-9">Descripción de la Sede A</dd>
 
-                        <dt class="col-sm-3">Fecha de Creación:</dt>
-                        <dd class="col-sm-9">01/01/2022</dd>
-
-                        <dt class="col-sm-3">Provincia:</dt>
-                        <dd class="col-sm-9">Provincia A</dd>
-
-                        <dt class="col-sm-3">Cantón:</dt>
-                        <dd class="col-sm-9">Cantón A</dd>
-
-                        <dt class="col-sm-3">Distrito:</dt>
-                        <dd class="col-sm-9">Distrito A</dd>
-
-                        <dt class="col-sm-3">Otras Señas:</dt>
-                        <dd class="col-sm-9">Otras señas de la Sede A</dd>
-
-                        <dt class="col-sm-3">Ubicación:</dt>
-                        <dd class="col-sm-9">Ubicación de la Sede A</dd>
-                    </dl>
                 </div>
+
             </div>
         </div>
-
-        <div>
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Profesionales de la Sede</h4>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nombre medico</th>
-                                <th scope="col">Especialidad</th>
-                            </tr>
-                        </thead>
-                        <tbody id="citasTableBody">
-                            <tr>
-                                <td> Juan Pérez</td>
-                                <td>Medicina General</td>
-                            </tr>
-                            <tr>
-                                <td>María González</td>
-                                <td>Audiometria</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a href="CrearCitasPErsonales" class="btn btn-outline-success">Agendar cita en esta sede</a>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
     </div>
+
+
+
+
+
 
     @Html.Partial("_Footer")
 

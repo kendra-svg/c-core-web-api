@@ -73,6 +73,101 @@ const especColumnDefinition = [
     
 ];
 
+const userColumnDefinition = [
+    { field: "id", headerName: "ID Usuario" },
+    { field: "nombreCompleto", headerName: "Nombre completo" },
+    { field: "especialidad", headerName: "ID Especialidad" },
+    /*{ field: "identificacion", headerName: "Cédula" },*/
+    //{ field: "nombre", headerName: "Nombre" },
+    //{ field: "apellidos", headerName: "Apellidos" },
+    { field: "correo", headerName: "Correo" },
+    { field: "rol", headerName: "Rol" },
+    /*{ field: "sexo", headerName: "Sexo" },*/
+
+
+    {
+        headerName: "Editar",
+        cellRenderer: function (params) {
+
+            const button = document.createElement("button");
+
+            button.className = "btn btn-success m-1";
+            button.innerHTML = "Editar";
+
+            button.addEventListener("click", function () {
+                handleButtonEditarUsuario(params.data);
+            });
+
+            const wrapper = document.createElement("div");
+            wrapper.appendChild(button);
+
+            return wrapper;
+        }
+    },
+
+
+    {
+        headerName: "Remover",
+        cellRenderer: function (params) {
+
+            const button = document.createElement("button");
+
+            button.className = "btn btn-danger m-1";
+            button.innerHTML = "Remover";
+
+            button.addEventListener("click", function () {
+                handleButtonEliminarUsuario(params.data);
+            });
+
+            const wrapper = document.createElement("div");
+            wrapper.appendChild(button);
+
+            return wrapper;
+        }
+    }
+
+    
+];
+
+function handleButtonEliminarUsuario(data) {
+
+    const idUsuarioEliminarInput = document.getElementById('IdUsuario');
+    const nombreUsuarioEliminarInput = document.getElementById('NombreUsuarioEliminar');
+    const idUsuarioEspecialidadEliminarInput = document.getElementById('IdUsuarioEspecialidadEliminar');
+    const correoUsuarioEliminarInput = document.getElementById('CorreoUsuarioEliminar');
+    const rolUsuarioEliminarInput = document.getElementById('RolUsuarioEliminar');
+
+    const idUsuarioLabel = document.querySelector('label[for="IdUsuarioLabel"]');
+    const nombreUsuarioLabel = document.querySelector('label[for="NombreUsuarioEliminarLabel"]');
+    const idUsuarioEspecialidadLabel = document.querySelector('label[for="IdUsuarioEspecialidadEliminarLabel"]');
+    const correoUsuarioLabel = document.querySelector('label[for="CorreoUsuarioEliminarLabel"]');
+    const rolUsuarioLabel = document.querySelector('label[for="RolUsuarioEliminarLabel"]');
+
+
+    document.getElementById('eliminarUsuarioBtn').style.display = 'block';
+
+    idUsuarioEliminarInput.style.display = 'block';
+    nombreUsuarioEliminarInput.style.display = 'block'; 
+    idUsuarioEspecialidadEliminarInput.style.display = 'block';
+    correoUsuarioEliminarInput.style.display = 'block';
+    rolUsuarioEliminarInput.style.display = 'block';
+
+    idUsuarioLabel.style.display = 'block';
+    nombreUsuarioLabel.style.display = 'block';
+    idUsuarioEspecialidadLabel.style.display = 'block';
+    correoUsuarioLabel.style.display = 'block';
+    rolUsuarioLabel.style.display = 'block';
+
+    idUsuarioEliminarInput.value = data.id;
+    nombreUsuarioEliminarInput.value = data.nombreCompleto;
+    idUsuarioEspecialidadEliminarInput.value = data.especialidad;
+    correoUsuarioEliminarInput.value = data.correo;
+    rolUsuarioEliminarInput.value = data.rol;
+
+    }
+
+
+
 function handleButtonEliminar(data) {
 
 
@@ -108,6 +203,12 @@ function handleButtonEliminar(data) {
     ivaInput.value = data.iva;
 
 
+}
+
+function handleButtonEditarUsuario(data) {
+    hideDeleteFieldsUsuario();
+
+    window.location = '/Administrador/VerUsuarios';
 }
 
 
@@ -147,7 +248,17 @@ function handleButtonEditar(data) {
 
 
     
+const userGridOptions = {
+    columnDefs: userColumnDefinition,
+    rowData: [],
+    rowSelection: 'single',
 
+    defaultColDef: { sortable: true, filter: true },
+
+    localeText: {
+        noRowsToShow: 'Si no se muestra el usuario, debe seleccionar una sede. Si ya seleccionó una sede y aún no se muestran usuarios, eso significa que no hay usuarios registrados a dicha sede.' // Personaliza el mensaje aquí
+    },
+}
 
 
 
@@ -187,6 +298,20 @@ function ProcessDoubleClick(params) {
     const costoLabelEliminar = document.querySelector('label[for="CostoEspecialidadEliminarLabel"]');
     const ivaLabelEliminar = document.querySelector('label[for="IvaEspecialidadEliminarLabel"]');
 
+    const idUsuarioEliminarInput = document.getElementById('IdUsuario');
+    const nombreUsuarioEliminarInput = document.getElementById('NombreUsuarioEliminar');
+    const idUsuarioEspecialidadEliminarInput = document.getElementById('IdUsuarioEspecialidadEliminar');
+    const correoUsuarioEliminarInput = document.getElementById('CorreoUsuarioEliminar');
+    const rolUsuarioEliminarInput = document.getElementById('RolUsuarioEliminar');
+
+    const idUsuarioLabel = document.querySelector('label[for="IdUsuarioLabel"]');
+    const nombreUsuarioLabel = document.querySelector('label[for="NombreUsuarioEliminarLabel"]');
+    const idUsuarioEspecialidadLabel = document.querySelector('label[for="IdUsuarioEspecialidadEliminarLabel"]');
+    const correoUsuarioLabel = document.querySelector('label[for="CorreoUsuarioEliminarLabel"]');
+    const rolUsuarioLabel = document.querySelector('label[for="RolUsuarioEliminarLabel"]');
+    
+
+
     idInput.value = "";
     nombreInput.value = "";
     costoInput.value = "";
@@ -195,7 +320,12 @@ function ProcessDoubleClick(params) {
     nombreInputEliminar.value = "";
     costoInputEliminar.value = "";
     ivaInputEliminar.value = "";
-    
+    idUsuarioEliminarInput.value = "";
+    nombreUsuarioEliminarInput.value = "";
+    idUsuarioEspecialidadEliminarInput.value = "";
+    correoUsuarioEliminarInput.value = "";
+    rolUsuarioEliminarInput.value = "";
+   
     
 
     idInput.style.display = 'none';
@@ -206,6 +336,11 @@ function ProcessDoubleClick(params) {
     costoLabel.style.display = 'none';
     ivaLabel.style.display = 'none';
     idLabel.style.display = 'none';
+    idUsuarioLabel.style.display = 'none';
+    nombreUsuarioLabel.style.display = 'none';
+    idUsuarioEspecialidadLabel.style.display = 'none';
+    correoUsuarioLabel.style.display = 'none';
+    rolUsuarioLabel.style.display = 'none';
 
 
     idInputEliminar.style.display = 'none';
@@ -216,19 +351,42 @@ function ProcessDoubleClick(params) {
     costoLabelEliminar.style.display = 'none';
     ivaLabelEliminar.style.display = 'none';
     idLabelEliminar.style.display = 'none';
+    idUsuarioEliminarInput.style.display = 'none';
+    nombreUsuarioEliminarInput.style.display = 'none';
+    idUsuarioEspecialidadEliminarInput.style.display = 'none';
+    correoUsuarioEliminarInput.style.display = 'none';
+    rolUsuarioEliminarInput.style.display = 'none';
+   
 
 
 
     document.getElementById('agregarEspecialidadBtn').style.display = 'none';
     document.getElementById('eliminarEspecialidadBtn').style.display = 'none';
+    document.getElementById('eliminarUsuarioBtn').style.display = 'none';
+   
 
     var view = new RegistroFuncionarios();
     view.GetSedeEspecialidadesDetails(params.data.id);
+    view.GetSedeUsuariosDetails(params.data.id);
 }
 
 function hideEditFields() {
     document.getElementById('agregarEspecialidadBtn').style.display = 'none';
     document.querySelectorAll('#IdEspecialidad, #NombreEspecialidad, #CostoEspecialidad, #IvaEspecialidad, label[for="IdEspecialidadLabel"], label[for="NombreEspecialidadLabel"], label[for="CostoEspecialidadLabel"], label[for="IvaEspecialidadLabel"]').forEach(el => {
+        el.style.display = 'none';
+    });
+}
+
+//function hideEditFieldsUsuario() {
+//    document.getElementById('agregarUsuarioBtn').style.display = 'none';
+//    document.querySelectorAll('#IdUsuario, #NombreUsuario, #IdUsuarioEspecialidad, #CorreoUsuario, #RolUsuario, label[for="IdUsuarioLabel"], label[for="NombreUsuarioLabel"], label[for="IdUsuarioEspecialidadLabel"], label[for="CorreoUsuarioLabel"], label[for="RolUsuarioLabel"]').forEach(el => {
+//        el.style.display = 'none';
+//    });
+//}
+
+function hideDeleteFieldsUsuario() {
+    document.getElementById('eliminarUsuarioBtn').style.display = 'none';
+    document.querySelectorAll('#IdUsuario, #NombreUsuario, #IdUsuarioEspecialidad, #CorreoUsuario, #RolUsuario, label[for="IdUsuarioLabel"], label[for="NombreUsuarioLabel"], label[for="IdUsuarioEspecialidadLabel"], label[for="CorreoUsuarioLabel"], label[for="RolUsuarioLabel"]').forEach(el => {
         el.style.display = 'none';
     });
 }
@@ -247,5 +405,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gridDestination = document.querySelector('#especGrid');
     new agGrid.Grid(gridDestination, especGridOptions);
+
+    const gridUser = document.querySelector('#userGrid');
+    new agGrid.Grid(gridUser, userGridOptions);
+
+
 
 });
