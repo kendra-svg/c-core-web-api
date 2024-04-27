@@ -61,105 +61,116 @@
 
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralAdmin")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <div class="container">
+                        <h2 class="text-center">Configuracion de Cupos</h2>
+                        <form>
+                            @* <div class="row pt-3">
 
 
-    @Html.Partial("MenuLateralAdmin")
+                            <div class="col-1 ">
+                            <label for="sedes">Sede:</label>
+                            </div>
+                            <div class="col-3">
+                            <div>
+
+                            <select id="sedes" class="form-select m-1">
+                            </select>
+
+                            </div>
+
+                            </div>
+                            </div> *@
+                            @*  <div class="row pt-3">
+                            <div class="col-1 ">
+                            <label for="especialidades">Especialidad:</label>
+                            </div>
+                            <div class="col-3">
+                            <div>
+                            <div>
+
+                            <select id="especialidades" class="form-select m-1">
+                            </select>
+
+                            </div>
+
+                            </div>
+
+                            </div>
+                            </div> *@
+                            @* <div class="row pt-3">
+                            <div class="col-1 ">
+                            <label for="cantidad">Cantidad:</label>
+                            </div>
+                            <div class="col-3">
+                            <div>
+                            <div>
+
+                            <input id="cantidad" type="number" class="form-control m-1" />
+
+                            </div>
+
+                            </div>
+
+                            </div>
+                            </div> *@
+                            <div>
+                                <label for="ddlSedes">Sede:</label>
+                                <select id="ddlSedes" class="form-select">
+                                </select>
+                            </div>
+                            <div>
+                                <label for="ddlEspecialidades">Especialidad:</label>
+                                <select id="ddlEspecialidades" class="form-select text-black">
+                                </select>
+                            </div>
+                            <div>
+                                <label for="txtCantidad">Cantidad:</label>
+                                <input id="txtCantidad" type="text" class="form-control" />
+                            </div>
+                            <div>
+                                <label for="txtCronometro">Cronómetro:</label>
+                                <input id="txtCronometro" type="text" class="form-control" values="30" placeholder="30 minutos" readonly />
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-1">
+                                    <div class="input-group">
+                                        <button type="button" id="btn-save" class="btn btn-success "> Guardar </button>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <button type="button" id="btn-update" class="btn btn-success"> Actualizar </button>
+                                    </div>
+                                </div>
+
+                            </div>
 
 
-    <div class="col text-left">
-        <div class="container">
-            <h2 class="text-center">Configuracion de Cupos</h2>
-            <form>
-                @* <div class="row pt-3">
 
 
-                <div class="col-1 ">
-                <label for="sedes">Sede:</label>
-                </div>
-                <div class="col-3">
-                <div>
-
-                <select id="sedes" class="form-select m-1">
-                </select>
-
-                </div>
-
-                </div>
-                </div> *@
-                @*  <div class="row pt-3">
-                <div class="col-1 ">
-                <label for="especialidades">Especialidad:</label>
-                </div>
-                <div class="col-3">
-                <div>
-                <div>
-
-                <select id="especialidades" class="form-select m-1">
-                </select>
-
-                </div>
-
-                </div>
-
-                </div>
-                </div> *@
-                @* <div class="row pt-3">
-                <div class="col-1 ">
-                <label for="cantidad">Cantidad:</label>
-                </div>
-                <div class="col-3">
-                <div>
-                <div>
-
-                <input id="cantidad" type="number" class="form-control m-1" />
-
-                </div>
-
-                </div>
-
-                </div>
-                </div> *@
-                <div>
-                    <label for="ddlSedes">Sede:</label>
-                    <select id="ddlSedes" class="form-select">
-                    </select>
-                </div>
-                <div>
-                    <label for="ddlEspecialidades">Especialidad:</label>
-                    <select id="ddlEspecialidades" class="form-select text-black">
-                    </select>
-                </div>
-                <div>
-                    <label for="txtCantidad">Cantidad:</label>
-                    <input id="txtCantidad" type="text" class="form-control" />
-                </div>
-                <div>
-                    <label for="txtCronometro">Cronómetro:</label>
-                    <input id="txtCronometro" type="text" class="form-control" values="30" placeholder="30 minutos" readonly />
-                </div>
-                <div class="row mt-2">
-                    <div class="col-1">
-                        <div class="input-group">
-                            <button type="button" id="btn-save" class="btn btn-success "> Guardar </button>
-                        </div>
+                        </form>
+                        <h5 class="mt-5">Lista de Cupos Previamente Configurados</h5>
+                        <div id="cupos-grid" style="height: 300px; width:90%;" class="ag-theme-alpine"></div>
                     </div>
-                    <div class="col-2">
-                        <div class="input-group">
-                            <button type="button" id="btn-update" class="btn btn-success"> Actualizar </button>
-                        </div>
-                    </div>
 
                 </div>
 
-
-
-
-            </form>
-            <h5 class="mt-5">Lista de Cupos Previamente Configurados</h5>
-            <div id="cupos-grid" style="height: 300px; width:90%;" class="ag-theme-alpine"></div>
+            </div>
         </div>
-
     </div>
+
+
+
+
 
 
     @Html.Partial("_Footer")
