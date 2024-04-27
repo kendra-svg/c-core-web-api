@@ -68,19 +68,17 @@ function Configure() {
             //console.log(data);
             infoEspecialidad = data;
             var select = $('#ddlEspecialidades');
-            select.find('option').remove(); 
+            select.find('option').remove();
 
-            
+
             for (var row in data) {
-                
-                
-                for (var srow in data) {
-                    select.append('<option   value=' + data[row].id + '>' + data[srow].nombre + '</option>');
-                }
+
+                select.append('<option   value=' + data[row].id + '>' + data[row].nombre + '</option>');
+
             }
             select.on('change', function () {
                 let id = $(this).val();
-                idEspecialidad=id;
+                idEspecialidad = id;
 
             });
 

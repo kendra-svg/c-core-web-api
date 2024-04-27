@@ -50,6 +50,8 @@ function Horario() {
 
    
 }
+
+
 $(document).ready(function () {
     var view = new Horario();
     view.InitView();
