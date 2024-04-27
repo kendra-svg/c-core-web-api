@@ -37,6 +37,37 @@
             $('#txt-fecha-naciemiento').val(usuario.fechaNacimiento)
             $('#txt-coodernadas').val(usuario.ubicaciones)
 
+
+
+
+            // Separa las coordenadas para mostrarlas en el mapa
+            var coordenadas = usuario.ubicaciones.split(',');
+            var lat = parseFloat(coordenadas[0].trim());
+            var lng = parseFloat(coordenadas[1].trim());
+
+            // Inicializa el mapa con las coordenadas predefinidas
+            var map = L.map('mapa').setView([lat, lng], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var marker = L.marker([lat, lng], { draggable: true }).addTo(map);
+
+            marker.on('dragend', function (event) {
+                var marker = event.target;
+                var position = marker.getLatLng();
+                $('#txt-coodernadas').val(position.lat + ', ' + position.lng);
+            });
+
+
+            
+
+
+
+
+
+
         }).fail(function (error) {
             console.log("Error del ajax ", error);
             Swal.fire({
