@@ -49,25 +49,6 @@ const especColumnDefinition = [
 
             return wrapper;
         }
-    },
-    {
-        headerName: "Eliminar",
-        cellRenderer: function (params) {
-
-            const button = document.createElement("button");
-
-            button.className = "btn btn-danger m-1";
-            button.innerHTML = "Eliminar";
-
-            button.addEventListener("click", function () {
-                handleButtonEliminar(params.data);
-            });
-
-            const wrapper = document.createElement("div");
-            wrapper.appendChild(button);
-
-            return wrapper;
-        }
     }
 
     
