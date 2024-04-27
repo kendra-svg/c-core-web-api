@@ -5,13 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/misfacturas/griddefinition.js"></script>
     <script src="~/js/misfacturas/misfacturas.js"></script>
-
-
-
 }
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    @* <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" /> *@
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
-
 
     <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
 
@@ -81,18 +72,19 @@
                         <div class="card">
                             <div class="card-body">
                                 <div id="factGrid" style="height: 430px; width: 1000px;" class="ag-theme-alpine justify-content-center"></div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    
-                    <div class="container mt-4">
+                                <div class="text-center mt-5 mb-4">
+                                    
+                                </div>
+                        <div class="container mt-4">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h3 class="fw-bold">PayPal</h3>
-                                <img src="https://i.imgur.com/aMgiFxT.png" alt="Logo de PayPal" style="max-width: 100%; height: auto;">
+                                <div id="smart-button-container">
+                                                <div style="text-align: center"><select id="montoFinalSelect" class="mb-sm-3"></select></div>
+                                    <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter an amount</p>
+                                    <div style="text-align: center;">
+                                        <div id="paypal-button-container"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-muted fs-5 mt-2">Recuerda que también tienes la opción de realizar tu pago en ventanilla.</p>
@@ -105,25 +97,31 @@
             </div>
         </div>
     </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AboES7iUomnXlXJRmTf7pTPOfmmlINEFeNDKp2hTB_TpjnSoLK09mAOqH6o_1roTA3NxWcxs1DziRpTu&currency=USD"></script>
+    <script>
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                            var amount = document.getElementById('montoFinalSelect').value;
 
-
-
-
-
-
-    @Html.Partial("_Footer")
-
-
-
-
-
-
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: amount // Use the selected value as the transaction amount
+                                    }
+                                }]
+                            });
+            },
+            onApprove: function (data, actions) {
+            },
+            onCancel: function (data) {
+                console.log("Pago_Cancelado");
+            }
+        }).render('#paypal-button-container');
+                    
+    </script>
+   
     <script src="~/js/usermenu/menufunctions.js"></script>
-
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
