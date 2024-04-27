@@ -17,13 +17,7 @@ namespace API.Controllers
             UsuariosManager manager = new UsuariosManager();
             return manager.CreateUsuario(user);
         }
-        //[HttpGet]
-        //public List<UsuarioBase> GetUsuarios()
-        //{
-        //    UsuariosManager pm = new UsuariosManager();
-        //    return pm.GetAllUsuarios();
 
-        //}
 
         [HttpGet]
         public List<UsuarioBase> GetAllFuncionarios()
