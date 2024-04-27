@@ -87,6 +87,14 @@ namespace API.Controllers
             Console.WriteLine(id_especialidad);
             return pm.GetEspecialidadesBySedeIdAndEspecialidadId(id_sede, id_especialidad);
         }
+        [HttpGet]
+        public SedeEspecialidad GetSedeEspecialidadesBySedeIdAndEspecialidadIdAndUserId(int id_sede, int id_especialidad, int id_usuario)
+        {
+            SedeEspeManager pm = new SedeEspeManager();
+            Console.WriteLine(id_sede);
+            Console.WriteLine(id_especialidad);
+            return pm.GetSedeEspecialidadesBySedeIdAndEspecialidadIdAndUserId(id_sede, id_especialidad,  id_usuario);
+        }
 
     }
 }

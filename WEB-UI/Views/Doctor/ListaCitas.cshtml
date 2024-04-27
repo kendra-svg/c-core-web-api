@@ -68,9 +68,22 @@
             </div>
         </div> *@
 
-        <h3>Lista de Citas de pacientes</h3>
+        <h3>Horario segun cupos</h3>
 
-        <nav class="navbar navbar-light bg-light">
+
+        <div class="container mt-5">
+           
+
+            <div class="row">
+                <div class="col">
+                    <div id="gridHorario" style="height: 300px; width:95%;" class="ag-theme-alpine"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+        @* <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <form class="d-flex w-75">
                     <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Nombre paciente" aria-label="Buscar">
@@ -100,7 +113,7 @@
             <tbody id="citasTableBody">
             </tbody>
         </table>
-
+ *@
         
     </div>
 
@@ -108,8 +121,12 @@
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="~/js/ListaCitas/ListaCitas.js"></script>
+    <script src="~/js/horario/gethorariobyuserid.js"></script>
+    <script src="~/js/horario/griddefinition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    
 
 
     <script src="~/js/usermenu/menufunctions.js"></script>

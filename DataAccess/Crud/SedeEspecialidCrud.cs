@@ -120,9 +120,22 @@ namespace DataAccess.Crud
             }
             return default(T);
         }
+        public T RetrieveBySedeIdAndEspecialidadIdAndUserId<T>(int idSede, int idEspecialidad, int idUsuario)
+        {
+            SqlOperation operation = sedeespemapper.GetRetrieveBySedeIdAndEspecialidadIdAndUsuarioId(idSede, idEspecialidad,idUsuario);
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoObject = sedeespemapper.BuildObject(dataResults[0]);
+
+                return (T)Convert.ChangeType(dtoObject, typeof(T));
+            }
+            return default(T);
+        }
 
 
 
-        
+
     }
 }
