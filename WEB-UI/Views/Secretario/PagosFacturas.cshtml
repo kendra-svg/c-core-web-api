@@ -1,30 +1,27 @@
-﻿
-@{
-    Layout = null;
-    ViewData["Title"] = "Pagos Facturas";
+﻿@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/misfacturas/griddefinition.js"></script>
+    <script src="~/js/misfacturas/misfacturas.js"></script>
 }
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <title>@ViewData["Title"]</title>
+    <title>Mis facturas</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
-    <link href="~/css/severalstyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="~/css/usersmenustyle.css" rel="stylesheet" />
+
+    <!--UNICO CSS PARA PAGINAS CREADAS POR CHRISTIAN -->
+
+    <link href="~/css/severalstyles.css" rel="stylesheet" />
     <link href="~/css/overflow.css" rel="stylesheet" />
 </head>
-
 <body>
 
     <header id="header-menu" class="text-white">
@@ -44,24 +41,13 @@
     <div class="position-relative ">
         <div class="container">
             <ul id="other-options-list" class="list-unstyled position-absolute end-0 " style="display:none;">
-                <li><a asp-controller="Secretario" asp-action="DatosPersonales">Mi perfil</a></li>
-                <li><a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
+                <li><a asp-controller="Administrador" asp-action="DatosPersonales">Mi perfil</a></li>
+                <li><a <a asp-controller="Login" asp-action="Logout">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- 
-    <div class="barra-busqueda">
-        <div class="input-group">
-            <div class="form-outline" data-mdb-input-init>
-                <input id="search-focus" type="search" id="form1" class="form-control" />
-                <label class="form-label" for="form1">Search</label>
-            </div>
-            <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-    </div>-->
+
     <div class="container-fluid">
         <div class="row">
             <!-- Barra lateral -->
@@ -71,139 +57,70 @@
             <!-- Contenido de la página -->
             <div class="col-md-9">
                 <div class="col text-left">
-                    <h2>Pagos de Facturas a Clientes</h2>
-                    <input type="text" class="form-text" placeholder="Buscar" />
+                    @* <div class="row align-items-center justify-content-center mt-4 ">
+                    <div class="col-md-9 ml-4">
+                    <form class="d-flex" action="/buscar" method="GET">
+                    <input class="form-control me-2 flex-grow-1" type="text" name="q" placeholder="Buscar...">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                    </div>
+                    </div> *@
+
                     <div class="container">
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col-3">
-                                    <table id="tb-bills" class="table border mt-3">
-                                        <tr>
-                                            <th>ID FACTURA</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>IVA</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>IMPUESTO POR SERVICIO</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>ESPECIALIDAD MEDICA</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>DOCTOR</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>FECHA DE EMISION</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>ESTADO</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>MONTO TOTAL</th>
-                                            <td>Content</td>
-                                        </tr>
-                                    </table>
+                        <h2 class="text-center mt-5 mb-4">Facturas Personales</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="factGrid" style="height: 430px; width: 1000px;" class="ag-theme-alpine justify-content-center"></div>
+                                <div class="text-center mt-5 mb-4">
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1">
-                                    <button class="btn border">Descargar</button>
+                                <div class="container mt-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <div id="smart-button-container">
+                                                <div style="text-align: center"><select id="montoFinalSelect" class="mb-sm-3"></select></div>
+                                                <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter an amount</p>
+                                                <div style="text-align: center;">
+                                                    <div id="paypal-button-container"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="text-muted fs-5 mt-2">Recuerda que también tienes la opción de realizar tu pago en ventanilla.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <button class="btn border">Pagar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col-3">
-                                    <table id="tb-bills" class="table border mt-3">
-                                        <tr>
-                                            <th>ID FACTURA</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>IVA</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>IMPUESTO POR SERVICIO</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>ESPECIALIDAD MEDICA</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>DOCTOR</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>FECHA DE EMISION</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>ESTADO</th>
-                                            <td>Content</td>
-                                        </tr>
-                                        <tr>
-                                            <th>MONTO TOTAL</th>
-                                            <td>Content</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1">
-                                    <button class="btn border">Descargar</button>
-                                </div>
-                                <div class="col">
-                                    <button class="btn border">Pagar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row mt-5">
-                        <div class="col">
-                            <h5> PAYPAL</h5>
+                            </div>
 
                         </div>
                     </div>
-
-
-
                 </div>
+                <script src="https://www.paypal.com/sdk/js?client-id=AboES7iUomnXlXJRmTf7pTPOfmmlINEFeNDKp2hTB_TpjnSoLK09mAOqH6o_1roTA3NxWcxs1DziRpTu&currency=USD"></script>
+                <script>
+                    paypal.Buttons({
+                        createOrder: function (data, actions) {
+                            var amount = document.getElementById('montoFinalSelect').value;
 
-            </div>
-        </div>
-    </div>
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: amount // Use the selected value as the transaction amount
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function (data, actions) {
+                        },
+                        onCancel: function (data) {
+                            console.log("Pago_Cancelado");
+                        }
+                    }).render('#paypal-button-container');
 
+                </script>
 
-    
-    
-
-     @Html.Partial("_Footer") 
-
-
-
-
-
-
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/usermenu/menufunctions.js"></script>
-
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+                <script src="~/js/usermenu/menufunctions.js"></script>
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
-

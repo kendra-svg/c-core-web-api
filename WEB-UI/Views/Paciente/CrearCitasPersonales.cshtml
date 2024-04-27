@@ -51,112 +51,123 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                @Html.Partial("MenuLateralPaciente")
+            </div>
+            <!-- Contenido de la página -->
+            <div class="col-md-9">
+                <div class="col text-left">
+                    <h2>Crear Citas Personales</h2>
+                    <div class="container-fluid">
+                        <form id="creacionCita">
+                            <div class="row pt-3">
+                                <div class="row pt-3">
 
 
-    @Html.Partial("MenuLateralPaciente")
+                                    <div class="col-1 ">
+                                        <label for="sedes">Sede:</label>
+                                    </div>
+                                    <div class="col">
+                                        <div>
 
+                                            <select id="ddlSedes" class="form-select">
+                                            </select>
 
+                                        </div>
 
-    <div class="col text-left">
-        <h2>Crear Citas Personales</h2>
-        <div class="container-fluid">
-            <form id="creacionCita">
-                <div class="row pt-3">
-                    <div class="row pt-3">
-
-
-                        <div class="col-1 ">
-                            <label for="sedes">Sede:</label>
-                        </div>
-                        <div class="col">
-                            <div>
-
-                                <select id="ddlSedes" class="form-select">
-                                </select>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row pt-3">
-                        <div class="col-1 ">
-                            <label for="especialidades">Especialidad:</label>
-                        </div>
-                        <div class="col">
-                            <div>
-                                <div>
-
-                                    <select id="ddlEspecialidades" class="form-select">
-                                    </select>
-
+                                    </div>
                                 </div>
 
-                            </div>
 
-                        </div>
-                    </div>
+                                <div class="row pt-3">
+                                    <div class="col-1 ">
+                                        <label for="especialidades">Especialidad:</label>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            <div>
 
-                    <div class="row pt-3">
-                        <div class="col-1 ">
-                            <label for="medicos">Medico:</label>
-                        </div>
-                        <div class="col">
-                            <div>
-                                <div>
+                                                <select id="ddlEspecialidades" class="form-select">
+                                                </select>
 
-                                    <select id="ddlmedicos" class="form-select">
-                                    </select>
+                                            </div>
 
+                                        </div>
+
+                                    </div>
                                 </div>
 
+                                <div class="row pt-3">
+                                    <div class="col-1 ">
+                                        <label for="medicos">Medico:</label>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            <div>
+
+                                                <select id="ddlmedicos" class="form-select">
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row pt-3">
+
+
+                                    <div class="col-1">
+                                        <p>Tiempo de atencion:</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" readonly placeholder="30 minutos" class="form-control" />
+                                    </div>
+                                </div>
                             </div>
 
+                        </form>
+
+
+                        <div class="row pt-3">
+                            <div class="col-3">
+                                <p>Confirmacion de cita por medio de: </p>
+
+                            </div>
+                            <div class="col-1">
+                                <input type="checkbox" name="email" checked disabled>
+                                <label for="vehicle2"> Email</label><br>
+                            </div>
                         </div>
+
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div id="grid-posibles-citas" style="height: 500px; width:88%;" class="ag-theme-alpine mt-5"></div>
+
+                            </div>
+
+
+                        </div>
+
+
                     </div>
-                    <div class="row pt-3">
 
-
-                        <div class="col-1">
-                            <p>Tiempo de atencion:</p>
-                        </div>
-                        <div class="col">
-                            <input type="text" readonly placeholder="30 minutos" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-
-
-            <div class="row pt-3">
-                <div class="col-3">
-                    <p>Confirmacion de cita por medio de: </p>
 
                 </div>
-                <div class="col-1">
-                    <input type="checkbox" name="email" checked disabled>
-                    <label for="vehicle2"> Email</label><br>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col">
-                    <div id="grid-posibles-citas" style="height: 500px; width:88%;" class="ag-theme-alpine mt-5"></div>
-
-                </div>
-
 
             </div>
-
-
         </div>
-
-
     </div>
+
+
+
+
+
 
     @Html.Partial("_Footer")
 
