@@ -33,13 +33,30 @@ namespace API.Controllers
         }
 
         [HttpGet] //Get all
-        public List<Receta> GetAllReceta()
+        public API_Response GetAllRecetas()
         {
-            RecetasManager rec = new RecetasManager();
-            return rec.GetAllRecetas();
+            API_Response response = new API_Response();
+            try
+            {
+                RecetasManager receta = new RecetasManager();
+                response.Data = receta.GetAllRecetas();
+                response.Result = "OK";
+            }
+            catch (Exception ex)
+            {
+                response.Result = "ERROR";
+                response.Message = ex.Message;
+            }
+            return response;
         }
-        
-        
-        
+
+        [HttpGet]
+        public List<Receta> GetRecetas()
+        {
+            RecetasManager pm = new RecetasManager();
+            return pm.GetAllRecetas();
+        }
+
+
     }
 }

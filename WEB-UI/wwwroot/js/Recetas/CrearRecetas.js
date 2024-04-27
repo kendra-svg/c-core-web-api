@@ -42,7 +42,7 @@ function CreateRecipe() {
         if (rec.FechaEmision === "") {
             Swal.fire({
                 icon: 'error',
-                text: "Por favor seleccione una foto.",
+                text: "Por favor seleccione una fecha de registro.",
                 title: 'Error'
             });
             return;
@@ -50,7 +50,7 @@ function CreateRecipe() {
         if (rec.DosisRecomendada === "") {
             Swal.fire({
                 icon: 'error',
-                text: "Por favor seleccione una foto.",
+                text: "Por favor indique una dosis.",
                 title: 'Error'
             });
             return;
@@ -58,7 +58,7 @@ function CreateRecipe() {
         if (rec.NombreMedicamento === "") {
             Swal.fire({
                 icon: 'error',
-                text: "Por favor seleccione una foto.",
+                text: "Por favor indique un nombre de Medicamento.",
                 title: 'Error'
             });
             return;
@@ -66,7 +66,7 @@ function CreateRecipe() {
         if (rec.RecomendacionAdicional === "") {
             Swal.fire({
                 icon: 'error',
-                text: "Por favor seleccione una foto.",
+                text: "Por favor indique una Recomendación adicional.",
                 title: 'Error'
             });
             return;
@@ -83,7 +83,7 @@ function CreateRecipe() {
         }
 
         //conexion con api
-        var api_url = API_URL_BASE + "/api/Recetas/CreateReceta";
+        //var api_url = API_URL_BASE + "/api/Recetas/CreateReceta";
 
         $.ajax({
             headers: {
@@ -91,7 +91,7 @@ function CreateRecipe() {
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: api_url,
+            url: "https://apisimepci.azurewebsites.net" + "/api/Recetas/CreateReceta",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             data: JSON.stringify(rec),

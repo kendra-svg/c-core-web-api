@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-    public class ExpedienteCrud : CrudFactory
+    public class ExpedienteRecetaCrud : CrudFactory
     {
-        ExpedienteMapper  mapper;
+        ExpedienteRecetaMapper emapper;
 
-        public ExpedienteCrud() : base() 
+        public ExpedienteRecetaCrud() : base() 
         {
-            mapper = new ExpedienteMapper();
+            emapper = new ExpedienteRecetaMapper();
             dao = SqlDao.GetInstance();
         }
-        
+
         public override void Create(BaseClass dto)
         {
-            SqlOperation operation = mapper.GetCreateStatement(dto);
+            SqlOperation operation = emapper.GetCreateStatement(dto);
             dao.ExecuteStoredProcedure(operation);
         }
 
@@ -34,13 +34,13 @@ namespace DataAccess.Crud
         public override List<T> RetrieveAll<T>()
         {
             List<T> resultList = new List<T>();
-            SqlOperation operation = mapper.GetRetrieveAllStatement();
+            SqlOperation operation = emapper.GetRetrieveAllStatement();
 
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
             if (dataResults.Count > 0)
             {
-                var dtoList = mapper.BuildObjects(dataResults);
+                var dtoList = emapper.BuildObjects(dataResults);
                 foreach (var dto in dtoList)
                 {
                     resultList.Add((T)Convert.ChangeType(dto, typeof(T)));
@@ -51,23 +51,12 @@ namespace DataAccess.Crud
 
         public override T RetrieveById<T>(int id)
         {
-            SqlOperation operation = mapper.GetRetrieveByIdStatement(id);
-            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
-
-            if (dataResults.Count > 0)
-            {
-                var dtoObject = mapper.BuildObject(dataResults[0]);
-
-                return (T)Convert.ChangeType(dtoObject, typeof(T));
-            }
-            return default(T);
+            throw new NotImplementedException();
         }
 
         public override void Update(BaseClass dto)
         {
-            SqlOperation operation = mapper.GetUpdateStatement(dto);
-           
-            dao.ExecuteStoredProcedure(operation);
+            throw new NotImplementedException();
         }
     }
 }

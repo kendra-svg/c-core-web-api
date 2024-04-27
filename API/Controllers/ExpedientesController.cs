@@ -21,7 +21,12 @@ namespace API.Controllers
 
         }
 
-
+        [HttpGet]
+        public List<Expediente> GetExpedientes()
+        {
+            ExpedientesManager pm = new ExpedientesManager();
+            return pm.GetAllexpediente();
+        }
 
         [HttpPut]
         public string UpdateExpediente(Expediente exp)
